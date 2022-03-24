@@ -1,0 +1,484 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A165677F27E57B0500F81F7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A165677E27E57B0500F81F7C /* AppDelegate.swift */; };
+		A165678127E57B0500F81F7C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A165678027E57B0500F81F7C /* SceneDelegate.swift */; };
+		A165678827E57B0700F81F7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A165678727E57B0700F81F7C /* Assets.xcassets */; };
+		A165679C27E57EEA00F81F7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A165679B27E57EEA00F81F7C /* Main.storyboard */; };
+		A165679F27E57F9D00F81F7C /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A165679E27E57F9D00F81F7C /* Constant.swift */; };
+		A16567A227E5804000F81F7C /* Int + Fit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16567A127E5804000F81F7C /* Int + Fit.swift */; };
+		A1D49EDC27EC486F0065B41E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D49EDB27EC486F0065B41E /* TabBarController.swift */; };
+		E6C8AF1E160FFD95626D64BC /* Pods_SilkRoad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0BBC5ADA3DFCC5A0193A68 /* Pods_SilkRoad.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0078B132562A23C835A83FD5 /* Pods-SilkRoad.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SilkRoad.debug.xcconfig"; path = "Target Support Files/Pods-SilkRoad/Pods-SilkRoad.debug.xcconfig"; sourceTree = "<group>"; };
+		A165677B27E57B0500F81F7C /* SilkRoad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SilkRoad.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A165677E27E57B0500F81F7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A165678027E57B0500F81F7C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A165678727E57B0700F81F7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A165678C27E57B0700F81F7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A165679B27E57EEA00F81F7C /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		A165679E27E57F9D00F81F7C /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		A16567A127E5804000F81F7C /* Int + Fit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int + Fit.swift"; sourceTree = "<group>"; };
+		A1D49EDB27EC486F0065B41E /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		C6612F10E5D61C2F4DE7F960 /* Pods-SilkRoad.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SilkRoad.release.xcconfig"; path = "Target Support Files/Pods-SilkRoad/Pods-SilkRoad.release.xcconfig"; sourceTree = "<group>"; };
+		EC0BBC5ADA3DFCC5A0193A68 /* Pods_SilkRoad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SilkRoad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A165677827E57B0500F81F7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6C8AF1E160FFD95626D64BC /* Pods_SilkRoad.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		56F35A54EB8ED215B1D4C384 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0078B132562A23C835A83FD5 /* Pods-SilkRoad.debug.xcconfig */,
+				C6612F10E5D61C2F4DE7F960 /* Pods-SilkRoad.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A165677227E57B0500F81F7C = {
+			isa = PBXGroup;
+			children = (
+				A165677D27E57B0500F81F7C /* SilkRoad */,
+				A165677C27E57B0500F81F7C /* Products */,
+				56F35A54EB8ED215B1D4C384 /* Pods */,
+				C97198ED7994F3597C858556 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A165677C27E57B0500F81F7C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A165677B27E57B0500F81F7C /* SilkRoad.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A165677D27E57B0500F81F7C /* SilkRoad */ = {
+			isa = PBXGroup;
+			children = (
+				A165679227E57B8800F81F7C /* Classes */,
+				A165679327E57B9B00F81F7C /* Resource */,
+				A165678C27E57B0700F81F7C /* Info.plist */,
+				A165679B27E57EEA00F81F7C /* Main.storyboard */,
+			);
+			path = SilkRoad;
+			sourceTree = "<group>";
+		};
+		A165679227E57B8800F81F7C /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A165679427E57BC900F81F7C /* AppDelegate */,
+				A165679527E57BE000F81F7C /* SceneDelegate */,
+				A165679627E57BF800F81F7C /* Application */,
+				A165679827E57C8400F81F7C /* Util */,
+				A165679727E57C6E00F81F7C /* Business */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		A165679327E57B9B00F81F7C /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				A165678727E57B0700F81F7C /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		A165679427E57BC900F81F7C /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				A165677E27E57B0500F81F7C /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		A165679527E57BE000F81F7C /* SceneDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				A165678027E57B0500F81F7C /* SceneDelegate.swift */,
+			);
+			path = SceneDelegate;
+			sourceTree = "<group>";
+		};
+		A165679627E57BF800F81F7C /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				A1D49EDB27EC486F0065B41E /* TabBarController.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		A165679727E57C6E00F81F7C /* Business */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Business;
+			sourceTree = "<group>";
+		};
+		A165679827E57C8400F81F7C /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				A16567A027E5802600F81F7C /* Extensions */,
+				A165679E27E57F9D00F81F7C /* Constant.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		A16567A027E5802600F81F7C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A16567A127E5804000F81F7C /* Int + Fit.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C97198ED7994F3597C858556 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC0BBC5ADA3DFCC5A0193A68 /* Pods_SilkRoad.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A165677A27E57B0500F81F7C /* SilkRoad */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A165678F27E57B0700F81F7C /* Build configuration list for PBXNativeTarget "SilkRoad" */;
+			buildPhases = (
+				26E89D8E196431FE8ABE49D4 /* [CP] Check Pods Manifest.lock */,
+				A165677727E57B0500F81F7C /* Sources */,
+				A165677827E57B0500F81F7C /* Frameworks */,
+				A165677927E57B0500F81F7C /* Resources */,
+				550C163D9213CF2BDA559565 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SilkRoad;
+			productName = SilkRoad;
+			productReference = A165677B27E57B0500F81F7C /* SilkRoad.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A165677327E57B0500F81F7C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					A165677A27E57B0500F81F7C = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+				};
+			};
+			buildConfigurationList = A165677627E57B0500F81F7C /* Build configuration list for PBXProject "SilkRoad" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A165677227E57B0500F81F7C;
+			productRefGroup = A165677C27E57B0500F81F7C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A165677A27E57B0500F81F7C /* SilkRoad */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A165677927E57B0500F81F7C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A165678827E57B0700F81F7C /* Assets.xcassets in Resources */,
+				A165679C27E57EEA00F81F7C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		26E89D8E196431FE8ABE49D4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SilkRoad-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		550C163D9213CF2BDA559565 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SilkRoad/Pods-SilkRoad-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SilkRoad/Pods-SilkRoad-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SilkRoad/Pods-SilkRoad-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A165677727E57B0500F81F7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A165677F27E57B0500F81F7C /* AppDelegate.swift in Sources */,
+				A165678127E57B0500F81F7C /* SceneDelegate.swift in Sources */,
+				A165679F27E57F9D00F81F7C /* Constant.swift in Sources */,
+				A1D49EDC27EC486F0065B41E /* TabBarController.swift in Sources */,
+				A16567A227E5804000F81F7C /* Int + Fit.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A165678D27E57B0700F81F7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A165678E27E57B0700F81F7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A165679027E57B0700F81F7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0078B132562A23C835A83FD5 /* Pods-SilkRoad.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S766NNL3LC;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SilkRoad/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xxx.SilkRoad;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A165679127E57B0700F81F7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6612F10E5D61C2F4DE7F960 /* Pods-SilkRoad.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S766NNL3LC;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SilkRoad/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xxx.SilkRoad;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A165677627E57B0500F81F7C /* Build configuration list for PBXProject "SilkRoad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A165678D27E57B0700F81F7C /* Debug */,
+				A165678E27E57B0700F81F7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A165678F27E57B0700F81F7C /* Build configuration list for PBXNativeTarget "SilkRoad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A165679027E57B0700F81F7C /* Debug */,
+				A165679127E57B0700F81F7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A165677327E57B0500F81F7C /* Project object */;
+}
