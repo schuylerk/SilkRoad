@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		3FC033D627EDDAFB00305127 /* StudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC033D527EDDAFB00305127 /* StudyViewController.swift */; };
 		3FC033D827EDDBBB00305127 /* UITabBarItem + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC033D727EDDBBB00305127 /* UITabBarItem + Extension.swift */; };
-		3FC033DA27EDDFE700305127 /* TimeStampHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC033D927EDDFE700305127 /* TimeStampHelper.swift */; };
+		3FC033DE27EDEDC700305127 /* VRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC033DD27EDEDC700305127 /* VRViewController.swift */; };
+		3FC033E227EDEE1D00305127 /* HelpFarmersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC033E127EDEE1D00305127 /* HelpFarmersViewController.swift */; };
+		3FC033E627EDEE4900305127 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC033E527EDEE4900305127 /* MineViewController.swift */; };
 		A165677F27E57B0500F81F7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A165677E27E57B0500F81F7C /* AppDelegate.swift */; };
 		A165678127E57B0500F81F7C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A165678027E57B0500F81F7C /* SceneDelegate.swift */; };
 		A165678827E57B0700F81F7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A165678727E57B0700F81F7C /* Assets.xcassets */; };
@@ -24,7 +26,9 @@
 		0078B132562A23C835A83FD5 /* Pods-SilkRoad.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SilkRoad.debug.xcconfig"; path = "Target Support Files/Pods-SilkRoad/Pods-SilkRoad.debug.xcconfig"; sourceTree = "<group>"; };
 		3FC033D527EDDAFB00305127 /* StudyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyViewController.swift; sourceTree = "<group>"; };
 		3FC033D727EDDBBB00305127 /* UITabBarItem + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarItem + Extension.swift"; sourceTree = "<group>"; };
-		3FC033D927EDDFE700305127 /* TimeStampHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStampHelper.swift; sourceTree = "<group>"; };
+		3FC033DD27EDEDC700305127 /* VRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VRViewController.swift; sourceTree = "<group>"; };
+		3FC033E127EDEE1D00305127 /* HelpFarmersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpFarmersViewController.swift; sourceTree = "<group>"; };
+		3FC033E527EDEE4900305127 /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
 		A165677B27E57B0500F81F7C /* SilkRoad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SilkRoad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A165677E27E57B0500F81F7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A165678027E57B0500F81F7C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +66,54 @@
 			isa = PBXGroup;
 			children = (
 				3FC033D527EDDAFB00305127 /* StudyViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3FC033DB27EDEDA200305127 /* VR */ = {
+			isa = PBXGroup;
+			children = (
+				3FC033DC27EDEDB400305127 /* Controller */,
+			);
+			path = VR;
+			sourceTree = "<group>";
+		};
+		3FC033DC27EDEDB400305127 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3FC033DD27EDEDC700305127 /* VRViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3FC033DF27EDEDD000305127 /* HelpFarmers */ = {
+			isa = PBXGroup;
+			children = (
+				3FC033E027EDEE0B00305127 /* Controller */,
+			);
+			path = HelpFarmers;
+			sourceTree = "<group>";
+		};
+		3FC033E027EDEE0B00305127 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3FC033E127EDEE1D00305127 /* HelpFarmersViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3FC033E327EDEE3000305127 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				3FC033E427EDEE3E00305127 /* Controller */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		3FC033E427EDEE3E00305127 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3FC033E527EDEE4900305127 /* MineViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -152,6 +204,9 @@
 			isa = PBXGroup;
 			children = (
 				3FC033D327EDDAB100305127 /* Study */,
+				3FC033DB27EDEDA200305127 /* VR */,
+				3FC033DF27EDEDD000305127 /* HelpFarmers */,
+				3FC033E327EDEE3000305127 /* Mine */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -161,7 +216,6 @@
 			children = (
 				A16567A027E5802600F81F7C /* Extensions */,
 				A165679E27E57F9D00F81F7C /* Constant.swift */,
-				3FC033D927EDDFE700305127 /* TimeStampHelper.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -297,14 +351,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FC033E227EDEE1D00305127 /* HelpFarmersViewController.swift in Sources */,
+				3FC033E627EDEE4900305127 /* MineViewController.swift in Sources */,
 				3FC033D827EDDBBB00305127 /* UITabBarItem + Extension.swift in Sources */,
 				A165677F27E57B0500F81F7C /* AppDelegate.swift in Sources */,
 				A165678127E57B0500F81F7C /* SceneDelegate.swift in Sources */,
 				A165679F27E57F9D00F81F7C /* Constant.swift in Sources */,
-				3FC033DA27EDDFE700305127 /* TimeStampHelper.swift in Sources */,
 				A1D49EDC27EC486F0065B41E /* TabBarController.swift in Sources */,
 				3FC033D627EDDAFB00305127 /* StudyViewController.swift in Sources */,
 				A16567A227E5804000F81F7C /* Int + Fit.swift in Sources */,
+				3FC033DE27EDEDC700305127 /* VRViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
