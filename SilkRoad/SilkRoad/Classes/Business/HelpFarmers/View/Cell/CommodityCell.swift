@@ -31,7 +31,7 @@ class CommodityCell: UICollectionViewCell {
         label.textColor = .black
         label.font = UIFont(name: "Arial", size: 16)
         label.text = model.description
-        label.numberOfLines = 0
+        label.numberOfLines = 3
         return label
     }()
     

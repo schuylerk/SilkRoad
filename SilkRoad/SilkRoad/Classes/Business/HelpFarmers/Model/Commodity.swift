@@ -17,8 +17,8 @@ struct Commodity {
     func descriptionRect() -> CGRect {
         let label = UILabel()
         label.text = description
-        label.font = UIFont(name: "Arial", size: 16)
+        label.font = UIFont(name: "Arial", size: CGFloat(16.fw))
         label.lineBreakMode = .byWordWrapping
-        return label.textRect(forBounds: CGRect(x: 0, y: 0, width: 150, height: screenHeight), limitedToNumberOfLines: 3)
+        return label.textRect(forBounds: CGRect(x: 0, y: 0, width: 150.fw, height: Int(screenHeight)), limitedToNumberOfLines: 3)
     }
 }
