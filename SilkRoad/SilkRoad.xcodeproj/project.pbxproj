@@ -7,29 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3FB0BFD127F1D27A00A3412B /* UIColor + Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB0BFD027F1D27A00A3412B /* UIColor + Hex.swift */; };
+		3FB0BFD427F1D80A00A3412B /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB0BFD327F1D80900A3412B /* SearchView.swift */; };
+		3FB0BFD727F1DE7E00A3412B /* CommodityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB0BFD627F1DE7E00A3412B /* CommodityCell.swift */; };
+		3FB0BFDA27F1E00600A3412B /* CommodityCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB0BFD927F1E00600A3412B /* CommodityCellModel.swift */; };
 		3FC033D627EDDAFB00305127 /* StudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC033D527EDDAFB00305127 /* StudyViewController.swift */; };
 		3FC033D827EDDBBB00305127 /* UITabBarItem + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC033D727EDDBBB00305127 /* UITabBarItem + Extension.swift */; };
 		3FC033DE27EDEDC700305127 /* VRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC033DD27EDEDC700305127 /* VRViewController.swift */; };
 		3FC033E227EDEE1D00305127 /* HelpFarmersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC033E127EDEE1D00305127 /* HelpFarmersViewController.swift */; };
 		3FC033E627EDEE4900305127 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC033E527EDEE4900305127 /* MineViewController.swift */; };
+		3FDFDD4D27F1E8D8006F4F15 /* Commodity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDFDD4C27F1E8D8006F4F15 /* Commodity.swift */; };
 		A165677F27E57B0500F81F7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A165677E27E57B0500F81F7C /* AppDelegate.swift */; };
 		A165678127E57B0500F81F7C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A165678027E57B0500F81F7C /* SceneDelegate.swift */; };
 		A165678827E57B0700F81F7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A165678727E57B0700F81F7C /* Assets.xcassets */; };
 		A165679C27E57EEA00F81F7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A165679B27E57EEA00F81F7C /* Main.storyboard */; };
 		A165679F27E57F9D00F81F7C /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A165679E27E57F9D00F81F7C /* Constant.swift */; };
 		A16567A227E5804000F81F7C /* Int + Fit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16567A127E5804000F81F7C /* Int + Fit.swift */; };
-		A1BA33EC27F1A85800326559 /* UIColor + Hex .swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BA33EB27F1A85800326559 /* UIColor + Hex .swift */; };
+		A1BA33EA27F16EC700326559 /* ColorLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BA33E927F16EC700326559 /* ColorLayer.swift */; };
 		A1D49EDC27EC486F0065B41E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D49EDB27EC486F0065B41E /* TabBarController.swift */; };
 		E6C8AF1E160FFD95626D64BC /* Pods_SilkRoad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0BBC5ADA3DFCC5A0193A68 /* Pods_SilkRoad.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0078B132562A23C835A83FD5 /* Pods-SilkRoad.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SilkRoad.debug.xcconfig"; path = "Target Support Files/Pods-SilkRoad/Pods-SilkRoad.debug.xcconfig"; sourceTree = "<group>"; };
+		3FB0BFD027F1D27A00A3412B /* UIColor + Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Hex.swift"; sourceTree = "<group>"; };
+		3FB0BFD327F1D80900A3412B /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		3FB0BFD627F1DE7E00A3412B /* CommodityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommodityCell.swift; sourceTree = "<group>"; };
+		3FB0BFD927F1E00600A3412B /* CommodityCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommodityCellModel.swift; sourceTree = "<group>"; };
 		3FC033D527EDDAFB00305127 /* StudyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyViewController.swift; sourceTree = "<group>"; };
 		3FC033D727EDDBBB00305127 /* UITabBarItem + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarItem + Extension.swift"; sourceTree = "<group>"; };
 		3FC033DD27EDEDC700305127 /* VRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VRViewController.swift; sourceTree = "<group>"; };
 		3FC033E127EDEE1D00305127 /* HelpFarmersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpFarmersViewController.swift; sourceTree = "<group>"; };
 		3FC033E527EDEE4900305127 /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
+		3FDFDD4C27F1E8D8006F4F15 /* Commodity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commodity.swift; sourceTree = "<group>"; };
 		A165677B27E57B0500F81F7C /* SilkRoad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SilkRoad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A165677E27E57B0500F81F7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A165678027E57B0500F81F7C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,7 +48,7 @@
 		A165679B27E57EEA00F81F7C /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A165679E27E57F9D00F81F7C /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		A16567A127E5804000F81F7C /* Int + Fit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int + Fit.swift"; sourceTree = "<group>"; };
-		A1BA33EB27F1A85800326559 /* UIColor + Hex .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Hex .swift"; sourceTree = "<group>"; };
+		A1BA33E927F16EC700326559 /* ColorLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorLayer.swift; sourceTree = "<group>"; };
 		A1D49EDB27EC486F0065B41E /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		C6612F10E5D61C2F4DE7F960 /* Pods-SilkRoad.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SilkRoad.release.xcconfig"; path = "Target Support Files/Pods-SilkRoad/Pods-SilkRoad.release.xcconfig"; sourceTree = "<group>"; };
 		EC0BBC5ADA3DFCC5A0193A68 /* Pods_SilkRoad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SilkRoad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,6 +66,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3FB0BFD227F1D7EA00A3412B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3FB0BFD527F1DDFB00A3412B /* Cell */,
+				3FB0BFD327F1D80900A3412B /* SearchView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3FB0BFD527F1DDFB00A3412B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3FB0BFD627F1DE7E00A3412B /* CommodityCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		3FB0BFD827F1DFEC00A3412B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3FB0BFD927F1E00600A3412B /* CommodityCellModel.swift */,
+				3FDFDD4C27F1E8D8006F4F15 /* Commodity.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		3FC033D327EDDAB100305127 /* Study */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +127,9 @@
 		3FC033DF27EDEDD000305127 /* HelpFarmers */ = {
 			isa = PBXGroup;
 			children = (
+				3FB0BFD827F1DFEC00A3412B /* Model */,
+				3FB0BFD227F1D7EA00A3412B /* View */,
+				A1BA33E827F16E9100326559 /* Layer */,
 				3FC033E027EDEE0B00305127 /* Controller */,
 			);
 			path = HelpFarmers;
@@ -227,9 +266,17 @@
 			children = (
 				A16567A127E5804000F81F7C /* Int + Fit.swift */,
 				3FC033D727EDDBBB00305127 /* UITabBarItem + Extension.swift */,
-				A1BA33EB27F1A85800326559 /* UIColor + Hex .swift */,
+				3FB0BFD027F1D27A00A3412B /* UIColor + Hex.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A1BA33E827F16E9100326559 /* Layer */ = {
+			isa = PBXGroup;
+			children = (
+				A1BA33E927F16EC700326559 /* ColorLayer.swift */,
+			);
+			path = Layer;
 			sourceTree = "<group>";
 		};
 		C97198ED7994F3597C858556 /* Frameworks */ = {
@@ -357,14 +404,19 @@
 				3FC033E227EDEE1D00305127 /* HelpFarmersViewController.swift in Sources */,
 				3FC033E627EDEE4900305127 /* MineViewController.swift in Sources */,
 				3FC033D827EDDBBB00305127 /* UITabBarItem + Extension.swift in Sources */,
+				3FB0BFD127F1D27A00A3412B /* UIColor + Hex.swift in Sources */,
 				A165677F27E57B0500F81F7C /* AppDelegate.swift in Sources */,
+				3FB0BFD727F1DE7E00A3412B /* CommodityCell.swift in Sources */,
 				A165678127E57B0500F81F7C /* SceneDelegate.swift in Sources */,
-				A1BA33EC27F1A85800326559 /* UIColor + Hex .swift in Sources */,
 				A165679F27E57F9D00F81F7C /* Constant.swift in Sources */,
+				3FB0BFDA27F1E00600A3412B /* CommodityCellModel.swift in Sources */,
 				A1D49EDC27EC486F0065B41E /* TabBarController.swift in Sources */,
+				3FB0BFD427F1D80A00A3412B /* SearchView.swift in Sources */,
+				A1BA33EA27F16EC700326559 /* ColorLayer.swift in Sources */,
 				3FC033D627EDDAFB00305127 /* StudyViewController.swift in Sources */,
 				A16567A227E5804000F81F7C /* Int + Fit.swift in Sources */,
 				3FC033DE27EDEDC700305127 /* VRViewController.swift in Sources */,
+				3FDFDD4D27F1E8D8006F4F15 /* Commodity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
