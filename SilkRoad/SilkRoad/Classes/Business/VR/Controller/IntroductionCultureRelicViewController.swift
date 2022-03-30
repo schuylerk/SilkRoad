@@ -35,8 +35,15 @@ class IntroductionCultureRelicViewController: UIViewController {
     lazy var dropDownImageView: UIImageView = {
         let imgV = UIImageView()
         imgV.image = UIImage(named: "vr_dropdown")
+        imgV.isUserInteractionEnabled = true
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(dismissVC))
+        imgV.addGestureRecognizer(gesture)
         return imgV
     }()
+    
+    @objc func dismissVC() {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     lazy var cultureRelicImageView: UIImageView = {
         let imgV = UIImageView()
@@ -86,7 +93,7 @@ class IntroductionCultureRelicViewController: UIViewController {
         }
         view.addSubview(cultureRelicImageView)
         cultureRelicImageView.snp.makeConstraints { maker in
-            maker.left.equalToSuperview().offset(20.fw)
+            maker.left.equalToSuperview().offset(30.fw)
             maker.top.equalTo(dropDownImageView.snp.bottom).offset(10)
             maker.width.height.equalTo(170)
         }
@@ -100,15 +107,15 @@ class IntroductionCultureRelicViewController: UIViewController {
         view.addSubview(cultureRelicHistoryView)
         cultureRelicHistoryView.snp.makeConstraints { maker in
             maker.left.equalTo(cultureRelicImageView)
-            maker.top.equalTo(cultureRelicImageView.snp.bottom).offset(20.fw)
-            maker.right.equalToSuperview().offset(-20.fw)
+            maker.top.equalTo(cultureRelicImageView.snp.bottom).offset(50.fw)
+            maker.right.equalToSuperview().offset(-30.fw)
             maker.height.equalTo(150)
         }
         view.addSubview(cultureRelicStatusView)
         cultureRelicStatusView.snp.makeConstraints { maker in
             maker.left.equalTo(cultureRelicImageView)
             maker.top.equalTo(cultureRelicHistoryView.snp.bottom).offset(20.fw)
-            maker.right.equalToSuperview().offset(-20.fw)
+            maker.right.equalToSuperview().offset(-30.fw)
             maker.height.equalTo(150)
         }
     }

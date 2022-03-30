@@ -13,7 +13,7 @@ class CultureRelicStatusView: UIView {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor(hex: "#BE6B24")
-        label.font = UIFont(name: "Arial", size: 18)
+        label.font = UIFont(name: "Arial", size: 20)
         label.text = "评价地位"
         return label
     }()
@@ -21,7 +21,7 @@ class CultureRelicStatusView: UIView {
     lazy var contentLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor(hex: "#353535")
-        label.font = UIFont(name: "Arial", size: 16)
+        label.font = UIFont(name: "Arial", size: 18)
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         return label
