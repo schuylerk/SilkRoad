@@ -36,6 +36,8 @@ class SetViewController: UIViewController {
     func ConfigUI() {
         self.view.addSubview(tableView)
         
+//        navigationController?.navigationItem.leftBarButtonItem = UIBarButtonItem(image: <#T##UIImage?#>, style: .done, target: self, action: <#T##Selector?#>)
+        
         tableView.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(0)
             make.right.equalToSuperview().offset(0)
