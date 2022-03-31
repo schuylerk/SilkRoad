@@ -12,6 +12,26 @@
 		3FC033DE27EDEDC700305127 /* VRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC033DD27EDEDC700305127 /* VRViewController.swift */; };
 		3FC033E227EDEE1D00305127 /* HelpFarmersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC033E127EDEE1D00305127 /* HelpFarmersViewController.swift */; };
 		3FC033E627EDEE4900305127 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC033E527EDEE4900305127 /* MineViewController.swift */; };
+		7E50C44127F152690041BA4C /* CityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E50C44027F152690041BA4C /* CityCollectionViewCell.swift */; };
+		7E50C44327F1963A0041BA4C /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E50C44227F1963A0041BA4C /* CityViewController.swift */; };
+		7E50C44627F1A29F0041BA4C /* MineDataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E50C44527F1A29F0041BA4C /* MineDataCollectionViewCell.swift */; };
+		7E50C44827F1CCA10041BA4C /* MedalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E50C44727F1CCA10041BA4C /* MedalCollectionViewCell.swift */; };
+		7E50C44B27F1F5160041BA4C /* TravelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E50C44A27F1F5150041BA4C /* TravelCollectionViewCell.swift */; };
+		7E7A273527F3469F00310E9F /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7A273427F3469F00310E9F /* AnswerViewController.swift */; };
+		7E9182FE27F46AB200F692C3 /* EditDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9182FD27F46AB200F692C3 /* EditDataViewController.swift */; };
+		7E91830027F4724800F692C3 /* EditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9182FF27F4724800F692C3 /* EditTableViewCell.swift */; };
+		7E91830227F47DC800F692C3 /* SetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E91830127F47DC800F692C3 /* SetViewController.swift */; };
+		7E91830427F47E9600F692C3 /* SetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E91830327F47E9600F692C3 /* SetTableViewCell.swift */; };
+		7E91830627F4812800F692C3 /* SettwoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E91830527F4812800F692C3 /* SettwoTableViewCell.swift */; };
+		7ECB5C1D27F2A5D100D37D27 /* ExploreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECB5C1C27F2A5D100D37D27 /* ExploreCollectionViewCell.swift */; };
+		7ECB5C1F27F2A5E300D37D27 /* IdiomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECB5C1E27F2A5E300D37D27 /* IdiomCollectionViewCell.swift */; };
+		7ECB5C2127F2A5FD00D37D27 /* PoetryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECB5C2027F2A5FD00D37D27 /* PoetryCollectionViewCell.swift */; };
+		7ECB5C2427F2AAF600D37D27 /* ObjectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECB5C2327F2AAF600D37D27 /* ObjectCollectionViewCell.swift */; };
+		7ECB5C2627F2EDF800D37D27 /* IdiomWordCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECB5C2527F2EDF800D37D27 /* IdiomWordCollectionViewCell.swift */; };
+		7ECB5C2827F325AE00D37D27 /* IntroduceObjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECB5C2727F325AE00D37D27 /* IntroduceObjectViewController.swift */; };
+		7ECB5C2C27F335E100D37D27 /* IntegralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECB5C2B27F335E100D37D27 /* IntegralViewController.swift */; };
+		7ECB5C2E27F33BDE00D37D27 /* PoemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECB5C2D27F33BDE00D37D27 /* PoemCollectionViewCell.swift */; };
+		7EE79C2E27F53C9400D30AD6 /* QuestionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE79C2D27F53C9400D30AD6 /* QuestionCollectionViewCell.swift */; };
 		A165677F27E57B0500F81F7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A165677E27E57B0500F81F7C /* AppDelegate.swift */; };
 		A165678127E57B0500F81F7C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A165678027E57B0500F81F7C /* SceneDelegate.swift */; };
 		A165678827E57B0700F81F7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A165678727E57B0700F81F7C /* Assets.xcassets */; };
@@ -29,6 +49,26 @@
 		3FC033DD27EDEDC700305127 /* VRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VRViewController.swift; sourceTree = "<group>"; };
 		3FC033E127EDEE1D00305127 /* HelpFarmersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpFarmersViewController.swift; sourceTree = "<group>"; };
 		3FC033E527EDEE4900305127 /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
+		7E50C44027F152690041BA4C /* CityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCollectionViewCell.swift; sourceTree = "<group>"; };
+		7E50C44227F1963A0041BA4C /* CityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
+		7E50C44527F1A29F0041BA4C /* MineDataCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineDataCollectionViewCell.swift; sourceTree = "<group>"; };
+		7E50C44727F1CCA10041BA4C /* MedalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedalCollectionViewCell.swift; sourceTree = "<group>"; };
+		7E50C44A27F1F5150041BA4C /* TravelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelCollectionViewCell.swift; sourceTree = "<group>"; };
+		7E7A273427F3469F00310E9F /* AnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
+		7E9182FD27F46AB200F692C3 /* EditDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDataViewController.swift; sourceTree = "<group>"; };
+		7E9182FF27F4724800F692C3 /* EditTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTableViewCell.swift; sourceTree = "<group>"; };
+		7E91830127F47DC800F692C3 /* SetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetViewController.swift; sourceTree = "<group>"; };
+		7E91830327F47E9600F692C3 /* SetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTableViewCell.swift; sourceTree = "<group>"; };
+		7E91830527F4812800F692C3 /* SettwoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettwoTableViewCell.swift; sourceTree = "<group>"; };
+		7ECB5C1C27F2A5D100D37D27 /* ExploreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCollectionViewCell.swift; sourceTree = "<group>"; };
+		7ECB5C1E27F2A5E300D37D27 /* IdiomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdiomCollectionViewCell.swift; sourceTree = "<group>"; };
+		7ECB5C2027F2A5FD00D37D27 /* PoetryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoetryCollectionViewCell.swift; sourceTree = "<group>"; };
+		7ECB5C2327F2AAF600D37D27 /* ObjectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectCollectionViewCell.swift; sourceTree = "<group>"; };
+		7ECB5C2527F2EDF800D37D27 /* IdiomWordCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdiomWordCollectionViewCell.swift; sourceTree = "<group>"; };
+		7ECB5C2727F325AE00D37D27 /* IntroduceObjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroduceObjectViewController.swift; sourceTree = "<group>"; };
+		7ECB5C2B27F335E100D37D27 /* IntegralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegralViewController.swift; sourceTree = "<group>"; };
+		7ECB5C2D27F33BDE00D37D27 /* PoemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemCollectionViewCell.swift; sourceTree = "<group>"; };
+		7EE79C2D27F53C9400D30AD6 /* QuestionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCollectionViewCell.swift; sourceTree = "<group>"; };
 		A165677B27E57B0500F81F7C /* SilkRoad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SilkRoad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A165677E27E57B0500F81F7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A165678027E57B0500F81F7C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +97,8 @@
 		3FC033D327EDDAB100305127 /* Study */ = {
 			isa = PBXGroup;
 			children = (
+				3FC033D527EDDAFB00305127 /* StudyViewController.swift */,
+				7E50C43F27F151E10041BA4C /* View */,
 				3FC033D427EDDACC00305127 /* Controller */,
 			);
 			path = Study;
@@ -65,7 +107,9 @@
 		3FC033D427EDDACC00305127 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				3FC033D527EDDAFB00305127 /* StudyViewController.swift */,
+				7E50C44227F1963A0041BA4C /* CityViewController.swift */,
+				7ECB5C2727F325AE00D37D27 /* IntroduceObjectViewController.swift */,
+				7E7A273427F3469F00310E9F /* AnswerViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -105,6 +149,8 @@
 		3FC033E327EDEE3000305127 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				3FC033E527EDEE4900305127 /* MineViewController.swift */,
+				7E50C44427F1A26F0041BA4C /* View */,
 				3FC033E427EDEE3E00305127 /* Controller */,
 			);
 			path = Mine;
@@ -113,7 +159,9 @@
 		3FC033E427EDEE3E00305127 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				3FC033E527EDEE4900305127 /* MineViewController.swift */,
+				7ECB5C2B27F335E100D37D27 /* IntegralViewController.swift */,
+				7E9182FD27F46AB200F692C3 /* EditDataViewController.swift */,
+				7E91830127F47DC800F692C3 /* SetViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -125,6 +173,50 @@
 				C6612F10E5D61C2F4DE7F960 /* Pods-SilkRoad.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		7E50C43F27F151E10041BA4C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7E50C44027F152690041BA4C /* CityCollectionViewCell.swift */,
+				7ECB5C1C27F2A5D100D37D27 /* ExploreCollectionViewCell.swift */,
+				7ECB5C1E27F2A5E300D37D27 /* IdiomCollectionViewCell.swift */,
+				7ECB5C2027F2A5FD00D37D27 /* PoetryCollectionViewCell.swift */,
+				7EE79C2D27F53C9400D30AD6 /* QuestionCollectionViewCell.swift */,
+				7ECB5C2227F2AACA00D37D27 /* View-Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7E50C44427F1A26F0041BA4C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7E50C44527F1A29F0041BA4C /* MineDataCollectionViewCell.swift */,
+				7E50C44727F1CCA10041BA4C /* MedalCollectionViewCell.swift */,
+				7E50C44927F1F4E60041BA4C /* View-Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7E50C44927F1F4E60041BA4C /* View-Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7E50C44A27F1F5150041BA4C /* TravelCollectionViewCell.swift */,
+				7E9182FF27F4724800F692C3 /* EditTableViewCell.swift */,
+				7E91830327F47E9600F692C3 /* SetTableViewCell.swift */,
+				7E91830527F4812800F692C3 /* SettwoTableViewCell.swift */,
+			);
+			path = "View-Cell";
+			sourceTree = "<group>";
+		};
+		7ECB5C2227F2AACA00D37D27 /* View-Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7ECB5C2327F2AAF600D37D27 /* ObjectCollectionViewCell.swift */,
+				7ECB5C2527F2EDF800D37D27 /* IdiomWordCollectionViewCell.swift */,
+				7ECB5C2D27F33BDE00D37D27 /* PoemCollectionViewCell.swift */,
+			);
+			path = "View-Cell";
 			sourceTree = "<group>";
 		};
 		A165677227E57B0500F81F7C = {
@@ -351,16 +443,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E91830427F47E9600F692C3 /* SetTableViewCell.swift in Sources */,
+				7ECB5C1D27F2A5D100D37D27 /* ExploreCollectionViewCell.swift in Sources */,
+				7E91830027F4724800F692C3 /* EditTableViewCell.swift in Sources */,
+				7E50C44627F1A29F0041BA4C /* MineDataCollectionViewCell.swift in Sources */,
 				3FC033E227EDEE1D00305127 /* HelpFarmersViewController.swift in Sources */,
+				7ECB5C2127F2A5FD00D37D27 /* PoetryCollectionViewCell.swift in Sources */,
+				7ECB5C2427F2AAF600D37D27 /* ObjectCollectionViewCell.swift in Sources */,
+				7E50C44827F1CCA10041BA4C /* MedalCollectionViewCell.swift in Sources */,
 				3FC033E627EDEE4900305127 /* MineViewController.swift in Sources */,
+				7ECB5C1F27F2A5E300D37D27 /* IdiomCollectionViewCell.swift in Sources */,
+				7EE79C2E27F53C9400D30AD6 /* QuestionCollectionViewCell.swift in Sources */,
+				7ECB5C2E27F33BDE00D37D27 /* PoemCollectionViewCell.swift in Sources */,
 				3FC033D827EDDBBB00305127 /* UITabBarItem + Extension.swift in Sources */,
 				A165677F27E57B0500F81F7C /* AppDelegate.swift in Sources */,
+				7E50C44127F152690041BA4C /* CityCollectionViewCell.swift in Sources */,
+				7E7A273527F3469F00310E9F /* AnswerViewController.swift in Sources */,
+				7E50C44B27F1F5160041BA4C /* TravelCollectionViewCell.swift in Sources */,
 				A165678127E57B0500F81F7C /* SceneDelegate.swift in Sources */,
 				A165679F27E57F9D00F81F7C /* Constant.swift in Sources */,
 				A1D49EDC27EC486F0065B41E /* TabBarController.swift in Sources */,
 				3FC033D627EDDAFB00305127 /* StudyViewController.swift in Sources */,
+				7E91830227F47DC800F692C3 /* SetViewController.swift in Sources */,
+				7E91830627F4812800F692C3 /* SettwoTableViewCell.swift in Sources */,
+				7ECB5C2C27F335E100D37D27 /* IntegralViewController.swift in Sources */,
 				A16567A227E5804000F81F7C /* Int + Fit.swift in Sources */,
+				7ECB5C2827F325AE00D37D27 /* IntroduceObjectViewController.swift in Sources */,
 				3FC033DE27EDEDC700305127 /* VRViewController.swift in Sources */,
+				7E9182FE27F46AB200F692C3 /* EditDataViewController.swift in Sources */,
+				7E50C44327F1963A0041BA4C /* CityViewController.swift in Sources */,
+				7ECB5C2627F2EDF800D37D27 /* IdiomWordCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

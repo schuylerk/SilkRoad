@@ -10,12 +10,20 @@ import UIKit
 
 func tabBar() -> UITabBarController {
     let tabBarController = UITabBarController()
-    let viewControllers = [
-        StudyViewController(),
-        VRViewController(),
-        HelpFarmersViewController(),
-        MineViewController()
-    ]
+    
+    let StudyVC = StudyViewController()
+    let VRVC = VRViewController()
+    let HelpVC = HelpFarmersViewController()
+    let MineVC = MineViewController()
+    
+    let StudyNavi = UINavigationController(rootViewController: StudyVC)
+    let VRNavi = UINavigationController(rootViewController: VRVC)
+    let HelpNavi = UINavigationController(rootViewController: HelpVC)
+    let MineNavi = UINavigationController(rootViewController: MineVC)
+    
+    let viewControllers = [StudyNavi, VRNavi, HelpNavi, MineNavi]
+    
+    
     tabBarController.viewControllers = viewControllers
     guard let items = tabBarController.tabBar.items else { return tabBarController }
     items[0].setFor("学习", image: nil, selectedImage: nil)
