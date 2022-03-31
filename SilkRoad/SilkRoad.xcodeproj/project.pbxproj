@@ -23,6 +23,12 @@
 		7E91830227F47DC800F692C3 /* SetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E91830127F47DC800F692C3 /* SetViewController.swift */; };
 		7E91830427F47E9600F692C3 /* SetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E91830327F47E9600F692C3 /* SetTableViewCell.swift */; };
 		7E91830627F4812800F692C3 /* SettwoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E91830527F4812800F692C3 /* SettwoTableViewCell.swift */; };
+		7EADA7D027F5C9C30044FB28 /* ColorLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EADA7CF27F5C9C30044FB28 /* ColorLayer.swift */; };
+		7EADA7D427F5C9CC0044FB28 /* Commodity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EADA7D227F5C9CC0044FB28 /* Commodity.swift */; };
+		7EADA7D527F5C9CC0044FB28 /* CommodityCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EADA7D327F5C9CC0044FB28 /* CommodityCellModel.swift */; };
+		7EADA7DA27F5C9D80044FB28 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EADA7D727F5C9D80044FB28 /* SearchView.swift */; };
+		7EADA7DB27F5C9D80044FB28 /* CommodityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EADA7D927F5C9D80044FB28 /* CommodityCell.swift */; };
+		7EADA7DD27F5CA360044FB28 /* UIColor + Hex .swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EADA7DC27F5CA360044FB28 /* UIColor + Hex .swift */; };
 		7ECB5C1D27F2A5D100D37D27 /* ExploreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECB5C1C27F2A5D100D37D27 /* ExploreCollectionViewCell.swift */; };
 		7ECB5C1F27F2A5E300D37D27 /* IdiomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECB5C1E27F2A5E300D37D27 /* IdiomCollectionViewCell.swift */; };
 		7ECB5C2127F2A5FD00D37D27 /* PoetryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECB5C2027F2A5FD00D37D27 /* PoetryCollectionViewCell.swift */; };
@@ -60,6 +66,12 @@
 		7E91830127F47DC800F692C3 /* SetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetViewController.swift; sourceTree = "<group>"; };
 		7E91830327F47E9600F692C3 /* SetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTableViewCell.swift; sourceTree = "<group>"; };
 		7E91830527F4812800F692C3 /* SettwoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettwoTableViewCell.swift; sourceTree = "<group>"; };
+		7EADA7CF27F5C9C30044FB28 /* ColorLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorLayer.swift; sourceTree = "<group>"; };
+		7EADA7D227F5C9CC0044FB28 /* Commodity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Commodity.swift; sourceTree = "<group>"; };
+		7EADA7D327F5C9CC0044FB28 /* CommodityCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommodityCellModel.swift; sourceTree = "<group>"; };
+		7EADA7D727F5C9D80044FB28 /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		7EADA7D927F5C9D80044FB28 /* CommodityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommodityCell.swift; sourceTree = "<group>"; };
+		7EADA7DC27F5CA360044FB28 /* UIColor + Hex .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor + Hex .swift"; sourceTree = "<group>"; };
 		7ECB5C1C27F2A5D100D37D27 /* ExploreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCollectionViewCell.swift; sourceTree = "<group>"; };
 		7ECB5C1E27F2A5E300D37D27 /* IdiomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdiomCollectionViewCell.swift; sourceTree = "<group>"; };
 		7ECB5C2027F2A5FD00D37D27 /* PoetryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoetryCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -133,6 +145,9 @@
 		3FC033DF27EDEDD000305127 /* HelpFarmers */ = {
 			isa = PBXGroup;
 			children = (
+				7EADA7D627F5C9D80044FB28 /* View */,
+				7EADA7D127F5C9CC0044FB28 /* Model */,
+				7EADA7CE27F5C9C30044FB28 /* Layer */,
 				3FC033E027EDEE0B00305127 /* Controller */,
 			);
 			path = HelpFarmers;
@@ -207,6 +222,40 @@
 				7E91830527F4812800F692C3 /* SettwoTableViewCell.swift */,
 			);
 			path = "View-Cell";
+			sourceTree = "<group>";
+		};
+		7EADA7CE27F5C9C30044FB28 /* Layer */ = {
+			isa = PBXGroup;
+			children = (
+				7EADA7CF27F5C9C30044FB28 /* ColorLayer.swift */,
+			);
+			path = Layer;
+			sourceTree = "<group>";
+		};
+		7EADA7D127F5C9CC0044FB28 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7EADA7D227F5C9CC0044FB28 /* Commodity.swift */,
+				7EADA7D327F5C9CC0044FB28 /* CommodityCellModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7EADA7D627F5C9D80044FB28 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7EADA7D727F5C9D80044FB28 /* SearchView.swift */,
+				7EADA7D827F5C9D80044FB28 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7EADA7D827F5C9D80044FB28 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7EADA7D927F5C9D80044FB28 /* CommodityCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		7ECB5C2227F2AACA00D37D27 /* View-Cell */ = {
@@ -315,6 +364,7 @@
 		A16567A027E5802600F81F7C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				7EADA7DC27F5CA360044FB28 /* UIColor + Hex .swift */,
 				A16567A127E5804000F81F7C /* Int + Fit.swift */,
 				3FC033D727EDDBBB00305127 /* UITabBarItem + Extension.swift */,
 			);
@@ -449,6 +499,7 @@
 				7E50C44627F1A29F0041BA4C /* MineDataCollectionViewCell.swift in Sources */,
 				3FC033E227EDEE1D00305127 /* HelpFarmersViewController.swift in Sources */,
 				7ECB5C2127F2A5FD00D37D27 /* PoetryCollectionViewCell.swift in Sources */,
+				7EADA7DA27F5C9D80044FB28 /* SearchView.swift in Sources */,
 				7ECB5C2427F2AAF600D37D27 /* ObjectCollectionViewCell.swift in Sources */,
 				7E50C44827F1CCA10041BA4C /* MedalCollectionViewCell.swift in Sources */,
 				3FC033E627EDEE4900305127 /* MineViewController.swift in Sources */,
@@ -466,13 +517,18 @@
 				3FC033D627EDDAFB00305127 /* StudyViewController.swift in Sources */,
 				7E91830227F47DC800F692C3 /* SetViewController.swift in Sources */,
 				7E91830627F4812800F692C3 /* SettwoTableViewCell.swift in Sources */,
+				7EADA7DD27F5CA360044FB28 /* UIColor + Hex .swift in Sources */,
 				7ECB5C2C27F335E100D37D27 /* IntegralViewController.swift in Sources */,
+				7EADA7D027F5C9C30044FB28 /* ColorLayer.swift in Sources */,
 				A16567A227E5804000F81F7C /* Int + Fit.swift in Sources */,
 				7ECB5C2827F325AE00D37D27 /* IntroduceObjectViewController.swift in Sources */,
 				3FC033DE27EDEDC700305127 /* VRViewController.swift in Sources */,
 				7E9182FE27F46AB200F692C3 /* EditDataViewController.swift in Sources */,
+				7EADA7D527F5C9CC0044FB28 /* CommodityCellModel.swift in Sources */,
 				7E50C44327F1963A0041BA4C /* CityViewController.swift in Sources */,
 				7ECB5C2627F2EDF800D37D27 /* IdiomWordCollectionViewCell.swift in Sources */,
+				7EADA7DB27F5C9D80044FB28 /* CommodityCell.swift in Sources */,
+				7EADA7D427F5C9CC0044FB28 /* Commodity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
