@@ -12,7 +12,7 @@ func tabBar() -> UITabBarController {
     let tabBarController = UITabBarController()
     let viewControllers = [
         StudyViewController(),
-        UINavigationController(rootViewController: VRViewController()),
+        UINavigationController(rootViewController: VREntryViewController()),
         UINavigationController(rootViewController: HelpFarmersViewController()),
         MineViewController()
     ]
