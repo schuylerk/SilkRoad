@@ -19,6 +19,7 @@ class VREntryViewController: UIViewController {
         scv.backgroundColor = .systemGray3
         scv.contentSize = CGSize(width: screenWidth*3, height: roadMapHeight)
         scv.addSubview(roadMapImageView)
+        scv.showsVerticalScrollIndicator = false
         return scv
     }()
     
