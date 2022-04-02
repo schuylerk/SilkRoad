@@ -1,5 +1,5 @@
 //
-//  CollectionRecordView.swift
+//  CollectionRecordVerticalView.swift
 //  SilkRoad
 //
 //  Created by student on 2022/4/2.
@@ -8,28 +8,36 @@
 import UIKit
 import SnapKit
 
-class CollectionRecordView: UIView {
+class CollectionRecordVerticalView: UIView {
 
     lazy var colorLayer: ColorLayer = {
         let layer = ColorLayer(
-            CGPoint(x: 0, y: 0.5),
-            endPoint: CGPoint(x: 1, y: 0.5),
-            colors: [UIColor(hex: "#FFCCA3").cgColor, UIColor(hex: "#F8F8F8").cgColor],
-            locations: [0, 0.8])
+            CGPoint(x: 0.5, y: 0),
+            endPoint: CGPoint(x: 0.5, y: 1),
+            colors: [UIColor(hex: "#FE7D7D").cgColor, UIColor(hex: "#FFE1E2").cgColor, UIColor(hex: "#F8F8F8").cgColor],
+            locations: [0, 0.4])
         layer.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height)
         return layer
     }()
     
-    lazy var titleLabel: UILabel = {
+    lazy var titleLargeLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.font = UIFont(name: "Arial", size: 20)
+        label.font = UIFont(name: "Arial", size: 40)
+        return label
+    }()
+    
+    lazy var titleSmallLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.font = UIFont(name: "Arial", size: 16)
+        label.textAlignment = .right
         return label
     }()
     
     lazy var slashView: UIView = {
         let sv = UIView()
-        sv.backgroundColor = UIColor(hex: "#FFCCA3")
+        sv.backgroundColor = UIColor(hex: "#FE7D7D")
         sv.transform = CGAffineTransform(rotationAngle: Double.pi/6)
         sv.layer.cornerRadius = 5
         return sv
@@ -37,14 +45,14 @@ class CollectionRecordView: UIView {
     
     lazy var collectedNumLabel: UILabel = {
         let label = UILabel()
-        label.textColor = UIColor(hex: "#FFCCA3")
+        label.textColor = UIColor(hex: "#FE7D7D")
         label.font = UIFont(name: "Arial", size: 60)
         return label
     }()
     
     lazy var collectTotalNumLabel: UILabel = {
         let label = UILabel()
-        label.textColor = UIColor(hex: "#FFCCA3")
+        label.textColor = UIColor(hex: "#FE7D7D")
         label.font = UIFont(name: "Arial", size: 60)
         return label
     }()
@@ -57,25 +65,31 @@ class CollectionRecordView: UIView {
     
     func setup() {
         self.layer.addSublayer(colorLayer)
-        self.addSubview(titleLabel)
+        self.addSubview(titleLargeLabel)
+        self.addSubview(titleSmallLabel)
         self.addSubview(collectedNumLabel)
-        self.addSubview(slashView)
         self.addSubview(collectTotalNumLabel)
-        titleLabel.snp.makeConstraints { maker in
-            maker.left.equalToSuperview().offset(15)
-            maker.bottom.equalToSuperview().offset(-20)
+        self.addSubview(slashView)
+        titleLargeLabel.snp.makeConstraints { maker in
+            maker.left.top.equalToSuperview().offset(20)
+            maker.right.equalToSuperview().offset(-20)
+        }
+        titleSmallLabel.snp.makeConstraints { maker in
+            maker.right.equalToSuperview().offset(-20)
+            maker.top.equalTo(titleLargeLabel.snp.bottom)
         }
         collectTotalNumLabel.snp.makeConstraints { maker in
             maker.right.bottom.equalToSuperview()
         }
         slashView.snp.makeConstraints { maker in
-            maker.top.bottom.equalToSuperview()
+            maker.bottom.equalToSuperview()
+            maker.height.equalTo(80)
             maker.width.equalTo(10)
             maker.right.equalTo(collectTotalNumLabel.snp.left).offset(-10)
         }
         collectedNumLabel.snp.makeConstraints { maker in
-            maker.top.equalToSuperview()
-            maker.right.equalTo(slashView.snp.left)
+            maker.top.equalTo(slashView)
+            maker.right.equalTo(slashView.snp.left).offset(-10)
         }
     }
 
