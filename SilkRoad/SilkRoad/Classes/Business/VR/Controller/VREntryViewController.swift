@@ -47,7 +47,6 @@ class VREntryViewController: UIViewController {
         if citiesLocation.count > 0 {
             if let (cityName, _) = citiesLocation.first {
                 //MARK: 入口
-                
             }
         }
     }

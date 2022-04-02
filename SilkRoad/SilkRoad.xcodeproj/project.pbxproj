@@ -29,6 +29,7 @@
 		A1CA8FC727F804CF00231BE3 /* roadMapCityLocation.json in Resources */ = {isa = PBXBuildFile; fileRef = A1CA8FC627F804CF00231BE3 /* roadMapCityLocation.json */; };
 		A1CA8FC927F806FC00231BE3 /* RoadMapCityLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CA8FC827F806FC00231BE3 /* RoadMapCityLocation.swift */; };
 		A1CA8FCB27F82B1000231BE3 /* CollectionRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CA8FCA27F82B1000231BE3 /* CollectionRecordView.swift */; };
+		A1CA8FCD27F8514C00231BE3 /* CollectionRecordVerticalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CA8FCC27F8514C00231BE3 /* CollectionRecordVerticalView.swift */; };
 		A1D49EDC27EC486F0065B41E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D49EDB27EC486F0065B41E /* TabBarController.swift */; };
 		E6C8AF1E160FFD95626D64BC /* Pods_SilkRoad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0BBC5ADA3DFCC5A0193A68 /* Pods_SilkRoad.framework */; };
 /* End PBXBuildFile section */
@@ -59,6 +60,7 @@
 		A1CA8FC627F804CF00231BE3 /* roadMapCityLocation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = roadMapCityLocation.json; sourceTree = "<group>"; };
 		A1CA8FC827F806FC00231BE3 /* RoadMapCityLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadMapCityLocation.swift; sourceTree = "<group>"; };
 		A1CA8FCA27F82B1000231BE3 /* CollectionRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionRecordView.swift; sourceTree = "<group>"; };
+		A1CA8FCC27F8514C00231BE3 /* CollectionRecordVerticalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionRecordVerticalView.swift; sourceTree = "<group>"; };
 		A1D49EDB27EC486F0065B41E /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		C6612F10E5D61C2F4DE7F960 /* Pods-SilkRoad.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SilkRoad.release.xcconfig"; path = "Target Support Files/Pods-SilkRoad/Pods-SilkRoad.release.xcconfig"; sourceTree = "<group>"; };
 		EC0BBC5ADA3DFCC5A0193A68 /* Pods_SilkRoad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SilkRoad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +89,7 @@
 		3F277DA427F33AB2004E31DE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A1CA8FCC27F8514C00231BE3 /* CollectionRecordVerticalView.swift */,
 				3F277DA527F33B10004E31DE /* CultureRelicInfoView.swift */,
 				3F277DAD27F34490004E31DE /* CultureRelicHistoryView.swift */,
 				3F277DAF27F3460E004E31DE /* CultureRelicStatusView.swift */,
@@ -424,6 +427,7 @@
 				A165679F27E57F9D00F81F7C /* Constant.swift in Sources */,
 				A1D49EDC27EC486F0065B41E /* TabBarController.swift in Sources */,
 				3F277DA327F33600004E31DE /* ColorLayer.swift in Sources */,
+				A1CA8FCD27F8514C00231BE3 /* CollectionRecordVerticalView.swift in Sources */,
 				3F277DA627F33B10004E31DE /* CultureRelicInfoView.swift in Sources */,
 				3FC033D627EDDAFB00305127 /* StudyViewController.swift in Sources */,
 				3F277DA927F33C6D004E31DE /* CultureRelic.swift in Sources */,
