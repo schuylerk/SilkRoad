@@ -14,6 +14,10 @@
 		3F277DAC27F33D1E004E31DE /* CultureRelicInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F277DAB27F33D1E004E31DE /* CultureRelicInfo.swift */; };
 		3F277DAE27F34490004E31DE /* CultureRelicHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F277DAD27F34490004E31DE /* CultureRelicHistoryView.swift */; };
 		3F277DB027F3460E004E31DE /* CultureRelicStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F277DAF27F3460E004E31DE /* CultureRelicStatusView.swift */; };
+		3F5AA8E427FC361400E0293C /* ShowVRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5AA8E327FC361300E0293C /* ShowVRViewController.swift */; };
+		3F5AA8E627FC5A1900E0293C /* Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5AA8E527FC5A1900E0293C /* Overlay.swift */; };
+		3F5AA8E827FC649D00E0293C /* SCNVector3 + Equal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5AA8E727FC649D00E0293C /* SCNVector3 + Equal.swift */; };
+		3F5AA8ED27FC66B100E0293C /* cultureRelic.json in Resources */ = {isa = PBXBuildFile; fileRef = 3F5AA8EC27FC66B100E0293C /* cultureRelic.json */; };
 		3FC033D627EDDAFB00305127 /* StudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC033D527EDDAFB00305127 /* StudyViewController.swift */; };
 		3FC033D827EDDBBB00305127 /* UITabBarItem + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC033D727EDDBBB00305127 /* UITabBarItem + Extension.swift */; };
 		3FC033E227EDEE1D00305127 /* HelpFarmersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC033E127EDEE1D00305127 /* HelpFarmersViewController.swift */; };
@@ -43,6 +47,10 @@
 		3F277DAB27F33D1E004E31DE /* CultureRelicInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CultureRelicInfo.swift; sourceTree = "<group>"; };
 		3F277DAD27F34490004E31DE /* CultureRelicHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CultureRelicHistoryView.swift; sourceTree = "<group>"; };
 		3F277DAF27F3460E004E31DE /* CultureRelicStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CultureRelicStatusView.swift; sourceTree = "<group>"; };
+		3F5AA8E327FC361300E0293C /* ShowVRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowVRViewController.swift; sourceTree = "<group>"; };
+		3F5AA8E527FC5A1900E0293C /* Overlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overlay.swift; sourceTree = "<group>"; };
+		3F5AA8E727FC649D00E0293C /* SCNVector3 + Equal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNVector3 + Equal.swift"; sourceTree = "<group>"; };
+		3F5AA8EC27FC66B100E0293C /* cultureRelic.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cultureRelic.json; sourceTree = "<group>"; };
 		3FC033D527EDDAFB00305127 /* StudyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyViewController.swift; sourceTree = "<group>"; };
 		3FC033D727EDDBBB00305127 /* UITabBarItem + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarItem + Extension.swift"; sourceTree = "<group>"; };
 		3FC033E127EDEE1D00305127 /* HelpFarmersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpFarmersViewController.swift; sourceTree = "<group>"; };
@@ -104,8 +112,18 @@
 				3F277DA827F33C6D004E31DE /* CultureRelic.swift */,
 				3F277DAB27F33D1E004E31DE /* CultureRelicInfo.swift */,
 				A1CA8FC827F806FC00231BE3 /* RoadMapCityLocation.swift */,
+				3F5AA8E527FC5A1900E0293C /* Overlay.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3F5AA8E927FC663A00E0293C /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				A1CA8FC627F804CF00231BE3 /* roadMapCityLocation.json */,
+				3F5AA8EC27FC66B100E0293C /* cultureRelic.json */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		3FC033D327EDDAB100305127 /* Study */ = {
@@ -127,11 +145,11 @@
 		3FC033DB27EDEDA200305127 /* VR */ = {
 			isa = PBXGroup;
 			children = (
+				3F5AA8E927FC663A00E0293C /* Resource */,
 				3F277DA727F33C54004E31DE /* Model */,
 				3F277DA427F33AB2004E31DE /* View */,
 				3F277DA127F33600004E31DE /* Layer */,
 				3FC033DC27EDEDB400305127 /* Controller */,
-				A1CA8FC627F804CF00231BE3 /* roadMapCityLocation.json */,
 			);
 			path = VR;
 			sourceTree = "<group>";
@@ -139,6 +157,7 @@
 		3FC033DC27EDEDB400305127 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				3F5AA8E327FC361300E0293C /* ShowVRViewController.swift */,
 				3F277D9D27F335DB004E31DE /* IntroductionCultureRelicViewController.swift */,
 				3FFF4EBB27F722E300F0D755 /* VREntryViewController.swift */,
 			);
@@ -285,6 +304,7 @@
 				A16567A127E5804000F81F7C /* Int + Fit.swift */,
 				3FC033D727EDDBBB00305127 /* UITabBarItem + Extension.swift */,
 				A1BA33EB27F1A85800326559 /* UIColor + Hex .swift */,
+				3F5AA8E727FC649D00E0293C /* SCNVector3 + Equal.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -357,6 +377,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F5AA8ED27FC66B100E0293C /* cultureRelic.json in Resources */,
 				A165678827E57B0700F81F7C /* Assets.xcassets in Resources */,
 				A1CA8FC727F804CF00231BE3 /* roadMapCityLocation.json in Resources */,
 				A165679C27E57EEA00F81F7C /* Main.storyboard in Resources */,
@@ -420,6 +441,8 @@
 				A165677F27E57B0500F81F7C /* AppDelegate.swift in Sources */,
 				A165678127E57B0500F81F7C /* SceneDelegate.swift in Sources */,
 				A1CA8FCB27F82B1000231BE3 /* CollectionRecordView.swift in Sources */,
+				3F5AA8E827FC649D00E0293C /* SCNVector3 + Equal.swift in Sources */,
+				3F5AA8E627FC5A1900E0293C /* Overlay.swift in Sources */,
 				3FFF4EBC27F722E300F0D755 /* VREntryViewController.swift in Sources */,
 				A1CA8FC927F806FC00231BE3 /* RoadMapCityLocation.swift in Sources */,
 				3F277DAE27F34490004E31DE /* CultureRelicHistoryView.swift in Sources */,
@@ -433,6 +456,7 @@
 				3F277DA927F33C6D004E31DE /* CultureRelic.swift in Sources */,
 				A16567A227E5804000F81F7C /* Int + Fit.swift in Sources */,
 				3F277DB027F3460E004E31DE /* CultureRelicStatusView.swift in Sources */,
+				3F5AA8E427FC361400E0293C /* ShowVRViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

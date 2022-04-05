@@ -8,9 +8,15 @@
 import UIKit
 import SnapKit
 
+protocol IntroductionCultureRelicDelegate {
+    func dismissVC()
+}
+
 class IntroductionCultureRelicViewController: UIViewController {
     
     var model: CultureRelic!
+    
+    var delegate: IntroductionCultureRelicDelegate?
     
     init(_ model: CultureRelic) {
         super.init(nibName: nil, bundle: nil)
@@ -42,7 +48,7 @@ class IntroductionCultureRelicViewController: UIViewController {
     }()
     
     @objc func dismissVC() {
-        self.dismiss(animated: true, completion: nil)
+        self.delegate?.dismissVC()
     }
     
     lazy var cultureRelicImageView: UIImageView = {
