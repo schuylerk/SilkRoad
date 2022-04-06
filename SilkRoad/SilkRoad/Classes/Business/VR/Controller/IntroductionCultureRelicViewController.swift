@@ -10,6 +10,7 @@ import SnapKit
 
 protocol IntroductionCultureRelicDelegate {
     func dismissVC()
+    func moveVC(_ value: CGFloat, dismiss: Bool)
 }
 
 class IntroductionCultureRelicViewController: UIViewController {
@@ -86,6 +87,24 @@ class IntroductionCultureRelicViewController: UIViewController {
         super.viewDidLoad()
         
         setUI()
+        let gesture = UIPanGestureRecognizer(target: self, action: #selector(panHandler))
+        view.addGestureRecognizer(gesture)
+    }
+    
+    var beganY: CGFloat = 0
+    
+    @objc func panHandler(gesture: UIPanGestureRecognizer) {
+        let location = gesture.location(in: view)
+        if gesture.state == .began {
+            beganY = location.y
+        } else {
+            let ty = location.y - beganY
+            if gesture.state == .ended {
+                self.delegate?.moveVC(ty, dismiss: true)
+            } else {
+                self.delegate?.moveVC(ty, dismiss: false)
+            }
+        }
     }
     
     func setUI() {

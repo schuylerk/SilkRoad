@@ -64,9 +64,7 @@ class VREntryViewController: UIViewController {
                             let y = Float.zero
                             let z = -sqrtf(100 - x * x) + 1
                             
-                            let rotation: SCNVector4? = nil //SCNVector4Make(0, 1, 0, -Float.pi / 3)
-                            
-                            return Overlay(width: 1, height: 1, position: SCNVector3Make(x, y, z), rotation: rotation, cullMode: .back, cultureRelic: cultureRelic)
+                            return Overlay(width: 1, height: 1, position: SCNVector3Make(x, y, z), rotation: nil, cullMode: .back, cultureRelic: cultureRelic)
                         }
                     }
                     self.navigationController?.pushViewController(vc, animated: true)

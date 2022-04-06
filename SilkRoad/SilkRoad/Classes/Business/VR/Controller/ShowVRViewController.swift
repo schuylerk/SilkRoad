@@ -109,6 +109,12 @@ class ShowVRViewController: UIViewController {
         })
     }
     
+    func moveIntro(_ value: CGFloat) {
+        let frame = introductionVC.view.frame
+        if frame.minY + value <= 250 { return }
+        introductionVC.view.frame = CGRect(x: frame.minX, y: frame.minY + value, width: frame.width, height: frame.height)
+    }
+    
     lazy var collectionRecordView: CollectionRecordView = {
         let crv = CollectionRecordView()
         crv.collectTotalNumLabel.text = "\(overlays.count)"
@@ -148,6 +154,7 @@ class ShowVRViewController: UIViewController {
     var introductionVC: IntroductionCultureRelicViewController!
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard blackView.isHidden else { return }
         guard let point = touches.first?.location(in: scnView) else { return }
         let results = scnView.hitTest(point, options: nil)
         guard let node = results.first?.node else { return }
@@ -214,6 +221,15 @@ extension ShowVRViewController: IntroductionCultureRelicDelegate {
     
     func dismissVC() {
         self.dismissIntro()
+    }
+    
+    func moveVC(_ value: CGFloat, dismiss: Bool) {
+        print(introductionVC.view.frame.minY)
+        if dismiss {
+            dismissIntro()
+        } else {
+            moveIntro(value)
+        }
     }
     
 }
