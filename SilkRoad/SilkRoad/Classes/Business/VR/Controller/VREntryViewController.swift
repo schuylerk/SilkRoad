@@ -60,11 +60,13 @@ class VREntryViewController: UIViewController {
                         vc.overlays =  cultureRelics.map { cultureRelic -> Overlay in
                             
                             //暂时文物位置随机设置
-                            let x = Float.random(in: -8.0...8.0)
-                            let y = Float.zero //Float.random(in: -4.0...4.0)
-                            let z = Float(-4) //Float.random(in: 3.0...8.0)
+                            let x = Float.random(in: -10.0...10.0)
+                            let y = Float.zero
+                            let z = -sqrtf(100 - x * x) + 1
                             
-                            return Overlay(width: 1, height: 1, position: SCNVector3Make(x, y, z), rotation: nil, cullMode: .back, cultureRelic: cultureRelic)
+                            let rotation: SCNVector4? = nil //SCNVector4Make(0, 1, 0, -Float.pi / 3)
+                            
+                            return Overlay(width: 1, height: 1, position: SCNVector3Make(x, y, z), rotation: rotation, cullMode: .back, cultureRelic: cultureRelic)
                         }
                     }
                     self.navigationController?.pushViewController(vc, animated: true)
@@ -81,6 +83,12 @@ class VREntryViewController: UIViewController {
         setUI()
         setNav()
         getRoadMapCityLocation()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tabBarController?.tabBar.isHidden = false
     }
     
     func getCultureRelicFor(_ cityName: String) -> [CultureRelic]? {

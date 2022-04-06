@@ -15,6 +15,8 @@ class ShowVRViewController: UIViewController {
     
     var overlays: [Overlay] = []
     
+    var collectedIndexes: [Int] = []
+    
     private var overlayNodes: [SCNNode] = []
     
     lazy var scnView: SCNView = {
@@ -109,7 +111,7 @@ class ShowVRViewController: UIViewController {
     
     lazy var collectionRecordView: CollectionRecordView = {
         let crv = CollectionRecordView()
-        crv.collectTotalNumLabel.text = "5"
+        crv.collectTotalNumLabel.text = "\(overlays.count)"
         crv.collectedNumLabel.text = "0"
         crv.titleLabel.text = "已收集文物"
         crv.layer.cornerRadius = 15
@@ -137,8 +139,8 @@ class ShowVRViewController: UIViewController {
         configOverlay()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         self.tabBarController?.tabBar.isHidden = true
     }
@@ -165,6 +167,10 @@ class ShowVRViewController: UIViewController {
             self.introductionVC.view.frame = CGRect(x: 0, y: 250, width: screenWidth, height: screenHeight - 250)
         })
         blackView.isHidden = false
+        if let _ = collectedIndexes.firstIndex(of: index) { return }
+        guard let collectedNum = Int(collectionRecordView.collectedNumLabel.text ?? "") else { return }
+        collectionRecordView.collectedNumLabel.text = "\(collectedNum + 1)"
+        collectedIndexes.append(index)
     }
 
 }
