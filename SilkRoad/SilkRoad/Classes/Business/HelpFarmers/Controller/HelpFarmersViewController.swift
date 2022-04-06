@@ -107,6 +107,12 @@ class HelpFarmersViewController: UIViewController {
             maker.top.equalToSuperview().offset(150.fh)
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tabBarController?.tabBar.isHidden = false
+    }
 
 }
 
@@ -127,6 +133,12 @@ extension HelpFarmersViewController: UICollectionViewDelegate, UICollectionViewD
             price: commodity.price))
         cell.layer.cornerRadius = CGFloat(15.fw)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        let vc = OrderViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }

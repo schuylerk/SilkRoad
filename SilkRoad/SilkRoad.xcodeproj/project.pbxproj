@@ -24,6 +24,12 @@
 		A165679F27E57F9D00F81F7C /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A165679E27E57F9D00F81F7C /* Constant.swift */; };
 		A16567A227E5804000F81F7C /* Int + Fit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16567A127E5804000F81F7C /* Int + Fit.swift */; };
 		A1BA33EA27F16EC700326559 /* ColorLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BA33E927F16EC700326559 /* ColorLayer.swift */; };
+		A1D25FDD27FD1F0A002D2EE8 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D25FDC27FD1F0A002D2EE8 /* OrderViewController.swift */; };
+		A1D25FDF27FD1F75002D2EE8 /* ReceiveAddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D25FDE27FD1F75002D2EE8 /* ReceiveAddressCell.swift */; };
+		A1D25FE127FD22DE002D2EE8 /* ProductOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D25FE027FD22DE002D2EE8 /* ProductOrderCell.swift */; };
+		A1D25FE527FD5077002D2EE8 /* UnitPriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D25FE427FD5077002D2EE8 /* UnitPriceCell.swift */; };
+		A1D25FE727FD5162002D2EE8 /* PurchaseQuantityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D25FE627FD5162002D2EE8 /* PurchaseQuantityCell.swift */; };
+		A1D25FE927FD599E002D2EE8 /* OrderRemarksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D25FE827FD599E002D2EE8 /* OrderRemarksCell.swift */; };
 		A1D49EDC27EC486F0065B41E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D49EDB27EC486F0065B41E /* TabBarController.swift */; };
 		E6C8AF1E160FFD95626D64BC /* Pods_SilkRoad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0BBC5ADA3DFCC5A0193A68 /* Pods_SilkRoad.framework */; };
 /* End PBXBuildFile section */
@@ -49,6 +55,12 @@
 		A165679E27E57F9D00F81F7C /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		A16567A127E5804000F81F7C /* Int + Fit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int + Fit.swift"; sourceTree = "<group>"; };
 		A1BA33E927F16EC700326559 /* ColorLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorLayer.swift; sourceTree = "<group>"; };
+		A1D25FDC27FD1F0A002D2EE8 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
+		A1D25FDE27FD1F75002D2EE8 /* ReceiveAddressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveAddressCell.swift; sourceTree = "<group>"; };
+		A1D25FE027FD22DE002D2EE8 /* ProductOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductOrderCell.swift; sourceTree = "<group>"; };
+		A1D25FE427FD5077002D2EE8 /* UnitPriceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitPriceCell.swift; sourceTree = "<group>"; };
+		A1D25FE627FD5162002D2EE8 /* PurchaseQuantityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseQuantityCell.swift; sourceTree = "<group>"; };
+		A1D25FE827FD599E002D2EE8 /* OrderRemarksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRemarksCell.swift; sourceTree = "<group>"; };
 		A1D49EDB27EC486F0065B41E /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		C6612F10E5D61C2F4DE7F960 /* Pods-SilkRoad.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SilkRoad.release.xcconfig"; path = "Target Support Files/Pods-SilkRoad/Pods-SilkRoad.release.xcconfig"; sourceTree = "<group>"; };
 		EC0BBC5ADA3DFCC5A0193A68 /* Pods_SilkRoad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SilkRoad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +91,11 @@
 			isa = PBXGroup;
 			children = (
 				3FB0BFD627F1DE7E00A3412B /* CommodityCell.swift */,
+				A1D25FDE27FD1F75002D2EE8 /* ReceiveAddressCell.swift */,
+				A1D25FE027FD22DE002D2EE8 /* ProductOrderCell.swift */,
+				A1D25FE427FD5077002D2EE8 /* UnitPriceCell.swift */,
+				A1D25FE627FD5162002D2EE8 /* PurchaseQuantityCell.swift */,
+				A1D25FE827FD599E002D2EE8 /* OrderRemarksCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -139,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				3FC033E127EDEE1D00305127 /* HelpFarmersViewController.swift */,
+				A1D25FDC27FD1F0A002D2EE8 /* OrderViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -405,17 +423,23 @@
 				3FC033E627EDEE4900305127 /* MineViewController.swift in Sources */,
 				3FC033D827EDDBBB00305127 /* UITabBarItem + Extension.swift in Sources */,
 				3FB0BFD127F1D27A00A3412B /* UIColor + Hex.swift in Sources */,
+				A1D25FE927FD599E002D2EE8 /* OrderRemarksCell.swift in Sources */,
 				A165677F27E57B0500F81F7C /* AppDelegate.swift in Sources */,
 				3FB0BFD727F1DE7E00A3412B /* CommodityCell.swift in Sources */,
 				A165678127E57B0500F81F7C /* SceneDelegate.swift in Sources */,
 				A165679F27E57F9D00F81F7C /* Constant.swift in Sources */,
+				A1D25FDF27FD1F75002D2EE8 /* ReceiveAddressCell.swift in Sources */,
+				A1D25FDD27FD1F0A002D2EE8 /* OrderViewController.swift in Sources */,
+				A1D25FE127FD22DE002D2EE8 /* ProductOrderCell.swift in Sources */,
 				3FB0BFDA27F1E00600A3412B /* CommodityCellModel.swift in Sources */,
 				A1D49EDC27EC486F0065B41E /* TabBarController.swift in Sources */,
 				3FB0BFD427F1D80A00A3412B /* SearchView.swift in Sources */,
 				A1BA33EA27F16EC700326559 /* ColorLayer.swift in Sources */,
 				3FC033D627EDDAFB00305127 /* StudyViewController.swift in Sources */,
 				A16567A227E5804000F81F7C /* Int + Fit.swift in Sources */,
+				A1D25FE527FD5077002D2EE8 /* UnitPriceCell.swift in Sources */,
 				3FC033DE27EDEDC700305127 /* VRViewController.swift in Sources */,
+				A1D25FE727FD5162002D2EE8 /* PurchaseQuantityCell.swift in Sources */,
 				3FDFDD4D27F1E8D8006F4F15 /* Commodity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
