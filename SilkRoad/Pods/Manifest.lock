@@ -1,20 +1,24 @@
 PODS:
   - Alamofire (5.5.0)
+  - Eureka (5.3.4)
   - SnapKit (5.0.1)
 
 DEPENDENCIES:
   - Alamofire
+  - Eureka
   - SnapKit
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Eureka
     - SnapKit
 
 SPEC CHECKSUMS:
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  Eureka: 60cf058f86a8fb3ed26165ba5292b9850361b0a6
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: db55ce4b09eab86b642ed2fe07d9c1278b80e248
+PODFILE CHECKSUM: 58974f5a4b17ff304eb4caadd293397758108076
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.11.2
