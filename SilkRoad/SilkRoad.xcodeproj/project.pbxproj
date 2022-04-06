@@ -12,6 +12,12 @@
 		3FC033DE27EDEDC700305127 /* VRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC033DD27EDEDC700305127 /* VRViewController.swift */; };
 		3FC033E227EDEE1D00305127 /* HelpFarmersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC033E127EDEE1D00305127 /* HelpFarmersViewController.swift */; };
 		3FC033E627EDEE4900305127 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC033E527EDEE4900305127 /* MineViewController.swift */; };
+		3FC1466627FDB7950064CBF8 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC1466527FDB7950064CBF8 /* OrderViewController.swift */; };
+		3FC1466C27FDB7B60064CBF8 /* PurchaseQuantityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC1466727FDB7B60064CBF8 /* PurchaseQuantityCell.swift */; };
+		3FC1466D27FDB7B60064CBF8 /* ReceiveAddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC1466827FDB7B60064CBF8 /* ReceiveAddressCell.swift */; };
+		3FC1466E27FDB7B60064CBF8 /* UnitPriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC1466927FDB7B60064CBF8 /* UnitPriceCell.swift */; };
+		3FC1466F27FDB7B60064CBF8 /* ProductOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC1466A27FDB7B60064CBF8 /* ProductOrderCell.swift */; };
+		3FC1467027FDB7B60064CBF8 /* OrderRemarksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC1466B27FDB7B60064CBF8 /* OrderRemarksCell.swift */; };
 		7E50C44127F152690041BA4C /* CityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E50C44027F152690041BA4C /* CityCollectionViewCell.swift */; };
 		7E50C44327F1963A0041BA4C /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E50C44227F1963A0041BA4C /* CityViewController.swift */; };
 		7E50C44627F1A29F0041BA4C /* MineDataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E50C44527F1A29F0041BA4C /* MineDataCollectionViewCell.swift */; };
@@ -55,6 +61,12 @@
 		3FC033DD27EDEDC700305127 /* VRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VRViewController.swift; sourceTree = "<group>"; };
 		3FC033E127EDEE1D00305127 /* HelpFarmersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpFarmersViewController.swift; sourceTree = "<group>"; };
 		3FC033E527EDEE4900305127 /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
+		3FC1466527FDB7950064CBF8 /* OrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
+		3FC1466727FDB7B60064CBF8 /* PurchaseQuantityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseQuantityCell.swift; sourceTree = "<group>"; };
+		3FC1466827FDB7B60064CBF8 /* ReceiveAddressCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiveAddressCell.swift; sourceTree = "<group>"; };
+		3FC1466927FDB7B60064CBF8 /* UnitPriceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitPriceCell.swift; sourceTree = "<group>"; };
+		3FC1466A27FDB7B60064CBF8 /* ProductOrderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductOrderCell.swift; sourceTree = "<group>"; };
+		3FC1466B27FDB7B60064CBF8 /* OrderRemarksCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderRemarksCell.swift; sourceTree = "<group>"; };
 		7E50C44027F152690041BA4C /* CityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCollectionViewCell.swift; sourceTree = "<group>"; };
 		7E50C44227F1963A0041BA4C /* CityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
 		7E50C44527F1A29F0041BA4C /* MineDataCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineDataCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -156,6 +168,7 @@
 		3FC033E027EDEE0B00305127 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				3FC1466527FDB7950064CBF8 /* OrderViewController.swift */,
 				3FC033E127EDEE1D00305127 /* HelpFarmersViewController.swift */,
 			);
 			path = Controller;
@@ -253,6 +266,11 @@
 		7EADA7D827F5C9D80044FB28 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				3FC1466B27FDB7B60064CBF8 /* OrderRemarksCell.swift */,
+				3FC1466A27FDB7B60064CBF8 /* ProductOrderCell.swift */,
+				3FC1466727FDB7B60064CBF8 /* PurchaseQuantityCell.swift */,
+				3FC1466827FDB7B60064CBF8 /* ReceiveAddressCell.swift */,
+				3FC1466927FDB7B60064CBF8 /* UnitPriceCell.swift */,
 				7EADA7D927F5C9D80044FB28 /* CommodityCell.swift */,
 			);
 			path = Cell;
@@ -503,17 +521,21 @@
 				7ECB5C2427F2AAF600D37D27 /* ObjectCollectionViewCell.swift in Sources */,
 				7E50C44827F1CCA10041BA4C /* MedalCollectionViewCell.swift in Sources */,
 				3FC033E627EDEE4900305127 /* MineViewController.swift in Sources */,
+				3FC1467027FDB7B60064CBF8 /* OrderRemarksCell.swift in Sources */,
 				7ECB5C1F27F2A5E300D37D27 /* IdiomCollectionViewCell.swift in Sources */,
+				3FC1466D27FDB7B60064CBF8 /* ReceiveAddressCell.swift in Sources */,
 				7EE79C2E27F53C9400D30AD6 /* QuestionCollectionViewCell.swift in Sources */,
 				7ECB5C2E27F33BDE00D37D27 /* PoemCollectionViewCell.swift in Sources */,
 				3FC033D827EDDBBB00305127 /* UITabBarItem + Extension.swift in Sources */,
 				A165677F27E57B0500F81F7C /* AppDelegate.swift in Sources */,
 				7E50C44127F152690041BA4C /* CityCollectionViewCell.swift in Sources */,
+				3FC1466E27FDB7B60064CBF8 /* UnitPriceCell.swift in Sources */,
 				7E7A273527F3469F00310E9F /* AnswerViewController.swift in Sources */,
 				7E50C44B27F1F5160041BA4C /* TravelCollectionViewCell.swift in Sources */,
 				A165678127E57B0500F81F7C /* SceneDelegate.swift in Sources */,
 				A165679F27E57F9D00F81F7C /* Constant.swift in Sources */,
 				A1D49EDC27EC486F0065B41E /* TabBarController.swift in Sources */,
+				3FC1466F27FDB7B60064CBF8 /* ProductOrderCell.swift in Sources */,
 				3FC033D627EDDAFB00305127 /* StudyViewController.swift in Sources */,
 				7E91830227F47DC800F692C3 /* SetViewController.swift in Sources */,
 				7E91830627F4812800F692C3 /* SettwoTableViewCell.swift in Sources */,
@@ -526,7 +548,9 @@
 				7E9182FE27F46AB200F692C3 /* EditDataViewController.swift in Sources */,
 				7EADA7D527F5C9CC0044FB28 /* CommodityCellModel.swift in Sources */,
 				7E50C44327F1963A0041BA4C /* CityViewController.swift in Sources */,
+				3FC1466C27FDB7B60064CBF8 /* PurchaseQuantityCell.swift in Sources */,
 				7ECB5C2627F2EDF800D37D27 /* IdiomWordCollectionViewCell.swift in Sources */,
+				3FC1466627FDB7950064CBF8 /* OrderViewController.swift in Sources */,
 				7EADA7DB27F5C9D80044FB28 /* CommodityCell.swift in Sources */,
 				7EADA7D427F5C9CC0044FB28 /* Commodity.swift in Sources */,
 			);
