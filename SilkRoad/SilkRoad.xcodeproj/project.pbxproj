@@ -197,8 +197,8 @@
 				7ECB5C1C27F2A5D100D37D27 /* ExploreCollectionViewCell.swift */,
 				7ECB5C1E27F2A5E300D37D27 /* IdiomCollectionViewCell.swift */,
 				7ECB5C2027F2A5FD00D37D27 /* PoetryCollectionViewCell.swift */,
-				7EE79C2D27F53C9400D30AD6 /* QuestionCollectionViewCell.swift */,
 				7ECB5C2227F2AACA00D37D27 /* View-Cell */,
+				7EE79C2D27F53C9400D30AD6 /* QuestionCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

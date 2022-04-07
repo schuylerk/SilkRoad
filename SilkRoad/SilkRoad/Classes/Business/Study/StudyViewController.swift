@@ -50,30 +50,39 @@ class StudyViewController: UIViewController {
         return collectionView
     }()
     
-    
-    
-    lazy var BacksearchView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "studysearch1"))
-        return imageView
+    lazy var searchView: SearchView = {
+        let searchView = SearchView()
+        searchView.backgroundColor = UIColor(hex: "#FDF5EF")
+        searchView.layer.cornerRadius = CGFloat(20.fw)
+        searchView.layer.borderColor = UIColor(hex: "#D8D0C9").cgColor
+        searchView.layer.borderWidth = CGFloat(1.fw)
+        searchView.searchTextField.delegate = self
+        return searchView
     }()
     
-    private lazy var searchBarBtn: UIButton = {
-        let btn = UIButton()
-        btn.titleLabel?.textAlignment = .left
-        btn.addTarget(self, action: #selector(searchBarClick), for: .touchUpInside)
-        return btn
+    lazy var blackView: UIView = {
+        let blv = UIView()
+        blv.backgroundColor = .black
+        blv.alpha = 0.5
+        blv.isUserInteractionEnabled = true
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(cancleSearch))
+        blv.addGestureRecognizer(gesture)
+        blv.isHidden = true
+        return blv
     }()
     
-    @objc func searchBarClick() {
-       print("1")
+    @objc func cancleSearch() {
+        blackView.isHidden = true
+        searchView.searchTextField.resignFirstResponder()
     }
+    
     
     func configUI() {
         self.view.addSubview(imageView)
         self.view.addSubview(collectionView)
         self.view.addSubview(Studylabel)
-        self.view.addSubview(BacksearchView)
-        BacksearchView.addSubview(searchBarBtn)
+        self.view.addSubview(blackView)
+        self.view.addSubview(searchView)
         
         Studylabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(-390.fh)
@@ -88,20 +97,18 @@ class StudyViewController: UIViewController {
             make.right.equalToSuperview().offset(-20.fw)
             make.height.equalToSuperview().offset(1000.fh)
         }
+    
+        blackView.snp.makeConstraints { maker in
+            maker.edges.equalToSuperview()
+        }
         
-        BacksearchView.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(20)
-            make.right.equalToSuperview().offset(-20)
-            make.top.equalToSuperview().offset(118)
-            make.height.equalTo(40)
+        searchView.snp.makeConstraints { maker in
+            maker.left.equalToSuperview().offset(20.fw)
+            maker.right.equalToSuperview().offset(-20.fw)
+            maker.height.equalTo(40.fw)
+            maker.top.equalToSuperview().offset(120.fh)
         }
-
-        searchBarBtn.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(70)
-            make.right.equalToSuperview().offset(-90)
-            make.centerY.equalTo(BacksearchView.snp.centerY)
-            make.height.equalTo(30)
-        }
+        
         
     }
     
@@ -109,6 +116,7 @@ class StudyViewController: UIViewController {
 
 
 extension  StudyViewController:  UICollectionViewDelegate, UICollectionViewDataSource {
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 5
     }
@@ -137,6 +145,15 @@ extension StudyViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: Int(screenWidth - 40).fw, height: 140.fh)
+    }
+    
+}
+
+
+extension StudyViewController: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        blackView.isHidden = false
     }
     
 }
