@@ -29,6 +29,7 @@
 		A165679C27E57EEA00F81F7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A165679B27E57EEA00F81F7C /* Main.storyboard */; };
 		A165679F27E57F9D00F81F7C /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A165679E27E57F9D00F81F7C /* Constant.swift */; };
 		A16567A227E5804000F81F7C /* Int + Fit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16567A127E5804000F81F7C /* Int + Fit.swift */; };
+		A1861CD02801681C0034EF48 /* CultureRelicIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1861CCF2801681C0034EF48 /* CultureRelicIntroView.swift */; };
 		A1BA33EC27F1A85800326559 /* UIColor + Hex .swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BA33EB27F1A85800326559 /* UIColor + Hex .swift */; };
 		A1CA8FC727F804CF00231BE3 /* roadMapCityLocation.json in Resources */ = {isa = PBXBuildFile; fileRef = A1CA8FC627F804CF00231BE3 /* roadMapCityLocation.json */; };
 		A1CA8FC927F806FC00231BE3 /* RoadMapCityLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CA8FC827F806FC00231BE3 /* RoadMapCityLocation.swift */; };
@@ -64,6 +65,7 @@
 		A165679B27E57EEA00F81F7C /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A165679E27E57F9D00F81F7C /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		A16567A127E5804000F81F7C /* Int + Fit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int + Fit.swift"; sourceTree = "<group>"; };
+		A1861CCF2801681C0034EF48 /* CultureRelicIntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CultureRelicIntroView.swift; sourceTree = "<group>"; };
 		A1BA33EB27F1A85800326559 /* UIColor + Hex .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Hex .swift"; sourceTree = "<group>"; };
 		A1CA8FC627F804CF00231BE3 /* roadMapCityLocation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = roadMapCityLocation.json; sourceTree = "<group>"; };
 		A1CA8FC827F806FC00231BE3 /* RoadMapCityLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadMapCityLocation.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				A1CA8FCC27F8514C00231BE3 /* CollectionRecordVerticalView.swift */,
+				A1861CCF2801681C0034EF48 /* CultureRelicIntroView.swift */,
 				3F277DA527F33B10004E31DE /* CultureRelicInfoView.swift */,
 				3F277DAD27F34490004E31DE /* CultureRelicHistoryView.swift */,
 				3F277DAF27F3460E004E31DE /* CultureRelicStatusView.swift */,
@@ -454,6 +457,7 @@
 				3F277DA627F33B10004E31DE /* CultureRelicInfoView.swift in Sources */,
 				3FC033D627EDDAFB00305127 /* StudyViewController.swift in Sources */,
 				3F277DA927F33C6D004E31DE /* CultureRelic.swift in Sources */,
+				A1861CD02801681C0034EF48 /* CultureRelicIntroView.swift in Sources */,
 				A16567A227E5804000F81F7C /* Int + Fit.swift in Sources */,
 				3F277DB027F3460E004E31DE /* CultureRelicStatusView.swift in Sources */,
 				3F5AA8E427FC361400E0293C /* ShowVRViewController.swift in Sources */,

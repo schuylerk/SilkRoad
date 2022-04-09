@@ -71,16 +71,22 @@ class IntroductionCultureRelicViewController: UIViewController {
         return cri
     }()
     
-    lazy var cultureRelicHistoryView: CultureRelicHistoryView = {
-        let crh = CultureRelicHistoryView()
-        crh.contentLabel.text = model.history
-        return crh
-    }()
+//    lazy var cultureRelicHistoryView: CultureRelicHistoryView = {
+//        let crh = CultureRelicHistoryView()
+//        crh.contentLabel.text = model.history
+//        return crh
+//    }()
+//
+//    lazy var cultureRelicStatusView: CultureRelicStatusView = {
+//        let crs = CultureRelicStatusView()
+//        crs.contentLabel.text = model.evaluationStatus
+//        return crs
+//    }()
     
-    lazy var cultureRelicStatusView: CultureRelicStatusView = {
-        let crs = CultureRelicStatusView()
-        crs.contentLabel.text = model.evaluationStatus
-        return crs
+    lazy var cultureRelicIntroView: CultureRelicIntroView = {
+        let cri = CultureRelicIntroView()
+        cri.contentLabel.text = model.intro
+        return cri
     }()
     
     override func viewDidLoad() {
@@ -127,22 +133,29 @@ class IntroductionCultureRelicViewController: UIViewController {
             maker.left.equalTo(cultureRelicImageView.snp.right).offset(20.fw)
             maker.bottom.equalTo(cultureRelicImageView)
             maker.height.equalTo(150.fh)
-            maker.right.equalToSuperview()
+            maker.right.equalToSuperview().offset(-15)
         }
-        view.addSubview(cultureRelicHistoryView)
-        cultureRelicHistoryView.snp.makeConstraints { maker in
+        view.addSubview(cultureRelicIntroView)
+        cultureRelicIntroView.snp.makeConstraints { maker in
             maker.left.equalTo(cultureRelicImageView)
             maker.top.equalTo(cultureRelicImageView.snp.bottom).offset(50.fw)
             maker.right.equalToSuperview().offset(-30.fw)
             maker.height.equalTo(150)
         }
-        view.addSubview(cultureRelicStatusView)
-        cultureRelicStatusView.snp.makeConstraints { maker in
-            maker.left.equalTo(cultureRelicImageView)
-            maker.top.equalTo(cultureRelicHistoryView.snp.bottom).offset(20.fw)
-            maker.right.equalToSuperview().offset(-30.fw)
-            maker.height.equalTo(150)
-        }
+//        view.addSubview(cultureRelicHistoryView)
+//        cultureRelicHistoryView.snp.makeConstraints { maker in
+//            maker.left.equalTo(cultureRelicImageView)
+//            maker.top.equalTo(cultureRelicImageView.snp.bottom).offset(50.fw)
+//            maker.right.equalToSuperview().offset(-30.fw)
+//            maker.height.equalTo(150)
+//        }
+//        view.addSubview(cultureRelicStatusView)
+//        cultureRelicStatusView.snp.makeConstraints { maker in
+//            maker.left.equalTo(cultureRelicImageView)
+//            maker.top.equalTo(cultureRelicHistoryView.snp.bottom).offset(20.fw)
+//            maker.right.equalToSuperview().offset(-30.fw)
+//            maker.height.equalTo(150)
+//        }
     }
     
 }

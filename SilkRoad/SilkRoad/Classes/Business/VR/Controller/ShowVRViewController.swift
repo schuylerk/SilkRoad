@@ -115,6 +115,17 @@ class ShowVRViewController: UIViewController {
         introductionVC.view.frame = CGRect(x: frame.minX, y: frame.minY + value, width: frame.width, height: frame.height)
     }
     
+    lazy var backButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "vr_back"), for: .normal)
+        button.addTarget(self, action: #selector(back), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc func back() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     lazy var collectionRecordView: CollectionRecordView = {
         let crv = CollectionRecordView()
         crv.collectTotalNumLabel.text = "\(overlays.count)"
@@ -135,11 +146,17 @@ class ShowVRViewController: UIViewController {
     func setUI() {
         view.addSubview(scnView)
         view.addSubview(blackView)
+        view.addSubview(backButton)
         view.addSubview(collectionRecordView)
+        backButton.snp.makeConstraints { maker in
+            maker.left.equalToSuperview().offset(15.fw)
+            maker.top.equalToSuperview().offset(50.fh)
+            maker.width.height.equalTo(30)
+        }
         collectionRecordView.snp.makeConstraints { maker in
             maker.left.equalToSuperview().offset(20.fw)
             maker.right.equalToSuperview().offset(-20.fw)
-            maker.top.equalToSuperview().offset(50.fh)
+            maker.top.equalTo(backButton.snp.bottom).offset(15.fh)
             maker.height.equalTo(100)
         }
         configOverlay()

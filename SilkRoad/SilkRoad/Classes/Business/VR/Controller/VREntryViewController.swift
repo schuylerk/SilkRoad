@@ -104,7 +104,8 @@ class VREntryViewController: UIViewController {
                     dynasty: json["dynasty"].stringValue,
                     history: json["history"].stringValue,
                     evaluationStatus: json["evaluationStatus"].stringValue,
-                    face: json["face"].stringValue)
+                    face: json["face"].stringValue,
+                    intro: json["intro"].stringValue)
             }
             return res
         } catch {

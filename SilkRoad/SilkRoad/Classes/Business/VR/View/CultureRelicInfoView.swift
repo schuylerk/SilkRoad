@@ -24,6 +24,7 @@ class CultureRelicInfoView: UIView {
         label.textColor = .black
         label.font = UIFont(name: "Arial", size: 30)
         label.text = model.name
+        label.numberOfLines = 0
         return label
     }()
     
@@ -32,6 +33,7 @@ class CultureRelicInfoView: UIView {
         label.textColor = UIColor(hex: "#494949")
         label.font = UIFont(name: "Arial", size: 16)
         label.text = "出土年份: \(model.unearthedYear)"
+        label.numberOfLines = 0
         return label
     }()
     
@@ -40,6 +42,7 @@ class CultureRelicInfoView: UIView {
         label.textColor = UIColor(hex: "#494949")
         label.font = UIFont(name: "Arial", size: 16)
         label.text = "出土地点: \(model.unearthPlace)"
+        label.numberOfLines = 0
         return label
     }()
     
@@ -48,6 +51,7 @@ class CultureRelicInfoView: UIView {
         label.textColor = UIColor(hex: "#494949")
         label.font = UIFont(name: "Arial", size: 16)
         label.text = "所属朝代: \(model.dynasty)"
+        label.numberOfLines = 0
         return label
     }()
     
@@ -63,19 +67,19 @@ class CultureRelicInfoView: UIView {
         self.addSubview(unearthedPlaceLabel)
         self.addSubview(dynastyLabel)
         dynastyLabel.snp.makeConstraints { maker in
-            maker.left.equalToSuperview()
+            maker.left.right.equalToSuperview()
             maker.bottom.equalToSuperview()
         }
         unearthedPlaceLabel.snp.makeConstraints { maker in
-            maker.left.equalToSuperview()
+            maker.left.right.equalToSuperview()
             maker.bottom.equalTo(dynastyLabel.snp.top).offset(-10.fh)
         }
         unearthedYearLabel.snp.makeConstraints { maker in
-            maker.left.equalToSuperview()
+            maker.left.right.equalToSuperview()
             maker.bottom.equalTo(unearthedPlaceLabel.snp.top).offset(-10.fh)
         }
         nameLabel.snp.makeConstraints { maker in
-            maker.left.equalToSuperview()
+            maker.left.right.equalToSuperview()
             maker.bottom.equalTo(unearthedYearLabel.snp.top).offset(-20.fh)
         }
     }

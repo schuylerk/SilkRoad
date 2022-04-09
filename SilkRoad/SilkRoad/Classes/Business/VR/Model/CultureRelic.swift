@@ -16,4 +16,5 @@ struct CultureRelic {
     var history: String
     var evaluationStatus: String
     var face: String
+    var intro: String
 }
