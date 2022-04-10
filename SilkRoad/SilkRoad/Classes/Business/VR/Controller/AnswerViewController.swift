@@ -194,37 +194,29 @@ class AnswerViewController: UIViewController {
     }
     
     func setOptionButtonColor(_ optionName: String) {
+        var bgColors: [UIColor] = [.clear, .clear, .clear, .clear]
+        var titleColors: [UIColor] = [.black, .black, .black, .black]
         switch optionName {
         case "A":
-            changeOptionButtonColor(AnswerAView, backgroundColor: UIColor(hex: "#FF9D4F"), titleColor: .white)
-            changeOptionButtonColor(AnswerBView, backgroundColor: .clear, titleColor: .black)
-            changeOptionButtonColor(AnswerCView, backgroundColor: .clear, titleColor: .black)
-            changeOptionButtonColor(AnswerDView, backgroundColor: .clear, titleColor: .black)
-            selectRecord[currentQuestionIndex] = "A"
+            bgColors[0] = UIColor(hex: "#FF9D4F")
+            titleColors[0] = .white
         case "B":
-            changeOptionButtonColor(AnswerBView, backgroundColor: UIColor(hex: "#FF9D4F"), titleColor: .white)
-            changeOptionButtonColor(AnswerAView, backgroundColor: .clear, titleColor: .black)
-            changeOptionButtonColor(AnswerCView, backgroundColor: .clear, titleColor: .black)
-            changeOptionButtonColor(AnswerDView, backgroundColor: .clear, titleColor: .black)
-            selectRecord[currentQuestionIndex] = "B"
+            bgColors[1] = UIColor(hex: "#FF9D4F")
+            titleColors[1] = .white
         case "C":
-            changeOptionButtonColor(AnswerCView, backgroundColor: UIColor(hex: "#FF9D4F"), titleColor: .white)
-            changeOptionButtonColor(AnswerBView, backgroundColor: .clear, titleColor: .black)
-            changeOptionButtonColor(AnswerAView, backgroundColor: .clear, titleColor: .black)
-            changeOptionButtonColor(AnswerDView, backgroundColor: .clear, titleColor: .black)
-            selectRecord[currentQuestionIndex] = "C"
+            bgColors[2] = UIColor(hex: "#FF9D4F")
+            titleColors[2] = .white
         case "D":
-            changeOptionButtonColor(AnswerDView, backgroundColor: UIColor(hex: "#FF9D4F"), titleColor: .white)
-            changeOptionButtonColor(AnswerBView, backgroundColor: .clear, titleColor: .black)
-            changeOptionButtonColor(AnswerCView, backgroundColor: .clear, titleColor: .black)
-            changeOptionButtonColor(AnswerAView, backgroundColor: .clear, titleColor: .black)
-            selectRecord[currentQuestionIndex] = "D"
+            bgColors[3] = UIColor(hex: "#FF9D4F")
+            titleColors[3] = .white
         default:
-            changeOptionButtonColor(AnswerCView, backgroundColor: .clear, titleColor: .black)
-            changeOptionButtonColor(AnswerBView, backgroundColor: .clear, titleColor: .black)
-            changeOptionButtonColor(AnswerAView, backgroundColor: .clear, titleColor: .black)
-            changeOptionButtonColor(AnswerDView, backgroundColor: .clear, titleColor: .black)
+            break
         }
+        changeOptionButtonColor(AnswerAView, backgroundColor: bgColors[0], titleColor: titleColors[0])
+        changeOptionButtonColor(AnswerBView, backgroundColor: bgColors[1], titleColor: titleColors[1])
+        changeOptionButtonColor(AnswerCView, backgroundColor: bgColors[2], titleColor: titleColors[2])
+        changeOptionButtonColor(AnswerDView, backgroundColor: bgColors[3], titleColor: titleColors[3])
+        if optionName != "" { selectRecord[currentQuestionIndex] = optionName }
     }
     
     func changeOptionButtonColor(_ button: UIButton, backgroundColor: UIColor, titleColor: UIColor) {
