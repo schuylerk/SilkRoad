@@ -11,6 +11,7 @@ import SnapKit
 protocol IntroductionCultureRelicDelegate {
     func dismissVC()
     func moveVC(_ value: CGFloat, dismiss: Bool)
+    func goAnswerTheQuestion()
 }
 
 class IntroductionCultureRelicViewController: UIViewController {
@@ -56,7 +57,7 @@ class IntroductionCultureRelicViewController: UIViewController {
         let imgV = UIImageView()
         imgV.layer.cornerRadius = 10
         imgV.layer.masksToBounds = true
-        imgV.image = UIImage(named: "")
+        imgV.image = UIImage(named: model.face)
         imgV.backgroundColor = .systemGray
         return imgV
     }()
@@ -88,6 +89,20 @@ class IntroductionCultureRelicViewController: UIViewController {
         cri.contentLabel.text = model.intro
         return cri
     }()
+    
+    lazy var anwserButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = UIColor(hex: "#FFCCA3")
+        button.setTitle("答题", for: .normal)
+        button.setTitleColor(.white, for:.normal)
+        button.layer.cornerRadius = 17
+        button.addTarget(self, action: #selector(answerHandler), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc func answerHandler() {
+        self.delegate?.goAnswerTheQuestion()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -156,6 +171,13 @@ class IntroductionCultureRelicViewController: UIViewController {
 //            maker.right.equalToSuperview().offset(-30.fw)
 //            maker.height.equalTo(150)
 //        }
+        view.addSubview(anwserButton)
+        anwserButton.snp.makeConstraints { maker in
+            maker.centerX.equalToSuperview()
+            maker.bottom.equalToSuperview().offset(-50)
+            maker.width.equalTo(150)
+            maker.height.equalTo(34)
+        }
     }
     
 }

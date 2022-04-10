@@ -1,17 +1,17 @@
 {
     "西安": [
         {
-            "face": "",
+            "face": "cr_1",
             "name": "鎏金翼兽纹带五足铜炉台 ",
             "unearthedYear": 1958,
             "unearthPlace": "陕西省",
             "dynasty": "唐代",
-            "intro": "1. 这件鎏金铜炉台的造型与陕西省扶风县法门寺真身宝塔地宫出土的“鎏金卧龟莲花纹五足熏炉及炉台”中的炉台相仿，功用也应相同，为香炉的底座。2.该件鎏金铜炉台从工艺制作、造型及纹饰等诸多方面都很精工，出土的地点为西安火车站广场，属唐代皇家所居的太极宫城东宫遗址，因此，该件鎏金铜炉台可能属于唐代皇家礼佛时的御用品",
+            "intro": "1. 这件鎏金铜炉台的造型与陕西省扶风县法门寺真身宝塔地宫出土的“鎏金卧龟莲花纹五足熏炉及炉台”中的炉台相仿，功用也应相同，为香炉的底座。2.该件鎏铜炉台从工艺制作、造型及纹饰等诸多方面都很精工，出土的地点为西安火车站广场，属唐代皇家所居的太极宫城东宫遗址，因此，该件鎏金铜炉台可能属于唐代皇家礼佛时的御用品",
             "history": "",
             "evaluationStatus": ""
         },
         {
-            "face": "",
+            "face": "cr_2",
             "name": "海棠形摩羯纹银长杯",
             "unearthedYear": 1968,
             "unearthPlace": "陕西省",
@@ -21,7 +21,7 @@
             "evaluationStatus": ""
         },
         {
-            "face": "",
+            "face": "cr_3",
             "name": "折枝团花纹鎏金银渣斗",
             "unearthedYear": 1977,
             "unearthPlace": "西安市灞桥区新筑乡枣园村",
@@ -31,7 +31,7 @@
             "evaluationStatus": ""
         },
         {
-            "face": "",
+            "face": "cr_4",
             "name": "都管七国人物银盒",
             "unearthedYear": 1979,
             "unearthPlace": "西安市碑林区西安交通大学 ",
@@ -53,7 +53,7 @@
     ],
     "兰州": [
         {
-            "face": "",
+            "face": "cr_5",
             "name": "铜镶玉带饰",
             "unearthedYear": 1955,
             "unearthPlace": "兰州上西园M3墓",
@@ -63,7 +63,7 @@
             "evaluationStatus": ""
         },
         {
-            "face": "",
+            "face": "cr_6",
             "name": "金累丝嵌玉观音银簪",
             "unearthedYear": 1987,
             "unearthPlace": "兰州市城关区白衣寺多子塔",
@@ -73,7 +73,7 @@
             "evaluationStatus": ""
         },
         {
-            "face": "",
+            "face": "cr_7",
             "name": "东汉墨迹纸",
             "unearthedYear": 0,
             "unearthPlace": "兰州伏龙坪龙尾山东汉墓",
@@ -95,7 +95,7 @@
             "evaluationStatus": ""
         },
         {
-            "face": "",
+            "face": "cr_8",
             "name": "铜羽人连枝灯顶部构件",
             "unearthedYear": 0,
             "unearthPlace": "西宁市陶家寨汉晋墓",
@@ -105,7 +105,7 @@
             "evaluationStatus": ""
         },
         {
-            "face": "",
+            "face": "cr_9",
             "name": "圆法勺",
             "unearthedYear": 0,
             "unearthPlace": "西宁市大通县朔北乡拉浪台村",
@@ -115,7 +115,7 @@
             "evaluationStatus": ""
         },
         {
-            "face": "",
+            "face": "cr_10",
             "name": "彩陶瓶",
             "unearthedYear": 0,
             "unearthPlace": "西宁市大通县下孙家寨",
@@ -125,7 +125,7 @@
             "evaluationStatus": ""
         },
         {
-            "face": "",
+            "face": "cr_11",
             "name": "卧式羊形铜灯",
             "unearthedYear": 0,
             "unearthPlace": "西宁市大通县孙家寨汉墓出土",
@@ -137,7 +137,7 @@
     ],
     "敦煌": [
         {
-            "face": "",
+            "face": "cr_12",
             "name": "汉历书简册",
             "unearthedYear": 0,
             "unearthPlace": "汉长城青水沟东墩出土",
@@ -147,7 +147,7 @@
             "evaluationStatus": ""
         },
         {
-            "face": "",
+            "face": "cr_13",
             "name": "敦煌汉简",
             "unearthedYear": 1907,
             "unearthPlace": "玉门关遗址出土",
@@ -157,7 +157,7 @@
             "evaluationStatus": ""
         },
         {
-            "face": "",
+            "face": "cr_14",
             "name": "胡人牵驼砖",
             "unearthedYear": 1942,
             "unearthPlace": "敦煌佛爷庙一座唐墓",
@@ -167,7 +167,7 @@
             "evaluationStatus": ""
         },
         {
-            "face": "",
+            "face": "cr_15",
             "name": "岷州庙塔",
             "unearthedYear": 1943,
             "unearthPlace": "敦煌岷州坊的一座庙里（此庙今已不存",
@@ -177,7 +177,7 @@
             "evaluationStatus": ""
         },
         {
-            "face": "",
+            "face": "cr_16",
             "name": "北魏刺绣（佛像供养人）",
             "unearthedYear": 1965,
             "unearthPlace": "敦煌莫高窟",
@@ -189,7 +189,7 @@
     ],
     "乌鲁木齐": [
         {
-            "face": "",
+            "face": "cr_17",
             "name": "青铜武士俑",
             "unearthedYear": 1981,
             "unearthPlace": "新源县71团鱼塘遗址",
@@ -199,7 +199,7 @@
             "evaluationStatus": ""
         },
         {
-            "face": "",
+            "face": "cr_18",
             "name": "螺钿双陆木棋盘",
             "unearthedYear": 1973,
             "unearthPlace": "阿斯塔那墓群",
@@ -209,7 +209,7 @@
             "evaluationStatus": ""
         },
         {
-            "face": "",
+            "face": "cr_19",
             "name": "“五星出东方利中国”锦护臂",
             "unearthedYear": 1995,
             "unearthPlace": "新疆和田地区民丰县尼雅遗址",
@@ -219,7 +219,7 @@
             "evaluationStatus": ""
         },
         {
-            "face": "",
+            "face": "cr_20",
             "name": "对虎纹金带饰",
             "unearthedYear": 1977,
             "unearthPlace": "乌鲁木齐阿拉沟30号墓地",
@@ -229,7 +229,7 @@
             "evaluationStatus": ""
         },
         {
-            "face": "",
+            "face": "cr_21",
             "name": "双耳彩陶罐",
             "unearthedYear": 1988,
             "unearthPlace": "哈密天山北路墓地出土",

@@ -166,6 +166,7 @@ class ShowVRViewController: UIViewController {
         super.viewWillAppear(animated)
         
         self.tabBarController?.tabBar.isHidden = true
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     var introductionVC: IntroductionCultureRelicViewController!
@@ -247,6 +248,11 @@ extension ShowVRViewController: IntroductionCultureRelicDelegate {
         } else {
             moveIntro(value)
         }
+    }
+    
+    func goAnswerTheQuestion() {
+        let vc = AnswerViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }

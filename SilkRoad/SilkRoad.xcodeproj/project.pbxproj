@@ -23,6 +23,7 @@
 		3FC033E227EDEE1D00305127 /* HelpFarmersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC033E127EDEE1D00305127 /* HelpFarmersViewController.swift */; };
 		3FC033E627EDEE4900305127 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC033E527EDEE4900305127 /* MineViewController.swift */; };
 		3FFF4EBC27F722E300F0D755 /* VREntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF4EBB27F722E300F0D755 /* VREntryViewController.swift */; };
+		A125FFBD28028C1A00A21F69 /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = A125FFBC28028C1A00A21F69 /* questions.json */; };
 		A165677F27E57B0500F81F7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A165677E27E57B0500F81F7C /* AppDelegate.swift */; };
 		A165678127E57B0500F81F7C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A165678027E57B0500F81F7C /* SceneDelegate.swift */; };
 		A165678827E57B0700F81F7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A165678727E57B0700F81F7C /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 		A165679F27E57F9D00F81F7C /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A165679E27E57F9D00F81F7C /* Constant.swift */; };
 		A16567A227E5804000F81F7C /* Int + Fit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16567A127E5804000F81F7C /* Int + Fit.swift */; };
 		A1861CD02801681C0034EF48 /* CultureRelicIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1861CCF2801681C0034EF48 /* CultureRelicIntroView.swift */; };
+		A1861CD22801718C0034EF48 /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1861CD12801718C0034EF48 /* AnswerViewController.swift */; };
 		A1BA33EC27F1A85800326559 /* UIColor + Hex .swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BA33EB27F1A85800326559 /* UIColor + Hex .swift */; };
 		A1CA8FC727F804CF00231BE3 /* roadMapCityLocation.json in Resources */ = {isa = PBXBuildFile; fileRef = A1CA8FC627F804CF00231BE3 /* roadMapCityLocation.json */; };
 		A1CA8FC927F806FC00231BE3 /* RoadMapCityLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CA8FC827F806FC00231BE3 /* RoadMapCityLocation.swift */; };
@@ -57,6 +59,7 @@
 		3FC033E127EDEE1D00305127 /* HelpFarmersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpFarmersViewController.swift; sourceTree = "<group>"; };
 		3FC033E527EDEE4900305127 /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
 		3FFF4EBB27F722E300F0D755 /* VREntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VREntryViewController.swift; sourceTree = "<group>"; };
+		A125FFBC28028C1A00A21F69 /* questions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
 		A165677B27E57B0500F81F7C /* SilkRoad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SilkRoad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A165677E27E57B0500F81F7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A165678027E57B0500F81F7C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +69,7 @@
 		A165679E27E57F9D00F81F7C /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		A16567A127E5804000F81F7C /* Int + Fit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int + Fit.swift"; sourceTree = "<group>"; };
 		A1861CCF2801681C0034EF48 /* CultureRelicIntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CultureRelicIntroView.swift; sourceTree = "<group>"; };
+		A1861CD12801718C0034EF48 /* AnswerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
 		A1BA33EB27F1A85800326559 /* UIColor + Hex .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Hex .swift"; sourceTree = "<group>"; };
 		A1CA8FC627F804CF00231BE3 /* roadMapCityLocation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = roadMapCityLocation.json; sourceTree = "<group>"; };
 		A1CA8FC827F806FC00231BE3 /* RoadMapCityLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadMapCityLocation.swift; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 			children = (
 				A1CA8FC627F804CF00231BE3 /* roadMapCityLocation.json */,
 				3F5AA8EC27FC66B100E0293C /* cultureRelic.json */,
+				A125FFBC28028C1A00A21F69 /* questions.json */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -160,6 +165,7 @@
 		3FC033DC27EDEDB400305127 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A1861CD12801718C0034EF48 /* AnswerViewController.swift */,
 				3F5AA8E327FC361300E0293C /* ShowVRViewController.swift */,
 				3F277D9D27F335DB004E31DE /* IntroductionCultureRelicViewController.swift */,
 				3FFF4EBB27F722E300F0D755 /* VREntryViewController.swift */,
@@ -380,6 +386,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A125FFBD28028C1A00A21F69 /* questions.json in Resources */,
 				3F5AA8ED27FC66B100E0293C /* cultureRelic.json in Resources */,
 				A165678827E57B0700F81F7C /* Assets.xcassets in Resources */,
 				A1CA8FC727F804CF00231BE3 /* roadMapCityLocation.json in Resources */,
@@ -446,6 +453,7 @@
 				A1CA8FCB27F82B1000231BE3 /* CollectionRecordView.swift in Sources */,
 				3F5AA8E827FC649D00E0293C /* SCNVector3 + Equal.swift in Sources */,
 				3F5AA8E627FC5A1900E0293C /* Overlay.swift in Sources */,
+				A1861CD22801718C0034EF48 /* AnswerViewController.swift in Sources */,
 				3FFF4EBC27F722E300F0D755 /* VREntryViewController.swift in Sources */,
 				A1CA8FC927F806FC00231BE3 /* RoadMapCityLocation.swift in Sources */,
 				3F277DAE27F34490004E31DE /* CultureRelicHistoryView.swift in Sources */,
