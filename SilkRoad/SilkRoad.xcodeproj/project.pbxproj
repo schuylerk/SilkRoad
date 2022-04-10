@@ -12,6 +12,10 @@
 		3FC033DE27EDEDC700305127 /* VRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC033DD27EDEDC700305127 /* VRViewController.swift */; };
 		3FC033E227EDEE1D00305127 /* HelpFarmersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC033E127EDEE1D00305127 /* HelpFarmersViewController.swift */; };
 		3FC033E627EDEE4900305127 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC033E527EDEE4900305127 /* MineViewController.swift */; };
+		7E1B9754280181A300EBAAAB /* cultureRelic.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E1B9753280181A300EBAAAB /* cultureRelic.json */; };
+		7E1B9757280181F600EBAAAB /* CultureRelic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1B9756280181F600EBAAAB /* CultureRelic.swift */; };
+		7E1B9759280281CF00EBAAAB /* introduce.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E1B9758280281CF00EBAAAB /* introduce.json */; };
+		7E1B975E2802867700EBAAAB /* Introduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1B975D2802867700EBAAAB /* Introduce.swift */; };
 		7E50C44127F152690041BA4C /* CityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E50C44027F152690041BA4C /* CityCollectionViewCell.swift */; };
 		7E50C44327F1963A0041BA4C /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E50C44227F1963A0041BA4C /* CityViewController.swift */; };
 		7E50C44627F1A29F0041BA4C /* MineDataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E50C44527F1A29F0041BA4C /* MineDataCollectionViewCell.swift */; };
@@ -49,6 +53,10 @@
 		3FC033DD27EDEDC700305127 /* VRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VRViewController.swift; sourceTree = "<group>"; };
 		3FC033E127EDEE1D00305127 /* HelpFarmersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpFarmersViewController.swift; sourceTree = "<group>"; };
 		3FC033E527EDEE4900305127 /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
+		7E1B9753280181A300EBAAAB /* cultureRelic.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cultureRelic.json; sourceTree = "<group>"; };
+		7E1B9756280181F600EBAAAB /* CultureRelic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CultureRelic.swift; sourceTree = "<group>"; };
+		7E1B9758280281CF00EBAAAB /* introduce.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = introduce.json; sourceTree = "<group>"; };
+		7E1B975D2802867700EBAAAB /* Introduce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Introduce.swift; sourceTree = "<group>"; };
 		7E50C44027F152690041BA4C /* CityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCollectionViewCell.swift; sourceTree = "<group>"; };
 		7E50C44227F1963A0041BA4C /* CityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
 		7E50C44527F1A29F0041BA4C /* MineDataCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineDataCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -97,7 +105,9 @@
 		3FC033D327EDDAB100305127 /* Study */ = {
 			isa = PBXGroup;
 			children = (
-				3FC033D527EDDAFB00305127 /* StudyViewController.swift */,
+				7E1B9753280181A300EBAAAB /* cultureRelic.json */,
+				7E1B9758280281CF00EBAAAB /* introduce.json */,
+				7E1B9755280181BA00EBAAAB /* Model */,
 				7E50C43F27F151E10041BA4C /* View */,
 				3FC033D427EDDACC00305127 /* Controller */,
 			);
@@ -107,6 +117,7 @@
 		3FC033D427EDDACC00305127 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				3FC033D527EDDAFB00305127 /* StudyViewController.swift */,
 				7E50C44227F1963A0041BA4C /* CityViewController.swift */,
 				7ECB5C2727F325AE00D37D27 /* IntroduceObjectViewController.swift */,
 				7E7A273427F3469F00310E9F /* AnswerViewController.swift */,
@@ -173,6 +184,15 @@
 				C6612F10E5D61C2F4DE7F960 /* Pods-SilkRoad.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		7E1B9755280181BA00EBAAAB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7E1B9756280181F600EBAAAB /* CultureRelic.swift */,
+				7E1B975D2802867700EBAAAB /* Introduce.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		7E50C43F27F151E10041BA4C /* View */ = {
@@ -391,6 +411,8 @@
 			files = (
 				A165678827E57B0700F81F7C /* Assets.xcassets in Resources */,
 				A165679C27E57EEA00F81F7C /* Main.storyboard in Resources */,
+				7E1B9754280181A300EBAAAB /* cultureRelic.json in Resources */,
+				7E1B9759280281CF00EBAAAB /* introduce.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +470,7 @@
 				7E91830027F4724800F692C3 /* EditTableViewCell.swift in Sources */,
 				7E50C44627F1A29F0041BA4C /* MineDataCollectionViewCell.swift in Sources */,
 				3FC033E227EDEE1D00305127 /* HelpFarmersViewController.swift in Sources */,
+				7E1B9757280181F600EBAAAB /* CultureRelic.swift in Sources */,
 				7ECB5C2127F2A5FD00D37D27 /* PoetryCollectionViewCell.swift in Sources */,
 				7ECB5C2427F2AAF600D37D27 /* ObjectCollectionViewCell.swift in Sources */,
 				7E50C44827F1CCA10041BA4C /* MedalCollectionViewCell.swift in Sources */,
@@ -470,6 +493,7 @@
 				A16567A227E5804000F81F7C /* Int + Fit.swift in Sources */,
 				7ECB5C2827F325AE00D37D27 /* IntroduceObjectViewController.swift in Sources */,
 				3FC033DE27EDEDC700305127 /* VRViewController.swift in Sources */,
+				7E1B975E2802867700EBAAAB /* Introduce.swift in Sources */,
 				7E9182FE27F46AB200F692C3 /* EditDataViewController.swift in Sources */,
 				7E50C44327F1963A0041BA4C /* CityViewController.swift in Sources */,
 				7ECB5C2627F2EDF800D37D27 /* IdiomWordCollectionViewCell.swift in Sources */,

@@ -8,13 +8,34 @@
 import UIKit
 
 class IntroduceObjectViewController: UIViewController {
-
+    
+    var Data = CultureRelic()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(red: 0.973, green: 0.973, blue: 0.973, alpha: 1)
         // Do any additional setup after loading the view.
+        //navigationController?.navigationBar.isHidden = false
         ConfigUI()
     }
+    lazy var leftButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "back"), for: .normal)
+        button.frame = CGRect(x: 20.fw, y: 50.fh, width: 30.fw, height: 30.fh)
+        button.addTarget(self, action: #selector(clickLeftBackButton), for: .allEvents)
+        
+        return button
+    }()
+    
+    @objc func clickLeftBackButton(){
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    lazy var imageView: UIImageView = {
+        let imageView = UIImageView(image: UIImage(named: "stdmainback"))
+        imageView.frame = CGRect(x: 0, y: 0, width: Int(UIScreen.main.bounds.width), height: 300.fh)
+        return imageView
+    }()
     
     lazy var Biglabel: UILabel = {
         let label = UILabel()
@@ -58,7 +79,7 @@ class IntroduceObjectViewController: UIViewController {
     
     lazy var HistoryLabel: UILabel = {
         let label = UILabel()
-        label.text = "文物历史"
+        label.text = "文物介绍一"
         label.frame = CGRect(x: 26, y: 328, width: 200, height: 27)
         label.font = UIFont.init(name: "Source Han Serif CN", size: 20)
         label.textColor = UIColor(red: 0.62, green: 0.478, blue: 0.353, alpha: 1)
@@ -78,7 +99,7 @@ class IntroduceObjectViewController: UIViewController {
     
     lazy var RemarkLabel: UILabel = {
         let label = UILabel()
-        label.text = "评价地位"
+        label.text = "文物介绍二"
         label.frame = CGRect(x: 26, y: 478, width: 200, height: 27)
         label.font = UIFont.init(name: "Source Han Serif CN", size: 20)
         label.textColor = UIColor(red: 0.62, green: 0.478, blue: 0.353, alpha: 1)
@@ -107,6 +128,8 @@ class IntroduceObjectViewController: UIViewController {
     }()
     
     func ConfigUI() {
+        self.view.addSubview(imageView)
+        self.view.addSubview(leftButton)
         self.view.addSubview(Biglabel)
         self.view.addSubview(Yearlabel)
         self.view.addSubview(Placelabel)
@@ -127,6 +150,13 @@ class IntroduceObjectViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = false
     }
     
-    
+    func updateUI(data: CultureRelic){
+        self.Biglabel.text = data.name
+        self.Yearlabel.text = data.unearthedYear
+        self.Placelabel.text = data.unearthPlace
+        self.Yearslabel.text = data.dynasty
+        self.HisIntrLabel.text = data.intro
+        self.RemIntrLabel.text = data.history
+    }
 
 }

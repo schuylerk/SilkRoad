@@ -34,7 +34,7 @@ class ObjectCollectionViewCell: UICollectionViewCell {
     }()
     
     lazy var ObjectView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "wenwu1"))
+        let imageView = UIImageView()
         return imageView
     }()
     
@@ -49,6 +49,11 @@ class ObjectCollectionViewCell: UICollectionViewCell {
         return layerView
     }()
     
+    func updateUI(cul data: CultureRelic,city cityname: String){
+        ObjectLabel.text = data.name
+        ObjectLabel.text = data.intro
+        ObjectView.image = UIImage(named: data.face)
+    }
     
     func configUI() {
         self.addSubview(WhiteView)
@@ -61,7 +66,7 @@ class ObjectCollectionViewCell: UICollectionViewCell {
             make.top.equalToSuperview().offset(10.fh)
             make.right.equalToSuperview().offset(-5.fh)
             make.left.equalToSuperview().offset(5.fw)
-            make.right.equalToSuperview().offset(-5.fw)
+            make.bottom.equalToSuperview()
         }
         
         ObjectView.snp.makeConstraints { make in
