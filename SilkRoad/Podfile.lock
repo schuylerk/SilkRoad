@@ -13,7 +13,6 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
-    - SwiftyJSON
   trunk:
     - Eureka
     - SnapKit
@@ -25,6 +24,6 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 8e8e0581e5891712ec2964d8c12509d7303d8a04
+PODFILE CHECKSUM: 00ae1787cf4d92648af0fcf60856f1c91231c970
 
 COCOAPODS: 1.11.2
