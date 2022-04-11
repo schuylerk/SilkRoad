@@ -10,6 +10,8 @@ import SnapKit
 
 class ProductOrderCell: UICollectionViewCell {
     
+    var commodity = Commodity()
+    
     let unitPriceCellReuseID = "unitPrice"
     let purchaseQuantityCellReuseID = "purchaseQuantity"
     let orderRemarksReuseID = "orderRemarks"
@@ -22,6 +24,7 @@ class ProductOrderCell: UICollectionViewCell {
     
     lazy var nameLabel: UILabel = {
         let label = UILabel()
+        label.numberOfLines = 0
         label.textColor = UIColor(hex: "#FFAD80")
         label.font = UIFont(name: "Arial", size: 14)
         return label
@@ -57,8 +60,10 @@ class ProductOrderCell: UICollectionViewCell {
             maker.height.equalTo(150)
         }
         nameLabel.snp.makeConstraints { maker in
-            maker.centerY.equalTo(faceImageView)
-            maker.left.equalTo(faceImageView.snp.right).offset(30)
+            maker.top.equalTo(faceImageView).offset(0)
+            maker.height.equalTo(150)
+            maker.left.equalTo(faceImageView.snp.right).offset(20)
+            maker.right.equalTo(-20)
         }
         tableView.snp.makeConstraints { maker in
             maker.centerX.equalToSuperview()
@@ -66,6 +71,13 @@ class ProductOrderCell: UICollectionViewCell {
             maker.left.equalToSuperview().offset(60)
             maker.bottom.equalToSuperview().offset(-30)
         }
+    }
+    
+    func updateUI(_ data: Commodity){
+        self.commodity = data
+        self.faceImageView.image = UIImage(named: data.face)
+        self.nameLabel.text = data.name
+        tableView.reloadData()
     }
     
 }
@@ -81,7 +93,7 @@ extension ProductOrderCell: UITableViewDelegate, UITableViewDataSource {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: unitPriceCellReuseID, for: indexPath) as! UnitPriceCell
             cell.nameLabel.text = "单价"
-            cell.valueLabel.text = "***"
+            cell.valueLabel.text = "\(self.commodity.price)"
             cell.selectionStyle = .none
             return cell
         case 1:

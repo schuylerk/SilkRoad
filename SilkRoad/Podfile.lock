@@ -1,24 +1,32 @@
 PODS:
-  - Alamofire (5.5.0)
+  - Alamofire (5.2.2)
   - Eureka (5.3.4)
+  - HandyJSON (5.0.2)
   - SnapKit (5.0.1)
+  - SwiftyJSON (5.0.1)
 
 DEPENDENCIES:
-  - Alamofire
+  - Alamofire (~> 5.2.0)
   - Eureka
+  - HandyJSON (~> 5.0.2)
   - SnapKit
+  - SwiftyJSON
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - Eureka
+    - HandyJSON
     - SnapKit
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
-  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   Eureka: 60cf058f86a8fb3ed26165ba5292b9850361b0a6
+  HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 58974f5a4b17ff304eb4caadd293397758108076
+PODFILE CHECKSUM: f3e00c6f3291b49e84c87636b45f065d8cab3f2a
 
 COCOAPODS: 1.11.2

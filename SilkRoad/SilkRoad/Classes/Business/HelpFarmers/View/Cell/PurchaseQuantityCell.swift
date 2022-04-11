@@ -10,6 +10,8 @@ import SnapKit
 
 class PurchaseQuantityCell: UITableViewCell {
 
+    typealias CallBack = ((Int) -> Void)?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -49,13 +51,16 @@ class PurchaseQuantityCell: UITableViewCell {
     }()
     
     @objc func add() {
-        valueLabel.text = "\((Int(valueLabel.text ?? "0") ?? 0) + 1)"
+        let value = (Int(valueLabel.text ?? "0") ?? 0) + 1
+        valueLabel.text = "\(value)"
+        NotificationCenter.default.post(name: .init("updateSubmitLabel"), object: nil, userInfo: ["count":value])
     }
     
     @objc func decrease() {
         var value = (Int(valueLabel.text ?? "0") ?? 0) - 1
         value = value >= 0 ? value : 0
         valueLabel.text = "\(value)"
+        NotificationCenter.default.post(name: .init("updateSubmitLabel"), object: nil, userInfo: ["count":value])
     }
     
     lazy var valueLabel: UILabel = {

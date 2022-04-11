@@ -10,7 +10,7 @@ import UIKit
 
 struct CommodityCellModel {
     var face: String = ""
-    var description: String = ""
+    var name: String = ""
     var purchasedNum: Int = 0
     var price: CGFloat = 0.0
 
