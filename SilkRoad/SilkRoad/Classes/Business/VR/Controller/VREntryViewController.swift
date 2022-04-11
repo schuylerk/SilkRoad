@@ -52,25 +52,35 @@ class VREntryViewController: UIViewController {
                 //MARK: 入口
                 
                 let cultureRelics = getCultureRelicFor(cityName)
+                var overlays = [Overlay]()
+                if let cultureRelics = cultureRelics {
+                    overlays =  cultureRelics.map { cultureRelic -> Overlay in
+                        
+                        //暂时文物位置随机设置
+                        let x = Float.random(in: -10.0...10.0)
+                        let y = Float.zero
+                        let z = -sqrtf(100 - x * x) + 1
+                        
+                        return Overlay(width: 1, height: 1, position: SCNVector3Make(x, y, z), rotation: nil, cullMode: .back, cultureRelic: cultureRelic)
+                    }
+                }
+                let vc = ShowVRViewController()
+                vc.overlays = overlays
                 switch cityName {
                 case "西安":
-                    let vc = ShowVRViewController()
                     vc.cityName = "xian"
-                    if let cultureRelics = cultureRelics {
-                        vc.overlays =  cultureRelics.map { cultureRelic -> Overlay in
-                            
-                            //暂时文物位置随机设置
-                            let x = Float.random(in: -10.0...10.0)
-                            let y = Float.zero
-                            let z = -sqrtf(100 - x * x) + 1
-                            
-                            return Overlay(width: 1, height: 1, position: SCNVector3Make(x, y, z), rotation: nil, cullMode: .back, cultureRelic: cultureRelic)
-                        }
-                    }
-                    self.navigationController?.pushViewController(vc, animated: true)
+                case "兰州":
+                    vc.cityName = "lanzhou"
+                case "乌鲁木齐":
+                    vc.cityName = "xinjiang"
+//                case "西宁":
+//                    vc.cityName = "xian"
+                case "敦煌":
+                    vc.cityName = "dunhuang"
                 default:
                     break
                 }
+                self.navigationController?.pushViewController(vc, animated: true)
             }
         }
     }
