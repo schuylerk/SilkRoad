@@ -16,6 +16,16 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>Eureka.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>HandyJSON.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
 		<key>Pods-SilkRoad.xcscheme</key>
 		<dict>
 			<key>isShown</key>

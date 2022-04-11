@@ -60,7 +60,7 @@ class StudyViewController: UIViewController {
         return imageView
     }()
     
-    private lazy var searchBarBtn: UIButton = {
+    lazy var searchBarBtn: UIButton = {
         let btn = UIButton()
         btn.titleLabel?.textAlignment = .left
         btn.addTarget(self, action: #selector(searchBarClick), for: .touchUpInside)
