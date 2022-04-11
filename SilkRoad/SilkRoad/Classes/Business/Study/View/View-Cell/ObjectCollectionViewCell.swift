@@ -26,7 +26,6 @@ class ObjectCollectionViewCell: UICollectionViewCell {
     
     lazy var ObjectIntroduceLabel: UILabel = {
         let label = UILabel()
-        label.text = "文物简介文物简介文物简介文物简介"
         label.textColor = .gray
         label.font = UIFont.init(name: "TimesNewRomanPS-ItalicMT", size: 10)
         label.numberOfLines = 0
@@ -35,6 +34,8 @@ class ObjectCollectionViewCell: UICollectionViewCell {
     
     lazy var ObjectView: UIImageView = {
         let imageView = UIImageView()
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 10
         return imageView
     }()
     
@@ -51,7 +52,7 @@ class ObjectCollectionViewCell: UICollectionViewCell {
     
     func updateUI(cul data: CultureRelic,city cityname: String){
         ObjectLabel.text = data.name
-        ObjectLabel.text = data.intro
+        ObjectIntroduceLabel.text = data.intro
         ObjectView.image = UIImage(named: data.face)
     }
     
@@ -84,11 +85,11 @@ class ObjectCollectionViewCell: UICollectionViewCell {
         }
         
         ObjectIntroduceLabel.snp.makeConstraints { make in
-            make.top.equalTo(ObjectLabel.snp.bottom).offset(0)
+            make.top.equalTo(ObjectLabel.snp.bottom).offset(5)
             make.left.equalToSuperview().offset(12)
             make.right.equalToSuperview().offset(-12)
             make.width.equalTo(150)
-            make.height.equalTo(50)
+            make.height.equalTo(32)
         }
     }
     

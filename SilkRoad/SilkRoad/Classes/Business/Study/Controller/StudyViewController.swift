@@ -164,7 +164,7 @@ extension  StudyViewController:  UICollectionViewDelegate, UICollectionViewDataS
 extension StudyViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: Int(screenWidth - 40).fw, height: 140.fh)
+        return CGSize(width: Int(screenWidth - 40).fw, height: 135.fh)
     }
     
 }

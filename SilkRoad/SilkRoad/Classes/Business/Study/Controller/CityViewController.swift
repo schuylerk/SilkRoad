@@ -31,7 +31,7 @@ class CityViewController: UIViewController {
     }()
     
     lazy var CellBackView: UIImageView = {
-        let imageView = UIImageView()
+        let imageView = UIImageView(image: UIImage(named: "lanzhouback"))
         imageView.image = UIImage(named: "dunhuangback")
         imageView.frame = CGRect(x: 0, y: 0, width: Int(screenWidth).fw, height: 311.fh)
         return imageView
@@ -76,9 +76,9 @@ class CityViewController: UIViewController {
         let galayer = CAGradientLayer()
         galayer.frame = backView.bounds
         print(galayer.frame)
-        let aCLolor = UIColor.blue
-        let bColor = UIColor.brown
-        let cColor = UIColor.red
+        let aCLolor = UIColor.blue.cgColor
+        let bColor = UIColor.brown.cgColor
+        let cColor = UIColor.red.cgColor
         galayer.colors = [aCLolor,bColor, cColor]
         galayer.startPoint = CGPoint(x: 0, y: 0)
         galayer.endPoint = CGPoint(x: 1, y: 1)
@@ -105,17 +105,14 @@ class CityViewController: UIViewController {
     
     func configUI() {
         self.view.addSubview(backView)
-        //self.view.addSubview(CellBackView)
-        //backView.addSubview(CellBackView)
-        backView.layer.addSublayer(gradientLayer)
-        //self.view.addSubview(CellBackView)
+        self.view.addSubview(CellBackView)
         self.view.addSubview(BigNamelabel)
         self.view.addSubview(IntroduceLabel)
         self.view.addSubview(collectionView)
         self.view.addSubview(leftButton)
         
         IntroduceLabel.snp.makeConstraints { make in
-            make.top.equalTo(BigNamelabel.snp.bottom).offset(5)
+            make.top.equalTo(BigNamelabel.snp.bottom).offset(0)
             make.height.equalTo(65)
             make.left.equalTo(20)
             make.right.equalTo(-20)
@@ -123,7 +120,7 @@ class CityViewController: UIViewController {
         
         
         collectionView.snp.makeConstraints {make in
-            make.top.equalToSuperview().offset(320.fh)
+            make.top.equalToSuperview().offset(328.fh)
             make.left.equalToSuperview().offset(0.fw)
             make.height.equalTo(600)
             make.width.equalTo(Int(screenWidth).fw)
@@ -139,6 +136,7 @@ class CityViewController: UIViewController {
     }
     
     func updateUI(with data:Introduce){
+        self.intro = data
         self.CellBackView.image = UIImage(named: data.back)
         self.BigNamelabel.text = data.name
         self.IntroduceLabel.text = data.introduce
@@ -160,8 +158,12 @@ extension  CityViewController:  UICollectionViewDelegate, UICollectionViewDataSo
         case 0:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: exploreCellID, for: indexPath) as! ExploreCollectionViewCell
             cell.handyJSON(self.intro.name)
-            cell.cellCallBack = { () in
+            print(self.intro.name)
+            cell.cellCallBack = { data, face in
                 let vc = IntroduceObjectViewController()
+                vc.updateUI(data: data)
+                print(data.unearthedYear)
+                vc.BackView.image = UIImage(named: face)
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             return cell

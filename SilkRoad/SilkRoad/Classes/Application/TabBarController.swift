@@ -26,9 +26,15 @@ func tabBar() -> UITabBarController {
     
     tabBarController.viewControllers = viewControllers
     guard let items = tabBarController.tabBar.items else { return tabBarController }
-    items[0].setFor("学习", image: nil, selectedImage: nil)
-    items[1].setFor("VR", image: nil, selectedImage: nil)
-    items[2].setFor("助农", image: nil, selectedImage: nil)
-    items[3].setFor("我的", image: nil, selectedImage: nil)
+    items[0].setFor(nil, image: UIImage(named: "stu"), selectedImage: nil)
+    items[1].setFor(nil, image: UIImage(named: "luxian"), selectedImage: nil)
+    items[2].setFor(nil, image: UIImage(named: "hf"), selectedImage: nil)
+    items[3].setFor(nil, image: UIImage(named: "min"), selectedImage: nil)
+    tabBarController.tabBar.tintColor = UIColor(red: 0.922, green: 0.624, blue: 0.349, alpha: 1)
+    tabBarController.tabBar.barTintColor = UIColor.white
+    items[0].imageInsets = UIEdgeInsets(top: 3, left: 3, bottom: -30, right: 0)
+    items[1].imageInsets = UIEdgeInsets(top: 3, left: 3, bottom: -30, right: 0)
+    items[2].imageInsets = UIEdgeInsets(top: 3, left: 3, bottom: -30, right: 0)
+    items[3].imageInsets = UIEdgeInsets(top: 3, left: 3, bottom: -30, right: 0)
     return tabBarController
 }

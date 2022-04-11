@@ -47,10 +47,29 @@ class IntroduceObjectViewController: UIViewController {
         return label
     }()
     
+    lazy var Yearlabel2: UILabel = {
+        let label = UILabel()
+        label.text = "出土年份："
+        label.frame = CGRect(x: 209, y: 208, width: 90, height: 20)
+        label.font = UIFont.init(name: "Source Han Serif CN", size: 15)
+        label.textColor = .gray
+        label.numberOfLines = 0
+        return label
+    }()
+    
     lazy var Yearlabel: UILabel = {
         let label = UILabel()
         label.text = "出土年份： 1987"
-        label.frame = CGRect(x: 209, y: 208, width: 200, height: 20)
+        label.font = UIFont.init(name: "Source Han Serif CN", size: 12)
+        label.textColor = .gray
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    lazy var Placelabel2: UILabel = {
+        let label = UILabel()
+        label.text = "出土地点："
+        label.frame = CGRect(x: 209, y: 235, width: 90, height: 20)
         label.font = UIFont.init(name: "Source Han Serif CN", size: 15)
         label.textColor = .gray
         label.numberOfLines = 0
@@ -60,7 +79,16 @@ class IntroduceObjectViewController: UIViewController {
     lazy var Placelabel: UILabel = {
         let label = UILabel()
         label.text = "出土地点： 敦煌"
-        label.frame = CGRect(x: 209, y: 235, width: 200, height: 20)
+        label.font = UIFont.init(name: "Source Han Serif CN", size: 12)
+        label.textColor = .gray
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    lazy var Yearslabel2: UILabel = {
+        let label = UILabel()
+        label.text = "所属朝代："
+        label.frame = CGRect(x: 209, y: 262, width: 90, height: 20)
         label.font = UIFont.init(name: "Source Han Serif CN", size: 15)
         label.textColor = .gray
         label.numberOfLines = 0
@@ -70,8 +98,7 @@ class IntroduceObjectViewController: UIViewController {
     lazy var Yearslabel: UILabel = {
         let label = UILabel()
         label.text = "所属朝代： 明朝"
-        label.frame = CGRect(x: 209, y: 262, width: 200, height: 20)
-        label.font = UIFont.init(name: "Source Han Serif CN", size: 15)
+        label.font = UIFont.init(name: "Source Han Serif CN", size: 12)
         label.textColor = .gray
         label.numberOfLines = 0
         return label
@@ -89,7 +116,6 @@ class IntroduceObjectViewController: UIViewController {
     
     lazy var HisIntrLabel: UILabel = {
         let label = UILabel()
-        label.frame = CGRect(x: 25, y: 330, width: 370, height: 120)
         label.text = "     文物历史介绍文物历史介绍文物历史介绍文物历史介绍文物历史介绍文物历史介绍"
         label.font = UIFont.init(name: "Source Han Serif CN", size: 16)
         label.textColor = .black
@@ -100,7 +126,6 @@ class IntroduceObjectViewController: UIViewController {
     lazy var RemarkLabel: UILabel = {
         let label = UILabel()
         label.text = "文物介绍二"
-        label.frame = CGRect(x: 26, y: 478, width: 200, height: 27)
         label.font = UIFont.init(name: "Source Han Serif CN", size: 20)
         label.textColor = UIColor(red: 0.62, green: 0.478, blue: 0.353, alpha: 1)
         label.numberOfLines = 0
@@ -109,7 +134,6 @@ class IntroduceObjectViewController: UIViewController {
     
     lazy var RemIntrLabel: UILabel = {
         let label = UILabel()
-        label.frame = CGRect(x: 25, y: 480, width: 370, height: 120)
         label.text = "     文物评价文物评价文物评价文物评价文物评价文物评价文物评价文物评价文物评价"
         label.font = UIFont.init(name: "Source Han Serif CN", size: 16)
         label.textColor = .black
@@ -119,9 +143,10 @@ class IntroduceObjectViewController: UIViewController {
     
     lazy var BackView:UIImageView = {
         let imageView = UIImageView()
-        imageView.frame = CGRect(x: 25, y: 113, width: 164, height: 169)
+        imageView.frame = CGRect(x: 25, y: 113, width: 160, height: 160)
         let image = UIImage(named: "wenwuimage")
         imageView.image = image
+        imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = 20
         return imageView
@@ -139,6 +164,48 @@ class IntroduceObjectViewController: UIViewController {
         self.view.addSubview(RemarkLabel)
         self.view.addSubview(RemIntrLabel)
         self.view.addSubview(BackView)
+        self.view.addSubview(Yearslabel2)
+        self.view.addSubview(Placelabel2)
+        self.view.addSubview(Yearlabel2)
+        
+        Yearlabel.snp.makeConstraints { make in
+            make.left.equalTo(Yearlabel2.snp.right)
+            make.right.equalToSuperview().offset(-5)
+            make.top.bottom.equalTo(Yearlabel2)
+        }
+        
+        Yearslabel.snp.makeConstraints { make in
+            make.left.equalTo(Yearslabel2.snp.right)
+            make.right.equalToSuperview().offset(-5)
+            make.top.bottom.equalTo(Yearslabel2)
+        }
+        
+        Placelabel.snp.makeConstraints { make in
+            make.left.equalTo(Placelabel2.snp.right)
+            make.right.equalToSuperview().offset(-5)
+            make.top.bottom.equalTo(Placelabel2)
+        }
+        
+        HisIntrLabel.snp.makeConstraints { make in
+            make.left.equalTo(HistoryLabel)
+            make.right.equalToSuperview().offset(-15)
+            make.height.equalTo(130)
+            make.top.equalTo(HistoryLabel.snp.bottom)
+        }
+        
+        RemarkLabel.snp.makeConstraints { make in
+            make.left.equalTo(HistoryLabel)
+            make.right.equalTo(HistoryLabel)
+            make.height.equalTo(27)
+            make.top.equalTo(HisIntrLabel.snp.bottom).offset(5)
+        }
+        
+        RemIntrLabel.snp.makeConstraints {make in
+            make.left.equalTo(HistoryLabel)
+            make.right.equalTo(HisIntrLabel)
+            make.top.equalTo(RemarkLabel.snp.bottom)
+            make.height.equalTo(120)
+        }
         
     }
 
@@ -152,7 +219,7 @@ class IntroduceObjectViewController: UIViewController {
     
     func updateUI(data: CultureRelic){
         self.Biglabel.text = data.name
-        self.Yearlabel.text = data.unearthedYear
+        self.Yearlabel.text =  data.unearthedYear
         self.Placelabel.text = data.unearthPlace
         self.Yearslabel.text = data.dynasty
         self.HisIntrLabel.text = data.intro
