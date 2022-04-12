@@ -152,10 +152,10 @@ class MineDataCollectionViewCell: UICollectionViewCell {
         }
         
         setbutton.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(-20.fh)
-            make.width.equalTo(30)
+            make.top.equalToSuperview().offset(-10.fh)
+            make.width.equalTo(40)
             make.right.equalToSuperview().offset(-30.fw)
-            make.height.equalTo(30)
+            make.height.equalTo(40)
         }
         
     }

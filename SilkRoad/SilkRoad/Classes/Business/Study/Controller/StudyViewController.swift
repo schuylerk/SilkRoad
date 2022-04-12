@@ -7,11 +7,13 @@
 
 import UIKit
 import SnapKit
+import SwiftyJSON
 
 class StudyViewController: UIViewController {
     
 
     let CityCellID = "CityCellID"
+    var IntroduceData = [Introduce]()
     
     let name = ["西 安", "兰 州", "西 宁", "敦 煌", "乌 鲁 木 齐"]
     let picture = ["xian1", "lanzhou1", "xining1", "dunhuang1", "wulumuqi1"]
@@ -19,7 +21,8 @@ class StudyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
-        configUI()        // Do any additional setup after loading the view.
+        configUI()
+        handyJSON()
     }
     
     lazy var Studylabel: UILabel = {
@@ -112,6 +115,30 @@ class StudyViewController: UIViewController {
         
     }
     
+    
+    func handyJSON() {
+        do{
+            let data = try Data(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "introduce", ofType: "json")!))
+            if let jsonData = String(data: data, encoding: .utf8) {
+                let json = JSON(parseJSON: jsonData)
+                guard let jsonarray = json.array else {return}
+                self.IntroduceData = jsonarray.map{ json -> Introduce in
+                    return Introduce(
+                        name: json["name"].stringValue,
+                        back: json["back"].stringValue,
+                        introduce: json["introduce"].stringValue
+                    )
+                }
+                
+            }
+            else {print("false")}
+        }
+        catch{
+            print("false")
+            
+        }
+    }
+    
 }
 
 
@@ -135,6 +162,7 @@ extension  StudyViewController:  UICollectionViewDelegate, UICollectionViewDataS
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = CityViewController()
+        vc.updateUI(with: IntroduceData[indexPath.section])
         navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -144,7 +172,7 @@ extension  StudyViewController:  UICollectionViewDelegate, UICollectionViewDataS
 extension StudyViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: Int(screenWidth - 40).fw, height: 140.fh)
+        return CGSize(width: Int(screenWidth - 40).fw, height: 135.fh)
     }
     
 }

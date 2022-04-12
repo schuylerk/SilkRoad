@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 source 'https://github.com/CocoaPods/Specs.git'
+=======
+#  --------------------------
+>>>>>>> wang
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
@@ -11,7 +15,6 @@ target 'SilkRoad' do
     pod 'Alamofire', '~> 5.2.0' #网络请求
     pod 'Eureka'
     pod 'SwiftyJSON'
-    pod 'Eureka'
     pod 'HandyJSON', '~> 5.0.2'
     
 end

@@ -6,18 +6,49 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class ExploreCollectionViewCell: UICollectionViewCell {
     
-    var cellCallBack: (() -> Void)?
+    var cellCallBack: ((CultureRelic,String) -> Void)?
     
     let ObjectCellID = "ObjectCell"
+    var Relic = [CultureRelic]()
+    var cityName: String = ""
     
-    let ObjectName = ["文物名称1", "文物名称2", "文物名称3"]
+    
+    func handyJSON(_ cityname: String) {
+        do{
+            self.cityName = cityname
+            print(cityname)
+            let data = try Data(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "cultureRelic", ofType: "json")!))
+            if let jsonData = String(data: data, encoding: .utf8) {
+                let json = JSON(parseJSON: jsonData)
+                guard let jsonarray = json[cityname].array else {print("aa")
+                    return}
+                self.Relic = jsonarray.map{ json -> CultureRelic in
+                    return CultureRelic(
+                        intro:json["intro"].stringValue, name: json["name"].stringValue,
+                        unearthedYear: json["unearthedYear"].stringValue,
+                        unearthPlace: json["unearthPlace"].stringValue,
+                        dynasty: json["dynasty"].stringValue,
+                        history: json["history"].stringValue,
+                        evaluationStatus: json["evaluationStatus"].stringValue,
+                        face: json["face"].stringValue
+                    )
+                }
+                collectionView.reloadData()
+            }
+            else {print("false")}
+        }
+        catch{
+            print("false")
+            
+        }
+    }
     
     override func layoutSubviews() {
         ConfigUI()
-        
     }
     
     lazy var explabel: UILabel = {
@@ -51,11 +82,13 @@ class ExploreCollectionViewCell: UICollectionViewCell {
         
     }
     
+    
+    
 }
 
 extension  ExploreCollectionViewCell:  UICollectionViewDelegate, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 3
+        return Relic.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -64,13 +97,14 @@ extension  ExploreCollectionViewCell:  UICollectionViewDelegate, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ObjectCellID, for: indexPath) as! ObjectCollectionViewCell
-        cell.ObjectLabel.text = ObjectName[indexPath.section]
+        cell.updateUI(cul: Relic[indexPath.section], city: self.cityName)
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let callback = cellCallBack {
-            callback()
+            
+            callback(self.Relic[indexPath.section],Relic[indexPath.section].face)
         }
         
     }
