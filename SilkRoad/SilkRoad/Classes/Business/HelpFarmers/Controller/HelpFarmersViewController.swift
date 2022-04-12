@@ -75,10 +75,19 @@ class HelpFarmersViewController: UIViewController {
         handyJSON()
     }
     
+    lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.font = UIFont(name: "Arial", size: 25)
+        label.text = "助农平台"
+        return label
+    }()
+    
     func setNav() {
-        self.title = "助农平台"
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.largeTitleTextAttributes = [.font: UIFont(name: "Arial", size: 25) as Any]
+//        self.title = "助农平台"
+//        navigationController?.navigationBar.prefersLargeTitles = true
+//        navigationController?.navigationBar.largeTitleTextAttributes = [.font: UIFont(name: "Arial", size: 25) as Any]
+        navigationController?.navigationBar.isHidden = true
     }
     
     func handyJSON(){
@@ -107,6 +116,11 @@ class HelpFarmersViewController: UIViewController {
     func setUI() {
         view.backgroundColor = .white
         view.layer.addSublayer(colorLayer)
+        view.addSubview(titleLabel)
+        titleLabel.snp.makeConstraints { maker in
+            maker.left.equalToSuperview().offset(20.fw)
+            maker.top.equalToSuperview().offset(100)
+        }
         view.addSubview(commodityCollectionView)
         commodityCollectionView.snp.makeConstraints { maker in
             maker.left.equalToSuperview().offset(20.fw)
