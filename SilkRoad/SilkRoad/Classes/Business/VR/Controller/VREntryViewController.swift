@@ -109,7 +109,7 @@ class VREntryViewController: UIViewController {
             res = currentCityJson.map { json -> CultureRelic in
                 return CultureRelic(
                     name: json["name"].stringValue,
-                    unearthedYear: json["unearthedYear"].intValue,
+                    unearthedYear: json["unearthedYear"].stringValue,
                     unearthPlace: json["unearthPlace"].stringValue,
                     dynasty: json["dynasty"].stringValue,
                     history: json["history"].stringValue,

@@ -10,7 +10,7 @@ import UIKit
 
 struct CultureRelic {
     var name: String
-    var unearthedYear: Int
+    var unearthedYear: String
     var unearthPlace: String
     var dynasty: String
     var history: String
