@@ -93,6 +93,7 @@ class OrderViewController: UIViewController {
         super.viewWillAppear(animated)
         
         tabBarController?.tabBar.isHidden = true
+        navigationController?.navigationBar.isHidden = false
     }
     
     func setUI() {
