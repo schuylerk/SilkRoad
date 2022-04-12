@@ -12,7 +12,8 @@ class CommodityCell: UICollectionViewCell {
     
     var model: CommodityCellModel = CommodityCellModel() {
         didSet {
-            descLabel.text = model.description
+            faceImageView.image = UIImage(named: model.face)
+            descLabel.text = model.name
             purchasedNumLabel.text = "\(model.purchasedNum)  已购"
             priceLabel.text = "\(model.price)"
         }
@@ -30,7 +31,7 @@ class CommodityCell: UICollectionViewCell {
         let label = UILabel()
         label.textColor = .black
         label.font = UIFont(name: "Arial", size: 16)
-        label.text = model.description
+        label.text = model.name
         label.numberOfLines = 3
         return label
     }()

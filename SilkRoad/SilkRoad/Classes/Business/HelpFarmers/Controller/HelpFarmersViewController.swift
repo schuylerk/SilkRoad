@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import SwiftyJSON
 
 class HelpFarmersViewController: UIViewController {
     
@@ -71,12 +72,7 @@ class HelpFarmersViewController: UIViewController {
         
         setNav()
         setUI()
-        self.commodityData = [
-            Commodity(face: "", description: "我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述", purchasedNum: 425, price: 425.5),
-            Commodity(face: "", description: "描述我是描述我是描述我是描述是描述", purchasedNum: 425, price: 425.5),
-            Commodity(face: "", description: "我是描述", purchasedNum: 425, price: 425.5),
-            Commodity(face: "", description: "我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述", purchasedNum: 425, price: 425.5)
-        ]
+        handyJSON()
     }
     
     func setNav() {
@@ -84,6 +80,29 @@ class HelpFarmersViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.largeTitleTextAttributes = [.font: UIFont(name: "Arial", size: 25) as Any]
     }
+    
+    func handyJSON(){
+        do{
+            let data = try Data(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "commodity", ofType: "json")!))
+            if let jsonData = String(data: data,encoding: .utf8){
+                let json = JSON(parseJSON: jsonData)
+                guard let jsonarray = json.array else{return}
+                self.commodityData = jsonarray.map{ json -> Commodity in
+                    return Commodity(
+                        face: json["face"].stringValue,
+                        name: json["name"].stringValue,
+                        purchasedNum: json["purchasedNum"].intValue,
+                        price: CGFloat(json["price"].intValue)
+                    )
+                }
+            }
+            else {print("false")}
+        }
+        catch{
+            print("false")
+        }
+    }
+    
     
     func setUI() {
         view.backgroundColor = .white
@@ -128,7 +147,7 @@ extension HelpFarmersViewController: UICollectionViewDelegate, UICollectionViewD
         cell.backgroundColor = .white
         cell.configCell(CommodityCellModel(
             face: commodity.face,
-            description: commodity.description,
+            name: commodity.name,
             purchasedNum: commodity.purchasedNum,
             price: commodity.price))
         cell.layer.cornerRadius = CGFloat(15.fw)
@@ -138,6 +157,7 @@ extension HelpFarmersViewController: UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         let vc = OrderViewController()
+        vc.updateUI(commodityData[indexPath.row])
         navigationController?.pushViewController(vc, animated: true)
     }
     

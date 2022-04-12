@@ -12,6 +12,9 @@ class OrderViewController: UIViewController {
     
     let receiveAddressCellReuseID = "receiveAddress"
     let productOrderCellReuseID = "productOrder"
+    var commoDity = Commodity()
+    
+    var CallBack: ((Int) -> Void)?
     
     lazy var colorLayer: ColorLayer = {
         let layer = ColorLayer(
@@ -59,7 +62,7 @@ class OrderViewController: UIViewController {
     lazy var submitLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.text = "共*件，合计: ****"
+        label.text = "共0件  合计: 0元"
         label.font = UIFont(name: "Arial", size: 14)
         return label
     }()
@@ -75,9 +78,15 @@ class OrderViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationController?.navigationBar.tintColor = .black
         // Do any additional setup after loading the view.
         setUI()
+        NotificationCenter.default.addObserver(self, selector: #selector(updateSubmitLabel),name: .init("updateSubmitLabel"),object: nil)
+    }
+    
+    @objc func updateSubmitLabel(notification: NSNotification){
+        guard let userinfo = notification.userInfo else{return}
+        self.submitLabel.text = "共\(userinfo["count"] as! Int)件  合计: \(userinfo["count"] as! Int * Int(self.commoDity.price)) 元"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -102,6 +111,10 @@ class OrderViewController: UIViewController {
             maker.height.equalTo(100)
         }
     }
+    
+    func updateUI(_ data: Commodity){
+        self.commoDity = data
+    }
 
 }
 
@@ -115,10 +128,10 @@ extension OrderViewController: UICollectionViewDelegate, UICollectionViewDataSou
         switch indexPath.row {
         case 0:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: receiveAddressCellReuseID, for: indexPath) as! ReceiveAddressCell
-            cell.titleLabel.text = "收货地址"
-            cell.addresseeLabel.text = "收件人"
-            cell.telephoneNumberLabel.text = "14815785751"
-            cell.addressLabel.text = "地址地址地址"
+            cell.titleLabel.text = "收货地址 "
+            cell.addresseeLabel.text = "收件人:  小王子"
+            cell.telephoneNumberLabel.text = "148157433333"
+            cell.addressLabel.text = "湖南省株洲市天元区泰山路88号"
             cell.layer.masksToBounds = true
             cell.layer.cornerRadius = 10
             cell.layer.borderColor = UIColor.systemGray.cgColor
@@ -127,7 +140,7 @@ extension OrderViewController: UICollectionViewDelegate, UICollectionViewDataSou
             return cell
         case 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: productOrderCellReuseID, for: indexPath) as! ProductOrderCell
-            cell.nameLabel.text = "名字"
+            cell.updateUI(self.commoDity)
             cell.layer.masksToBounds = true
             cell.layer.cornerRadius = 10
             cell.layer.borderColor = UIColor.systemGray.cgColor
