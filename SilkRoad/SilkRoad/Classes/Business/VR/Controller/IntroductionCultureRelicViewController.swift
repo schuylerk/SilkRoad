@@ -118,6 +118,7 @@ class IntroductionCultureRelicViewController: UIViewController {
     
     @objc func collectionHandler() {
         collectionBack?()
+        collectionButton.isHidden = true
     }
     
     override func viewDidLoad() {
@@ -187,6 +188,13 @@ class IntroductionCultureRelicViewController: UIViewController {
 //            maker.right.equalToSuperview().offset(-30.fw)
 //            maker.height.equalTo(150)
 //        }
+        view.addSubview(anwserButton)
+        anwserButton.snp.makeConstraints { maker in
+            maker.centerX.equalToSuperview()
+            maker.bottom.equalToSuperview().offset(-50)
+            maker.width.equalTo(150)
+            maker.height.equalTo(34)
+        }
         view.addSubview(collectionButton)
         collectionButton.snp.makeConstraints { maker in
             maker.centerX.equalToSuperview()
