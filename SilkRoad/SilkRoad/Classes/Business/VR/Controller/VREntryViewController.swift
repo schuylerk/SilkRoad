@@ -108,14 +108,13 @@ class VREntryViewController: UIViewController {
             guard let currentCityJson = json[cityName].array else { return nil }
             res = currentCityJson.map { json -> CultureRelic in
                 return CultureRelic(
-                    name: json["name"].stringValue,
+                    intro: json["intro"].stringValue, name: json["name"].stringValue,
                     unearthedYear: json["unearthedYear"].stringValue,
                     unearthPlace: json["unearthPlace"].stringValue,
                     dynasty: json["dynasty"].stringValue,
                     history: json["history"].stringValue,
                     evaluationStatus: json["evaluationStatus"].stringValue,
-                    face: json["face"].stringValue,
-                    intro: json["intro"].stringValue)
+                    face: json["face"].stringValue)
             }
             return res
         } catch {
