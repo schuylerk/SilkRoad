@@ -87,7 +87,6 @@ class HelpFarmersViewController: UIViewController {
 //        self.title = "助农平台"
 //        navigationController?.navigationBar.prefersLargeTitles = true
 //        navigationController?.navigationBar.largeTitleTextAttributes = [.font: UIFont(name: "Arial", size: 25) as Any]
-        navigationController?.navigationBar.isHidden = true
     }
     
     func handyJSON(){
@@ -145,6 +144,7 @@ class HelpFarmersViewController: UIViewController {
         super.viewWillAppear(animated)
         
         tabBarController?.tabBar.isHidden = false
+        navigationController?.navigationBar.isHidden = true
     }
 
 }
