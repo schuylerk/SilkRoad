@@ -100,8 +100,24 @@ class IntroductionCultureRelicViewController: UIViewController {
         return button
     }()
     
+    lazy var collectionButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = UIColor(hex: "#FFCCA3")
+        button.setTitle("收集", for: .normal)
+        button.setTitleColor(.white, for:.normal)
+        button.layer.cornerRadius = 17
+        button.addTarget(self, action: #selector(collectionHandler), for: .touchUpInside)
+        return button
+    }()
+    
     @objc func answerHandler() {
         self.delegate?.goAnswerTheQuestion()
+    }
+    
+    var collectionBack: (() -> Void)?
+    
+    @objc func collectionHandler() {
+        collectionBack?()
     }
     
     override func viewDidLoad() {
@@ -171,8 +187,8 @@ class IntroductionCultureRelicViewController: UIViewController {
 //            maker.right.equalToSuperview().offset(-30.fw)
 //            maker.height.equalTo(150)
 //        }
-        view.addSubview(anwserButton)
-        anwserButton.snp.makeConstraints { maker in
+        view.addSubview(collectionButton)
+        collectionButton.snp.makeConstraints { maker in
             maker.centerX.equalToSuperview()
             maker.bottom.equalToSuperview().offset(-50)
             maker.width.equalTo(150)

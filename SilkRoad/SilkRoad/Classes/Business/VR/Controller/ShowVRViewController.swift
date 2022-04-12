@@ -192,10 +192,12 @@ class ShowVRViewController: UIViewController {
             self.introductionVC.view.frame = CGRect(x: 0, y: 250, width: screenWidth, height: screenHeight - 250)
         })
         blackView.isHidden = false
-        if let _ = collectedIndexes.firstIndex(of: index) { return }
-        guard let collectedNum = Int(collectionRecordView.collectedNumLabel.text ?? "") else { return }
-        collectionRecordView.collectedNumLabel.text = "\(collectedNum + 1)"
-        collectedIndexes.append(index)
+        introductionVC.collectionBack = {
+            if let _ = self.collectedIndexes.firstIndex(of: index) { return }
+            guard let collectedNum = Int(self.collectionRecordView.collectedNumLabel.text ?? "") else { return }
+            self.collectionRecordView.collectedNumLabel.text = "\(collectedNum + 1)"
+            self.collectedIndexes.append(index)
+        }
     }
 
 }
