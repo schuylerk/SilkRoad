@@ -68,6 +68,7 @@
 		A1CD63162803E63D006C56EC /* VREntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CD63032803E63D006C56EC /* VREntryViewController.swift */; };
 		A1CD63182803E648006C56EC /* SCNVector3 + Equal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CD63172803E648006C56EC /* SCNVector3 + Equal.swift */; };
 		A1D49EDC27EC486F0065B41E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D49EDB27EC486F0065B41E /* TabBarController.swift */; };
+		A1DFC61128053E50004ED0BE /* commodity.json in Resources */ = {isa = PBXBuildFile; fileRef = A1DFC61028053E50004ED0BE /* commodity.json */; };
 		E6C8AF1E160FFD95626D64BC /* Pods_SilkRoad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0BBC5ADA3DFCC5A0193A68 /* Pods_SilkRoad.framework */; };
 /* End PBXBuildFile section */
 
@@ -136,6 +137,7 @@
 		A1CD63032803E63D006C56EC /* VREntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VREntryViewController.swift; sourceTree = "<group>"; };
 		A1CD63172803E648006C56EC /* SCNVector3 + Equal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNVector3 + Equal.swift"; sourceTree = "<group>"; };
 		A1D49EDB27EC486F0065B41E /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		A1DFC61028053E50004ED0BE /* commodity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = commodity.json; sourceTree = "<group>"; };
 		C6612F10E5D61C2F4DE7F960 /* Pods-SilkRoad.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SilkRoad.release.xcconfig"; path = "Target Support Files/Pods-SilkRoad/Pods-SilkRoad.release.xcconfig"; sourceTree = "<group>"; };
 		EC0BBC5ADA3DFCC5A0193A68 /* Pods_SilkRoad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SilkRoad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -194,9 +196,9 @@
 		3FC033DF27EDEDD000305127 /* HelpFarmers */ = {
 			isa = PBXGroup;
 			children = (
+				A1DFC61028053E50004ED0BE /* commodity.json */,
 				7EADA7D627F5C9D80044FB28 /* View */,
 				7EADA7D127F5C9CC0044FB28 /* Model */,
-				7EADA7CE27F5C9C30044FB28 /* Layer */,
 				3FC033E027EDEE0B00305127 /* Controller */,
 			);
 			path = HelpFarmers;
@@ -272,13 +274,6 @@
 				7E91830527F4812800F692C3 /* SettwoTableViewCell.swift */,
 			);
 			path = "View-Cell";
-			sourceTree = "<group>";
-		};
-		7EADA7CE27F5C9C30044FB28 /* Layer */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Layer;
 			sourceTree = "<group>";
 		};
 		7EADA7D127F5C9CC0044FB28 /* Model */ = {
@@ -553,6 +548,7 @@
 				A1CD63052803E63D006C56EC /* questions.json in Resources */,
 				A165679C27E57EEA00F81F7C /* Main.storyboard in Resources */,
 				A1CD63042803E63D006C56EC /* cultureRelic.json in Resources */,
+				A1DFC61128053E50004ED0BE /* commodity.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
