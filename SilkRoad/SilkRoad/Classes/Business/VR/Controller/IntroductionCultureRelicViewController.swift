@@ -72,18 +72,6 @@ class IntroductionCultureRelicViewController: UIViewController {
         return cri
     }()
     
-//    lazy var cultureRelicHistoryView: CultureRelicHistoryView = {
-//        let crh = CultureRelicHistoryView()
-//        crh.contentLabel.text = model.history
-//        return crh
-//    }()
-//
-//    lazy var cultureRelicStatusView: CultureRelicStatusView = {
-//        let crs = CultureRelicStatusView()
-//        crs.contentLabel.text = model.evaluationStatus
-//        return crs
-//    }()
-    
     lazy var cultureRelicIntroView: CultureRelicIntroView = {
         let cri = CultureRelicIntroView()
         cri.contentLabel.text = model.intro
@@ -102,10 +90,7 @@ class IntroductionCultureRelicViewController: UIViewController {
     
     lazy var collectionButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = UIColor(hex: "#FFCCA3")
-        button.setTitle("收集", for: .normal)
-        button.setTitleColor(.white, for:.normal)
-        button.layer.cornerRadius = 17
+        button.setImage(UIImage(named: "vr_collection"), for: .normal)
         button.addTarget(self, action: #selector(collectionHandler), for: .touchUpInside)
         return button
     }()
@@ -118,7 +103,7 @@ class IntroductionCultureRelicViewController: UIViewController {
     
     @objc func collectionHandler() {
         collectionBack?()
-        collectionButton.isHidden = true
+        collectionButton.setImage(UIImage(named: "vr_collection_select"), for: .normal)
     }
     
     override func viewDidLoad() {
@@ -174,20 +159,6 @@ class IntroductionCultureRelicViewController: UIViewController {
             maker.right.equalToSuperview().offset(-30.fw)
             maker.height.equalTo(150)
         }
-//        view.addSubview(cultureRelicHistoryView)
-//        cultureRelicHistoryView.snp.makeConstraints { maker in
-//            maker.left.equalTo(cultureRelicImageView)
-//            maker.top.equalTo(cultureRelicImageView.snp.bottom).offset(50.fw)
-//            maker.right.equalToSuperview().offset(-30.fw)
-//            maker.height.equalTo(150)
-//        }
-//        view.addSubview(cultureRelicStatusView)
-//        cultureRelicStatusView.snp.makeConstraints { maker in
-//            maker.left.equalTo(cultureRelicImageView)
-//            maker.top.equalTo(cultureRelicHistoryView.snp.bottom).offset(20.fw)
-//            maker.right.equalToSuperview().offset(-30.fw)
-//            maker.height.equalTo(150)
-//        }
         view.addSubview(anwserButton)
         anwserButton.snp.makeConstraints { maker in
             maker.centerX.equalToSuperview()
@@ -197,10 +168,8 @@ class IntroductionCultureRelicViewController: UIViewController {
         }
         view.addSubview(collectionButton)
         collectionButton.snp.makeConstraints { maker in
-            maker.centerX.equalToSuperview()
-            maker.bottom.equalToSuperview().offset(-50)
-            maker.width.equalTo(150)
-            maker.height.equalTo(34)
+            maker.left.equalToSuperview().offset(30)
+            maker.top.equalToSuperview().offset(10)
         }
     }
     
