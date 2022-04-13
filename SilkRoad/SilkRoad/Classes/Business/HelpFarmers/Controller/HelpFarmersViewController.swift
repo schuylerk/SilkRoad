@@ -142,8 +142,8 @@ class HelpFarmersViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         tabBarController?.tabBar.isHidden = false
+        tabBarController?.tabBar.backgroundColor = .white
         navigationController?.navigationBar.isHidden = true
     }
 
