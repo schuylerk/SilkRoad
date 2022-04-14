@@ -8,6 +8,7 @@
 import UIKit
 import SceneKit
 import SnapKit
+import CoreMotion
 
 class ShowVRViewController: UIViewController {
     
@@ -60,6 +61,8 @@ class ShowVRViewController: UIViewController {
             }
         }
     }
+    
+    var manager: CMMotionManager = CMMotionManager()
     
     lazy var sphereNode: SCNNode = {
         let node = SCNNode()
@@ -141,6 +144,14 @@ class ShowVRViewController: UIViewController {
         // Do any additional setup after loading the view.
     
         setUI()
+        manager.gyroUpdateInterval = 0.2
+        manager.startDeviceMotionUpdates(to: .main, withHandler: { motion, _ in
+            let qp1 = GLKQuaternionMakeWithAngleAndAxis(GLKMathDegreesToRadians(-90), 1, 0, 0)
+            guard let quaternion = motion?.attitude.quaternion else { return }
+            let qp2 = GLKQuaternionMake(Float(quaternion.x), Float(quaternion.y), Float(quaternion.z), Float(quaternion.w))
+            let qp = GLKQuaternionMultiply(qp1, qp2)
+            self.cameraNode.orientation = SCNVector4Make(qp.x, qp.y, qp.z, qp.w)
+        })
     }
     
     func setUI() {
