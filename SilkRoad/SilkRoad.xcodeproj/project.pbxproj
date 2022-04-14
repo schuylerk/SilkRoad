@@ -197,16 +197,8 @@
 				A1CD62F92803E63D006C56EC /* Model */,
 				A1CD62EC2803E63D006C56EC /* Resource */,
 				A1CD62F22803E63D006C56EC /* View */,
-				3FC033DC27EDEDB400305127 /* Controller */,
 			);
 			path = VR;
-			sourceTree = "<group>";
-		};
-		3FC033DC27EDEDB400305127 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		3FC033DF27EDEDD000305127 /* HelpFarmers */ = {
