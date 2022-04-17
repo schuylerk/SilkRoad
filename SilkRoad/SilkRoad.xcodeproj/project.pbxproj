@@ -23,6 +23,8 @@
 		3FC033E227EDEE1D00305127 /* HelpFarmersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC033E127EDEE1D00305127 /* HelpFarmersViewController.swift */; };
 		3FC033E627EDEE4900305127 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC033E527EDEE4900305127 /* MineViewController.swift */; };
 		3FFF4EBC27F722E300F0D755 /* VREntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF4EBB27F722E300F0D755 /* VREntryViewController.swift */; };
+		7E402C3C28086414003CFF43 /* OtherCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E402C3B28086414003CFF43 /* OtherCityViewController.swift */; };
+		7EBDDDD0280C10DB002C473B /* otherCity.json in Resources */ = {isa = PBXBuildFile; fileRef = 7EBDDDCF280C10DB002C473B /* otherCity.json */; };
 		A125FFBD28028C1A00A21F69 /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = A125FFBC28028C1A00A21F69 /* questions.json */; };
 		A125FFBF28029BCA00A21F69 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = A125FFBE28029BCA00A21F69 /* Question.swift */; };
 		A165677F27E57B0500F81F7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A165677E27E57B0500F81F7C /* AppDelegate.swift */; };
@@ -60,6 +62,8 @@
 		3FC033E127EDEE1D00305127 /* HelpFarmersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpFarmersViewController.swift; sourceTree = "<group>"; };
 		3FC033E527EDEE4900305127 /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
 		3FFF4EBB27F722E300F0D755 /* VREntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VREntryViewController.swift; sourceTree = "<group>"; };
+		7E402C3B28086414003CFF43 /* OtherCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherCityViewController.swift; sourceTree = "<group>"; };
+		7EBDDDCF280C10DB002C473B /* otherCity.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = otherCity.json; sourceTree = "<group>"; };
 		A125FFBC28028C1A00A21F69 /* questions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
 		A125FFBE28029BCA00A21F69 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		A165677B27E57B0500F81F7C /* SilkRoad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SilkRoad.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +137,7 @@
 				A1CA8FC627F804CF00231BE3 /* roadMapCityLocation.json */,
 				3F5AA8EC27FC66B100E0293C /* cultureRelic.json */,
 				A125FFBC28028C1A00A21F69 /* questions.json */,
+				7EBDDDCF280C10DB002C473B /* otherCity.json */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -172,6 +177,7 @@
 				3F5AA8E327FC361300E0293C /* ShowVRViewController.swift */,
 				3F277D9D27F335DB004E31DE /* IntroductionCultureRelicViewController.swift */,
 				3FFF4EBB27F722E300F0D755 /* VREntryViewController.swift */,
+				7E402C3B28086414003CFF43 /* OtherCityViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -392,6 +398,7 @@
 				A125FFBD28028C1A00A21F69 /* questions.json in Resources */,
 				3F5AA8ED27FC66B100E0293C /* cultureRelic.json in Resources */,
 				A165678827E57B0700F81F7C /* Assets.xcassets in Resources */,
+				7EBDDDD0280C10DB002C473B /* otherCity.json in Resources */,
 				A1CA8FC727F804CF00231BE3 /* roadMapCityLocation.json in Resources */,
 				A165679C27E57EEA00F81F7C /* Main.storyboard in Resources */,
 			);
@@ -472,6 +479,7 @@
 				A1861CD02801681C0034EF48 /* CultureRelicIntroView.swift in Sources */,
 				A16567A227E5804000F81F7C /* Int + Fit.swift in Sources */,
 				3F277DB027F3460E004E31DE /* CultureRelicStatusView.swift in Sources */,
+				7E402C3C28086414003CFF43 /* OtherCityViewController.swift in Sources */,
 				3F5AA8E427FC361400E0293C /* ShowVRViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
