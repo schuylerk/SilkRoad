@@ -6,20 +6,58 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class OtherCityViewController: UIViewController {
 
+    var CityLabel: [String: OtherCity] = [:]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
-        
+        handyJSON()
         ConfigUI()
         Animation()
     }
     
+    func handyJSON(){
+           do{
+               let data = try Data(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "otherCity", ofType: "json")!))
+               if let jsonData = String(data: data,encoding: .utf8){
+                   let json = JSON(parseJSON: jsonData)
+                   guard let jsonarray = json.array else{return}
+                   let _ = jsonarray.map{ json -> Void in
+                       CityLabel[json["cityName"].stringValue] = OtherCity(
+                           cityName: json["cityName"].stringValue,
+                           label1: json["label1"].stringValue,
+                           label2: json["label2"].stringValue,
+                           label3: json["label3"].stringValue
+                       )
+                   }
+               }
+               else {print("false")}
+           }
+           catch{
+               print("false")
+           }
+       }
+       
+    lazy var backimage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "back2")
+        return imageView
+    }()
+    
+    lazy var name: UILabel = {
+        let label = UILabel(frame: CGRect(x: 50, y: 40, width: 80, height: 80))
+        label.numberOfLines = 0
+        label.font = UIFont(name: "Arial", size: 32)
+        label.textColor = .black
+        return label
+    }()
+    
     lazy var label1: UILabel = {
         let label = UILabel(frame: CGRect(x: -340, y: 50, width: 340, height: 150))
-        label.text = "你好，我是杨洋洋111111111111111111111111111111111111111111111111你好，我是杨洋洋111111111111111111111111111111111111111111111111你好，我是杨洋洋111111111111111111111111111111111111111111111111你好，我是杨洋洋111111111111111111111111111111111111111111111111你好，我是杨洋洋111111111111111111111111111111111111111111111111"
         label.numberOfLines = 0
         label.textColor = .black
         return label
@@ -27,7 +65,6 @@ class OtherCityViewController: UIViewController {
    
     lazy var label2: UILabel = {
         let label = UILabel(frame: CGRect(x: -340, y: 230, width: 340, height: 200))
-        label.text = "你好，我是杨洋洋11111111111111111111111你好，我是杨洋洋111111111111111111111111111111111111111111111111你好，我是杨洋洋111111111111111111111111111111111111111111111111你好，我是杨洋洋111111111111111111111111111111111111111111111111你好，我是杨洋洋111111111111111111111111111111111111111111111111你好，我是杨洋洋111111111111111111111111111111111111111111111111"
         label.numberOfLines = 0
         label.textColor = .black
         return label
@@ -35,7 +72,6 @@ class OtherCityViewController: UIViewController {
     
     lazy var label3: UILabel = {
         let label = UILabel(frame: CGRect(x: -340, y: 460, width: 340, height: 200))
-        label.text = "你好，我是杨洋洋你好，我是杨洋洋111111111111111111111111111111111111111111111111你好，我是杨洋洋111111111111111111111111111111111111111111111111你好，我是杨洋洋111111111111111111111111111111111111111111111111你好，我是杨洋洋111111111111111111111111111111111111111111111111你好，我是杨洋洋111111111111111111111111111111111111111111111111你好，我是杨洋洋111111111111111111111111111111111111111111111111"
         label.numberOfLines = 0
         label.textColor = .black
         return label
@@ -58,12 +94,24 @@ class OtherCityViewController: UIViewController {
         self.view.addSubview(label2)
         self.view.addSubview(label3)
         self.view.addSubview(backButton)
+        self.view.addSubview(name)
         
-        backButton.snp.makeConstraints { maker in
-            maker.left.equalToSuperview().offset(15.fw)
-            maker.top.equalToSuperview().offset(50.fh)
+        name.text = "酒泉"
+        label1.text = CityLabel["酒泉"]?.label1 //这里需要传值！！！！
+        label2.text = CityLabel["酒泉"]?.label2
+        label3.text = CityLabel["酒泉"]?.label3
+        
+        
+        backButton.snp.makeConstraints { maker in  //等写完了把这个注销改回来就行！！！
+            //maker.left.equalToSuperview().offset(15.fw)
+            //maker.top.equalToSuperview().offset(50.fh)
             maker.width.height.equalTo(30)
         }
+        
+        backimage.snp.makeConstraints { make in
+            make.left.right.top.bottom.equalToSuperview().offset(0)
+        }
+        
     }
     
     func Animation() {
