@@ -24,8 +24,8 @@ class EditTableViewCell: UITableViewCell {
     
     lazy var answerLabel: UILabel = {
         let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 18)
         label.textAlignment = .right
-        label.font = UIFont.systemFont(ofSize: 15)
         label.textColor = .gray
         return label
     }()
@@ -43,10 +43,12 @@ class EditTableViewCell: UITableViewCell {
         }
         
         answerLabel.snp.makeConstraints {make in
-            make.right.equalToSuperview().offset(-50)
-            make.width.equalToSuperview().offset(100)
-            make.top.equalTo(titleLabel).offset(-5)
-            make.height.equalToSuperview().offset(0)        }
+            make.right.equalTo(rightView).offset(-14)
+            make.width.equalTo(150)
+            make.top.equalTo(titleLabel).offset(0)
+            make.height.equalTo(titleLabel)
+            
+        }
         
     }
     

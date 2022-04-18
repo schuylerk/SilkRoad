@@ -50,7 +50,6 @@ class EditDataViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = false
     }
     
-    
 }
 
 extension EditDataViewController: UITableViewDelegate, UITableViewDataSource {

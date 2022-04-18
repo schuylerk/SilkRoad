@@ -40,8 +40,8 @@ class IntroduceObjectViewController: UIViewController {
     lazy var Biglabel: UILabel = {
         let label = UILabel()
         label.text = "敦煌大鼎"
-        label.frame = CGRect(x: 210, y: 144, width: 200, height: 51)
-        label.font = UIFont.init(name: "TimesNewRomanPS-ItalicMT", size: 38)
+        label.frame = CGRect(x: 210, y: 144, width: 200, height: 60)
+        label.font = UIFont.init(name: "TimesNewRomanPS-ItalicMT", size: 20)
         label.textColor = .black
         label.numberOfLines = 0
         return label
