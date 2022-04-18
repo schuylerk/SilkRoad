@@ -25,6 +25,7 @@
 		3FFF4EBC27F722E300F0D755 /* VREntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFF4EBB27F722E300F0D755 /* VREntryViewController.swift */; };
 		7E402C3C28086414003CFF43 /* OtherCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E402C3B28086414003CFF43 /* OtherCityViewController.swift */; };
 		7EBDDDD0280C10DB002C473B /* otherCity.json in Resources */ = {isa = PBXBuildFile; fileRef = 7EBDDDCF280C10DB002C473B /* otherCity.json */; };
+		7EBDDDD2280C2929002C473B /* OtherCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBDDDD1280C2929002C473B /* OtherCity.swift */; };
 		A125FFBD28028C1A00A21F69 /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = A125FFBC28028C1A00A21F69 /* questions.json */; };
 		A125FFBF28029BCA00A21F69 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = A125FFBE28029BCA00A21F69 /* Question.swift */; };
 		A165677F27E57B0500F81F7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A165677E27E57B0500F81F7C /* AppDelegate.swift */; };
@@ -64,6 +65,7 @@
 		3FFF4EBB27F722E300F0D755 /* VREntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VREntryViewController.swift; sourceTree = "<group>"; };
 		7E402C3B28086414003CFF43 /* OtherCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherCityViewController.swift; sourceTree = "<group>"; };
 		7EBDDDCF280C10DB002C473B /* otherCity.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = otherCity.json; sourceTree = "<group>"; };
+		7EBDDDD1280C2929002C473B /* OtherCity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherCity.swift; sourceTree = "<group>"; };
 		A125FFBC28028C1A00A21F69 /* questions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
 		A125FFBE28029BCA00A21F69 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		A165677B27E57B0500F81F7C /* SilkRoad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SilkRoad.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,6 +129,7 @@
 				A1CA8FC827F806FC00231BE3 /* RoadMapCityLocation.swift */,
 				3F5AA8E527FC5A1900E0293C /* Overlay.swift */,
 				A125FFBE28029BCA00A21F69 /* Question.swift */,
+				7EBDDDD1280C2929002C473B /* OtherCity.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 				3F277DA627F33B10004E31DE /* CultureRelicInfoView.swift in Sources */,
 				3FC033D627EDDAFB00305127 /* StudyViewController.swift in Sources */,
 				A125FFBF28029BCA00A21F69 /* Question.swift in Sources */,
+				7EBDDDD2280C2929002C473B /* OtherCity.swift in Sources */,
 				3F277DA927F33C6D004E31DE /* CultureRelic.swift in Sources */,
 				A1861CD02801681C0034EF48 /* CultureRelicIntroView.swift in Sources */,
 				A16567A227E5804000F81F7C /* Int + Fit.swift in Sources */,
