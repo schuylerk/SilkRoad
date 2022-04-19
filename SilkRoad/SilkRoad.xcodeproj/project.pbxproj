@@ -77,6 +77,8 @@
 		A1CD63182803E648006C56EC /* SCNVector3 + Equal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CD63172803E648006C56EC /* SCNVector3 + Equal.swift */; };
 		A1D49EDC27EC486F0065B41E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D49EDB27EC486F0065B41E /* TabBarController.swift */; };
 		A1DFC61128053E50004ED0BE /* commodity.json in Resources */ = {isa = PBXBuildFile; fileRef = A1DFC61028053E50004ED0BE /* commodity.json */; };
+		A1E61634280EE9D300B250F2 /* CultureRelicDialogueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E61633280EE9D300B250F2 /* CultureRelicDialogueView.swift */; };
+		A1E61636280EEDAA00B250F2 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E61635280EEDAA00B250F2 /* TestViewController.swift */; };
 		E6C8AF1E160FFD95626D64BC /* Pods_SilkRoad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0BBC5ADA3DFCC5A0193A68 /* Pods_SilkRoad.framework */; };
 /* End PBXBuildFile section */
 
@@ -154,6 +156,8 @@
 		A1CD63172803E648006C56EC /* SCNVector3 + Equal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNVector3 + Equal.swift"; sourceTree = "<group>"; };
 		A1D49EDB27EC486F0065B41E /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		A1DFC61028053E50004ED0BE /* commodity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = commodity.json; sourceTree = "<group>"; };
+		A1E61633280EE9D300B250F2 /* CultureRelicDialogueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CultureRelicDialogueView.swift; sourceTree = "<group>"; };
+		A1E61635280EEDAA00B250F2 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		C6612F10E5D61C2F4DE7F960 /* Pods-SilkRoad.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SilkRoad.release.xcconfig"; path = "Target Support Files/Pods-SilkRoad/Pods-SilkRoad.release.xcconfig"; sourceTree = "<group>"; };
 		EC0BBC5ADA3DFCC5A0193A68 /* Pods_SilkRoad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SilkRoad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -370,6 +374,7 @@
 				A165679327E57B9B00F81F7C /* Resource */,
 				A165678C27E57B0700F81F7C /* Info.plist */,
 				A165679B27E57EEA00F81F7C /* Main.storyboard */,
+				A1E61635280EEDAA00B250F2 /* TestViewController.swift */,
 			);
 			path = SilkRoad;
 			sourceTree = "<group>";
@@ -495,6 +500,7 @@
 				A1CD62F62803E63D006C56EC /* CollectionRecordView.swift */,
 				A1CD62F72803E63D006C56EC /* CollectionRecordVerticalView.swift */,
 				A1CD62F82803E63D006C56EC /* CultureRelicIntroView.swift */,
+				A1E61633280EE9D300B250F2 /* CultureRelicDialogueView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -669,6 +675,7 @@
 				3FC033E627EDEE4900305127 /* MineViewController.swift in Sources */,
 				3FC1467027FDB7B60064CBF8 /* OrderRemarksCell.swift in Sources */,
 				7ECB5C1F27F2A5E300D37D27 /* IdiomCollectionViewCell.swift in Sources */,
+				A1E61636280EEDAA00B250F2 /* TestViewController.swift in Sources */,
 				3FC1466D27FDB7B60064CBF8 /* ReceiveAddressCell.swift in Sources */,
 				7EE79C2E27F53C9400D30AD6 /* QuestionCollectionViewCell.swift in Sources */,
 				A19F46B4280E860D00D0BE94 /* OtherCityViewController.swift in Sources */,
@@ -694,6 +701,7 @@
 				7EADA7DD27F5CA360044FB28 /* UIColor + Hex .swift in Sources */,
 				7ECB5C2C27F335E100D37D27 /* IntegralViewController.swift in Sources */,
 				A1CD630B2803E63D006C56EC /* CollectionRecordView.swift in Sources */,
+				A1E61634280EE9D300B250F2 /* CultureRelicDialogueView.swift in Sources */,
 				A1CD63102803E63D006C56EC /* RoadMapCityLocation.swift in Sources */,
 				A16567A227E5804000F81F7C /* Int + Fit.swift in Sources */,
 				A19F46C6280EBB0100D0BE94 /* CultureRelicCache.swift in Sources */,
