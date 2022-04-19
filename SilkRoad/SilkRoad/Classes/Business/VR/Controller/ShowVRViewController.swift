@@ -13,6 +13,7 @@ import CoreMotion
 class ShowVRViewController: UIViewController {
     
     var cityName: String = ""
+    var cityNameCN: String = ""
     
     var overlays: [Overlay] = []
     
@@ -193,7 +194,7 @@ class ShowVRViewController: UIViewController {
         guard let currentNode = currentNode else { return }
         guard let index = overlayNodes.firstIndex(of: currentNode) else { return }
         let currentCultureRelic = overlays[index].cultureRelic
-        introductionVC = IntroductionCultureRelicViewController(currentCultureRelic)
+        introductionVC = IntroductionCultureRelicViewController(currentCultureRelic,city: self.cityName)
         introductionVC.view.frame = CGRect(x: 0, y: screenHeight, width: screenWidth, height: screenHeight - 250)
         introductionVC.view.layer.cornerRadius = 10
         introductionVC.view.layer.masksToBounds = true
@@ -208,8 +209,9 @@ class ShowVRViewController: UIViewController {
             guard let collectedNum = Int(self.collectionRecordView.collectedNumLabel.text ?? "") else { return }
             self.collectionRecordView.collectedNumLabel.text = "\(collectedNum + 1)"
             self.collectedIndexes.append(index)
+            saveCultureRelicFor(self.overlays[index].cultureRelic.name, city: self.cityName)
             if self.collectedIndexes.count == self.overlays.count {
-                saveBadge(self.cityName)
+                saveBadge(self.cityNameCN)
             }
         }
     }
