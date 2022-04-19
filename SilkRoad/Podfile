@@ -12,5 +12,6 @@ target 'SilkRoad' do
     pod 'Eureka'
     pod 'SwiftyJSON'
     pod 'HandyJSON', '~> 5.0.2'
+    pod 'MJRefresh'
     
 end
