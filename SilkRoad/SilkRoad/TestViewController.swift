@@ -13,7 +13,7 @@ class TestViewController: UIViewController {
     lazy var dialogueView: CultureRelicDialogueView = {
         let vi = CultureRelicDialogueView()
         vi.actionImage = UIImage(named: "continue")
-        vi.contents = "内容内容内容内容内容内容内容内容内容内容"
+        vi.contents = ["内容1", "内容2", "内容3"]
         vi.faceImage = UIImage(named: "cr_1")
         vi.backgroundViewColor = .white
         vi.backgroundView.layer.cornerRadius = 10
