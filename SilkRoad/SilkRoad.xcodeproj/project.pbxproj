@@ -53,6 +53,9 @@
 		A16567A227E5804000F81F7C /* Int + Fit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16567A127E5804000F81F7C /* Int + Fit.swift */; };
 		A19F46B0280E81F400D0BE94 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F46AF280E81F400D0BE94 /* User.swift */; };
 		A19F46B2280E824800D0BE94 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F46B1280E824800D0BE94 /* Badge.swift */; };
+		A19F46B4280E860D00D0BE94 /* OtherCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F46B3280E860D00D0BE94 /* OtherCityViewController.swift */; };
+		A19F46B6280E862500D0BE94 /* OtherCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F46B5280E862500D0BE94 /* OtherCity.swift */; };
+		A19F46B8280E869500D0BE94 /* otherCity.json in Resources */ = {isa = PBXBuildFile; fileRef = A19F46B7280E869500D0BE94 /* otherCity.json */; };
 		A1CD63052803E63D006C56EC /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = A1CD62EE2803E63D006C56EC /* questions.json */; };
 		A1CD63062803E63D006C56EC /* roadMapCityLocation.json in Resources */ = {isa = PBXBuildFile; fileRef = A1CD62EF2803E63D006C56EC /* roadMapCityLocation.json */; };
 		A1CD63072803E63D006C56EC /* ColorLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CD62F12803E63D006C56EC /* ColorLayer.swift */; };
@@ -126,6 +129,9 @@
 		A16567A127E5804000F81F7C /* Int + Fit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int + Fit.swift"; sourceTree = "<group>"; };
 		A19F46AF280E81F400D0BE94 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = ../../../../../../../../Documents/User.swift; sourceTree = "<group>"; };
 		A19F46B1280E824800D0BE94 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Badge.swift; path = ../../../../../../../../Documents/Badge.swift; sourceTree = "<group>"; };
+		A19F46B3280E860D00D0BE94 /* OtherCityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherCityViewController.swift; sourceTree = "<group>"; };
+		A19F46B5280E862500D0BE94 /* OtherCity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherCity.swift; sourceTree = "<group>"; };
+		A19F46B7280E869500D0BE94 /* otherCity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = otherCity.json; sourceTree = "<group>"; };
 		A1CD62EE2803E63D006C56EC /* questions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
 		A1CD62EF2803E63D006C56EC /* roadMapCityLocation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = roadMapCityLocation.json; sourceTree = "<group>"; };
 		A1CD62F12803E63D006C56EC /* ColorLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorLayer.swift; sourceTree = "<group>"; };
@@ -462,6 +468,7 @@
 		A1CD62EC2803E63D006C56EC /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A19F46B7280E869500D0BE94 /* otherCity.json */,
 				A1CD62EE2803E63D006C56EC /* questions.json */,
 				A1CD62EF2803E63D006C56EC /* roadMapCityLocation.json */,
 			);
@@ -492,6 +499,7 @@
 		A1CD62F92803E63D006C56EC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A19F46B5280E862500D0BE94 /* OtherCity.swift */,
 				A1CD62FA2803E63D006C56EC /* Question.swift */,
 				A1CD62FB2803E63D006C56EC /* CultureRelicInfo.swift */,
 				A1CD62FC2803E63D006C56EC /* RoadMapCityLocation.swift */,
@@ -503,6 +511,7 @@
 		A1CD62FF2803E63D006C56EC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A19F46B3280E860D00D0BE94 /* OtherCityViewController.swift */,
 				A1CD63002803E63D006C56EC /* ShowVRViewController.swift */,
 				A1CD63012803E63D006C56EC /* IntroductionCultureRelicViewController.swift */,
 				A1CD63022803E63D006C56EC /* AnswerViewController.swift */,
@@ -580,6 +589,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1CD63062803E63D006C56EC /* roadMapCityLocation.json in Resources */,
+				A19F46B8280E869500D0BE94 /* otherCity.json in Resources */,
 				A165678827E57B0700F81F7C /* Assets.xcassets in Resources */,
 				A1CD63052803E63D006C56EC /* questions.json in Resources */,
 				3F6810F028059BEF0039A6B7 /* introduce.json in Resources */,
@@ -649,6 +659,7 @@
 				A19F46B0280E81F400D0BE94 /* User.swift in Sources */,
 				7ECB5C2127F2A5FD00D37D27 /* PoetryCollectionViewCell.swift in Sources */,
 				7EADA7DA27F5C9D80044FB28 /* SearchView.swift in Sources */,
+				A19F46B6280E862500D0BE94 /* OtherCity.swift in Sources */,
 				7ECB5C2427F2AAF600D37D27 /* ObjectCollectionViewCell.swift in Sources */,
 				7E50C44827F1CCA10041BA4C /* MedalCollectionViewCell.swift in Sources */,
 				3FC033E627EDEE4900305127 /* MineViewController.swift in Sources */,
@@ -656,6 +667,7 @@
 				7ECB5C1F27F2A5E300D37D27 /* IdiomCollectionViewCell.swift in Sources */,
 				3FC1466D27FDB7B60064CBF8 /* ReceiveAddressCell.swift in Sources */,
 				7EE79C2E27F53C9400D30AD6 /* QuestionCollectionViewCell.swift in Sources */,
+				A19F46B4280E860D00D0BE94 /* OtherCityViewController.swift in Sources */,
 				A1CD63092803E63D006C56EC /* CultureRelicInfoView.swift in Sources */,
 				3F6810F428059C160039A6B7 /* StudyViewController.swift in Sources */,
 				7ECB5C2E27F33BDE00D37D27 /* PoemCollectionViewCell.swift in Sources */,
