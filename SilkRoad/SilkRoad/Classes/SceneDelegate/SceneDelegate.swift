@@ -16,13 +16,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let _ = (scene as? UIWindowScene) else { return }
         
-        guard UserDefaults.standard.value(forKey: "user") != nil else {
-            let user = createUser()
-            saveUser(user)
-            window?.rootViewController = tabBar()
-            return
-        }
-        window?.rootViewController = tabBar()
+//        guard UserDefaults.standard.value(forKey: "user") != nil else {
+//            let user = createUser()
+//            saveUser(user)
+//            window?.rootViewController = tabBar()
+//            return
+//        }
+//        window?.rootViewController = tabBar()
+        window?.rootViewController = TestViewController()
     }
 
 }
