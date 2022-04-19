@@ -34,7 +34,7 @@ class IntegralViewController: UIViewController {
     lazy var scorelabel: UILabel = {
         let label = UILabel()
         //此label可改数值
-        label.text = "195"
+        label.text = "\((UserDefaults.standard.value(forKey: "silkintegral") as? Int) ?? 0)"
         label.frame = CGRect(x: 79, y: 123, width: 59, height: 44)
         label.font = UIFont.init(name: "TimesNewRomanPS-ItalicMT", size: 36)
         label.textColor = UIColor(red: 1, green: 0.383, blue: 0.383, alpha: 1)

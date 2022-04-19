@@ -6,22 +6,45 @@
 //
 
 import UIKit
+import MJRefresh
 
 class MedalCollectionViewCell: UICollectionViewCell {
     
     let MedalCellID = "MedalCellIID"
     
-    let name = ["西 安", "兰 州", "西 宁", "敦 煌", "乌 鲁 木 齐"]
-    let goad = ["xagoad", "lzgoad", "xngoad", "dhgoad", "wlmqgoad"]
+    var name = [String]()//["西 安", "兰 州", "西 宁", "敦 煌", "乌 鲁 木 齐"]
+    var goad = [String]()//["xagoad", "lzgoad", "xngoad", "dhgoad", "wlmqgoad"]
     
     override func layoutSubviews() {
         configUI()
-        
+        configData()
+    }
+    
+    func configData() {
+        guard let name = getBadge() else { return }
+        self.name = name
+        goad = name.map { string -> String in
+            switch string {
+            case "西安":
+                return "xagoad"
+            case "兰州":
+                return "lzgoad"
+            case "西宁":
+                return "xngoad"
+            case "敦煌":
+                return "dhgoad"
+            case "乌鲁木齐":
+                return "wlmqgoad"
+            default:
+                return ""
+            }
+        }
+        badgelabel.text = "旅行徽章  \(name.count)/5"
     }
     
     lazy var badgelabel: UILabel = {
         let label = UILabel()
-        label.text = "旅行徽章  \(4)/5"
+        label.text = "旅行徽章  \(name.count)/5"
         label.font = UIFont.init(name: "TimesNewRomanPS-ItalicMT", size: 20)
         label.numberOfLines = 0
         return label
@@ -35,10 +58,17 @@ class MedalCollectionViewCell: UICollectionViewCell {
         collectionView.showsVerticalScrollIndicator = false
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(refresh))
         
         collectionView.register(TravelCollectionViewCell.self, forCellWithReuseIdentifier: MedalCellID)
         return collectionView
     }()
+    
+    @objc func refresh() {
+        configData()
+        collectionView.reloadData()
+        collectionView.mj_header?.endRefreshing()
+    }
     
     
     func configUI() {
@@ -67,7 +97,7 @@ extension  MedalCollectionViewCell:  UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return name.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
