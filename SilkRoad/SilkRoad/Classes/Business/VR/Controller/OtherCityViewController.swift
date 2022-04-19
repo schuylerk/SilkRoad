@@ -12,6 +12,8 @@ class OtherCityViewController: UIViewController {
 
     var CityLabel: [String: OtherCity] = [:]
     
+    var cityName: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
@@ -49,7 +51,7 @@ class OtherCityViewController: UIViewController {
     }()
     
     lazy var name: UILabel = {
-        let label = UILabel(frame: CGRect(x: 50, y: 40, width: 80, height: 80))
+        let label = UILabel(frame: CGRect(x: 50, y: 40, width: screenWidth, height: 80))
         label.numberOfLines = 0
         label.font = UIFont(name: "Arial", size: 32)
         label.textColor = .black
@@ -57,21 +59,21 @@ class OtherCityViewController: UIViewController {
     }()
     
     lazy var label1: UILabel = {
-        let label = UILabel(frame: CGRect(x: -340, y: 50, width: 340, height: 150))
+        let label = UILabel(frame: CGRect(x: -340, y: 120, width: 340, height: 150))
         label.numberOfLines = 0
         label.textColor = .black
         return label
     }()
    
     lazy var label2: UILabel = {
-        let label = UILabel(frame: CGRect(x: -340, y: 230, width: 340, height: 200))
+        let label = UILabel(frame: CGRect(x: -340, y: 340, width: 340, height: 200))
         label.numberOfLines = 0
         label.textColor = .black
         return label
     }()
     
     lazy var label3: UILabel = {
-        let label = UILabel(frame: CGRect(x: -340, y: 460, width: 340, height: 200))
+        let label = UILabel(frame: CGRect(x: -340, y: 640, width: 340, height: 200))
         label.numberOfLines = 0
         label.textColor = .black
         return label
@@ -85,26 +87,27 @@ class OtherCityViewController: UIViewController {
     }()
     
     @objc func back() {
-        //self.navigationController?.popViewController(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     
     func ConfigUI() {
+        view.addSubview(backimage)
         self.view.addSubview(label1)
         self.view.addSubview(label2)
         self.view.addSubview(label3)
         self.view.addSubview(backButton)
         self.view.addSubview(name)
         
-        name.text = "酒泉"
-        label1.text = CityLabel["酒泉"]?.label1 //这里需要传值！！！！
-        label2.text = CityLabel["酒泉"]?.label2
-        label3.text = CityLabel["酒泉"]?.label3
+        name.text = cityName
+        label1.text = CityLabel[cityName]?.label1 //这里需要传值！！！！
+        label2.text = CityLabel[cityName]?.label2
+        label3.text = CityLabel[cityName]?.label3
         
         
         backButton.snp.makeConstraints { maker in  //等写完了把这个注销改回来就行！！！
-            //maker.left.equalToSuperview().offset(15.fw)
-            //maker.top.equalToSuperview().offset(50.fh)
+            maker.left.equalToSuperview().offset(15.fw)
+            maker.top.equalToSuperview().offset(50.fh)
             maker.width.height.equalTo(30)
         }
         
