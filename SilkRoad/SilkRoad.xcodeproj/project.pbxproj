@@ -53,6 +53,7 @@
 		A16567A227E5804000F81F7C /* Int + Fit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16567A127E5804000F81F7C /* Int + Fit.swift */; };
 		A19F46BA280EAB9F00D0BE94 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F46B9280EAB9F00D0BE94 /* User.swift */; };
 		A19F46BC280EABB800D0BE94 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F46BB280EABB800D0BE94 /* Badge.swift */; };
+		A19F46C4280EBA4600D0BE94 /* CultureRelicCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F46C3280EBA4600D0BE94 /* CultureRelicCache.swift */; };
 		A1CD63052803E63D006C56EC /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = A1CD62EE2803E63D006C56EC /* questions.json */; };
 		A1CD63062803E63D006C56EC /* roadMapCityLocation.json in Resources */ = {isa = PBXBuildFile; fileRef = A1CD62EF2803E63D006C56EC /* roadMapCityLocation.json */; };
 		A1CD63072803E63D006C56EC /* ColorLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CD62F12803E63D006C56EC /* ColorLayer.swift */; };
@@ -126,6 +127,7 @@
 		A16567A127E5804000F81F7C /* Int + Fit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int + Fit.swift"; sourceTree = "<group>"; };
 		A19F46B9280EAB9F00D0BE94 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A19F46BB280EABB800D0BE94 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
+		A19F46C3280EBA4600D0BE94 /* CultureRelicCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CultureRelicCache.swift; sourceTree = "<group>"; };
 		A1CD62EE2803E63D006C56EC /* questions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
 		A1CD62EF2803E63D006C56EC /* roadMapCityLocation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = roadMapCityLocation.json; sourceTree = "<group>"; };
 		A1CD62F12803E63D006C56EC /* ColorLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorLayer.swift; sourceTree = "<group>"; };
@@ -455,6 +457,7 @@
 			children = (
 				A19F46B9280EAB9F00D0BE94 /* User.swift */,
 				A19F46BB280EABB800D0BE94 /* Badge.swift */,
+				A19F46C3280EBA4600D0BE94 /* CultureRelicCache.swift */,
 			);
 			path = UserDefaults;
 			sourceTree = "<group>";
@@ -639,6 +642,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1CD630D2803E63D006C56EC /* CultureRelicIntroView.swift in Sources */,
+				A19F46C4280EBA4600D0BE94 /* CultureRelicCache.swift in Sources */,
 				A19F46BC280EABB800D0BE94 /* Badge.swift in Sources */,
 				7E91830427F47E9600F692C3 /* SetTableViewCell.swift in Sources */,
 				7ECB5C1D27F2A5D100D37D27 /* ExploreCollectionViewCell.swift in Sources */,
