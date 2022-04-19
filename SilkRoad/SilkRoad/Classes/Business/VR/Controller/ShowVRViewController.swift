@@ -208,7 +208,9 @@ class ShowVRViewController: UIViewController {
             guard let collectedNum = Int(self.collectionRecordView.collectedNumLabel.text ?? "") else { return }
             self.collectionRecordView.collectedNumLabel.text = "\(collectedNum + 1)"
             self.collectedIndexes.append(index)
-            saveBadge(self.cityName)
+            if self.collectedIndexes.count == self.overlays.count {
+                saveBadge(self.cityName)
+            }
         }
     }
 
