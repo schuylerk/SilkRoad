@@ -56,6 +56,7 @@
 		A19F46B8280E869500D0BE94 /* otherCity.json in Resources */ = {isa = PBXBuildFile; fileRef = A19F46B7280E869500D0BE94 /* otherCity.json */; };
 		A19F46BF280EAC3900D0BE94 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F46BD280EAC3900D0BE94 /* User.swift */; };
 		A19F46C0280EAC3900D0BE94 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F46BE280EAC3900D0BE94 /* Badge.swift */; };
+		A19F46C6280EBB0100D0BE94 /* CultureRelicCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F46C5280EBB0100D0BE94 /* CultureRelicCache.swift */; };
 		A1CD63052803E63D006C56EC /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = A1CD62EE2803E63D006C56EC /* questions.json */; };
 		A1CD63062803E63D006C56EC /* roadMapCityLocation.json in Resources */ = {isa = PBXBuildFile; fileRef = A1CD62EF2803E63D006C56EC /* roadMapCityLocation.json */; };
 		A1CD63072803E63D006C56EC /* ColorLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CD62F12803E63D006C56EC /* ColorLayer.swift */; };
@@ -132,6 +133,7 @@
 		A19F46B7280E869500D0BE94 /* otherCity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = otherCity.json; sourceTree = "<group>"; };
 		A19F46BD280EAC3900D0BE94 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A19F46BE280EAC3900D0BE94 /* Badge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
+		A19F46C5280EBB0100D0BE94 /* CultureRelicCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CultureRelicCache.swift; sourceTree = "<group>"; };
 		A1CD62EE2803E63D006C56EC /* questions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
 		A1CD62EF2803E63D006C56EC /* roadMapCityLocation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = roadMapCityLocation.json; sourceTree = "<group>"; };
 		A1CD62F12803E63D006C56EC /* ColorLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorLayer.swift; sourceTree = "<group>"; };
@@ -459,6 +461,7 @@
 		A19F46AE280E81DF00D0BE94 /* UserDefaults */ = {
 			isa = PBXGroup;
 			children = (
+				A19F46C5280EBB0100D0BE94 /* CultureRelicCache.swift */,
 				A19F46BE280EAC3900D0BE94 /* Badge.swift */,
 				A19F46BD280EAC3900D0BE94 /* User.swift */,
 			);
@@ -693,6 +696,7 @@
 				A1CD630B2803E63D006C56EC /* CollectionRecordView.swift in Sources */,
 				A1CD63102803E63D006C56EC /* RoadMapCityLocation.swift in Sources */,
 				A16567A227E5804000F81F7C /* Int + Fit.swift in Sources */,
+				A19F46C6280EBB0100D0BE94 /* CultureRelicCache.swift in Sources */,
 				7ECB5C2827F325AE00D37D27 /* IntroduceObjectViewController.swift in Sources */,
 				A1CD630C2803E63D006C56EC /* CollectionRecordVerticalView.swift in Sources */,
 				7E9182FE27F46AB200F692C3 /* EditDataViewController.swift in Sources */,
