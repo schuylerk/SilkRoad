@@ -66,6 +66,7 @@ class VREntryViewController: UIViewController {
                 }
                 let vc = ShowVRViewController()
                 vc.overlays = overlays
+                vc.cityNameCN = cityName
                 switch cityName {
                 case "西安":
                     vc.cityName = "xian"

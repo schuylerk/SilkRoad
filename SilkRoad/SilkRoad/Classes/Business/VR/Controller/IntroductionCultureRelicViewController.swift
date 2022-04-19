@@ -18,12 +18,15 @@ class IntroductionCultureRelicViewController: UIViewController {
     
     var model: CultureRelic!
     
+    var cityName: String = ""
+    
     var delegate: IntroductionCultureRelicDelegate?
     
-    init(_ model: CultureRelic) {
+    init(_ model: CultureRelic, city: String) {
         super.init(nibName: nil, bundle: nil)
         
         self.model = model
+        self.cityName = city
     }
     
     required init?(coder: NSCoder) {
