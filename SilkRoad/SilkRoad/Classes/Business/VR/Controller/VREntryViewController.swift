@@ -73,12 +73,15 @@ class VREntryViewController: UIViewController {
                     vc.cityName = "lanzhou"
                 case "乌鲁木齐":
                     vc.cityName = "xinjiang"
-//                case "西宁":
-//                    vc.cityName = "xian"
+                case "西宁":
+                    vc.cityName = "xining"
                 case "敦煌":
                     vc.cityName = "dunhuang"
                 default:
-                    break
+                    let ocvc = OtherCityViewController()
+                    ocvc.cityName = cityName
+                    self.navigationController?.pushViewController(ocvc, animated: true)
+                    return
                 }
                 self.navigationController?.pushViewController(vc, animated: true)
             }
