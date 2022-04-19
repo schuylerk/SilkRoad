@@ -16,6 +16,18 @@ class OrderViewController: UIViewController {
     
     var CallBack: ((Int) -> Void)?
     
+    lazy var backButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "hf_back"), for: .normal)
+        button.addTarget(self, action: #selector(back), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc func back() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
     lazy var colorLayer: ColorLayer = {
         let layer = ColorLayer(
             CGPoint(x: 0.5, y: 0),
@@ -78,8 +90,8 @@ class OrderViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.tintColor = .black
-        // Do any additional setup after loading the view.
+        //navigationController?.navigationBar.isHidden = true
+        
         setUI()
         NotificationCenter.default.addObserver(self, selector: #selector(updateSubmitLabel),name: .init("updateSubmitLabel"),object: nil)
     }
@@ -93,23 +105,31 @@ class OrderViewController: UIViewController {
         super.viewWillAppear(animated)
         
         tabBarController?.tabBar.isHidden = true
-        navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.isHidden = true
     }
     
     func setUI() {
         view.layer.addSublayer(colorLayer)
         view.addSubview(collectionView)
         view.addSubview(submitOrderView)
+        view.addSubview(backButton)
         collectionView.snp.makeConstraints { maker in
             maker.left.equalToSuperview().offset(10)
             maker.right.equalToSuperview().offset(-10)
-            maker.top.equalToSuperview().offset(80)
+            maker.top.equalToSuperview().offset(110)
             maker.bottom.equalToSuperview().offset(-100)
         }
+        
         submitOrderView.snp.makeConstraints { maker in
             maker.left.right.equalToSuperview()
             maker.bottom.equalToSuperview().offset(-50)
             maker.height.equalTo(100)
+        }
+        
+        backButton.snp.makeConstraints { maker in
+            maker.left.equalToSuperview().offset(15.fw)
+            maker.top.equalToSuperview().offset(50.fh)
+            maker.width.height.equalTo(30)
         }
     }
     

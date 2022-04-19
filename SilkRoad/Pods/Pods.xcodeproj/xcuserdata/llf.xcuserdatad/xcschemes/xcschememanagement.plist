@@ -23,6 +23,11 @@
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
+		<key>MJRefresh.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
 		<key>Pods-SilkRoad.xcscheme</key>
 		<dict>
 			<key>isShown</key>

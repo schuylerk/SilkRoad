@@ -20,6 +20,7 @@ class OtherCityViewController: UIViewController {
         handyJSON()
         ConfigUI()
         Animation()
+        tabBarController?.tabBar.isHidden = true
     }
     
     func handyJSON(){
@@ -66,14 +67,14 @@ class OtherCityViewController: UIViewController {
     }()
    
     lazy var label2: UILabel = {
-        let label = UILabel(frame: CGRect(x: -340, y: 340, width: 340, height: 200))
+        let label = UILabel(frame: CGRect(x: -340, y: 320, width: 340, height: 200))
         label.numberOfLines = 0
         label.textColor = .black
         return label
     }()
     
     lazy var label3: UILabel = {
-        let label = UILabel(frame: CGRect(x: -340, y: 640, width: 340, height: 200))
+        let label = UILabel(frame: CGRect(x: -340, y: 570, width: 340, height: 200))
         label.numberOfLines = 0
         label.textColor = .black
         return label
@@ -100,12 +101,12 @@ class OtherCityViewController: UIViewController {
         self.view.addSubview(name)
         
         name.text = cityName
-        label1.text = CityLabel[cityName]?.label1 //这里需要传值！！！！
+        label1.text = CityLabel[cityName]?.label1
         label2.text = CityLabel[cityName]?.label2
         label3.text = CityLabel[cityName]?.label3
         
         
-        backButton.snp.makeConstraints { maker in  //等写完了把这个注销改回来就行！！！
+        backButton.snp.makeConstraints { maker in
             maker.left.equalToSuperview().offset(15.fw)
             maker.top.equalToSuperview().offset(50.fh)
             maker.width.height.equalTo(30)
