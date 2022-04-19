@@ -19,3 +19,7 @@ func saveCultureRelicFor(_ name: String, city: String) {
 func getCollectedCultureRelic(_ city: String) -> [String]? {
     return UserDefaults.standard.value(forKey: city) as? [String]
 }
+func getCollectedCultureRelic(_ city: String, name: String) -> [String]? {
+    guard let datas = UserDefaults.standard.value(forKey: city) as? [String] else { return nil }
+    return datas.filter { return $0 == name }
+}
