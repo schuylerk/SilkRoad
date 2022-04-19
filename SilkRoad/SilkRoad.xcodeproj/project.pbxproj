@@ -51,11 +51,11 @@
 		A165679C27E57EEA00F81F7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A165679B27E57EEA00F81F7C /* Main.storyboard */; };
 		A165679F27E57F9D00F81F7C /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A165679E27E57F9D00F81F7C /* Constant.swift */; };
 		A16567A227E5804000F81F7C /* Int + Fit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16567A127E5804000F81F7C /* Int + Fit.swift */; };
-		A19F46B0280E81F400D0BE94 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F46AF280E81F400D0BE94 /* User.swift */; };
-		A19F46B2280E824800D0BE94 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F46B1280E824800D0BE94 /* Badge.swift */; };
 		A19F46B4280E860D00D0BE94 /* OtherCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F46B3280E860D00D0BE94 /* OtherCityViewController.swift */; };
 		A19F46B6280E862500D0BE94 /* OtherCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F46B5280E862500D0BE94 /* OtherCity.swift */; };
 		A19F46B8280E869500D0BE94 /* otherCity.json in Resources */ = {isa = PBXBuildFile; fileRef = A19F46B7280E869500D0BE94 /* otherCity.json */; };
+		A19F46BF280EAC3900D0BE94 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F46BD280EAC3900D0BE94 /* User.swift */; };
+		A19F46C0280EAC3900D0BE94 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F46BE280EAC3900D0BE94 /* Badge.swift */; };
 		A1CD63052803E63D006C56EC /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = A1CD62EE2803E63D006C56EC /* questions.json */; };
 		A1CD63062803E63D006C56EC /* roadMapCityLocation.json in Resources */ = {isa = PBXBuildFile; fileRef = A1CD62EF2803E63D006C56EC /* roadMapCityLocation.json */; };
 		A1CD63072803E63D006C56EC /* ColorLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CD62F12803E63D006C56EC /* ColorLayer.swift */; };
@@ -127,11 +127,11 @@
 		A165679B27E57EEA00F81F7C /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A165679E27E57F9D00F81F7C /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		A16567A127E5804000F81F7C /* Int + Fit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int + Fit.swift"; sourceTree = "<group>"; };
-		A19F46AF280E81F400D0BE94 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = ../../../../../../../../Documents/User.swift; sourceTree = "<group>"; };
-		A19F46B1280E824800D0BE94 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Badge.swift; path = ../../../../../../../../Documents/Badge.swift; sourceTree = "<group>"; };
 		A19F46B3280E860D00D0BE94 /* OtherCityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherCityViewController.swift; sourceTree = "<group>"; };
 		A19F46B5280E862500D0BE94 /* OtherCity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherCity.swift; sourceTree = "<group>"; };
 		A19F46B7280E869500D0BE94 /* otherCity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = otherCity.json; sourceTree = "<group>"; };
+		A19F46BD280EAC3900D0BE94 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A19F46BE280EAC3900D0BE94 /* Badge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		A1CD62EE2803E63D006C56EC /* questions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
 		A1CD62EF2803E63D006C56EC /* roadMapCityLocation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = roadMapCityLocation.json; sourceTree = "<group>"; };
 		A1CD62F12803E63D006C56EC /* ColorLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorLayer.swift; sourceTree = "<group>"; };
@@ -459,8 +459,8 @@
 		A19F46AE280E81DF00D0BE94 /* UserDefaults */ = {
 			isa = PBXGroup;
 			children = (
-				A19F46AF280E81F400D0BE94 /* User.swift */,
-				A19F46B1280E824800D0BE94 /* Badge.swift */,
+				A19F46BE280EAC3900D0BE94 /* Badge.swift */,
+				A19F46BD280EAC3900D0BE94 /* User.swift */,
 			);
 			path = UserDefaults;
 			sourceTree = "<group>";
@@ -652,11 +652,12 @@
 				7E91830427F47E9600F692C3 /* SetTableViewCell.swift in Sources */,
 				7ECB5C1D27F2A5D100D37D27 /* ExploreCollectionViewCell.swift in Sources */,
 				7E91830027F4724800F692C3 /* EditTableViewCell.swift in Sources */,
+				A19F46BF280EAC3900D0BE94 /* User.swift in Sources */,
 				A1CD630F2803E63D006C56EC /* CultureRelicInfo.swift in Sources */,
 				7E50C44627F1A29F0041BA4C /* MineDataCollectionViewCell.swift in Sources */,
+				A19F46C0280EAC3900D0BE94 /* Badge.swift in Sources */,
 				A1CD63082803E63D006C56EC /* CultureRelicStatusView.swift in Sources */,
 				3FC033E227EDEE1D00305127 /* HelpFarmersViewController.swift in Sources */,
-				A19F46B0280E81F400D0BE94 /* User.swift in Sources */,
 				7ECB5C2127F2A5FD00D37D27 /* PoetryCollectionViewCell.swift in Sources */,
 				7EADA7DA27F5C9D80044FB28 /* SearchView.swift in Sources */,
 				A19F46B6280E862500D0BE94 /* OtherCity.swift in Sources */,
@@ -671,7 +672,6 @@
 				A1CD63092803E63D006C56EC /* CultureRelicInfoView.swift in Sources */,
 				3F6810F428059C160039A6B7 /* StudyViewController.swift in Sources */,
 				7ECB5C2E27F33BDE00D37D27 /* PoemCollectionViewCell.swift in Sources */,
-				A19F46B2280E824800D0BE94 /* Badge.swift in Sources */,
 				3FC033D827EDDBBB00305127 /* UITabBarItem + Extension.swift in Sources */,
 				A1CD630A2803E63D006C56EC /* CultureRelicHistoryView.swift in Sources */,
 				A165677F27E57B0500F81F7C /* AppDelegate.swift in Sources */,
