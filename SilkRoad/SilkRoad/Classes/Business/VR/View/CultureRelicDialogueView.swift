@@ -12,13 +12,18 @@ class CultureRelicDialogueView: UIView {
     
     var backgroundViewColor: UIColor?
     var faceImage: UIImage?
-    var contents: [String]?
+    var contents: [String]? {
+        didSet {
+            contentLabel.text = contents?[currentContentIndex]
+        }
+    }
     var actionImage: UIImage?
     private var currentContentIndex: Int = 0 {
         didSet {
             contentLabel.text = contents?[currentContentIndex]
         }
     }
+    var showDetailBack: (() -> Void)?
 
     lazy var backgroundView: UIView = {
         let bgv = UIView()
@@ -59,6 +64,9 @@ class CultureRelicDialogueView: UIView {
     }()
     
     @objc func actionHandle() {
+        if currentContentIndex == contents!.count-1 {
+            showDetailBack?()
+        }
         currentContentIndex = currentContentIndex+1 >= contents!.count-1 ? contents!.count-1 : currentContentIndex+1
     }
     
