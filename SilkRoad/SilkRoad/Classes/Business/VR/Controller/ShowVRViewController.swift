@@ -148,6 +148,7 @@ class ShowVRViewController: UIViewController {
         dlv.layer.masksToBounds = true
         dlv.isHidden = true
         dlv.backgroundViewColor = .white
+        dlv.alpha = 0.5
         dlv.showDetailBack = {
             self.showDetailFor(index: self.currentCultureRelicIndex)
             self.dialogueView.isHidden = true
@@ -191,7 +192,7 @@ class ShowVRViewController: UIViewController {
             maker.left.equalToSuperview().offset(15)
             maker.right.equalToSuperview().offset(-15)
             maker.bottom.equalToSuperview().offset(-40)
-            maker.height.equalTo(100)
+            maker.height.equalTo(300)
         }
         configOverlay()
     }
