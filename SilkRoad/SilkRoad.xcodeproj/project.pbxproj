@@ -51,6 +51,7 @@
 		A165679C27E57EEA00F81F7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A165679B27E57EEA00F81F7C /* Main.storyboard */; };
 		A165679F27E57F9D00F81F7C /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A165679E27E57F9D00F81F7C /* Constant.swift */; };
 		A16567A227E5804000F81F7C /* Int + Fit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16567A127E5804000F81F7C /* Int + Fit.swift */; };
+		A18CF2CE281BB2EF00455B6B /* OtherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18CF2CD281BB2EF00455B6B /* OtherViewController.swift */; };
 		A19F46B4280E860D00D0BE94 /* OtherCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F46B3280E860D00D0BE94 /* OtherCityViewController.swift */; };
 		A19F46B6280E862500D0BE94 /* OtherCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F46B5280E862500D0BE94 /* OtherCity.swift */; };
 		A19F46B8280E869500D0BE94 /* otherCity.json in Resources */ = {isa = PBXBuildFile; fileRef = A19F46B7280E869500D0BE94 /* otherCity.json */; };
@@ -129,6 +130,7 @@
 		A165679B27E57EEA00F81F7C /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A165679E27E57F9D00F81F7C /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		A16567A127E5804000F81F7C /* Int + Fit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int + Fit.swift"; sourceTree = "<group>"; };
+		A18CF2CD281BB2EF00455B6B /* OtherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherViewController.swift; sourceTree = "<group>"; };
 		A19F46B3280E860D00D0BE94 /* OtherCityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherCityViewController.swift; sourceTree = "<group>"; };
 		A19F46B5280E862500D0BE94 /* OtherCity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherCity.swift; sourceTree = "<group>"; };
 		A19F46B7280E869500D0BE94 /* otherCity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = otherCity.json; sourceTree = "<group>"; };
@@ -415,6 +417,7 @@
 		A165679727E57C6E00F81F7C /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				A18CF2CC281BB2DE00455B6B /* Other */,
 				3FC033D327EDDAB100305127 /* Study */,
 				3FC033DB27EDEDA200305127 /* VR */,
 				3FC033DF27EDEDD000305127 /* HelpFarmers */,
@@ -442,6 +445,14 @@
 				3FC033D727EDDBBB00305127 /* UITabBarItem + Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A18CF2CC281BB2DE00455B6B /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				A18CF2CD281BB2EF00455B6B /* OtherViewController.swift */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 		A19F46AD280E81D600D0BE94 /* Cache */ = {
@@ -699,6 +710,7 @@
 				7EADA7D527F5C9CC0044FB28 /* CommodityCellModel.swift in Sources */,
 				A1CD63132803E63D006C56EC /* ShowVRViewController.swift in Sources */,
 				7E50C44327F1963A0041BA4C /* CityViewController.swift in Sources */,
+				A18CF2CE281BB2EF00455B6B /* OtherViewController.swift in Sources */,
 				3FC1466C27FDB7B60064CBF8 /* PurchaseQuantityCell.swift in Sources */,
 				7ECB5C2627F2EDF800D37D27 /* IdiomWordCollectionViewCell.swift in Sources */,
 				3FC1466627FDB7950064CBF8 /* OrderViewController.swift in Sources */,
