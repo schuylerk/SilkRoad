@@ -52,6 +52,19 @@
 		A165679F27E57F9D00F81F7C /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A165679E27E57F9D00F81F7C /* Constant.swift */; };
 		A16567A227E5804000F81F7C /* Int + Fit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16567A127E5804000F81F7C /* Int + Fit.swift */; };
 		A18CF2CE281BB2EF00455B6B /* OtherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18CF2CD281BB2EF00455B6B /* OtherViewController.swift */; };
+		A18CF2D2281BCA4700455B6B /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18CF2D1281BCA4700455B6B /* ARViewController.swift */; };
+		A18CF2DE281BCA5000455B6B /* 6.usdz in Resources */ = {isa = PBXBuildFile; fileRef = A18CF2D4281BCA5000455B6B /* 6.usdz */; };
+		A18CF2DF281BCA5000455B6B /* 7.usdz in Resources */ = {isa = PBXBuildFile; fileRef = A18CF2D5281BCA5000455B6B /* 7.usdz */; };
+		A18CF2E0281BCA5000455B6B /* 10.usdz in Resources */ = {isa = PBXBuildFile; fileRef = A18CF2D6281BCA5000455B6B /* 10.usdz */; };
+		A18CF2E1281BCA5000455B6B /* 1.usdz in Resources */ = {isa = PBXBuildFile; fileRef = A18CF2D7281BCA5000455B6B /* 1.usdz */; };
+		A18CF2E2281BCA5000455B6B /* 2.usdz in Resources */ = {isa = PBXBuildFile; fileRef = A18CF2D8281BCA5000455B6B /* 2.usdz */; };
+		A18CF2E3281BCA5000455B6B /* 3.usdz in Resources */ = {isa = PBXBuildFile; fileRef = A18CF2D9281BCA5000455B6B /* 3.usdz */; };
+		A18CF2E4281BCA5000455B6B /* 4.usdz in Resources */ = {isa = PBXBuildFile; fileRef = A18CF2DA281BCA5000455B6B /* 4.usdz */; };
+		A18CF2E5281BCA5000455B6B /* 8.usdz in Resources */ = {isa = PBXBuildFile; fileRef = A18CF2DB281BCA5000455B6B /* 8.usdz */; };
+		A18CF2E6281BCA5000455B6B /* 9.usdz in Resources */ = {isa = PBXBuildFile; fileRef = A18CF2DC281BCA5000455B6B /* 9.usdz */; };
+		A18CF2E7281BCA5000455B6B /* 5.usdz in Resources */ = {isa = PBXBuildFile; fileRef = A18CF2DD281BCA5000455B6B /* 5.usdz */; };
+		A191FD3F281D5DF700B25FDF /* ARModelListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A191FD3E281D5DF700B25FDF /* ARModelListView.swift */; };
+		A191FD42281D5E6900B25FDF /* ARModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A191FD41281D5E6900B25FDF /* ARModelCell.swift */; };
 		A19F46B4280E860D00D0BE94 /* OtherCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F46B3280E860D00D0BE94 /* OtherCityViewController.swift */; };
 		A19F46B6280E862500D0BE94 /* OtherCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F46B5280E862500D0BE94 /* OtherCity.swift */; };
 		A19F46B8280E869500D0BE94 /* otherCity.json in Resources */ = {isa = PBXBuildFile; fileRef = A19F46B7280E869500D0BE94 /* otherCity.json */; };
@@ -131,6 +144,19 @@
 		A165679E27E57F9D00F81F7C /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		A16567A127E5804000F81F7C /* Int + Fit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int + Fit.swift"; sourceTree = "<group>"; };
 		A18CF2CD281BB2EF00455B6B /* OtherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherViewController.swift; sourceTree = "<group>"; };
+		A18CF2D1281BCA4700455B6B /* ARViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
+		A18CF2D4281BCA5000455B6B /* 6.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = 6.usdz; sourceTree = "<group>"; };
+		A18CF2D5281BCA5000455B6B /* 7.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = 7.usdz; sourceTree = "<group>"; };
+		A18CF2D6281BCA5000455B6B /* 10.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = 10.usdz; sourceTree = "<group>"; };
+		A18CF2D7281BCA5000455B6B /* 1.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = 1.usdz; sourceTree = "<group>"; };
+		A18CF2D8281BCA5000455B6B /* 2.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = 2.usdz; sourceTree = "<group>"; };
+		A18CF2D9281BCA5000455B6B /* 3.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = 3.usdz; sourceTree = "<group>"; };
+		A18CF2DA281BCA5000455B6B /* 4.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = 4.usdz; sourceTree = "<group>"; };
+		A18CF2DB281BCA5000455B6B /* 8.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = 8.usdz; sourceTree = "<group>"; };
+		A18CF2DC281BCA5000455B6B /* 9.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = 9.usdz; sourceTree = "<group>"; };
+		A18CF2DD281BCA5000455B6B /* 5.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = 5.usdz; sourceTree = "<group>"; };
+		A191FD3E281D5DF700B25FDF /* ARModelListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARModelListView.swift; sourceTree = "<group>"; };
+		A191FD41281D5E6900B25FDF /* ARModelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARModelCell.swift; sourceTree = "<group>"; };
 		A19F46B3280E860D00D0BE94 /* OtherCityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherCityViewController.swift; sourceTree = "<group>"; };
 		A19F46B5280E862500D0BE94 /* OtherCity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherCity.swift; sourceTree = "<group>"; };
 		A19F46B7280E869500D0BE94 /* otherCity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = otherCity.json; sourceTree = "<group>"; };
@@ -417,6 +443,7 @@
 		A165679727E57C6E00F81F7C /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				A18CF2CF281BCA4700455B6B /* AR */,
 				A18CF2CC281BB2DE00455B6B /* Other */,
 				3FC033D327EDDAB100305127 /* Study */,
 				3FC033DB27EDEDA200305127 /* VR */,
@@ -453,6 +480,58 @@
 				A18CF2CD281BB2EF00455B6B /* OtherViewController.swift */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		A18CF2CF281BCA4700455B6B /* AR */ = {
+			isa = PBXGroup;
+			children = (
+				A18CF2D3281BCA5000455B6B /* USDZ */,
+				A191FD3D281D5DD400B25FDF /* View */,
+				A18CF2D0281BCA4700455B6B /* Controller */,
+			);
+			path = AR;
+			sourceTree = "<group>";
+		};
+		A18CF2D0281BCA4700455B6B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A18CF2D1281BCA4700455B6B /* ARViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A18CF2D3281BCA5000455B6B /* USDZ */ = {
+			isa = PBXGroup;
+			children = (
+				A18CF2D4281BCA5000455B6B /* 6.usdz */,
+				A18CF2D5281BCA5000455B6B /* 7.usdz */,
+				A18CF2D6281BCA5000455B6B /* 10.usdz */,
+				A18CF2D7281BCA5000455B6B /* 1.usdz */,
+				A18CF2D8281BCA5000455B6B /* 2.usdz */,
+				A18CF2D9281BCA5000455B6B /* 3.usdz */,
+				A18CF2DA281BCA5000455B6B /* 4.usdz */,
+				A18CF2DB281BCA5000455B6B /* 8.usdz */,
+				A18CF2DC281BCA5000455B6B /* 9.usdz */,
+				A18CF2DD281BCA5000455B6B /* 5.usdz */,
+			);
+			path = USDZ;
+			sourceTree = "<group>";
+		};
+		A191FD3D281D5DD400B25FDF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A191FD40281D5E4F00B25FDF /* Cell */,
+				A191FD3E281D5DF700B25FDF /* ARModelListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A191FD40281D5E4F00B25FDF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A191FD41281D5E6900B25FDF /* ARModelCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		A19F46AD280E81D600D0BE94 /* Cache */ = {
@@ -597,11 +676,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A18CF2E2281BCA5000455B6B /* 2.usdz in Resources */,
+				A18CF2DE281BCA5000455B6B /* 6.usdz in Resources */,
+				A18CF2E5281BCA5000455B6B /* 8.usdz in Resources */,
 				A1CD63062803E63D006C56EC /* roadMapCityLocation.json in Resources */,
 				A19F46B8280E869500D0BE94 /* otherCity.json in Resources */,
+				A18CF2E7281BCA5000455B6B /* 5.usdz in Resources */,
 				A165678827E57B0700F81F7C /* Assets.xcassets in Resources */,
 				A1CD63052803E63D006C56EC /* questions.json in Resources */,
+				A18CF2DF281BCA5000455B6B /* 7.usdz in Resources */,
+				A18CF2E3281BCA5000455B6B /* 3.usdz in Resources */,
+				A18CF2E6281BCA5000455B6B /* 9.usdz in Resources */,
 				3F6810F028059BEF0039A6B7 /* introduce.json in Resources */,
+				A18CF2E1281BCA5000455B6B /* 1.usdz in Resources */,
+				A18CF2E4281BCA5000455B6B /* 4.usdz in Resources */,
+				A18CF2E0281BCA5000455B6B /* 10.usdz in Resources */,
 				3F6810EF28059BEF0039A6B7 /* cultureRelic.json in Resources */,
 				A165679C27E57EEA00F81F7C /* Main.storyboard in Resources */,
 				A1DFC61128053E50004ED0BE /* commodity.json in Resources */,
@@ -662,10 +751,12 @@
 				7ECB5C1D27F2A5D100D37D27 /* ExploreCollectionViewCell.swift in Sources */,
 				7E91830027F4724800F692C3 /* EditTableViewCell.swift in Sources */,
 				A19F46BF280EAC3900D0BE94 /* User.swift in Sources */,
+				A191FD3F281D5DF700B25FDF /* ARModelListView.swift in Sources */,
 				A1CD630F2803E63D006C56EC /* CultureRelicInfo.swift in Sources */,
 				7E50C44627F1A29F0041BA4C /* MineDataCollectionViewCell.swift in Sources */,
 				A19F46C0280EAC3900D0BE94 /* Badge.swift in Sources */,
 				A1CD63082803E63D006C56EC /* CultureRelicStatusView.swift in Sources */,
+				A18CF2D2281BCA4700455B6B /* ARViewController.swift in Sources */,
 				3FC033E227EDEE1D00305127 /* HelpFarmersViewController.swift in Sources */,
 				7ECB5C2127F2A5FD00D37D27 /* PoetryCollectionViewCell.swift in Sources */,
 				7EADA7DA27F5C9D80044FB28 /* SearchView.swift in Sources */,
@@ -684,6 +775,7 @@
 				3FC033D827EDDBBB00305127 /* UITabBarItem + Extension.swift in Sources */,
 				A1CD630A2803E63D006C56EC /* CultureRelicHistoryView.swift in Sources */,
 				A165677F27E57B0500F81F7C /* AppDelegate.swift in Sources */,
+				A191FD42281D5E6900B25FDF /* ARModelCell.swift in Sources */,
 				A1CD63072803E63D006C56EC /* ColorLayer.swift in Sources */,
 				A1CD63182803E648006C56EC /* SCNVector3 + Equal.swift in Sources */,
 				7E50C44127F152690041BA4C /* CityCollectionViewCell.swift in Sources */,
@@ -854,6 +946,7 @@
 				DEVELOPMENT_TEAM = S766NNL3LC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SilkRoad/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Need camera for AR";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -865,7 +958,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.xxx.SilkRoad;
+				PRODUCT_BUNDLE_IDENTIFIER = hu.Easyvisit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -884,6 +977,7 @@
 				DEVELOPMENT_TEAM = S766NNL3LC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SilkRoad/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Need camera for AR";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -895,7 +989,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.xxx.SilkRoad;
+				PRODUCT_BUNDLE_IDENTIFIER = hu.Easyvisit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

@@ -15,8 +15,16 @@ class OtherViewController: UIViewController {
         imgv.layer.cornerRadius = 25
         imgv.frame.size = CGSize(width: 50, height: 50)
         imgv.image = UIImage(named: "ar")
+        imgv.isUserInteractionEnabled = true
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(goAR))
+        imgv.addGestureRecognizer(gesture)
         return imgv
     }()
+    
+    @objc func goAR() {
+        let vc = ARViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
     
     lazy var playImageView: UIImageView = {
         let imgv = UIImageView()
@@ -49,6 +57,7 @@ class OtherViewController: UIViewController {
             self.arImageView.center = CGPoint(x: screenWidth / 2 - 40, y: screenHeight - 150)
             self.playImageView.center = CGPoint(x: screenWidth / 2 + 40, y: screenHeight - 150)
         })
+        tabBarController?.tabBar.isHidden = false
     }
     
 }
