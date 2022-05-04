@@ -51,6 +51,10 @@
 		A165679C27E57EEA00F81F7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A165679B27E57EEA00F81F7C /* Main.storyboard */; };
 		A165679F27E57F9D00F81F7C /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A165679E27E57F9D00F81F7C /* Constant.swift */; };
 		A16567A227E5804000F81F7C /* Int + Fit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16567A127E5804000F81F7C /* Int + Fit.swift */; };
+		A189B5EA281E2AA6009B7E6D /* ARModelListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189B5E7281E2AA6009B7E6D /* ARModelListView.swift */; };
+		A189B5EB281E2AA6009B7E6D /* ARModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189B5E9281E2AA6009B7E6D /* ARModelCell.swift */; };
+		A189B5EE281E2ACC009B7E6D /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189B5ED281E2ACC009B7E6D /* PlayViewController.swift */; };
+		A189B5F0281E2C30009B7E6D /* FirstPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189B5EF281E2C30009B7E6D /* FirstPlayViewController.swift */; };
 		A18CF2CE281BB2EF00455B6B /* OtherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18CF2CD281BB2EF00455B6B /* OtherViewController.swift */; };
 		A18CF2D2281BCA4700455B6B /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18CF2D1281BCA4700455B6B /* ARViewController.swift */; };
 		A18CF2DE281BCA5000455B6B /* 6.usdz in Resources */ = {isa = PBXBuildFile; fileRef = A18CF2D4281BCA5000455B6B /* 6.usdz */; };
@@ -63,8 +67,6 @@
 		A18CF2E5281BCA5000455B6B /* 8.usdz in Resources */ = {isa = PBXBuildFile; fileRef = A18CF2DB281BCA5000455B6B /* 8.usdz */; };
 		A18CF2E6281BCA5000455B6B /* 9.usdz in Resources */ = {isa = PBXBuildFile; fileRef = A18CF2DC281BCA5000455B6B /* 9.usdz */; };
 		A18CF2E7281BCA5000455B6B /* 5.usdz in Resources */ = {isa = PBXBuildFile; fileRef = A18CF2DD281BCA5000455B6B /* 5.usdz */; };
-		A191FD3F281D5DF700B25FDF /* ARModelListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A191FD3E281D5DF700B25FDF /* ARModelListView.swift */; };
-		A191FD42281D5E6900B25FDF /* ARModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A191FD41281D5E6900B25FDF /* ARModelCell.swift */; };
 		A19F46B4280E860D00D0BE94 /* OtherCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F46B3280E860D00D0BE94 /* OtherCityViewController.swift */; };
 		A19F46B6280E862500D0BE94 /* OtherCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F46B5280E862500D0BE94 /* OtherCity.swift */; };
 		A19F46B8280E869500D0BE94 /* otherCity.json in Resources */ = {isa = PBXBuildFile; fileRef = A19F46B7280E869500D0BE94 /* otherCity.json */; };
@@ -143,6 +145,10 @@
 		A165679B27E57EEA00F81F7C /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A165679E27E57F9D00F81F7C /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		A16567A127E5804000F81F7C /* Int + Fit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int + Fit.swift"; sourceTree = "<group>"; };
+		A189B5E7281E2AA6009B7E6D /* ARModelListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARModelListView.swift; sourceTree = "<group>"; };
+		A189B5E9281E2AA6009B7E6D /* ARModelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARModelCell.swift; sourceTree = "<group>"; };
+		A189B5ED281E2ACC009B7E6D /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
+		A189B5EF281E2C30009B7E6D /* FirstPlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPlayViewController.swift; sourceTree = "<group>"; };
 		A18CF2CD281BB2EF00455B6B /* OtherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherViewController.swift; sourceTree = "<group>"; };
 		A18CF2D1281BCA4700455B6B /* ARViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		A18CF2D4281BCA5000455B6B /* 6.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = 6.usdz; sourceTree = "<group>"; };
@@ -155,8 +161,6 @@
 		A18CF2DB281BCA5000455B6B /* 8.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = 8.usdz; sourceTree = "<group>"; };
 		A18CF2DC281BCA5000455B6B /* 9.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = 9.usdz; sourceTree = "<group>"; };
 		A18CF2DD281BCA5000455B6B /* 5.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = 5.usdz; sourceTree = "<group>"; };
-		A191FD3E281D5DF700B25FDF /* ARModelListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARModelListView.swift; sourceTree = "<group>"; };
-		A191FD41281D5E6900B25FDF /* ARModelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARModelCell.swift; sourceTree = "<group>"; };
 		A19F46B3280E860D00D0BE94 /* OtherCityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherCityViewController.swift; sourceTree = "<group>"; };
 		A19F46B5280E862500D0BE94 /* OtherCity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherCity.swift; sourceTree = "<group>"; };
 		A19F46B7280E869500D0BE94 /* otherCity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = otherCity.json; sourceTree = "<group>"; };
@@ -443,6 +447,7 @@
 		A165679727E57C6E00F81F7C /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				A189B5EC281E2AB9009B7E6D /* Play */,
 				A18CF2CF281BCA4700455B6B /* AR */,
 				A18CF2CC281BB2DE00455B6B /* Other */,
 				3FC033D327EDDAB100305127 /* Study */,
@@ -474,6 +479,32 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		A189B5E6281E2AA6009B7E6D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A189B5E7281E2AA6009B7E6D /* ARModelListView.swift */,
+				A189B5E8281E2AA6009B7E6D /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A189B5E8281E2AA6009B7E6D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A189B5E9281E2AA6009B7E6D /* ARModelCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		A189B5EC281E2AB9009B7E6D /* Play */ = {
+			isa = PBXGroup;
+			children = (
+				A189B5ED281E2ACC009B7E6D /* PlayViewController.swift */,
+				A189B5EF281E2C30009B7E6D /* FirstPlayViewController.swift */,
+			);
+			path = Play;
+			sourceTree = "<group>";
+		};
 		A18CF2CC281BB2DE00455B6B /* Other */ = {
 			isa = PBXGroup;
 			children = (
@@ -485,8 +516,8 @@
 		A18CF2CF281BCA4700455B6B /* AR */ = {
 			isa = PBXGroup;
 			children = (
+				A189B5E6281E2AA6009B7E6D /* View */,
 				A18CF2D3281BCA5000455B6B /* USDZ */,
-				A191FD3D281D5DD400B25FDF /* View */,
 				A18CF2D0281BCA4700455B6B /* Controller */,
 			);
 			path = AR;
@@ -515,23 +546,6 @@
 				A18CF2DD281BCA5000455B6B /* 5.usdz */,
 			);
 			path = USDZ;
-			sourceTree = "<group>";
-		};
-		A191FD3D281D5DD400B25FDF /* View */ = {
-			isa = PBXGroup;
-			children = (
-				A191FD40281D5E4F00B25FDF /* Cell */,
-				A191FD3E281D5DF700B25FDF /* ARModelListView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		A191FD40281D5E4F00B25FDF /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				A191FD41281D5E6900B25FDF /* ARModelCell.swift */,
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 		A19F46AD280E81D600D0BE94 /* Cache */ = {
@@ -751,7 +765,6 @@
 				7ECB5C1D27F2A5D100D37D27 /* ExploreCollectionViewCell.swift in Sources */,
 				7E91830027F4724800F692C3 /* EditTableViewCell.swift in Sources */,
 				A19F46BF280EAC3900D0BE94 /* User.swift in Sources */,
-				A191FD3F281D5DF700B25FDF /* ARModelListView.swift in Sources */,
 				A1CD630F2803E63D006C56EC /* CultureRelicInfo.swift in Sources */,
 				7E50C44627F1A29F0041BA4C /* MineDataCollectionViewCell.swift in Sources */,
 				A19F46C0280EAC3900D0BE94 /* Badge.swift in Sources */,
@@ -775,11 +788,12 @@
 				3FC033D827EDDBBB00305127 /* UITabBarItem + Extension.swift in Sources */,
 				A1CD630A2803E63D006C56EC /* CultureRelicHistoryView.swift in Sources */,
 				A165677F27E57B0500F81F7C /* AppDelegate.swift in Sources */,
-				A191FD42281D5E6900B25FDF /* ARModelCell.swift in Sources */,
+				A189B5EB281E2AA6009B7E6D /* ARModelCell.swift in Sources */,
 				A1CD63072803E63D006C56EC /* ColorLayer.swift in Sources */,
 				A1CD63182803E648006C56EC /* SCNVector3 + Equal.swift in Sources */,
 				7E50C44127F152690041BA4C /* CityCollectionViewCell.swift in Sources */,
 				3FC1466E27FDB7B60064CBF8 /* UnitPriceCell.swift in Sources */,
+				A189B5F0281E2C30009B7E6D /* FirstPlayViewController.swift in Sources */,
 				7E50C44B27F1F5160041BA4C /* TravelCollectionViewCell.swift in Sources */,
 				A165678127E57B0500F81F7C /* SceneDelegate.swift in Sources */,
 				A165679F27E57F9D00F81F7C /* Constant.swift in Sources */,
@@ -807,12 +821,14 @@
 				7ECB5C2627F2EDF800D37D27 /* IdiomWordCollectionViewCell.swift in Sources */,
 				3FC1466627FDB7950064CBF8 /* OrderViewController.swift in Sources */,
 				A1CD63162803E63D006C56EC /* VREntryViewController.swift in Sources */,
+				A189B5EE281E2ACC009B7E6D /* PlayViewController.swift in Sources */,
 				7EADA7DB27F5C9D80044FB28 /* CommodityCell.swift in Sources */,
 				A1CD630E2803E63D006C56EC /* Question.swift in Sources */,
 				A1CD63112803E63D006C56EC /* Overlay.swift in Sources */,
 				7EADA7D427F5C9CC0044FB28 /* Commodity.swift in Sources */,
 				3F6810F228059BEF0039A6B7 /* CultureRelic.swift in Sources */,
 				3F6810F128059BEF0039A6B7 /* Introduce.swift in Sources */,
+				A189B5EA281E2AA6009B7E6D /* ARModelListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -870,7 +886,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -925,7 +941,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
