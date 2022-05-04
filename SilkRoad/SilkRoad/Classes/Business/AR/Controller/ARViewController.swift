@@ -16,6 +16,8 @@ class ARViewController: UIViewController {
         arscnView.delegate = self
         let gesture = UITapGestureRecognizer(target: self, action: #selector(tapARScnView))
         arscnView.addGestureRecognizer(gesture)
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panHandler))
+        arscnView.addGestureRecognizer(panGesture)
         return arscnView
     }()
     
@@ -25,6 +27,25 @@ class ARViewController: UIViewController {
         guard let node = results.first?.node else { return }
         slider.value = node.transform.m11
         sliderCurrentNode = node
+    }
+    
+    var beganPoint: CGPoint = CGPoint()
+    var currentPoint: CGPoint = CGPoint()
+    var currentAngle: Float = 0.0
+    var totleAngle: Float = 0.0
+    
+    @objc func panHandler(gesture: UIPanGestureRecognizer) {
+        let location = gesture.location(in: arscnView) 
+        if gesture.state == .began {
+            beganPoint = location
+        } else if gesture.state == .ended {
+            totleAngle += currentAngle
+        } else {
+            currentPoint = location
+            let tx = Float(currentPoint.x - beganPoint.x)
+            currentAngle = tx / 50.0 * Float.pi / 2
+            currentNode.pivot = SCNMatrix4Rotate(SCNMatrix4Identity, currentAngle + totleAngle, 0, 1, 0)
+        }
     }
     
     var sliderCurrentNode: SCNNode!
@@ -85,7 +106,7 @@ class ARViewController: UIViewController {
         }
         return vi
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -118,6 +139,7 @@ class ARViewController: UIViewController {
         configuration.planeDetection = .horizontal
         arscnView.session.run(configuration)
         tabBarController?.tabBar.isHidden = true
+        navigationController?.navigationBar.isHidden = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {

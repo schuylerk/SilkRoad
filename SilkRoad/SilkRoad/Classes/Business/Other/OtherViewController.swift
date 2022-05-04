@@ -32,8 +32,16 @@ class OtherViewController: UIViewController {
         imgv.layer.cornerRadius = 25
         imgv.frame.size = CGSize(width: 50, height: 50)
         imgv.image = UIImage(named: "play")
+        imgv.isUserInteractionEnabled = true
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(goPlay))
+        imgv.addGestureRecognizer(gesture)
         return imgv
     }()
+    
+    @objc func goPlay() {
+        let vc = PlayViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +51,7 @@ class OtherViewController: UIViewController {
     }
     
     func setUI() {
-        view.backgroundColor = .white
+        view.backgroundColor = .clear
         view.addSubview(arImageView)
         view.addSubview(playImageView)
     }
