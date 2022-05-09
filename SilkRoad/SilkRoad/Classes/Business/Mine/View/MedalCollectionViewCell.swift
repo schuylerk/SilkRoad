@@ -86,7 +86,7 @@ class MedalCollectionViewCell: UICollectionViewCell {
             make.top.equalToSuperview().offset(90.fh)
             make.height.equalTo(400.fh)
             make.left.equalToSuperview().offset(10.fw)
-            make.right.equalToSuperview().offset(-40)
+            make.right.equalToSuperview().offset(-40.fw)
         }
     }
 }

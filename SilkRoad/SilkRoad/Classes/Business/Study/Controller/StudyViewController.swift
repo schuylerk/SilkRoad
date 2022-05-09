@@ -63,15 +63,20 @@ class StudyViewController: UIViewController {
         return searchView
     }()
     
-    lazy var blackView: UIView = {
-        let blv = UIView()
-        blv.backgroundColor = .black
-        blv.alpha = 0.5
-        blv.isUserInteractionEnabled = true
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(cancleSearch))
-        blv.addGestureRecognizer(gesture)
-        blv.isHidden = true
-        return blv
+    lazy var searchBarBtn: UIButton = {
+        let btn = UIButton()
+        btn.titleLabel?.textAlignment = .left
+        btn.addTarget(self, action: #selector(searchBarClick), for: .touchUpInside)
+        return btn
+//    lazy var blackView: UIView = {
+//        let blv = UIView()
+//        blv.backgroundColor = .black
+//        blv.alpha = 0.5
+//        blv.isUserInteractionEnabled = true
+//        let gesture = UITapGestureRecognizer(target: self, action: #selector(cancleSearch))
+//        blv.addGestureRecognizer(gesture)
+//        blv.isHidden = true
+//        return blv
     }()
     
     @objc func cancleSearch() {

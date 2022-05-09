@@ -19,7 +19,7 @@ class SetTableViewCell: UITableViewCell {
     
     lazy var rightView: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "mineRight"))
-        imageView.frame = CGRect(x: 390, y: 20, width: 10, height: 10)
+        imageView.frame = CGRect(x: 390.fw, y: 20.fh, width: 10.fw, height: 10.fh)
         return imageView
     }()
     
@@ -28,10 +28,10 @@ class SetTableViewCell: UITableViewCell {
         self.addSubview(rightView)
         
         titleLabel.snp.makeConstraints {make in
-            make.left.equalToSuperview().offset(20)
-            make.width.equalToSuperview().offset(50)
-            make.top.equalToSuperview().offset(0)
-            make.bottom.equalToSuperview().offset(5)
+            make.left.equalToSuperview().offset(20.fw)
+            make.width.equalToSuperview().offset(50.fw)
+            make.top.equalToSuperview().offset(0.fh)
+            make.bottom.equalToSuperview().offset(5.fh)
         }
         
         
