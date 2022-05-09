@@ -22,12 +22,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         tabBarController = tabBar { _, _, _ in
-            self.window_2.isHidden = false
-            UIView.animate(withDuration: 0.5, animations: {
-                self.arButton.center = CGPoint(x: screenWidth / 2 - 40, y: screenHeight - 150)
-                self.playButton.center = CGPoint(x: screenWidth / 2 + 40, y: screenHeight - 150)
-            })
+//            self.window_2.isHidden = false
+//            UIView.animate(withDuration: 0.5, animations: {
+//                self.arButton.center = CGPoint(x: screenWidth / 2 - 40, y: screenHeight - 150)
+//                self.playButton.center = CGPoint(x: screenWidth / 2 + 40, y: screenHeight - 150)
+//            })
         }
+//
+        tabBarController.selectedIndex = 2
         
         guard UserDefaults.standard.value(forKey: "user") != nil else {
             let user = createUser()
@@ -36,7 +38,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return
         }
         window?.rootViewController = tabBarController
-        configWindow(windowScene: windowScene)
+//        configWindow(windowScene: windowScene)
     }
     
     var arButton: UIButton!

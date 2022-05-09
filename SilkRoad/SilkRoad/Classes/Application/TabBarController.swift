@@ -13,30 +13,33 @@ func tabBar(didHijackHandler: @escaping ESTabBarControllerDidHijackHandler) -> E
     let tabBarController = ESTabBarController()
     let StudyVC = StudyViewController()
     let VRVC = VREntryViewController()
-    let otherVC = OtherViewController()
-    let HelpVC = HelpFarmersViewController()
+//    let otherVC = OtherViewController()
+//    let HelpVC = HelpFarmersViewController()
     let MineVC = MineViewController()
+    let playVC = PlayViewController()
 
     let StudyNavi = UINavigationController(rootViewController: StudyVC)
     let VRNavi = UINavigationController(rootViewController: VRVC)
-    let otherNavi = UINavigationController(rootViewController: otherVC)
-    let HelpNavi = UINavigationController(rootViewController: HelpVC)
+//    let otherNavi = UINavigationController(rootViewController: otherVC)
+//    let HelpNavi = UINavigationController(rootViewController: HelpVC)
     let MineNavi = UINavigationController(rootViewController: MineVC)
+    let playNavi = UINavigationController(rootViewController: playVC)
     
     StudyVC.tabBarItem = ESTabBarItem(ESTabBarItemCustomColorContentView(), title: nil, image: UIImage(named: "stu"), selectedImage: nil, tag: 0)
     VRVC.tabBarItem = ESTabBarItem(ESTabBarItemCustomColorContentView(), title: nil, image: UIImage(named: "luxian"), selectedImage: nil, tag: 1)
-    otherVC.tabBarItem = ESTabBarItem(ESTabBarItemCustomColorContentView(), title: nil, image: UIImage(named: "other"), selectedImage: nil, tag: 2)
-    HelpVC.tabBarItem = ESTabBarItem(ESTabBarItemCustomColorContentView(), title: nil, image: UIImage(named: "hf"), selectedImage: nil, tag: 3)
-    MineVC.tabBarItem = ESTabBarItem(ESTabBarItemCustomColorContentView(), title: nil, image: UIImage(named: "min"), selectedImage: nil, tag: 4)
+//    otherVC.tabBarItem = ESTabBarItem(ESTabBarItemCustomColorContentView(), title: nil, image: UIImage(named: "other"), selectedImage: nil, tag: 2)
+//    HelpVC.tabBarItem = ESTabBarItem(ESTabBarItemCustomColorContentView(), title: nil, image: UIImage(named: "hf"), selectedImage: nil, tag: 3)
+    playVC.tabBarItem = ESTabBarItem(ESTabBarItemCustomColorContentView(), title: nil, image: UIImage(named: "hui"), selectedImage: nil, tag: 2)
+    MineVC.tabBarItem = ESTabBarItem(ESTabBarItemCustomColorContentView(), title: nil, image: UIImage(named: "min"), selectedImage: nil, tag: 3)
     
-    tabBarController.viewControllers = [StudyNavi, VRNavi, otherNavi, HelpNavi, MineNavi]
-    tabBarController.shouldHijackHandler = { _, _, index -> Bool in
-        if index == 2 {
-            return true
-        }
-        return false
-    }
-    tabBarController.didHijackHandler = didHijackHandler
+    tabBarController.viewControllers = [StudyNavi, VRNavi, playNavi, MineNavi]
+//    tabBarController.shouldHijackHandler = { _, _, index -> Bool in
+//        if index == 2 {
+//            return true
+//        }
+//        return false
+//    }
+//    tabBarController.didHijackHandler = didHijackHandler
     return tabBarController
 }
 
