@@ -51,6 +51,21 @@
 		A165679C27E57EEA00F81F7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A165679B27E57EEA00F81F7C /* Main.storyboard */; };
 		A165679F27E57F9D00F81F7C /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A165679E27E57F9D00F81F7C /* Constant.swift */; };
 		A16567A227E5804000F81F7C /* Int + Fit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16567A127E5804000F81F7C /* Int + Fit.swift */; };
+		A189B5EA281E2AA6009B7E6D /* ARModelListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189B5E7281E2AA6009B7E6D /* ARModelListView.swift */; };
+		A189B5EB281E2AA6009B7E6D /* ARModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189B5E9281E2AA6009B7E6D /* ARModelCell.swift */; };
+		A189B5EE281E2ACC009B7E6D /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189B5ED281E2ACC009B7E6D /* PlayViewController.swift */; };
+		A18CF2CE281BB2EF00455B6B /* OtherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18CF2CD281BB2EF00455B6B /* OtherViewController.swift */; };
+		A18CF2D2281BCA4700455B6B /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18CF2D1281BCA4700455B6B /* ARViewController.swift */; };
+		A18CF2DE281BCA5000455B6B /* 6.usdz in Resources */ = {isa = PBXBuildFile; fileRef = A18CF2D4281BCA5000455B6B /* 6.usdz */; };
+		A18CF2DF281BCA5000455B6B /* 7.usdz in Resources */ = {isa = PBXBuildFile; fileRef = A18CF2D5281BCA5000455B6B /* 7.usdz */; };
+		A18CF2E0281BCA5000455B6B /* 10.usdz in Resources */ = {isa = PBXBuildFile; fileRef = A18CF2D6281BCA5000455B6B /* 10.usdz */; };
+		A18CF2E1281BCA5000455B6B /* 1.usdz in Resources */ = {isa = PBXBuildFile; fileRef = A18CF2D7281BCA5000455B6B /* 1.usdz */; };
+		A18CF2E2281BCA5000455B6B /* 2.usdz in Resources */ = {isa = PBXBuildFile; fileRef = A18CF2D8281BCA5000455B6B /* 2.usdz */; };
+		A18CF2E3281BCA5000455B6B /* 3.usdz in Resources */ = {isa = PBXBuildFile; fileRef = A18CF2D9281BCA5000455B6B /* 3.usdz */; };
+		A18CF2E4281BCA5000455B6B /* 4.usdz in Resources */ = {isa = PBXBuildFile; fileRef = A18CF2DA281BCA5000455B6B /* 4.usdz */; };
+		A18CF2E5281BCA5000455B6B /* 8.usdz in Resources */ = {isa = PBXBuildFile; fileRef = A18CF2DB281BCA5000455B6B /* 8.usdz */; };
+		A18CF2E6281BCA5000455B6B /* 9.usdz in Resources */ = {isa = PBXBuildFile; fileRef = A18CF2DC281BCA5000455B6B /* 9.usdz */; };
+		A18CF2E7281BCA5000455B6B /* 5.usdz in Resources */ = {isa = PBXBuildFile; fileRef = A18CF2DD281BCA5000455B6B /* 5.usdz */; };
 		A19F46B4280E860D00D0BE94 /* OtherCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F46B3280E860D00D0BE94 /* OtherCityViewController.swift */; };
 		A19F46B6280E862500D0BE94 /* OtherCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F46B5280E862500D0BE94 /* OtherCity.swift */; };
 		A19F46B8280E869500D0BE94 /* otherCity.json in Resources */ = {isa = PBXBuildFile; fileRef = A19F46B7280E869500D0BE94 /* otherCity.json */; };
@@ -77,6 +92,11 @@
 		A1CD63182803E648006C56EC /* SCNVector3 + Equal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CD63172803E648006C56EC /* SCNVector3 + Equal.swift */; };
 		A1D49EDC27EC486F0065B41E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D49EDB27EC486F0065B41E /* TabBarController.swift */; };
 		A1DFC61128053E50004ED0BE /* commodity.json in Resources */ = {isa = PBXBuildFile; fileRef = A1DFC61028053E50004ED0BE /* commodity.json */; };
+		A1E61634280EE9D300B250F2 /* CultureRelicDialogueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E61633280EE9D300B250F2 /* CultureRelicDialogueView.swift */; };
+		A1EDF5F62827DEEB001874BC /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EDF5F52827DEEB001874BC /* Game.swift */; };
+		A1EDF5FA2827DF44001874BC /* GameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EDF5F92827DF44001874BC /* GameCell.swift */; };
+		A1EDF5FC2827E80C001874BC /* HomemadeGourdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EDF5FB2827E80C001874BC /* HomemadeGourdViewController.swift */; };
+		A1EDF5FE2827E82F001874BC /* ScrapingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EDF5FD2827E82F001874BC /* ScrapingViewController.swift */; };
 		E6C8AF1E160FFD95626D64BC /* Pods_SilkRoad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0BBC5ADA3DFCC5A0193A68 /* Pods_SilkRoad.framework */; };
 /* End PBXBuildFile section */
 
@@ -128,6 +148,21 @@
 		A165679B27E57EEA00F81F7C /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A165679E27E57F9D00F81F7C /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		A16567A127E5804000F81F7C /* Int + Fit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int + Fit.swift"; sourceTree = "<group>"; };
+		A189B5E7281E2AA6009B7E6D /* ARModelListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARModelListView.swift; sourceTree = "<group>"; };
+		A189B5E9281E2AA6009B7E6D /* ARModelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARModelCell.swift; sourceTree = "<group>"; };
+		A189B5ED281E2ACC009B7E6D /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
+		A18CF2CD281BB2EF00455B6B /* OtherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherViewController.swift; sourceTree = "<group>"; };
+		A18CF2D1281BCA4700455B6B /* ARViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
+		A18CF2D4281BCA5000455B6B /* 6.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = 6.usdz; sourceTree = "<group>"; };
+		A18CF2D5281BCA5000455B6B /* 7.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = 7.usdz; sourceTree = "<group>"; };
+		A18CF2D6281BCA5000455B6B /* 10.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = 10.usdz; sourceTree = "<group>"; };
+		A18CF2D7281BCA5000455B6B /* 1.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = 1.usdz; sourceTree = "<group>"; };
+		A18CF2D8281BCA5000455B6B /* 2.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = 2.usdz; sourceTree = "<group>"; };
+		A18CF2D9281BCA5000455B6B /* 3.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = 3.usdz; sourceTree = "<group>"; };
+		A18CF2DA281BCA5000455B6B /* 4.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = 4.usdz; sourceTree = "<group>"; };
+		A18CF2DB281BCA5000455B6B /* 8.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = 8.usdz; sourceTree = "<group>"; };
+		A18CF2DC281BCA5000455B6B /* 9.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = 9.usdz; sourceTree = "<group>"; };
+		A18CF2DD281BCA5000455B6B /* 5.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = 5.usdz; sourceTree = "<group>"; };
 		A19F46B3280E860D00D0BE94 /* OtherCityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherCityViewController.swift; sourceTree = "<group>"; };
 		A19F46B5280E862500D0BE94 /* OtherCity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherCity.swift; sourceTree = "<group>"; };
 		A19F46B7280E869500D0BE94 /* otherCity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = otherCity.json; sourceTree = "<group>"; };
@@ -154,6 +189,11 @@
 		A1CD63172803E648006C56EC /* SCNVector3 + Equal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNVector3 + Equal.swift"; sourceTree = "<group>"; };
 		A1D49EDB27EC486F0065B41E /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		A1DFC61028053E50004ED0BE /* commodity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = commodity.json; sourceTree = "<group>"; };
+		A1E61633280EE9D300B250F2 /* CultureRelicDialogueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CultureRelicDialogueView.swift; sourceTree = "<group>"; };
+		A1EDF5F52827DEEB001874BC /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		A1EDF5F92827DF44001874BC /* GameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCell.swift; sourceTree = "<group>"; };
+		A1EDF5FB2827E80C001874BC /* HomemadeGourdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomemadeGourdViewController.swift; sourceTree = "<group>"; };
+		A1EDF5FD2827E82F001874BC /* ScrapingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapingViewController.swift; sourceTree = "<group>"; };
 		C6612F10E5D61C2F4DE7F960 /* Pods-SilkRoad.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SilkRoad.release.xcconfig"; path = "Target Support Files/Pods-SilkRoad/Pods-SilkRoad.release.xcconfig"; sourceTree = "<group>"; };
 		EC0BBC5ADA3DFCC5A0193A68 /* Pods_SilkRoad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SilkRoad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -413,6 +453,9 @@
 		A165679727E57C6E00F81F7C /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				A189B5EC281E2AB9009B7E6D /* Play */,
+				A18CF2CF281BCA4700455B6B /* AR */,
+				A18CF2CC281BB2DE00455B6B /* Other */,
 				3FC033D327EDDAB100305127 /* Study */,
 				3FC033DB27EDEDA200305127 /* VR */,
 				3FC033DF27EDEDD000305127 /* HelpFarmers */,
@@ -440,6 +483,76 @@
 				3FC033D727EDDBBB00305127 /* UITabBarItem + Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A189B5E6281E2AA6009B7E6D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A189B5E7281E2AA6009B7E6D /* ARModelListView.swift */,
+				A189B5E8281E2AA6009B7E6D /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A189B5E8281E2AA6009B7E6D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A189B5E9281E2AA6009B7E6D /* ARModelCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		A189B5EC281E2AB9009B7E6D /* Play */ = {
+			isa = PBXGroup;
+			children = (
+				A1EDF5F72827DF1F001874BC /* View */,
+				A1EDF5F12827DEA3001874BC /* Model */,
+				A1EDF5F02827DE93001874BC /* Controller */,
+			);
+			path = Play;
+			sourceTree = "<group>";
+		};
+		A18CF2CC281BB2DE00455B6B /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				A18CF2CD281BB2EF00455B6B /* OtherViewController.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		A18CF2CF281BCA4700455B6B /* AR */ = {
+			isa = PBXGroup;
+			children = (
+				A189B5E6281E2AA6009B7E6D /* View */,
+				A18CF2D3281BCA5000455B6B /* USDZ */,
+				A18CF2D0281BCA4700455B6B /* Controller */,
+			);
+			path = AR;
+			sourceTree = "<group>";
+		};
+		A18CF2D0281BCA4700455B6B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A18CF2D1281BCA4700455B6B /* ARViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A18CF2D3281BCA5000455B6B /* USDZ */ = {
+			isa = PBXGroup;
+			children = (
+				A18CF2D4281BCA5000455B6B /* 6.usdz */,
+				A18CF2D5281BCA5000455B6B /* 7.usdz */,
+				A18CF2D6281BCA5000455B6B /* 10.usdz */,
+				A18CF2D7281BCA5000455B6B /* 1.usdz */,
+				A18CF2D8281BCA5000455B6B /* 2.usdz */,
+				A18CF2D9281BCA5000455B6B /* 3.usdz */,
+				A18CF2DA281BCA5000455B6B /* 4.usdz */,
+				A18CF2DB281BCA5000455B6B /* 8.usdz */,
+				A18CF2DC281BCA5000455B6B /* 9.usdz */,
+				A18CF2DD281BCA5000455B6B /* 5.usdz */,
+			);
+			path = USDZ;
 			sourceTree = "<group>";
 		};
 		A19F46AD280E81D600D0BE94 /* Cache */ = {
@@ -487,6 +600,7 @@
 				A1CD62F62803E63D006C56EC /* CollectionRecordView.swift */,
 				A1CD62F72803E63D006C56EC /* CollectionRecordVerticalView.swift */,
 				A1CD62F82803E63D006C56EC /* CultureRelicIntroView.swift */,
+				A1E61633280EE9D300B250F2 /* CultureRelicDialogueView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -513,6 +627,40 @@
 				A1CD63032803E63D006C56EC /* VREntryViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		A1EDF5F02827DE93001874BC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A189B5ED281E2ACC009B7E6D /* PlayViewController.swift */,
+				A1EDF5FB2827E80C001874BC /* HomemadeGourdViewController.swift */,
+				A1EDF5FD2827E82F001874BC /* ScrapingViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A1EDF5F12827DEA3001874BC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A1EDF5F52827DEEB001874BC /* Game.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A1EDF5F72827DF1F001874BC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A1EDF5F82827DF26001874BC /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A1EDF5F82827DF26001874BC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A1EDF5F92827DF44001874BC /* GameCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		C97198ED7994F3597C858556 /* Frameworks */ = {
@@ -583,11 +731,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A18CF2E2281BCA5000455B6B /* 2.usdz in Resources */,
+				A18CF2DE281BCA5000455B6B /* 6.usdz in Resources */,
+				A18CF2E5281BCA5000455B6B /* 8.usdz in Resources */,
 				A1CD63062803E63D006C56EC /* roadMapCityLocation.json in Resources */,
 				A19F46B8280E869500D0BE94 /* otherCity.json in Resources */,
+				A18CF2E7281BCA5000455B6B /* 5.usdz in Resources */,
 				A165678827E57B0700F81F7C /* Assets.xcassets in Resources */,
 				A1CD63052803E63D006C56EC /* questions.json in Resources */,
+				A18CF2DF281BCA5000455B6B /* 7.usdz in Resources */,
+				A18CF2E3281BCA5000455B6B /* 3.usdz in Resources */,
+				A18CF2E6281BCA5000455B6B /* 9.usdz in Resources */,
 				3F6810F028059BEF0039A6B7 /* introduce.json in Resources */,
+				A18CF2E1281BCA5000455B6B /* 1.usdz in Resources */,
+				A18CF2E4281BCA5000455B6B /* 4.usdz in Resources */,
+				A18CF2E0281BCA5000455B6B /* 10.usdz in Resources */,
 				3F6810EF28059BEF0039A6B7 /* cultureRelic.json in Resources */,
 				A165679C27E57EEA00F81F7C /* Main.storyboard in Resources */,
 				A1DFC61128053E50004ED0BE /* commodity.json in Resources */,
@@ -652,6 +810,7 @@
 				7E50C44627F1A29F0041BA4C /* MineDataCollectionViewCell.swift in Sources */,
 				A19F46C0280EAC3900D0BE94 /* Badge.swift in Sources */,
 				A1CD63082803E63D006C56EC /* CultureRelicStatusView.swift in Sources */,
+				A18CF2D2281BCA4700455B6B /* ARViewController.swift in Sources */,
 				3FC033E227EDEE1D00305127 /* HelpFarmersViewController.swift in Sources */,
 				7ECB5C2127F2A5FD00D37D27 /* PoetryCollectionViewCell.swift in Sources */,
 				7EADA7DA27F5C9D80044FB28 /* SearchView.swift in Sources */,
@@ -670,13 +829,16 @@
 				3FC033D827EDDBBB00305127 /* UITabBarItem + Extension.swift in Sources */,
 				A1CD630A2803E63D006C56EC /* CultureRelicHistoryView.swift in Sources */,
 				A165677F27E57B0500F81F7C /* AppDelegate.swift in Sources */,
+				A189B5EB281E2AA6009B7E6D /* ARModelCell.swift in Sources */,
 				A1CD63072803E63D006C56EC /* ColorLayer.swift in Sources */,
 				A1CD63182803E648006C56EC /* SCNVector3 + Equal.swift in Sources */,
 				7E50C44127F152690041BA4C /* CityCollectionViewCell.swift in Sources */,
 				3FC1466E27FDB7B60064CBF8 /* UnitPriceCell.swift in Sources */,
 				7E50C44B27F1F5160041BA4C /* TravelCollectionViewCell.swift in Sources */,
+				A1EDF5FA2827DF44001874BC /* GameCell.swift in Sources */,
 				A165678127E57B0500F81F7C /* SceneDelegate.swift in Sources */,
 				A165679F27E57F9D00F81F7C /* Constant.swift in Sources */,
+				A1EDF5FE2827E82F001874BC /* ScrapingViewController.swift in Sources */,
 				A1D49EDC27EC486F0065B41E /* TabBarController.swift in Sources */,
 				3FC1466F27FDB7B60064CBF8 /* ProductOrderCell.swift in Sources */,
 				7E91830227F47DC800F692C3 /* SetViewController.swift in Sources */,
@@ -686,25 +848,31 @@
 				7EADA7DD27F5CA360044FB28 /* UIColor + Hex .swift in Sources */,
 				7ECB5C2C27F335E100D37D27 /* IntegralViewController.swift in Sources */,
 				A1CD630B2803E63D006C56EC /* CollectionRecordView.swift in Sources */,
+				A1E61634280EE9D300B250F2 /* CultureRelicDialogueView.swift in Sources */,
 				A1CD63102803E63D006C56EC /* RoadMapCityLocation.swift in Sources */,
 				A16567A227E5804000F81F7C /* Int + Fit.swift in Sources */,
 				A19F46C6280EBB0100D0BE94 /* CultureRelicCache.swift in Sources */,
 				7ECB5C2827F325AE00D37D27 /* IntroduceObjectViewController.swift in Sources */,
+				A1EDF5F62827DEEB001874BC /* Game.swift in Sources */,
 				A1CD630C2803E63D006C56EC /* CollectionRecordVerticalView.swift in Sources */,
 				7E9182FE27F46AB200F692C3 /* EditDataViewController.swift in Sources */,
+				A1EDF5FC2827E80C001874BC /* HomemadeGourdViewController.swift in Sources */,
 				7EADA7D527F5C9CC0044FB28 /* CommodityCellModel.swift in Sources */,
 				A1CD63132803E63D006C56EC /* ShowVRViewController.swift in Sources */,
 				7E50C44327F1963A0041BA4C /* CityViewController.swift in Sources */,
+				A18CF2CE281BB2EF00455B6B /* OtherViewController.swift in Sources */,
 				3FC1466C27FDB7B60064CBF8 /* PurchaseQuantityCell.swift in Sources */,
 				7ECB5C2627F2EDF800D37D27 /* IdiomWordCollectionViewCell.swift in Sources */,
 				3FC1466627FDB7950064CBF8 /* OrderViewController.swift in Sources */,
 				A1CD63162803E63D006C56EC /* VREntryViewController.swift in Sources */,
+				A189B5EE281E2ACC009B7E6D /* PlayViewController.swift in Sources */,
 				7EADA7DB27F5C9D80044FB28 /* CommodityCell.swift in Sources */,
 				A1CD630E2803E63D006C56EC /* Question.swift in Sources */,
 				A1CD63112803E63D006C56EC /* Overlay.swift in Sources */,
 				7EADA7D427F5C9CC0044FB28 /* Commodity.swift in Sources */,
 				3F6810F228059BEF0039A6B7 /* CultureRelic.swift in Sources */,
 				3F6810F128059BEF0039A6B7 /* Introduce.swift in Sources */,
+				A189B5EA281E2AA6009B7E6D /* ARModelListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -762,7 +930,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -817,7 +985,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -838,18 +1006,19 @@
 				DEVELOPMENT_TEAM = S766NNL3LC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SilkRoad/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Need camera for AR";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.xxx.SilkRoad;
+				PRODUCT_BUNDLE_IDENTIFIER = hu.Easyvisit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -868,18 +1037,19 @@
 				DEVELOPMENT_TEAM = S766NNL3LC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SilkRoad/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Need camera for AR";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.xxx.SilkRoad;
+				PRODUCT_BUNDLE_IDENTIFIER = hu.Easyvisit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

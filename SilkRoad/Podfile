@@ -13,5 +13,7 @@ target 'SilkRoad' do
     pod 'SwiftyJSON'
     pod 'HandyJSON', '~> 5.0.2'
     pod 'MJRefresh'
+    pod "ESTabBarController-swift"
+    pod 'MaLiang'
     
 end

@@ -9,9 +9,12 @@ import UIKit
 
 class ColorLayer: CALayer {
     
+    var gradientLayer: CAGradientLayer!
+    
     init(_ startPoint: CGPoint, endPoint: CGPoint, colors: [CGColor], locations: [NSNumber]) {
         super.init()
         
+        self.gradientLayer = CAGradientLayer()
         self.gradientLayer.startPoint = startPoint
         self.gradientLayer.endPoint = endPoint
         self.gradientLayer.colors = colors
@@ -22,11 +25,6 @@ class ColorLayer: CALayer {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    lazy var gradientLayer: CAGradientLayer = {
-        let layer = CAGradientLayer()
-        return layer
-    }()
     
     override func layoutSublayers() {
         super.layoutSublayers()

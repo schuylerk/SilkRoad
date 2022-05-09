@@ -139,6 +139,21 @@ class ShowVRViewController: UIViewController {
         crv.layer.masksToBounds = true
         return crv
     }()
+    
+    lazy var dialogueView: CultureRelicDialogueView = {
+        let dlv = CultureRelicDialogueView()
+        dlv.faceImage = UIImage(named: "cr_1")
+        dlv.actionImage = UIImage(named: "continue")
+        dlv.layer.cornerRadius = 10
+        dlv.layer.masksToBounds = true
+        dlv.isHidden = true
+        dlv.backgroundViewColor = .white
+        dlv.showDetailBack = {
+            self.showDetailFor(index: self.currentCultureRelicIndex)
+            self.dialogueView.isHidden = true
+        }
+        return dlv
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -160,6 +175,7 @@ class ShowVRViewController: UIViewController {
         view.addSubview(blackView)
         view.addSubview(backButton)
         view.addSubview(collectionRecordView)
+        view.addSubview(dialogueView)
         backButton.snp.makeConstraints { maker in
             maker.left.equalToSuperview().offset(15.fw)
             maker.top.equalToSuperview().offset(50.fh)
@@ -169,6 +185,12 @@ class ShowVRViewController: UIViewController {
             maker.left.equalToSuperview().offset(20.fw)
             maker.right.equalToSuperview().offset(-20.fw)
             maker.top.equalTo(backButton.snp.bottom).offset(15.fh)
+            maker.height.equalTo(100)
+        }
+        dialogueView.snp.makeConstraints { maker in
+            maker.left.equalToSuperview().offset(15)
+            maker.right.equalToSuperview().offset(-15)
+            maker.bottom.equalToSuperview().offset(-40)
             maker.height.equalTo(100)
         }
         configOverlay()
@@ -182,6 +204,7 @@ class ShowVRViewController: UIViewController {
     }
     
     var introductionVC: IntroductionCultureRelicViewController!
+    private var currentCultureRelicIndex: Int = 0
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard blackView.isHidden else { return }
@@ -193,8 +216,14 @@ class ShowVRViewController: UIViewController {
         }.first
         guard let currentNode = currentNode else { return }
         guard let index = overlayNodes.firstIndex(of: currentNode) else { return }
-        let currentCultureRelic = overlays[index].cultureRelic
-        introductionVC = IntroductionCultureRelicViewController(currentCultureRelic,city: self.cityName)
+        currentCultureRelicIndex = index
+        dialogueView.isHidden = false
+        dialogueView.contents = [overlays[index].cultureRelic.intro]
+    }
+    
+    func showDetailFor(index: Int) {
+        let cultureRelic = overlays[index].cultureRelic
+        introductionVC = IntroductionCultureRelicViewController(cultureRelic,city: self.cityName)
         introductionVC.view.frame = CGRect(x: 0, y: screenHeight, width: screenWidth, height: screenHeight - 250)
         introductionVC.view.layer.cornerRadius = 10
         introductionVC.view.layer.masksToBounds = true
