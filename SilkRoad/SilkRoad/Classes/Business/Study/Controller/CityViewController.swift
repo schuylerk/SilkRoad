@@ -26,14 +26,14 @@ class CityViewController: UIViewController {
     
     lazy var backView: UIView = {
         let view = UIView()
-        view.frame = CGRect(x: 0, y: 0, width: Int(screenWidth).fw, height: 311.fh)
+        view.frame = CGRect(x: 0, y: 0, width: Int(screenWidth), height: 311.fh)
         return view
     }()
     
     lazy var CellBackView: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "lanzhouback"))
         imageView.image = UIImage(named: "dunhuangback")
-        imageView.frame = CGRect(x: 0, y: 0, width: Int(screenWidth).fw, height: 311.fh)
+        imageView.frame = CGRect(x: 0, y: 0, width: Int(screenWidth), height: 311.fh)
         return imageView
     }()
 

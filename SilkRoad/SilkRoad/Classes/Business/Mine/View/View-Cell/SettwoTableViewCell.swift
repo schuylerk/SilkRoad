@@ -22,10 +22,10 @@ class SettwoTableViewCell: UITableViewCell {
         self.addSubview(titleLabel)
         
         titleLabel.snp.makeConstraints {make in
-            make.left.equalToSuperview().offset(170)
-            make.width.equalToSuperview().offset(50)
-            make.top.equalToSuperview().offset(0)
-            make.bottom.equalToSuperview().offset(5)
+            make.left.equalToSuperview().offset(170.fw)
+            make.width.equalToSuperview().offset(50.fw)
+            make.top.equalToSuperview().offset(0.fh)
+            make.bottom.equalToSuperview().offset(5.fh)
         }
         
         

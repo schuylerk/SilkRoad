@@ -18,7 +18,7 @@ class EditTableViewCell: UITableViewCell {
     
     lazy var rightView: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "mineRight"))
-        imageView.frame = CGRect(x: 390, y: 20, width: 10, height: 10)
+        imageView.frame = CGRect(x: 390.fw, y: 20.fh, width: 10.fw, height: 10.fh)
         return imageView
     }()
     
@@ -36,16 +36,16 @@ class EditTableViewCell: UITableViewCell {
         self.addSubview(answerLabel)
         
         titleLabel.snp.makeConstraints {make in
-            make.left.equalToSuperview().offset(20)
-            make.width.equalToSuperview().offset(50)
-            make.top.equalToSuperview().offset(0)
-            make.bottom.equalToSuperview().offset(5)
+            make.left.equalToSuperview().offset(20.fw)
+            make.width.equalToSuperview().offset(50.fw)
+            make.top.equalToSuperview().offset(0.fh)
+            make.bottom.equalToSuperview().offset(5.fh)
         }
         
         answerLabel.snp.makeConstraints {make in
-            make.right.equalTo(rightView).offset(-14)
-            make.width.equalTo(150)
-            make.top.equalTo(titleLabel).offset(0)
+            make.right.equalTo(rightView).offset(-14.fw)
+            make.width.equalTo(150.fw)
+            make.top.equalTo(titleLabel).offset(0.fh)
             make.height.equalTo(titleLabel)
             
         }

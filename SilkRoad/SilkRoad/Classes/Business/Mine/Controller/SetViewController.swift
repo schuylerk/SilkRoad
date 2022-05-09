@@ -16,8 +16,22 @@ class SetViewController: UIViewController {
         super.viewDidLoad()
         self.title = "设置"
         self.view.backgroundColor = UIColor(red: 0.953, green: 0.953, blue: 0.953, alpha: 1)
+        self.navigationController?.navigationBar.isHidden = true
         // Do any additional setup after loading the view.
         ConfigUI()
+    }
+    lazy var leftButton: UIButton = {
+            let button = UIButton()
+            button.setImage(UIImage(named: "back"), for: .normal)
+            button.frame = CGRect(x: 20.fw, y: 50.fh, width: 30.fw, height: 30.fh)
+            button.addTarget(self, action: #selector(clickLeftBackButton), for: .allEvents)
+            
+            return button
+        }()
+        
+    @objc func clickLeftBackButton(){
+        self.navigationController?.popViewController(animated: true)
+        tabBarController?.tabBar.isHidden = false
     }
     
     lazy var tableView: UITableView = {
@@ -35,12 +49,13 @@ class SetViewController: UIViewController {
     
     func ConfigUI() {
         self.view.addSubview(tableView)
+        self.view.addSubview(leftButton)
         
         tableView.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(0)
-            make.right.equalToSuperview().offset(0)
-            make.top.equalToSuperview().offset(20)
-            make.height.equalToSuperview().offset(300)
+            make.left.equalToSuperview().offset(0.fw)
+            make.right.equalToSuperview().offset(0.fw)
+            make.top.equalToSuperview().offset(20.fh)
+            make.height.equalToSuperview().offset(300.fh)
         }
     }
     
@@ -103,7 +118,7 @@ extension SetViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-       return 50
+        return CGFloat(50.fh)
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -115,10 +130,10 @@ extension SetViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section != 4 {
-            return 15
+            return CGFloat(15.fh)
         }
         else {
-            return 180
+            return CGFloat(180.fh)
         }
     }
     
