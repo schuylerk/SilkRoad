@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "DJI_0366-新疆314国线风光720VR全景_33598267_sphere.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

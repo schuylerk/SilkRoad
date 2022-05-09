@@ -51,7 +51,7 @@ class MineDataCollectionViewCell: UICollectionViewCell {
     
     lazy var introducelabel: UILabel = {
         let label = UILabel()
-        label.text = "女｜湖南｜已解锁\(4)个旅行勋章"
+        label.text = "女｜湖南｜已解锁\(getBadge()?.count ?? 0)个旅行勋章"
         label.textColor = .gray
         label.font = UIFont.init(name: "TimesNewRomanPS-ItalicMT", size: 15)
         label.numberOfLines = 0

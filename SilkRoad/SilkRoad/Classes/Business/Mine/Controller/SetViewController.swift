@@ -51,6 +51,8 @@ class SetViewController: UIViewController {
         self.view.addSubview(tableView)
         self.view.addSubview(leftButton)
         
+//        navigationController?.navigationItem.leftBarButtonItem = UIBarButtonItem(image: <#T##UIImage?#>, style: .done, target: self, action: <#T##Selector?#>)
+        
         tableView.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(0.fw)
             make.right.equalToSuperview().offset(0.fw)
@@ -135,6 +137,10 @@ extension SetViewController: UITableViewDelegate, UITableViewDataSource {
         else {
             return CGFloat(180.fh)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
 }

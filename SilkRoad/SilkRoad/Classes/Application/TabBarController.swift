@@ -12,7 +12,7 @@ func tabBar() -> UITabBarController {
     let tabBarController = UITabBarController()
     
     let StudyVC = StudyViewController()
-    let VRVC = VRViewController()
+    let VRVC = VREntryViewController()
     let HelpVC = HelpFarmersViewController()
     let MineVC = MineViewController()
     
@@ -22,8 +22,6 @@ func tabBar() -> UITabBarController {
     let MineNavi = UINavigationController(rootViewController: MineVC)
     
     let viewControllers = [StudyNavi, VRNavi, HelpNavi, MineNavi]
-    
-    
     tabBarController.viewControllers = viewControllers
     guard let items = tabBarController.tabBar.items else { return tabBarController }
     items[0].setFor(nil, image: UIImage(named: "stu"), selectedImage: nil)
