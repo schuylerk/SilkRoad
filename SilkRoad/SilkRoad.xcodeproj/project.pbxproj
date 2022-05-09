@@ -54,7 +54,6 @@
 		A189B5EA281E2AA6009B7E6D /* ARModelListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189B5E7281E2AA6009B7E6D /* ARModelListView.swift */; };
 		A189B5EB281E2AA6009B7E6D /* ARModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189B5E9281E2AA6009B7E6D /* ARModelCell.swift */; };
 		A189B5EE281E2ACC009B7E6D /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189B5ED281E2ACC009B7E6D /* PlayViewController.swift */; };
-		A189B5F0281E2C30009B7E6D /* FirstPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189B5EF281E2C30009B7E6D /* FirstPlayViewController.swift */; };
 		A18CF2CE281BB2EF00455B6B /* OtherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18CF2CD281BB2EF00455B6B /* OtherViewController.swift */; };
 		A18CF2D2281BCA4700455B6B /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18CF2D1281BCA4700455B6B /* ARViewController.swift */; };
 		A18CF2DE281BCA5000455B6B /* 6.usdz in Resources */ = {isa = PBXBuildFile; fileRef = A18CF2D4281BCA5000455B6B /* 6.usdz */; };
@@ -94,6 +93,10 @@
 		A1D49EDC27EC486F0065B41E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D49EDB27EC486F0065B41E /* TabBarController.swift */; };
 		A1DFC61128053E50004ED0BE /* commodity.json in Resources */ = {isa = PBXBuildFile; fileRef = A1DFC61028053E50004ED0BE /* commodity.json */; };
 		A1E61634280EE9D300B250F2 /* CultureRelicDialogueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E61633280EE9D300B250F2 /* CultureRelicDialogueView.swift */; };
+		A1EDF5F62827DEEB001874BC /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EDF5F52827DEEB001874BC /* Game.swift */; };
+		A1EDF5FA2827DF44001874BC /* GameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EDF5F92827DF44001874BC /* GameCell.swift */; };
+		A1EDF5FC2827E80C001874BC /* HomemadeGourdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EDF5FB2827E80C001874BC /* HomemadeGourdViewController.swift */; };
+		A1EDF5FE2827E82F001874BC /* ScrapingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EDF5FD2827E82F001874BC /* ScrapingViewController.swift */; };
 		E6C8AF1E160FFD95626D64BC /* Pods_SilkRoad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0BBC5ADA3DFCC5A0193A68 /* Pods_SilkRoad.framework */; };
 /* End PBXBuildFile section */
 
@@ -148,7 +151,6 @@
 		A189B5E7281E2AA6009B7E6D /* ARModelListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARModelListView.swift; sourceTree = "<group>"; };
 		A189B5E9281E2AA6009B7E6D /* ARModelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARModelCell.swift; sourceTree = "<group>"; };
 		A189B5ED281E2ACC009B7E6D /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
-		A189B5EF281E2C30009B7E6D /* FirstPlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPlayViewController.swift; sourceTree = "<group>"; };
 		A18CF2CD281BB2EF00455B6B /* OtherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherViewController.swift; sourceTree = "<group>"; };
 		A18CF2D1281BCA4700455B6B /* ARViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		A18CF2D4281BCA5000455B6B /* 6.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = 6.usdz; sourceTree = "<group>"; };
@@ -188,6 +190,10 @@
 		A1D49EDB27EC486F0065B41E /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		A1DFC61028053E50004ED0BE /* commodity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = commodity.json; sourceTree = "<group>"; };
 		A1E61633280EE9D300B250F2 /* CultureRelicDialogueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CultureRelicDialogueView.swift; sourceTree = "<group>"; };
+		A1EDF5F52827DEEB001874BC /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		A1EDF5F92827DF44001874BC /* GameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCell.swift; sourceTree = "<group>"; };
+		A1EDF5FB2827E80C001874BC /* HomemadeGourdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomemadeGourdViewController.swift; sourceTree = "<group>"; };
+		A1EDF5FD2827E82F001874BC /* ScrapingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapingViewController.swift; sourceTree = "<group>"; };
 		C6612F10E5D61C2F4DE7F960 /* Pods-SilkRoad.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SilkRoad.release.xcconfig"; path = "Target Support Files/Pods-SilkRoad/Pods-SilkRoad.release.xcconfig"; sourceTree = "<group>"; };
 		EC0BBC5ADA3DFCC5A0193A68 /* Pods_SilkRoad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SilkRoad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -499,8 +505,9 @@
 		A189B5EC281E2AB9009B7E6D /* Play */ = {
 			isa = PBXGroup;
 			children = (
-				A189B5ED281E2ACC009B7E6D /* PlayViewController.swift */,
-				A189B5EF281E2C30009B7E6D /* FirstPlayViewController.swift */,
+				A1EDF5F72827DF1F001874BC /* View */,
+				A1EDF5F12827DEA3001874BC /* Model */,
+				A1EDF5F02827DE93001874BC /* Controller */,
 			);
 			path = Play;
 			sourceTree = "<group>";
@@ -620,6 +627,40 @@
 				A1CD63032803E63D006C56EC /* VREntryViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		A1EDF5F02827DE93001874BC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A189B5ED281E2ACC009B7E6D /* PlayViewController.swift */,
+				A1EDF5FB2827E80C001874BC /* HomemadeGourdViewController.swift */,
+				A1EDF5FD2827E82F001874BC /* ScrapingViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A1EDF5F12827DEA3001874BC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A1EDF5F52827DEEB001874BC /* Game.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A1EDF5F72827DF1F001874BC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A1EDF5F82827DF26001874BC /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A1EDF5F82827DF26001874BC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A1EDF5F92827DF44001874BC /* GameCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		C97198ED7994F3597C858556 /* Frameworks */ = {
@@ -793,10 +834,11 @@
 				A1CD63182803E648006C56EC /* SCNVector3 + Equal.swift in Sources */,
 				7E50C44127F152690041BA4C /* CityCollectionViewCell.swift in Sources */,
 				3FC1466E27FDB7B60064CBF8 /* UnitPriceCell.swift in Sources */,
-				A189B5F0281E2C30009B7E6D /* FirstPlayViewController.swift in Sources */,
 				7E50C44B27F1F5160041BA4C /* TravelCollectionViewCell.swift in Sources */,
+				A1EDF5FA2827DF44001874BC /* GameCell.swift in Sources */,
 				A165678127E57B0500F81F7C /* SceneDelegate.swift in Sources */,
 				A165679F27E57F9D00F81F7C /* Constant.swift in Sources */,
+				A1EDF5FE2827E82F001874BC /* ScrapingViewController.swift in Sources */,
 				A1D49EDC27EC486F0065B41E /* TabBarController.swift in Sources */,
 				3FC1466F27FDB7B60064CBF8 /* ProductOrderCell.swift in Sources */,
 				7E91830227F47DC800F692C3 /* SetViewController.swift in Sources */,
@@ -811,8 +853,10 @@
 				A16567A227E5804000F81F7C /* Int + Fit.swift in Sources */,
 				A19F46C6280EBB0100D0BE94 /* CultureRelicCache.swift in Sources */,
 				7ECB5C2827F325AE00D37D27 /* IntroduceObjectViewController.swift in Sources */,
+				A1EDF5F62827DEEB001874BC /* Game.swift in Sources */,
 				A1CD630C2803E63D006C56EC /* CollectionRecordVerticalView.swift in Sources */,
 				7E9182FE27F46AB200F692C3 /* EditDataViewController.swift in Sources */,
+				A1EDF5FC2827E80C001874BC /* HomemadeGourdViewController.swift in Sources */,
 				7EADA7D527F5C9CC0044FB28 /* CommodityCellModel.swift in Sources */,
 				A1CD63132803E63D006C56EC /* ShowVRViewController.swift in Sources */,
 				7E50C44327F1963A0041BA4C /* CityViewController.swift in Sources */,

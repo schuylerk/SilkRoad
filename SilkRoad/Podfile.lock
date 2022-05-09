@@ -3,6 +3,7 @@ PODS:
   - ESTabBarController-swift (2.8.0)
   - Eureka (5.3.4)
   - HandyJSON (5.0.2)
+  - MaLiang (2.9.2)
   - MJRefresh (3.7.5)
   - SnapKit (5.0.1)
   - SwiftyJSON (5.0.1)
@@ -12,6 +13,7 @@ DEPENDENCIES:
   - ESTabBarController-swift
   - Eureka
   - HandyJSON (~> 5.0.2)
+  - MaLiang
   - MJRefresh
   - SnapKit
   - SwiftyJSON
@@ -22,6 +24,7 @@ SPEC REPOS:
     - ESTabBarController-swift
     - Eureka
     - HandyJSON
+    - MaLiang
     - MJRefresh
     - SnapKit
     - SwiftyJSON
@@ -31,10 +34,11 @@ SPEC CHECKSUMS:
   ESTabBarController-swift: 05593a6ad64700b03c0eb60ff625916370aa4136
   Eureka: 60cf058f86a8fb3ed26165ba5292b9850361b0a6
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
+  MaLiang: 7cf6c70e37577b5ec1b34add37fa6d58808f5451
   MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 654800140c2e792edeb05e28198c577542ad1155
+PODFILE CHECKSUM: 35ef938ae2ed05ba615ba57915e7f4f64042a968
 
 COCOAPODS: 1.11.2
