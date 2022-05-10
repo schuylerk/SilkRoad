@@ -33,7 +33,7 @@ func tabBar(didHijackHandler: @escaping ESTabBarControllerDidHijackHandler) -> E
 //    HelpVC.tabBarItem = ESTabBarItem(ESTabBarItemCustomColorContentView(), title: nil, image: UIImage(named: "hf"), selectedImage: nil, tag: 3)
     playVC.tabBarItem = ESTabBarItem(ESTabBarItemCustomColorContentView(), title: nil, image: UIImage(named: "hui"), selectedImage: nil, tag: 3)
     MineVC.tabBarItem = ESTabBarItem(ESTabBarItemCustomColorContentView(), title: nil, image: UIImage(named: "min"), selectedImage: nil, tag: 4)
-    arVC.tabBarItem = ESTabBarItem(ESTabBarItemCustomColorContentView(), title: nil, image: UIImage(named: "ar"), selectedImage: nil, tag: 2)
+    arVC.tabBarItem = ESTabBarItem(ESTabBarItemCustomColorContentView(), title: nil, image: UIImage(named: "stu"), selectedImage: nil, tag: 2)
     
     tabBarController.viewControllers = [StudyNavi, VRNavi, arNavi, playNavi, MineNavi]
 //    tabBarController.shouldHijackHandler = { _, _, index -> Bool in

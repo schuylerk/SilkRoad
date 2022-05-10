@@ -29,7 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //            })
         }
 //
-        tabBarController.selectedIndex = 3
+        tabBarController.selectedIndex = 0
         
         guard UserDefaults.standard.value(forKey: "user") != nil else {
             let user = createUser()
