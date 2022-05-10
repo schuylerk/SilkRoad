@@ -31,7 +31,7 @@ func tabBar(didHijackHandler: @escaping ESTabBarControllerDidHijackHandler) -> E
     VRVC.tabBarItem = ESTabBarItem(ESTabBarItemCustomColorContentView(), title: nil, image: UIImage(named: "luxian"), selectedImage: nil, tag: 1)
 //    otherVC.tabBarItem = ESTabBarItem(ESTabBarItemCustomColorContentView(), title: nil, image: UIImage(named: "other"), selectedImage: nil, tag: 2)
 //    HelpVC.tabBarItem = ESTabBarItem(ESTabBarItemCustomColorContentView(), title: nil, image: UIImage(named: "hf"), selectedImage: nil, tag: 3)
-    playVC.tabBarItem = ESTabBarItem(ESTabBarItemCustomColorContentView(), title: nil, image: UIImage(named: "hui"), selectedImage: nil, tag: 3)
+    playVC.tabBarItem = ESTabBarItem(ESTabBarItemCustomColorContentView(), title: nil, image: UIImage(named: "play"), selectedImage: nil, tag: 3)
     MineVC.tabBarItem = ESTabBarItem(ESTabBarItemCustomColorContentView(), title: nil, image: UIImage(named: "min"), selectedImage: nil, tag: 4)
     arVC.tabBarItem = ESTabBarItem(ESTabBarItemCustomColorContentView(), title: nil, image: UIImage(named: "stu"), selectedImage: nil, tag: 2)
     

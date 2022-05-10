@@ -64,7 +64,7 @@ class PlayViewController: UIViewController {
     }
     
     func setNav() {
-        self.title = "寓教于乐"
+        //self.title = "寓教于乐"
         navigationController?.navigationBar.isHidden = false
     }
 
