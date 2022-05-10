@@ -13,7 +13,7 @@ class ScrapingViewController: UIViewController {
     lazy var canvas: Canvas = {
         let canvas = Canvas(frame: CGRect(x: 0, y: 0, width: 400, height: 600))
         let pen = canvas.defaultBrush
-        pen!.color = .orange
+        pen!.color = .white
         pen!.use()
         return canvas
     }()
@@ -51,6 +51,13 @@ class ScrapingViewController: UIViewController {
     func setNav() {
         title = "刮画"
         navigationController?.navigationBar.isHidden = false
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "back"), style: .done, target: self, action: #selector(back))
+        navigationController?.navigationBar.tintColor = .black
+    }
+    
+    
+    @objc func back() {
+        navigationController?.popViewController(animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
