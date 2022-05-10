@@ -15,5 +15,6 @@ target 'SilkRoad' do
     pod 'MJRefresh'
     pod "ESTabBarController-swift"
     pod 'MaLiang'
+    pod 'pop'
     
 end

@@ -5,6 +5,7 @@ PODS:
   - HandyJSON (5.0.2)
   - MaLiang (2.9.2)
   - MJRefresh (3.7.5)
+  - pop (1.0.12)
   - SnapKit (5.0.1)
   - SwiftyJSON (5.0.1)
 
@@ -15,6 +16,7 @@ DEPENDENCIES:
   - HandyJSON (~> 5.0.2)
   - MaLiang
   - MJRefresh
+  - pop
   - SnapKit
   - SwiftyJSON
 
@@ -26,6 +28,7 @@ SPEC REPOS:
     - HandyJSON
     - MaLiang
     - MJRefresh
+    - pop
     - SnapKit
     - SwiftyJSON
 
@@ -36,9 +39,10 @@ SPEC CHECKSUMS:
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
   MaLiang: 7cf6c70e37577b5ec1b34add37fa6d58808f5451
   MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
+  pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 35ef938ae2ed05ba615ba57915e7f4f64042a968
+PODFILE CHECKSUM: e7b993074faa6e441a0ce33d9da88f371958f7d6
 
 COCOAPODS: 1.11.2

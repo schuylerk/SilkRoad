@@ -138,7 +138,7 @@ class ARViewController: UIViewController {
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = .horizontal
         arscnView.session.run(configuration)
-//        tabBarController?.tabBar.isHidden = true
+        tabBarController?.tabBar.isHidden = true
         navigationController?.navigationBar.isHidden = false
     }
     

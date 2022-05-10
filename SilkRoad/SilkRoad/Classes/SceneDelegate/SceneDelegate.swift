@@ -27,6 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //                self.arButton.center = CGPoint(x: screenWidth / 2 - 40, y: screenHeight - 150)
 //                self.playButton.center = CGPoint(x: screenWidth / 2 + 40, y: screenHeight - 150)
 //            })
+            self.goAR()
         }
 //
         tabBarController.selectedIndex = 0
@@ -74,7 +75,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     @objc func goPlay() {
-        tapBlackButton()
+//        tapBlackButton()
         let vc = getBackVC()
         vc?.navigationController?.pushViewController(PlayViewController(), animated: true)
     }
@@ -89,7 +90,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         case 1:
             vc = vc as! VREntryViewController
         case 3:
-            vc = vc as! HelpFarmersViewController
+            vc = vc as! PlayViewController
         case 4:
             vc = vc as! MineViewController
         default:
@@ -99,9 +100,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     @objc func tapBlackButton() {
-        arButton.center = CGPoint(x: screenWidth / 2 , y: screenHeight - 70)
-        playButton.center = CGPoint(x: screenWidth / 2, y: screenHeight - 70)
-        window_2.isHidden = true
+//        arButton.center = CGPoint(x: screenWidth / 2 , y: screenHeight - 70)
+//        playButton.center = CGPoint(x: screenWidth / 2, y: screenHeight - 70)
+//        window_2.isHidden = true
     }
 
 }
