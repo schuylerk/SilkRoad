@@ -11,15 +11,15 @@ import MaLiang
 class ScrapingViewController: UIViewController {
 
     lazy var canvas: Canvas = {
-        let canvas = Canvas(frame: CGRect(x: 0, y: 0, width: 300, height: 400))
+        let canvas = Canvas(frame: CGRect(x: 0, y: 0, width: 400, height: 600))
         let pen = canvas.defaultBrush
-        pen!.color = .white
+        pen!.color = .orange
         pen!.use()
         return canvas
     }()
     
     lazy var backView: UIView = {
-        let vi = UIView(frame: CGRect(x: screenWidth / 2 - 150, y: screenHeight / 2 - 200, width: 300, height: 400))
+        let vi = UIView(frame: CGRect(x: screenWidth / 2 - 200, y: screenHeight / 2 - 300, width: 400, height: 600))
         vi.addSubview(canvas)
         vi.backgroundColor = .systemGray
         vi.layer.cornerRadius = 20

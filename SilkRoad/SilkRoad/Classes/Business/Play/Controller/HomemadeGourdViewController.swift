@@ -11,7 +11,7 @@ import SnapKit
 
 class HomemadeGourdViewController: UIViewController {
     
-    var colors: [UIColor] = [.white, .blue, .green, .red, .orange]
+    var colors: [UIColor] = [.white, .blue, .green, .red, .orange, .yellow]
     let colorCellReuseID = "color"
     var penColor: UIColor = .blue
     var upBrushes: [Brush] = []
@@ -125,7 +125,7 @@ class HomemadeGourdViewController: UIViewController {
     lazy var colorCollctionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.itemSize = CGSize(width: 80, height: 80)
+        layout.itemSize = CGSize(width: 60, height: 60)
         let clv = UICollectionView(frame: CGRect(x: 30, y: 100, width: screenWidth - 60, height: 80), collectionViewLayout: layout)
         clv.delegate = self
         clv.dataSource = self
@@ -176,7 +176,7 @@ extension HomemadeGourdViewController: UICollectionViewDataSource, UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: colorCellReuseID, for: indexPath)
-        cell.layer.cornerRadius = 40
+        cell.layer.cornerRadius = 30
         cell.backgroundColor = colors[indexPath.row]
         return cell
     }
