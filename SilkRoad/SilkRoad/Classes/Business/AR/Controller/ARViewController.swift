@@ -138,7 +138,7 @@ class ARViewController: UIViewController {
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = .horizontal
         arscnView.session.run(configuration)
-        tabBarController?.tabBar.isHidden = true
+//        tabBarController?.tabBar.isHidden = true
         navigationController?.navigationBar.isHidden = false
     }
     
@@ -154,22 +154,12 @@ extension ARViewController: ARSCNViewDelegate {
 
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         guard let planeAnchor = anchor as? ARPlaneAnchor else {
-            print("haha")
             return
         }
         self.anchor = planeAnchor
         self.currentNode = node
-        print(planeAnchor)
-        print(self.arscnView.scene.rootNode)
-        print(node.position)
         DispatchQueue.main.async {
             self.addButton.isHidden = false
-            
-//            let box = SCNBox(width: 0.5, height: 0, length: 1.5, chamferRadius: 0)
-//            box.firstMaterial?.diffuse.contents = UIColor.red
-//            let planeNode = SCNNode(geometry: box)
-//            planeNode.position = SCNVector3Make(planeAnchor.center.x, planeAnchor.center.y, planeAnchor.center.z)
-//            node.addChildNode(planeNode)
         }
     }
 

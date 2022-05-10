@@ -125,7 +125,7 @@ class HomemadeGourdViewController: UIViewController {
     lazy var colorCollctionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.itemSize = CGSize(width: 60, height: 60)
+        layout.itemSize = CGSize(width: 40, height: 40)
         let clv = UICollectionView(frame: CGRect(x: 30, y: 100, width: screenWidth - 60, height: 80), collectionViewLayout: layout)
         clv.delegate = self
         clv.dataSource = self
@@ -152,6 +152,12 @@ class HomemadeGourdViewController: UIViewController {
     func setNav() {
         title = "自制葫芦"
         navigationController?.navigationBar.isHidden = false
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "back"), style: .done, target: self, action: #selector(back))
+        navigationController?.navigationBar.tintColor = .black
+    }
+    
+    @objc func back() {
+        navigationController?.popViewController(animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -176,7 +182,7 @@ extension HomemadeGourdViewController: UICollectionViewDataSource, UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: colorCellReuseID, for: indexPath)
-        cell.layer.cornerRadius = 30
+        cell.layer.cornerRadius = 20
         cell.backgroundColor = colors[indexPath.row]
         return cell
     }
