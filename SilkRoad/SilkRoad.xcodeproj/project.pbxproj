@@ -45,6 +45,8 @@
 		7ECB5C2C27F335E100D37D27 /* IntegralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECB5C2B27F335E100D37D27 /* IntegralViewController.swift */; };
 		7ECB5C2E27F33BDE00D37D27 /* PoemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECB5C2D27F33BDE00D37D27 /* PoemCollectionViewCell.swift */; };
 		7EE79C2E27F53C9400D30AD6 /* QuestionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE79C2D27F53C9400D30AD6 /* QuestionCollectionViewCell.swift */; };
+		A150ED18282A23F00001E145 /* dialogue.json in Resources */ = {isa = PBXBuildFile; fileRef = A150ED17282A23F00001E145 /* dialogue.json */; };
+		A150ED1A282A25890001E145 /* Dialogue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A150ED19282A25890001E145 /* Dialogue.swift */; };
 		A165677F27E57B0500F81F7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A165677E27E57B0500F81F7C /* AppDelegate.swift */; };
 		A165678127E57B0500F81F7C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A165678027E57B0500F81F7C /* SceneDelegate.swift */; };
 		A165678827E57B0700F81F7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A165678727E57B0700F81F7C /* Assets.xcassets */; };
@@ -140,6 +142,8 @@
 		7ECB5C2B27F335E100D37D27 /* IntegralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegralViewController.swift; sourceTree = "<group>"; };
 		7ECB5C2D27F33BDE00D37D27 /* PoemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemCollectionViewCell.swift; sourceTree = "<group>"; };
 		7EE79C2D27F53C9400D30AD6 /* QuestionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCollectionViewCell.swift; sourceTree = "<group>"; };
+		A150ED17282A23F00001E145 /* dialogue.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dialogue.json; sourceTree = "<group>"; };
+		A150ED19282A25890001E145 /* Dialogue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dialogue.swift; sourceTree = "<group>"; };
 		A165677B27E57B0500F81F7C /* SilkRoad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SilkRoad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A165677E27E57B0500F81F7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A165678027E57B0500F81F7C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -579,6 +583,7 @@
 				A19F46B7280E869500D0BE94 /* otherCity.json */,
 				A1CD62EE2803E63D006C56EC /* questions.json */,
 				A1CD62EF2803E63D006C56EC /* roadMapCityLocation.json */,
+				A150ED17282A23F00001E145 /* dialogue.json */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -613,6 +618,7 @@
 				A1CD62FB2803E63D006C56EC /* CultureRelicInfo.swift */,
 				A1CD62FC2803E63D006C56EC /* RoadMapCityLocation.swift */,
 				A1CD62FD2803E63D006C56EC /* Overlay.swift */,
+				A150ED19282A25890001E145 /* Dialogue.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -731,6 +737,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A150ED18282A23F00001E145 /* dialogue.json in Resources */,
 				A18CF2E2281BCA5000455B6B /* 2.usdz in Resources */,
 				A18CF2DE281BCA5000455B6B /* 6.usdz in Resources */,
 				A18CF2E5281BCA5000455B6B /* 8.usdz in Resources */,
@@ -820,6 +827,7 @@
 				3FC033E627EDEE4900305127 /* MineViewController.swift in Sources */,
 				3FC1467027FDB7B60064CBF8 /* OrderRemarksCell.swift in Sources */,
 				7ECB5C1F27F2A5E300D37D27 /* IdiomCollectionViewCell.swift in Sources */,
+				A150ED1A282A25890001E145 /* Dialogue.swift in Sources */,
 				3FC1466D27FDB7B60064CBF8 /* ReceiveAddressCell.swift in Sources */,
 				7EE79C2E27F53C9400D30AD6 /* QuestionCollectionViewCell.swift in Sources */,
 				A19F46B4280E860D00D0BE94 /* OtherCityViewController.swift in Sources */,

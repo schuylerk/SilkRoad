@@ -14,6 +14,7 @@ class CultureRelicDialogueView: UIView {
     var faceImage: UIImage?
     var contents: [String]? {
         didSet {
+            currentContentIndex = 0
             contentLabel.text = contents?[currentContentIndex]
         }
     }

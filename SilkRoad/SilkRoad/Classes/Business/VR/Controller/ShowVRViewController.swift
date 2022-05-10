@@ -9,6 +9,7 @@ import UIKit
 import SceneKit
 import SnapKit
 import CoreMotion
+import SwiftyJSON
 
 class ShowVRViewController: UIViewController {
     
@@ -191,9 +192,10 @@ class ShowVRViewController: UIViewController {
             maker.left.equalToSuperview().offset(15)
             maker.right.equalToSuperview().offset(-15)
             maker.bottom.equalToSuperview().offset(-40)
-            maker.height.equalTo(100)
+            maker.height.equalTo(200)
         }
         configOverlay()
+        configDialogueData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -205,6 +207,8 @@ class ShowVRViewController: UIViewController {
     
     var introductionVC: IntroductionCultureRelicViewController!
     private var currentCultureRelicIndex: Int = 0
+    
+    var dialogueData: [Dialogue] = []
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard blackView.isHidden else { return }
@@ -218,7 +222,9 @@ class ShowVRViewController: UIViewController {
         guard let index = overlayNodes.firstIndex(of: currentNode) else { return }
         currentCultureRelicIndex = index
         dialogueView.isHidden = false
-        dialogueView.contents = [overlays[index].cultureRelic.intro]
+        dialogueView.contents = dialogueData.filter { dia in
+            dia.name == overlays[index].cultureRelic.name
+        }.first?.contents ?? []
     }
     
     func showDetailFor(index: Int) {
@@ -300,6 +306,26 @@ extension ShowVRViewController: IntroductionCultureRelicDelegate {
     func goAnswerTheQuestion() {
         let vc = AnswerViewController()
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+}
+
+extension ShowVRViewController {
+    
+    func configDialogueData() {
+        do {
+            let data = try Data(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "dialogue", ofType: "json")!))
+            let jsonString = String(data: data, encoding: .utf8)!
+            let json = JSON(parseJSON: jsonString)
+            json.map { _, json -> Void in
+                guard let json = json.array else { return }
+                json.map { json -> Void in
+                    dialogueData.append(Dialogue(name: json["name"].stringValue, contents: json["contents"].arrayValue.map { $0.stringValue }))
+                }
+            }
+        } catch {
+            
+        }
     }
     
 }
