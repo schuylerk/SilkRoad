@@ -16,6 +16,7 @@ class MedalCollectionViewCell: UICollectionViewCell {
     var goad = [String]()//["xagoad", "lzgoad", "xngoad", "dhgoad", "wlmqgoad"]
     
     override func layoutSubviews() {
+        super.layoutSubviews()
         configUI()
         configData()
     }
@@ -76,17 +77,17 @@ class MedalCollectionViewCell: UICollectionViewCell {
         self.addSubview(collectionView)
         
         badgelabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(-150.fh)
-            make.height.equalToSuperview().offset(10.fh)
+            make.top.equalToSuperview()
+            make.height.equalTo(30)
             make.left.equalToSuperview().offset(20.fw)
-            make.width.equalToSuperview().offset(20.fw)
+            make.width.equalToSuperview().offset(-40.fw)
         }
         
         collectionView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(90.fh)
-            make.height.equalTo(400.fh)
-            make.left.equalToSuperview().offset(10.fw)
-            make.right.equalToSuperview().offset(-40.fw)
+            make.top.equalTo(badgelabel.snp.bottom).offset(10.fh)
+            make.bottom.equalToSuperview()
+            make.left.equalToSuperview().offset(20.fw)
+            make.right.equalToSuperview().offset(-20.fw)
         }
     }
 }

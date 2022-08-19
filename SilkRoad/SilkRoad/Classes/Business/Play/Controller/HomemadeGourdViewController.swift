@@ -18,9 +18,9 @@ class HomemadeGourdViewController: UIViewController {
     var downBrushes: [Brush] = []
 
     lazy var upCanvas: Canvas = {
-        let canvas = Canvas(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+        let canvas = Canvas(frame: CGRect(x: 0, y: 0, width: 200.fw, height: 200.fw))
         canvas.data.addObserver(self)
-        canvas.layer.cornerRadius = 100
+        canvas.layer.cornerRadius = CGFloat(100.fw)
         canvas.layer.masksToBounds = true
         let eraser = try! canvas.registerBrush(name: "Eraser") as Eraser
         upBrushes.append(eraser)
@@ -32,9 +32,9 @@ class HomemadeGourdViewController: UIViewController {
     }()
     
     lazy var downCanvas: Canvas = {
-        let canvas = Canvas(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
+        let canvas = Canvas(frame: CGRect(x: 0, y: 0, width: 300.fw, height: 300.fw))
         canvas.data.addObserver(self)
-        canvas.layer.cornerRadius = 150
+        canvas.layer.cornerRadius = CGFloat(150.fw)
         canvas.layer.masksToBounds = true
         let eraser = try! canvas.registerBrush(name: "Eraser") as Eraser
         let pen = canvas.defaultBrush!
@@ -46,9 +46,9 @@ class HomemadeGourdViewController: UIViewController {
     }()
     
     lazy var upView: UIView = {
-        let vi = UIView(frame: CGRect(x: screenWidth / 2 - 100, y: 150, width: 200, height: 200))
+        let vi = UIView(frame: CGRect(x: Int(screenWidth) / 2 - 100.fw, y: 120.fh, width: 200.fw, height: 200.fw))
         vi.backgroundColor = .white
-        vi.layer.cornerRadius = 100
+        vi.layer.cornerRadius = CGFloat(100.fw)
         vi.layer.borderColor = UIColor.systemGray3.cgColor
         vi.layer.borderWidth = 1
         vi.addSubview(upCanvas)
@@ -56,9 +56,9 @@ class HomemadeGourdViewController: UIViewController {
     }()
     
     lazy var downView: UIView = {
-        let vi = UIView(frame: CGRect(x: screenWidth / 2 - 150, y: 350, width: 300, height: 300))
+        let vi = UIView(frame: CGRect(x: Int(screenWidth) / 2 - 150.fw, y: 120.fh+200.fw, width: 300.fw, height: 300.fw))
         vi.backgroundColor = .white
-        vi.layer.cornerRadius = 150
+        vi.layer.cornerRadius = CGFloat(150.fw)
         vi.layer.borderColor = UIColor.systemGray3.cgColor
         vi.layer.borderWidth = 1
         vi.addSubview(downCanvas)
@@ -76,7 +76,7 @@ class HomemadeGourdViewController: UIViewController {
     }()
     
     lazy var bottomContainerView: UIView = {
-        let vi = UIView(frame: CGRect(x: 0, y: screenHeight - 230, width: screenWidth, height: 200))
+        let vi = UIView(frame: CGRect(x: 0, y: Int(screenHeight) - 200.fh, width: Int(screenWidth), height: 200.fh))
         vi.backgroundColor = .white
         vi.addSubview(bottomTopContainerView)
         vi.addSubview(colorCollctionView)
@@ -84,11 +84,11 @@ class HomemadeGourdViewController: UIViewController {
     }()
     
     lazy var bottomTopContainerView: UIView = {
-        let vi = UIView(frame: CGRect(x: screenWidth / 2 - 150, y: 20, width: 300, height: 70))
+        let vi = UIView(frame: CGRect(x: Int(screenWidth) / 2 - 150.fw, y: 20.fh, width: 300.fw, height: 70.fh))
         vi.backgroundColor = .white
         vi.layer.borderColor = UIColor.systemGray3.cgColor
         vi.layer.borderWidth = 1
-        vi.layer.cornerRadius = 10
+        vi.layer.cornerRadius = CGFloat(10.fw)
         vi.addSubview(penButton)
         vi.addSubview(eraserButton)
         return vi
@@ -97,8 +97,8 @@ class HomemadeGourdViewController: UIViewController {
     lazy var penButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "pen"), for: .normal)
-        button.frame.size = CGSize(width: 60, height: 60)
-        button.center = CGPoint(x: 75, y: 35)
+        button.frame.size = CGSize(width: 60.fw, height: 60.fw)
+        button.center = CGPoint(x: 75.fw, y: 35.fh)
         button.addTarget(self, action: #selector(pen), for: .touchUpInside)
         return button
     }()
@@ -106,8 +106,8 @@ class HomemadeGourdViewController: UIViewController {
     lazy var eraserButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "eraser"), for: .normal)
-        button.frame.size = CGSize(width: 60, height: 60)
-        button.center = CGPoint(x: 225, y: 35)
+        button.frame.size = CGSize(width: 60.fw, height: 60.fw)
+        button.center = CGPoint(x: 225.fw, y: 35.fh)
         button.addTarget(self, action: #selector(eraser), for: .touchUpInside)
         return button
     }()
@@ -125,8 +125,8 @@ class HomemadeGourdViewController: UIViewController {
     lazy var colorCollctionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.itemSize = CGSize(width: 40, height: 40)
-        let clv = UICollectionView(frame: CGRect(x: 30, y: 100, width: screenWidth - 60, height: 80), collectionViewLayout: layout)
+        layout.itemSize = CGSize(width: 40.fw, height: 40.fw)
+        let clv = UICollectionView(frame: CGRect(x: 30.fw, y: 100.fh, width: Int(screenWidth) - 60.fw, height: 80.fh), collectionViewLayout: layout)
         clv.delegate = self
         clv.dataSource = self
         clv.backgroundColor = .clear
@@ -182,7 +182,7 @@ extension HomemadeGourdViewController: UICollectionViewDataSource, UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: colorCellReuseID, for: indexPath)
-        cell.layer.cornerRadius = 20
+        cell.layer.cornerRadius = CGFloat(20.fw)
         cell.backgroundColor = colors[indexPath.row]
         return cell
     }

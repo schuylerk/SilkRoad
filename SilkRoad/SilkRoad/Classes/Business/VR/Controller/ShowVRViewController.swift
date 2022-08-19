@@ -18,9 +18,86 @@ class ShowVRViewController: UIViewController {
     
     var overlays: [Overlay] = []
     
-    var collectedIndexes: [Int] = []
+    var collectedIndexes: [Int] = [] {
+        didSet {
+            mhCollectionView.reloadData()
+        }
+    }
+    
+    var openedIndexes: [Int] = []
     
     private var overlayNodes: [SCNNode] = []
+    
+    let mhDisplayCellReusedID = "mhdisplay"
+    
+    private var mhContentIsFull: Bool = false
+    
+    lazy var mhContentView: MHContentView = {
+        let vi = MHContentView()
+        vi.frame = CGRect(x: screenWidth/2-150, y: screenHeight/2-200, width: 300, height: 400)
+        vi.isHidden = true
+        vi.layer.masksToBounds = true
+        return vi
+    }()
+    
+    lazy var unlockTextLabel: UILabel = {
+        let label = UILabel(frame: CGRect(x: screenWidth/2-150, y: screenHeight/2-250, width: 300, height: 40))
+        label.textColor = .white
+        label.textAlignment = .center
+        label.font = .systemFont(ofSize: 20)
+        label.isHidden = true
+        label.layer.shadowColor = UIColor(hex: "#FFCCA3").cgColor
+        label.layer.shadowOpacity = 1
+        return label
+    }()
+    
+    lazy var deleteButton: UIButton = {
+        let button = UIButton(frame: CGRect(x: screenWidth/2+150, y: screenHeight/2-215, width: 15, height: 15))
+        button.setImage(UIImage(named: "mh_cha"), for: .normal)
+        button.isHidden = true
+        button.addTarget(self, action: #selector(tapDeleteButton), for: .touchUpInside)
+        return button
+    }()
+    
+    lazy var mhContentFullButton: UIButton = {
+        let button = UIButton(frame: CGRect(x: screenWidth/2+130, y: screenHeight/2+180, width: 15, height: 15))
+        button.setImage(UIImage(named: "mh_full"), for: .normal)
+        button.isHidden = true
+        button.addTarget(self, action: #selector(tapFullButton), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc func tapDeleteButton() {
+        deleteButton.isHidden = true
+        mhContentFullButton.isHidden = true
+        mhContentView.isHidden = true
+        unlockTextLabel.isHidden = true
+        mhCollectionView.isHidden = false
+        mhBlackButton.isUserInteractionEnabled = true
+        mhContentView.removeMarkView()
+        mhContentView.removeScnView()
+    }
+    
+    @objc func tapFullButton() {
+        deleteButton.isHidden = !mhContentIsFull
+        unlockTextLabel.isHidden = !mhContentIsFull
+        mhContentFullButton.isHidden = true
+        UIView.animate(withDuration: 0.3, animations: { [self] in
+            if !mhContentIsFull {
+                mhContentView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+            } else {
+                mhContentView.frame = CGRect(x: screenWidth/2-150, y: screenHeight/2-200, width: 300, height: 400)
+            }
+            mhContentView.updateMarkView()
+            mhContentView.updateArscnView(type: !mhContentIsFull ? .enlarge : .narrow)
+        }, completion: { [self] _ in
+            mhContentFullButton.frame = !mhContentIsFull ?
+            CGRect(x: screenWidth-40, y: screenHeight-40, width: 20, height: 20) :
+            CGRect(x: screenWidth/2+130, y: screenHeight/2+180, width: 15, height: 15)
+            mhContentIsFull = !mhContentIsFull
+            mhContentFullButton.isHidden = false
+        })
+    }
     
     lazy var scnView: SCNView = {
         let scnView = SCNView(frame: view.frame)
@@ -134,8 +211,8 @@ class ShowVRViewController: UIViewController {
     lazy var collectionRecordView: CollectionRecordView = {
         let crv = CollectionRecordView()
         crv.collectTotalNumLabel.text = "\(overlays.count)"
-        crv.collectedNumLabel.text = "0"
-        crv.titleLabel.text = "已收集文物"
+        crv.collectedNumLabel.text = "\((getCollectedMHIndexesFor(cityName: cityNameCN) ?? []).count)"
+        crv.titleLabel.text = "已收集盲盒"
         crv.layer.cornerRadius = 15
         crv.layer.masksToBounds = true
         return crv
@@ -155,6 +232,64 @@ class ShowVRViewController: UIViewController {
         }
         return dlv
     }()
+    
+    lazy var displayMHButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "displaymh"), for: .normal)
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOpacity = 1
+        button.addTarget(self, action: #selector(tapDisplayButton), for: .touchUpInside)
+        return button
+    }()
+    
+    lazy var mhBlackButton: UIButton = {
+        let vi = UIButton(frame: view.frame)
+        vi.backgroundColor = .black
+        vi.isHidden = true
+        vi.alpha = 0.9
+        vi.addTarget(self, action: #selector(tapMHBlackButton), for: .touchUpInside)
+        return vi
+    }()
+    
+    lazy var mhCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 100, height: 120)
+        layout.minimumInteritemSpacing = 10
+        layout.scrollDirection = .vertical
+        let clv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        clv.delegate = self
+        clv.dataSource = self
+        clv.register(MHDisplayCell.self, forCellWithReuseIdentifier: mhDisplayCellReusedID)
+        clv.isHidden = true
+        clv.backgroundColor = .clear
+        return clv
+    }()
+    
+    lazy var animateView: UIImageView = {
+        let imgv = UIImageView(frame: CGRect(x: screenWidth/2-200, y: screenHeight/2-200, width: 400, height: 400))
+        var names: [String] = []
+        for i in 0..<100 {
+            names.append("盲盒动画_000" + (i >= 10 ? "\(i)" : "0\(i)"))
+        }
+        imgv.animationImages = names.map { name -> UIImage in
+            return UIImage(named: name)!
+        }
+        imgv.animationDuration = 4
+        imgv.contentMode = .scaleAspectFit
+        imgv.isHidden = true
+        return imgv
+    }()
+    
+    @objc func tapDisplayButton() {
+        mhBlackButton.isHidden = false
+        mhCollectionView.isHidden = false
+    }
+    
+    @objc func tapMHBlackButton() {
+        mhCollectionView.isHidden = true
+        mhBlackButton.isHidden = true
+        displayMHButton.isUserInteractionEnabled = true
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -177,6 +312,14 @@ class ShowVRViewController: UIViewController {
         view.addSubview(backButton)
         view.addSubview(collectionRecordView)
         view.addSubview(dialogueView)
+        view.addSubview(displayMHButton)
+        view.addSubview(mhBlackButton)
+        view.addSubview(mhCollectionView)
+        view.addSubview(animateView)
+        view.addSubview(mhContentView)
+        view.addSubview(deleteButton)
+        view.addSubview(mhContentFullButton)
+        view.addSubview(unlockTextLabel)
         backButton.snp.makeConstraints { maker in
             maker.left.equalToSuperview().offset(15.fw)
             maker.top.equalToSuperview().offset(50.fh)
@@ -194,8 +337,20 @@ class ShowVRViewController: UIViewController {
             maker.bottom.equalToSuperview().offset(-40)
             maker.height.equalTo(200)
         }
+        displayMHButton.snp.makeConstraints { maker in
+            maker.centerX.equalToSuperview()
+            maker.bottom.equalToSuperview().offset(-50)
+            maker.width.equalTo(150)
+            maker.height.equalTo(120)
+        }
+        mhCollectionView.snp.makeConstraints { maker in
+            maker.center.equalToSuperview()
+            maker.left.equalToSuperview().offset(30)
+            maker.right.equalToSuperview().offset(-30)
+            maker.height.equalTo(250)
+        }
         configOverlay()
-        configDialogueData()
+//        configDialogueData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -219,12 +374,25 @@ class ShowVRViewController: UIViewController {
             return overlayNode.position == node.position
         }.first
         guard let currentNode = currentNode else { return }
+        currentNode.removeFromParentNode()
+        guard let point2 = touches.first?.location(in: view) else {
+            return
+        }
         guard let index = overlayNodes.firstIndex(of: currentNode) else { return }
-        currentCultureRelicIndex = index
-        dialogueView.isHidden = false
-        dialogueView.contents = dialogueData.filter { dia in
-            dia.name == overlays[index].cultureRelic.name
-        }.first?.contents ?? []
+        let imageView = UIImageView(frame: CGRect(x: point2.x - 50, y: point2.y-50, width: 100, height: 100))
+        imageView.image = UIImage(named: "mh")
+        view.addSubview(imageView)
+        UIView.animate(withDuration: 1, animations: {
+            imageView.frame = CGRect(x: screenWidth/2-25, y: screenHeight-135, width: 50,  height: 50)
+        }, completion: { [self] _ in
+            imageView.isHidden = true
+            collect(index: index)
+        })
+//        currentCultureRelicIndex = index
+//        dialogueView.isHidden = false
+//        dialogueView.contents = dialogueData.filter { dia in
+//            dia.name == overlays[index].cultureRelic.name
+//        }.first?.contents ?? []
     }
     
     func showDetailFor(index: Int) {
@@ -250,6 +418,18 @@ class ShowVRViewController: UIViewController {
             }
         }
     }
+    
+    func collect(index: Int) {
+        if let _ = self.collectedIndexes.firstIndex(of: index) { return }
+        guard let collectedNum = Int(self.collectionRecordView.collectedNumLabel.text ?? "") else { return }
+        self.collectionRecordView.collectedNumLabel.text = "\(collectedNum + 1)"
+        self.collectedIndexes.append(index)
+        saveCollectedMHIndexes(cityName: cityNameCN, mindex: index)
+//        saveCultureRelicFor(self.overlays[index].cultureRelic.name, city: self.cityName)
+//        if self.collectedIndexes.count == self.overlays.count {
+//            saveBadge(self.cityNameCN)
+//        }
+    }
 
 }
 
@@ -260,7 +440,7 @@ extension ShowVRViewController {
     func createOverlayNode(_ model: Overlay) -> SCNNode {
         let node = SCNNode()
         node.geometry = SCNPlane(width: model.width, height: model.height)
-        node.geometry?.firstMaterial?.diffuse.contents = UIImage(named: model.cultureRelic.face)
+        node.geometry?.firstMaterial?.diffuse.contents = UIImage(named: "mh")
         node.position = model.position
         
         if let rotation = model.rotation {
@@ -280,8 +460,19 @@ extension ShowVRViewController {
     }
     
     func displayOverlayNodes() {
-        overlayNodes.forEach { overlayNode in
-            scnView.scene?.rootNode.addChildNode(overlayNode)
+        if let indexes = getCollectedMHIndexesFor(cityName: cityNameCN) {
+            collectedIndexes = indexes
+        }
+        if let opIndexes = getOpenedMHIndexes(cityName: cityNameCN) {
+            openedIndexes = opIndexes
+        }
+//        overlayNodes.forEach { overlayNode in
+//            scnView.scene?.rootNode.addChildNode(overlayNode)
+//        }
+        for i in 0..<overlayNodes.count {
+            if collectedIndexes.firstIndex(where: {$0==i}) == nil {
+                scnView.scene?.rootNode.addChildNode(overlayNodes[i])
+            }
         }
     }
     
@@ -317,15 +508,93 @@ extension ShowVRViewController {
             let data = try Data(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "dialogue", ofType: "json")!))
             let jsonString = String(data: data, encoding: .utf8)!
             let json = JSON(parseJSON: jsonString)
-            json.map { _, json -> Void in
+            let _ = json.map { _, json -> Void in
                 guard let json = json.array else { return }
-                json.map { json -> Void in
+                let _ = json.map { json -> Void in
                     dialogueData.append(Dialogue(name: json["name"].stringValue, contents: json["contents"].arrayValue.map { $0.stringValue }))
                 }
             }
         } catch {
             
         }
+    }
+    
+}
+
+extension ShowVRViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 6 //collectedIndexes.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: mhDisplayCellReusedID, for: indexPath) as! MHDisplayCell
+        let isOpened = openedIndexes.firstIndex(where: {$0==indexPath.row}) != nil
+        cell.imageView.image = isOpened ? (overlays[indexPath.row].type == 0 ? UIImage(named: "mh_story") : UIImage(named: "mh_culturerelic")) : UIImage(named: "mh_2")
+        let isCollected = collectedIndexes.firstIndex(where: {$0==indexPath.row}) != nil
+        if isOpened {
+            cell.textLabel.text = "已解锁" + (overlays[indexPath.row].type==0 ? "(故事)" : "(文物)")
+        } else {
+            cell.textLabel.text = isCollected ? "已收集" : "未收集"
+        }
+        cell.textLabel.textColor = isCollected ? .white : .gray 
+        return cell
+    }
+    
+}
+
+extension ShowVRViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let isCollected = collectedIndexes.firstIndex(where: {$0==indexPath.row}) != nil
+        if isCollected {
+            mhCollectionView.isHidden = true
+            mhBlackButton.isUserInteractionEnabled = false
+            displayMHButton.isUserInteractionEnabled = false
+            if let _ = openedIndexes.firstIndex(where: {$0==indexPath.row}) {
+                displayMHContent(index: indexPath.row)
+            } else {
+                openMH(index: indexPath.row)
+                openedIndexes.append(indexPath.row)
+                saveOpenedMHIndexes(cityName: cityNameCN, index: indexPath.row)
+                mhCollectionView.reloadData()
+            }
+        }
+    }
+    
+}
+
+extension ShowVRViewController {
+    
+    func openMH(index: Int) {
+        animateView.isHidden = false
+        animateView.startAnimating()
+        Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { [self] _ in
+            animateView.stopAnimating()
+            animateView.isHidden = true
+            displayMHContent(index: index)
+        }
+    }
+    
+    func displayMHContent(index: Int) {
+        mhContentView.isHidden = false
+        mhContentView.frame = CGRect(x: screenWidth/2, y: screenHeight/2, width: 0, height: 0)
+        let mhContentType: MHContentView.ContentType = overlays[index].type == 0 ? .story : .cultureRelic
+        mhContentView.contentType = mhContentType
+        UIView.animate(withDuration: 0.5, animations: { [self] in
+            mhContentView.frame = CGRect(x: screenWidth/2-150, y: screenHeight/2-200, width: 300, height: 400)
+        }, completion: { [self] _ in
+            deleteButton.isHidden = false
+            mhContentFullButton.isHidden = false
+            unlockTextLabel.isHidden = false
+            unlockTextLabel.text = mhContentType == .story ? "解锁一个故事" : "解锁一个文物"
+            switch mhContentType {
+            case .story:
+                mhContentView.configStory(name: overlays[index].story)
+            case .cultureRelic:
+                mhContentView.configCultureRelic(cultureRelic: overlays[index].cultureRelic)
+            }
+        })
     }
     
 }

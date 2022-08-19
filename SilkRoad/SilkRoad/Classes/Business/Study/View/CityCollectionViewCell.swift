@@ -13,13 +13,13 @@ class CityCollectionView: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         configUI()
-        self.backgroundColor = .white
+//        self.backgroundColor = .white
     }
     
     
     lazy var Studylabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.init(name: "TimesNewRomanPS-ItalicMT", size: 40)
+        label.font = UIFont.init(name: "TimesNewRomanPS-ItalicMT", size: CGFloat(40.fw))
         label.textColor = .white
         label.numberOfLines = 0
         return label
@@ -30,7 +30,7 @@ class CityCollectionView: UICollectionViewCell {
         let image = UIImage()
         imageView.image = image
         imageView.contentMode = .scaleAspectFill
-        imageView.layer.cornerRadius = 20
+        imageView.layer.cornerRadius = CGFloat(20.fw)
         imageView.layer.masksToBounds = true
         return imageView
     }()

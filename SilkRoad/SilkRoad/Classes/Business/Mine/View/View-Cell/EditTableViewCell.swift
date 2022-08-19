@@ -11,20 +11,19 @@ class EditTableViewCell: UITableViewCell {
 
     lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 18)
+        label.font = UIFont.systemFont(ofSize: CGFloat(18.fw))
         label.textColor = .black
         return label
     }()
     
     lazy var rightView: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "mineRight"))
-        imageView.frame = CGRect(x: 390.fw, y: 20.fh, width: 10.fw, height: 10.fh)
         return imageView
     }()
     
     lazy var answerLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 18)
+        label.font = UIFont.init(name: "TimesNewRomanPS-ItalicMT", size: CGFloat(18.fw))
         label.textAlignment = .right
         label.textColor = .gray
         return label
@@ -37,17 +36,19 @@ class EditTableViewCell: UITableViewCell {
         
         titleLabel.snp.makeConstraints {make in
             make.left.equalToSuperview().offset(20.fw)
-            make.width.equalToSuperview().offset(50.fw)
-            make.top.equalToSuperview().offset(0.fh)
-            make.bottom.equalToSuperview().offset(5.fh)
+            make.width.equalToSuperview().offset(-40.fw)
+            make.top.bottom.equalToSuperview()
+        }
+        rightView.snp.makeConstraints { maker in
+            maker.centerY.equalToSuperview()
+            maker.right.equalToSuperview().offset(-20.fw)
+            maker.width.height.equalTo(15.fw)
         }
         
         answerLabel.snp.makeConstraints {make in
-            make.right.equalTo(rightView).offset(-14.fw)
+            make.right.equalTo(rightView.snp.left).offset(-14.fw)
             make.width.equalTo(150.fw)
-            make.top.equalTo(titleLabel).offset(0.fh)
-            make.height.equalTo(titleLabel)
-            
+            make.top.bottom.equalToSuperview()
         }
         
     }
@@ -61,15 +62,19 @@ class EditTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    func setAnswerLabelText(type: AnswerLabelType) {
+        switch type {
+        case .username:
+            answerLabel.text = (UserDefaults.standard.value(forKey: "username") as? String) ?? "墨笔拾丝"
+        }
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+}
 
-        // Configure the view for the selected state
+extension EditTableViewCell {
+    
+    enum AnswerLabelType {
+        case username
     }
-
+    
 }

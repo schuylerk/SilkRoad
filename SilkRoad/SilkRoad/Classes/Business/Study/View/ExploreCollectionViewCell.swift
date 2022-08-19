@@ -48,14 +48,15 @@ class ExploreCollectionViewCell: UICollectionViewCell {
     }
     
     override func layoutSubviews() {
+        super.layoutSubviews()
         ConfigUI()
     }
     
     lazy var explabel: UILabel = {
         let label = UILabel()
         label.text = "文物探索"
-        label.frame = CGRect(x: 20, y: 5, width: 100, height: 50)
-        label.font = UIFont.init(name: "TimesNewRomanPS-ItalicMT", size: 20)
+        label.frame = CGRect(x: 20.fw, y: 5.fh, width: 100.fw, height: 50.fh)
+        label.font = UIFont.init(name: "TimesNewRomanPS-ItalicMT", size: CGFloat(20.fw))
         label.textColor = .black
         label.numberOfLines = 0
         return label
@@ -65,7 +66,7 @@ class ExploreCollectionViewCell: UICollectionViewCell {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.frame = CGRect(x: 20, y: 45, width: screenWidth, height: 280)
+        collectionView.frame = CGRect(x: 20.fw, y: 45.fh, width: Int(screenWidth), height: 280.fh)
         collectionView.backgroundColor = .clear
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -120,8 +121,8 @@ extension ExploreCollectionViewCell: UICollectionViewDelegateFlowLayout {
     
   
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: CGFloat(0.fh), left: CGFloat(0.fw), bottom: CGFloat(13.fh), right: CGFloat(20.fw))
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//        return UIEdgeInsets(top: CGFloat(0.fh), left: CGFloat(0.fw), bottom: CGFloat(13.fh), right: CGFloat(20.fw))
+//    }
     
 }

@@ -51,19 +51,26 @@ class MineViewController: UIViewController {
     
     func ConfigUI() {
         self.view.addSubview(MinecollectionView)
-        self.view.addSubview(setbutton)
+//        self.view.addSubview(setbutton)
         
         MinecollectionView.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.height.equalToSuperview().offset(900.fh)
+            make.top.bottom.equalToSuperview()
+//            make.height.equalToSuperview().offset(900.fh)
             make.left.equalToSuperview()
             make.right.equalToSuperview()
         }
-        setbutton.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(80.fh)
-            make.width.equalTo(50.fw)
-            make.right.equalToSuperview().offset(-25.fw)
-            make.height.equalTo(50.fh)
+//        setbutton.snp.makeConstraints { make in
+//            make.top.equalToSuperview().offset(80.fh)
+//            make.width.equalTo(50.fw)
+//            make.right.equalToSuperview().offset(-25.fw)
+//            make.height.equalTo(50.fh)
+//        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if let dataCell = MinecollectionView.cellForItem(at: IndexPath(row: 0, section: 0)) as? MineDataCollectionViewCell {
+            dataCell.setPortraitImageView()
         }
     }
     
@@ -88,19 +95,16 @@ extension  MineViewController:  UICollectionViewDelegate, UICollectionViewDataSo
                 let vc = IntegralViewController()
                 self.navigationController?.pushViewController(vc, animated: true)
             }
-            cell.editCallBack = { () in
+            cell.editCallBack = {
                 let vc = EditDataViewController()
+                vc.didBack = {
+                    cell.updateView()
+                }
                 self.navigationController?.pushViewController(vc, animated: true)
             }
-//            cell.setCallBack = { () in
-//                let vc = SetViewController()
-//                self.navigationController?.pushViewController(vc, animated: true)
-//            }
-//
             return cell
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MedalCell, for: indexPath) as! MedalCollectionViewCell
-            
             return cell
             
        }
@@ -114,9 +118,9 @@ extension MineViewController: UICollectionViewDelegateFlowLayout {
         
         switch indexPath.section{
         case 0:
-            return CGSize(width: Int(UIScreen.main.bounds.width), height: 320)
+            return CGSize(width: Int(UIScreen.main.bounds.width), height: 320.fh)
         default:
-            return CGSize(width: Int(UIScreen.main.bounds.width).fw, height: 400.fh)
+            return CGSize(width: Int(UIScreen.main.bounds.width), height: Int(screenHeight)-320.fh-100.fh)
         }
     }
   

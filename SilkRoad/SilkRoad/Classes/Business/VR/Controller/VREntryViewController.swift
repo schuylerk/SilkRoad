@@ -12,27 +12,25 @@ import SwiftyJSON
 
 class VREntryViewController: UIViewController {
     
-    let roadMapHeight: CGFloat = 750
+    let roadMapHeight: CGFloat = 850
     
     var roadMapCityLocation: Dictionary<String, RoadMapCityLocation> = [:]
     
     lazy var scrollView: UIScrollView = {
-        let scv = UIScrollView()
-        scv.frame.size = CGSize(width: screenWidth, height: roadMapHeight)
-        scv.center = view.center
-        scv.backgroundColor = .systemGray3
-        scv.contentSize = CGSize(width: screenWidth*3, height: roadMapHeight)
+        let scv = UIScrollView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: CGFloat(Int(roadMapHeight).fh)))
+//        scv.frame.size = CGSize(width: screenWidth, height: roadMapHeight)
+//        scv.center = view.center
+        scv.backgroundColor = .white
+        scv.contentSize = CGSize(width: screenWidth*2.5, height: CGFloat(Int(roadMapHeight).fh))
         scv.addSubview(roadMapImageView)
         scv.showsHorizontalScrollIndicator = false
         return scv
     }()
     
     lazy var roadMapImageView: UIImageView = {
-        let imgV = UIImageView()
+        let imgV = UIImageView(frame: CGRect(x: 0, y: 0, width: screenWidth*2.5, height: CGFloat(Int(roadMapHeight).fh)))
         imgV.image = UIImage(named: "vr_roadmap")
-        imgV.frame.origin = CGPoint(x: 0, y: 0)
-        imgV.contentMode = .scaleAspectFill
-        imgV.frame.size = CGSize(width: screenWidth*3, height: roadMapHeight)
+        imgV.contentMode = .scaleAspectFit
         imgV.isUserInteractionEnabled = true
         let gesture = UITapGestureRecognizer(target: self, action: #selector(tapHandler))
         imgV.addGestureRecognizer(gesture)
@@ -41,27 +39,45 @@ class VREntryViewController: UIViewController {
     
     @objc func tapHandler(gesture: UIGestureRecognizer) {
         let location = gesture.location(in: roadMapImageView)
+        print(location.x, location.y)
         let citiesLocation = roadMapCityLocation.filter { _, value -> Bool in
-            return Int(location.x) >= value.minX &&
-            Int(location.x) <= value.maxX &&
-            Int(location.y) >= value.minY &&
-            Int(location.y) <= value.maxY
+            return Int(location.x) >= value.minX.fw &&
+            Int(location.x) <= value.maxX.fw &&
+            Int(location.y) >= value.minY.fh &&
+            Int(location.y) <= value.maxY.fh
         }
         if citiesLocation.count > 0 {
             if let (cityName, _) = citiesLocation.first {
                 //MARK: 入口
-                
-                let cultureRelics = getCultureRelicFor(cityName)
+                let mh = getMHFor(cityName)
                 var overlays = [Overlay]()
-                if let cultureRelics = cultureRelics {
-                    overlays =  cultureRelics.map { cultureRelic -> Overlay in
-                        
-                        //暂时文物位置随机设置
-                        let x = Float.random(in: -10.0...10.0)
-                        let y = Float.zero
-                        let z = -sqrtf(100 - x * x) + 1
-                        
-                        return Overlay(width: 1, height: 1, position: SCNVector3Make(x, y, z), rotation: nil, cullMode: .back, cultureRelic: cultureRelic)
+                if let mh = mh {
+                    let x: [Float] = [0,0.4,0.8,1.2,1.6,2.0]
+                    var index = -1
+                    if let inxlist = UserDefaults.standard.value(forKey: cityName + "_indexlist") as? [Int] {
+                        overlays = inxlist.map { inx -> Overlay in
+                            index += 1
+                            return mh[inx].type == 0 ?
+                            Overlay(width: 0.6, height: 0.6, position: SCNVector3Make(x[index], -0.7, -4.5), rotation: nil, cullMode: .back, story: mh[inx].story, type: mh[inx].type) :
+                            Overlay(width: 0.6, height: 0.6, position: SCNVector3Make(x[index], -0.7, -4.5), rotation: nil, cullMode: .back, cultureRelic: mh[inx].cultureRelic, type: mh[inx].type)
+                        }
+                    } else {
+                        let count = mh.count
+                        var isVisited: [Int] = Array(repeating: 0, count: count)
+                        var indexList: [Int] = []
+                        for _ in 0..<count {
+                            var inx = Int(arc4random()) % count
+                            while isVisited[inx] == 1 {
+                                inx = Int(arc4random()) % count
+                            }
+                            isVisited[inx] = 1
+                            indexList.append(inx)
+                            index += 1
+                            mh[inx].type == 0 ?
+                            overlays.append(Overlay(width: 0.6, height: 0.6, position: SCNVector3Make(x[index], -0.7, -4.5), rotation: nil, cullMode: .back, story: mh[inx].story, type: mh[inx].type)) :
+                            overlays.append(Overlay(width: 0.6, height: 0.6, position: SCNVector3Make(x[index], -0.7, -4.5), rotation: nil, cullMode: .back, cultureRelic: mh[inx].cultureRelic, type: mh[inx].type))
+                        }//随机内容所在的盲盒.
+                        UserDefaults.standard.set(indexList, forKey: cityName + "_indexlist")
                     }
                 }
                 let vc = ShowVRViewController()
@@ -94,7 +110,9 @@ class VREntryViewController: UIViewController {
 
         setUI()
         setNav()
-        getRoadMapCityLocation()
+        getRoadMapCityLocation { [self] in
+//            configColletedImageView()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -126,7 +144,23 @@ class VREntryViewController: UIViewController {
         }
     }
     
-    func getRoadMapCityLocation() {
+    func getMHFor(_ cityName: String) -> [MH]? {
+        var res: [MH] = []
+        do {
+            let data = try Data(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "mh", ofType: "json")!))
+            guard let jsonString = String(data: data, encoding: .utf8) else { return nil }
+            let json = JSON(parseJSON: jsonString)
+            guard let currentCityJson = json[cityName].array else { return nil }
+            res = currentCityJson.map { json -> MH in
+                return MH(type: json["type"].intValue, story: json["story"].stringValue, cultureRelic: CultureRelic(name: json["cultureRelic"]["name"].stringValue,num: json["cultureRelic"]["num"].intValue))
+            }
+            return res
+        } catch {
+            return nil
+        }
+    }
+    
+    func getRoadMapCityLocation(completion: @escaping ()->Void) {
         do {
             let data = try Data(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "roadMapCityLocation", ofType: "json")!))
             if let jsonObject = try JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary {
@@ -142,6 +176,7 @@ class VREntryViewController: UIViewController {
                     }
                 }
             }
+            completion()
         } catch {
             
         }
@@ -154,6 +189,36 @@ class VREntryViewController: UIViewController {
     
     func setNav() {
         navigationController?.navigationBar.isHidden = true
+    }
+    
+    func configColletedImageView() {
+        let cities = ["西安", "兰州", "西宁", "敦煌", "乌鲁木齐"]
+        cities.forEach { cityName in
+            let location = roadMapCityLocation[cityName]!
+            if let mh = getMHFor(cityName) {
+                if let indexes = getOpenedMHIndexes(cityName: cityName) {
+                    if let inxlist = UserDefaults.standard.value(forKey: cityName + "_indexlist") as? [Int] {
+                        for i in 0..<indexes.count {
+                            let (x, y, width, height) =
+                            (
+                                i < 3 ? location.minX-20 : location.maxX+5,
+                                location.minY+20*(i%3),
+                                15,
+                                15
+                            )
+                            let imgV = UIImageView(frame: CGRect(x: x, y: y, width: width, height: height))
+                            imgV.image = UIImage(named: mh[inxlist[ indexes[i]]].type == 0 ? "mh_story" : "mh_culturerelic_2")
+                            roadMapImageView.addSubview(imgV)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        configColletedImageView()
     }
 
 }

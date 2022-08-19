@@ -33,10 +33,14 @@ class StudyViewController: UIViewController {
         return label
     }()
     
-    lazy var imageView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "stdmainback"))
-        imageView.frame = CGRect(x: 0, y: 0, width: Int(UIScreen.main.bounds.width), height: 300.fh)
-        return imageView
+    lazy var colorLayer: ColorLayer = {
+        let layer = ColorLayer(
+            CGPoint(x: 0.5, y: 0),
+            endPoint: CGPoint(x: 0.5, y: 1.0),
+            colors: [UIColor(hex: "#FFCCA3").cgColor, UIColor(hex: "#F8F8F8").cgColor],
+            locations: [0, 0.5])
+        layer.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        return layer
     }()
     
     lazy var collectionView: UICollectionView = {
@@ -88,36 +92,37 @@ class StudyViewController: UIViewController {
     
     
     func configUI() {
-        self.view.addSubview(imageView)
+        view.layer.addSublayer(colorLayer)
         self.view.addSubview(collectionView)
         self.view.addSubview(Studylabel)
         self.view.addSubview(blackView)
-        self.view.addSubview(searchView)
+//        self.view.addSubview(searchView)
         
         Studylabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(-390.fh)
+            make.top.equalToSuperview().offset(80.fh)
             make.left.equalToSuperview().offset(20.fw)
-            make.width.equalToSuperview().offset(20.fw)
-            make.height.equalToSuperview().offset(35.fh)
+            make.width.equalToSuperview().offset(-40.fw)
+            make.height.equalTo(35)
         }
     
         collectionView.snp.makeConstraints{ make in
-            make.top.equalToSuperview().offset(170.fh)
+//            make.top.equalToSuperview().offset(170.fh)
+            make.top.equalToSuperview().offset(130.fh)
             make.left.equalToSuperview().offset(20.fw)
             make.right.equalToSuperview().offset(-20.fw)
-            make.height.equalToSuperview().offset(1000.fh)
+            make.bottom.equalToSuperview().offset(-50.fh)
         }
     
         blackView.snp.makeConstraints { maker in
             maker.edges.equalToSuperview()
         }
         
-        searchView.snp.makeConstraints { maker in
-            maker.left.equalToSuperview().offset(20.fw)
-            maker.right.equalToSuperview().offset(-20.fw)
-            maker.height.equalTo(40.fw)
-            maker.top.equalToSuperview().offset(120.fh)
-        }
+//        searchView.snp.makeConstraints { maker in
+//            maker.left.equalToSuperview().offset(20.fw)
+//            maker.right.equalToSuperview().offset(-20.fw)
+//            maker.height.equalTo(40.fw)
+//            maker.top.equalToSuperview().offset(120.fh)
+//        }
         
         
     }
@@ -169,7 +174,6 @@ extension  StudyViewController:  UICollectionViewDelegate, UICollectionViewDataS
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CityCellID, for: indexPath) as! CityCollectionView
         cell.Studylabel.text = name[indexPath.section]
         cell.BackView.image = UIImage(named: picture[indexPath.section])
-        cell.clipsToBounds = true
         return cell
     }
 
@@ -185,7 +189,7 @@ extension  StudyViewController:  UICollectionViewDelegate, UICollectionViewDataS
 extension StudyViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: Int(screenWidth - 40).fw, height: 135.fh)
+        return CGSize(width: Int(screenWidth) - 40.fw, height: 150.fh)
     }
     
 }

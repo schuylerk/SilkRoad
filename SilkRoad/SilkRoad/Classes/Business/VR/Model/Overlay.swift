@@ -17,5 +17,7 @@ struct Overlay {
     var rotation: SCNVector4?
     var cullMode: SCNCullMode
     
-    var cultureRelic: CultureRelic //文物数据
+    var cultureRelic: CultureRelic = CultureRelic()//文物数据
+    var story: String = ""
+    var type: Int = 0
 }

@@ -29,8 +29,8 @@ class PlayViewController: UIViewController {
     lazy var playListCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.itemSize = CGSize(width: screenWidth - 80, height: 300)
-        layout.minimumLineSpacing = 50
+        layout.itemSize = CGSize(width: Int(screenWidth) - 80.fw, height: 300.fh)
+        layout.minimumLineSpacing = CGFloat(50.fh)
         let clv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         clv.delegate = self
         clv.dataSource = self
@@ -49,10 +49,10 @@ class PlayViewController: UIViewController {
         view.layer.addSublayer(colorLayer)
         view.addSubview(playListCollectionView)
         playListCollectionView.snp.makeConstraints { maker in
-            maker.left.equalToSuperview().offset(40)
-            maker.right.equalToSuperview().offset(-40)
-            maker.top.equalToSuperview().offset(100)
-            maker.bottom.equalToSuperview().offset(-50)
+            maker.left.equalToSuperview().offset(40.fw)
+            maker.right.equalToSuperview().offset(-40.fw)
+            maker.top.equalToSuperview().offset(50.fh)
+            maker.bottom.equalToSuperview().offset(-50.fh)
         }
     }
     
@@ -82,7 +82,7 @@ extension PlayViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.nameLabel.text = data[indexPath.row].name
         cell.introLabel.text = data[indexPath.row].intro
         cell.backgroundColor = .white
-        cell.layer.cornerRadius = 20
+        cell.layer.cornerRadius = CGFloat(20.fh)
         return cell
     }
     

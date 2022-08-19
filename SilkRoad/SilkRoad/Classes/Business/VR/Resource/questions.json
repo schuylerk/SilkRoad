@@ -1,98 +1,608 @@
-[
-    {
-        "title": "派卫青、霍去病出击匈奴。取得河西走廊，并设置敦煌、张掖等郡县的皇帝是",
-        "options": [
-            {
-                "name": "A",
-                "content": "秦始皇"
-            },
-            {
-                "name": "B",
-                "content": "汉武帝"
-            },
-            {
-                "name": "C",
-                "content": "唐太宗"
-            },
-            {
-                "name": "D",
-                "content": "宋太祖"
+{
+    "西安": [
+        {
+            "title": "海棠形摩羯纹银长杯由什么构成？",
+            "options": [
+                {
+                    "name": "A",
+                    "content": "荷莲、鱼与火焰宝珠"
+                },
+                {
+                    "name": "B",
+                    "content": "荷莲与鱼"
+                },
+                {
+                    "name": "C",
+                    "content": "鱼与火焰宝珠"
+                },
+                {
+                    "name": "D",
+                    "content": "荷莲与火焰宝珠"
+                }
+            ],
+            "answer": {
+                "name": "A"
             }
-        ],
-        "answer": {
-            "name": "B"
-        }
-    },
-    {
-        "title": "我国历代政府均重视对边疆的有效管理。下列行政或军事机构管辖的地区是",
-        "options": [
-            {
-                "name": "A",
-                "content": "西藏"
-            },
-            {
-                "name": "B",
-                "content": "东北"
-            },
-            {
-                "name": "C",
-                "content": "新疆"
-            },
-            {
-                "name": "D",
-                "content": "台湾"
+        },
+        {
+            "title": "折枝团花纹鎏金银渣斗流行于什么时期？",
+            "options": [
+                {
+                    "name": "A",
+                    "content": "唐代早期"
+                },
+                {
+                    "name": "B",
+                    "content": "唐代中、晚期"
+                },
+                {
+                    "name": "C",
+                    "content": "唐代晚期"
+                },
+                {
+                    "name": "D",
+                    "content": "唐代早、中、晚三期"
+                }
+            ],
+            "answer": {
+                "name": "D"
             }
-        ],
-        "answer": {
-            "name": "C"
-        }
-    },
-    {
-        "title": "习近平主席提出共建“丝绸之路经济带”和“21世纪海上丝绸之路”的战略构想，旨在借“丝绸之路”这一历史符号，沟通历史与未来，连接中国与世界。中国古代“丝绸之路”的开通",
-        "options": [
-            {
-                "name": "A",
-                "content": "使世界连成一个整体"
-            },
-            {
-                "name": "B",
-                "content": "加速了殖民扩张和殖民掠夺"
-            },
-            {
-                "name": "C",
-                "content": "促进了区域文明的交流"
-            },
-            {
-                "name": "D",
-                "content": "促进了亚非与拉美地区的贸易往来"
+        },
+        {
+            "title": "鎏金翼兽纹带五足铜炉台的出土年份是哪年？",
+            "options": [
+                {
+                    "name": "A",
+                    "content": "1948 "
+                },
+                {
+                    "name": "B",
+                    "content": "1958"
+                },
+                {
+                    "name": "C",
+                    "content": "1927"
+                },
+                {
+                    "name": "D",
+                    "content": "1935"
+                }
+            ],
+            "answer": {
+                "name": "B"
             }
-        ],
-        "answer": {
-            "name": "D"
-        }
-    },
-    {
-        "title": "2015年3月，国务院发布《推动共建丝绸之路经济带和21世纪海上丝绸之路的愿景与行动》，建设“一带一路”。西汉时期为开辟丝绸之路作出重要贡献的是",
-        "options": [
-            {
-                "name": "A",
-                "content": "张骞"
-            },
-            {
-                "name": "B",
-                "content": "卫靑"
-            },
-            {
-                "name": "C",
-                "content": "蒙恬"
-            },
-            {
-                "name": "D",
-                "content": "霍去病"
+        },
+        {
+            "title": "鎏金翼兽纹带五足铜炉台的所属朝代？",
+            "options": [
+                {
+                    "name": "A",
+                    "content": "清朝"
+                },
+                {
+                    "name": "B",
+                    "content": "宋代"
+                },
+                {
+                    "name": "C",
+                    "content": "唐代"
+                },
+                {
+                    "name": "D",
+                    "content": "明朝"
+                }
+            ],
+            "answer": {
+                "name": "C"
             }
-        ],
-        "answer": {
-            "name": "A"
+        },
+        {
+            "title": "鎏金翼兽纹带五足铜炉台的功能？",
+            "options": [
+                {
+                    "name": "A",
+                    "content": "保护香炉"
+                },
+                {
+                    "name": "B",
+                    "content": "香炉的盖子"
+                },
+                {
+                    "name": "C",
+                    "content": "香炉的底座"
+                },
+                {
+                    "name": "D",
+                    "content": "稳定香炉位置"
+                }
+            ],
+            "answer": {
+                "name": "C"
+            }
         }
-    }
-]
+    ],
+    "兰州": [
+        {
+            "title": "金累丝嵌玉观音银簪首正中嵌观音菩萨的特征是？",
+            "options": [
+                {
+                    "name": "A",
+                    "content": "左手提篮, 裙裾轻摆"
+                },
+                {
+                    "name": "B",
+                    "content": "身着苏袖裙"
+                },
+                {
+                    "name": "C",
+                    "content": "高发髻，面相圆润"
+                },
+                {
+                    "name": "D",
+                    "content": "身外接连透雕的圆形身光"
+                }
+            ],
+            "answer": {
+                "name": "C"
+            }
+        },
+        {
+            "title": "东汉墨迹纸书体为？",
+            "options": [
+                {
+                    "name": "A",
+                    "content": "楷书"
+                },
+                {
+                    "name": "B",
+                    "content": "隶书"
+                },
+                {
+                    "name": "C",
+                    "content": "行书"
+                },
+                {
+                    "name": "D",
+                    "content": "草书"
+                }
+            ],
+            "answer": {
+                "name": "B"
+            }
+        },
+        {
+            "title": "从仅存的文字中，东汉墨迹纸记录了什么？",
+            "options": [
+                {
+                    "name": "A",
+                    "content": "人民生活"
+                },
+                {
+                    "name": "B",
+                    "content": "怪异见闻"
+                },
+                {
+                    "name": "C",
+                    "content": "帝王言行"
+                },
+                {
+                    "name": "D",
+                    "content": "奇珍异事"
+                }
+            ],
+            "answer": {
+                "name": "A"
+            }
+        },
+        {
+            "title": "铜镶玉带饰的出土年份是哪年？",
+            "options": [
+                {
+                    "name": "A",
+                    "content": "1948 "
+                },
+                {
+                    "name": "B",
+                    "content": "1955"
+                },
+                {
+                    "name": "C",
+                    "content": "1927"
+                },
+                {
+                    "name": "D",
+                    "content": "1935"
+                }
+            ],
+            "answer": {
+                "name": "B"
+            }
+        },
+        {
+            "title": "铜镶玉带饰的所属朝代？",
+            "options": [
+                {
+                    "name": "A",
+                    "content": "清朝"
+                },
+                {
+                    "name": "B",
+                    "content": "宋代"
+                },
+                {
+                    "name": "C",
+                    "content": "元代"
+                },
+                {
+                    "name": "D",
+                    "content": "明朝"
+                }
+            ],
+            "answer": {
+                "name": "C"
+            }
+        }
+    ],
+    "西宁": [
+        {
+            "title": "圆法勺的功能？",
+            "options": [
+                {
+                    "name": "A",
+                    "content": "藏传佛教举行护魔仪式时，用以浇油助燃之器具"
+                },
+                {
+                    "name": "B",
+                    "content": "藏传佛教举行护魔仪式时，用以燃烧之器具"
+                },
+                {
+                    "name": "C",
+                    "content": "道教举行护魔仪式时，用以浇油助燃之器具"
+                },
+                {
+                    "name": "D",
+                    "content": "道教举行护魔仪式时，用以燃烧之器具"
+                }
+            ],
+            "answer": {
+                "name": "A"
+            }
+        },
+        {
+            "title": "下列关于彩陶瓶的外观，正确的是？",
+            "options": [
+                {
+                    "name": "A",
+                    "content": "平口圆底"
+                },
+                {
+                    "name": "B",
+                    "content": "平口平底"
+                },
+                {
+                    "name": "C",
+                    "content": "方口圆底"
+                },
+                {
+                    "name": "D",
+                    "content": "方口平底"
+                }
+            ],
+            "answer": {
+                "name": "B"
+            }
+        },
+        {
+            "title": "铜羽人连枝灯顶部构件的所属朝代？",
+            "options": [
+                {
+                    "name": "A",
+                    "content": "南朝"
+                },
+                {
+                    "name": "B",
+                    "content": "北朝"
+                },
+                {
+                    "name": "C",
+                    "content": "东汉末至魏晋"
+                },
+                {
+                    "name": "D",
+                    "content": "春秋时期"
+                }
+            ],
+            "answer": {
+                "name": "C"
+            }
+        },
+        {
+            "title": "圆法勺的所属朝代？",
+            "options": [
+                {
+                    "name": "A",
+                    "content": "南朝"
+                },
+                {
+                    "name": "B",
+                    "content": "东汉"
+                },
+                {
+                    "name": "C",
+                    "content": "西夏"
+                },
+                {
+                    "name": "D",
+                    "content": "魏晋"
+                }
+            ],
+            "answer": {
+                "name": "C"
+            }
+        },
+        {
+            "title": "彩陶瓶的所属朝代？",
+            "options": [
+                {
+                    "name": "A",
+                    "content": "商朝"
+                },
+                {
+                    "name": "B",
+                    "content": "新石器时代"
+                },
+                {
+                    "name": "C",
+                    "content": "春秋时期"
+                },
+                {
+                    "name": "D",
+                    "content": "西夏"
+                }
+            ],
+            "answer": {
+                "name": "B"
+            }
+        }
+    ],
+    "敦煌": [
+        {
+            "title": "\"汉历书简册\"属于哪个朝代？",
+            "optinos": [
+                {
+                    "name": "A",
+                    "content": "东汉"
+                },
+                {
+                    "name": "B",
+                    "content": "西汉"
+                },
+                {
+                    "name": "C",
+                    "content": "宋代"
+                },
+                {
+                    "name": "D",
+                    "content": "唐代"
+                }
+            ],
+            "answer": {
+                "name": "B"
+            }
+        },
+        {
+            "title": "\"汉历书简册\"由多少支简组成？",
+            "options": [
+                {
+                    "name": "A",
+                    "content": "50支"
+                },
+                {
+                    "name": "B",
+                    "content": "40支"
+                },
+                {
+                    "name": "C",
+                    "content": "20支"
+                },
+                {
+                    "name": "D",
+                    "content": "30支"
+                }
+            ],
+            "answer": {
+                "name": "D"
+            }
+        },
+        {
+            "title": "\"敦煌汉简\"的形制大致与四大汗简的哪一汗简相同？",
+            "options": [
+                {
+                    "name": "A",
+                    "content": "居延汉简"
+                },
+                {
+                    "name": "B",
+                    "content": "武威汉简"
+                },
+                {
+                    "name": "C",
+                    "content": "甘谷汉简"
+                }
+            ],
+            "answer": {
+                "name": "A"
+            }
+        },
+        {
+            "title": "\"胡人牵驼砖\"出土地址为：________",
+            "options": [
+                {
+                    "name": "A",
+                    "content": "玉门关遗址"
+                },
+                {
+                    "name": "B",
+                    "content": "汉长城清水沟东墩"
+                },
+                {
+                    "name": "C",
+                    "content": "敦煌佛爷庙一座唐墓"
+                },
+                {
+                    "name": "D",
+                    "content": "无记录"
+                }
+            ],
+            "answer": {
+                "name": "C"
+            }
+        },
+        {
+            "title": " 中国三大石窟为敦煌莫高窟，河南洛阳龙门石窟和——",
+            "options": [
+                {
+                    "name": "A",
+                    "content": "麦积山石窟"
+                },
+                {
+                    "name": "B",
+                    "content": "山西大同云岗石窟 "
+                },
+                {
+                    "name": "C",
+                    "content": "新疆克孜尔千佛洞"
+                },
+                {
+                    "name": "D",
+                    "content": "甘肃炳灵寺石窟"
+                }
+            ],
+            "answer": {
+                "name": "B"
+            }
+        }
+    ],
+    "乌鲁木齐": [
+        {
+            "title": "\"青铜武士俑\"出土年份为______",
+            "options": [
+                {
+                    "name": "A",
+                    "content": "1981"
+                },
+                {
+                    "name": "B",
+                    "content": "1982"
+                },
+                {
+                    "name": "C",
+                    "content": "1983"
+                },
+                {
+                    "name": "D",
+                    "content": "1984"
+                }
+            ],
+            "answer": {
+                "name": "A"
+            }
+        },
+        {
+            "title": "\"青铜武士俑\"中武士的衣着打扮是______",
+            "options": [
+                {
+                    "name": "A",
+                    "content": "上着短衫"
+                },
+                {
+                    "name": "B",
+                    "content": "头缠头巾"
+                },
+                {
+                    "name": "C",
+                    "content": "腰系短裙"
+                },
+                {
+                    "name": "D",
+                    "content": "脚踩短靴"
+                }
+            ],
+            "answer": {
+                "name": "C"
+            }
+        },
+        {
+            "title":"\\“\\“五星出东方利中国\\”锦护臂\\”为_______",
+            "options": [
+                {
+                    "name": "A",
+                    "content": "国家二级文物"
+                },
+                {
+                    "name": "B",
+                    "content": "一般文物"
+                },
+                {
+                    "name": "C",
+                    "content": "不可移动文物"
+                },
+                {
+                    "name": "D",
+                    "content": "国家一级文物"
+                }
+            ],
+            "answer": {
+                "name": "D"
+            }
+        },
+        {
+            "title": "\"螺钿双陆木棋盘\"属于________",
+            "options": [
+                {
+                    "name": "A",
+                    "content": "唐朝"
+                },
+                {
+                    "name": "B",
+                    "content": "汉朝"
+                },
+                {
+                    "name": "C",
+                    "content": "元代"
+                },
+                {
+                    "name": "D",
+                    "content": "宋代"
+                }
+            ],
+            "answer": {
+                "name": "A"
+            }
+        },
+        {
+            "title":"\"螺钿双陆木棋盘\"由陆板、棋子和骰子组成，中间似弯月的叫\\“梁\\”，左右各______个棋子，故名双陆。",
+            "options": [
+                {
+                    "name": "A",
+                    "content": "8"
+                },
+                {
+                    "name": "B",
+                    "content": "5"
+                },
+                {
+                    "name": "C",
+                    "content": "6"
+                },
+                {
+                    "name": "D",
+                    "content": "7"
+                }
+            ],
+            "answer": {
+                "name": "C"
+            }
+        }
+    ]
+}

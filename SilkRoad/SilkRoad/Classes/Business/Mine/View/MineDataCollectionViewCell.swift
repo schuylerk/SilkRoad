@@ -15,8 +15,8 @@ class MineDataCollectionViewCell: UICollectionViewCell {
     //var setCallBack: (() -> Void)?
     
     override func layoutSubviews() {
+        super.layoutSubviews()
         ConfigUI()
-        
     }
     
     lazy var BackimageView: UIImageView = {
@@ -27,25 +27,26 @@ class MineDataCollectionViewCell: UICollectionViewCell {
     lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.isUserInteractionEnabled = true
-        imageView.frame = CGRect(x: 20.fw, y: 188.fh, width: 385.fw, height: 180.fh)
+        imageView.frame = CGRect(x: 20.fw, y: 188.fh, width: 385.fw, height: 130.fh)
         imageView.backgroundColor = .white
-        imageView.layer.cornerRadius = 20
+        imageView.layer.cornerRadius = 10
         return imageView
     }()
 
-    lazy var portraitimageView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "portrait"))
-        imageView.frame = CGRect(x: (Int(screenWidth)/2 - 35).fw, y: 150.fh, width: 70.fw, height: 70.fh)
-        imageView.layer.cornerRadius = 35
+    lazy var portraitImageView: UIImageView = {
+        let image = UIImage(named: "portrait")
+        let imageView = UIImageView(image: image)
+        imageView.layer.cornerRadius = CGFloat(35.fw)
         imageView.clipsToBounds = true
         return imageView
     }()
     
     lazy var namelabel: UILabel = {
         let label = UILabel()
-        label.text = "小王子"
+        label.text = (UserDefaults.standard.value(forKey: "username") as? String) ?? "墨笔拾丝"
         label.font = UIFont.init(name: "TimesNewRomanPS-ItalicMT", size: 15)
         label.numberOfLines = 0
+        label.textAlignment = .center
         return label
     }()
     
@@ -66,19 +67,14 @@ class MineDataCollectionViewCell: UICollectionViewCell {
         button.addTarget(self, action: #selector(searchBarClick), for: .touchUpInside)
         return button
     }()
-    
-    lazy var editimageView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "edit"))
-        imageView.isUserInteractionEnabled = true
-        imageView.frame = CGRect(x: 150.fw, y: 133.fh, width: 78.fw, height: 24.fh)
-        imageView.clipsToBounds = true
-        return imageView
-    }()
         
     lazy var editbutton: UIButton = {
         let button = UIButton()
-        button.setTitle("    编辑资料", for: .normal)
+        button.setTitle("编辑资料", for: .normal)
         button.setTitleColor(.gray, for: .normal)
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.gray.cgColor
+        button.layer.cornerRadius = CGFloat(12.fh)
         button.titleLabel?.font = UIFont.init(name: "TimesNewRomanPS-ItalicMT", size: 12)
         button.addTarget(self, action: #selector(editClick), for: .touchUpInside)
         return button
@@ -90,6 +86,22 @@ class MineDataCollectionViewCell: UICollectionViewCell {
 //        button.addTarget(self, action: #selector(setClick), for: .touchUpInside)
 //        return button
 //    }()
+    
+    func updateView() {
+        namelabel.text = (UserDefaults.standard.value(forKey: "username") as? String) ?? "墨笔拾丝"
+        var image = UIImage(named: "portrait")
+        if let data = UserDefaults.standard.value(forKey: "avatar") as? Data {
+            image = UIImage(data: data)
+        }
+        portraitImageView.image = image
+    }
+    
+    func setPortraitImageView() {
+        if let data = UserDefaults.standard.value(forKey: "avatar") as? Data {
+            let image = UIImage(data: data)
+            portraitImageView.image = image
+        }
+    }
     
     @objc func searchBarClick() {
         if let callback = searchCallBack {
@@ -113,44 +125,47 @@ class MineDataCollectionViewCell: UICollectionViewCell {
     func ConfigUI() {
         contentView.addSubview(BackimageView)
         contentView.addSubview(imageView)
-        //contentView.addSubview(setbutton)
-        self.addSubview(portraitimageView)
-        imageView.addSubview(editimageView)
+        contentView.addSubview(portraitImageView)
         imageView.addSubview(namelabel)
-        imageView.addSubview(introducelabel)
-        imageView.addSubview(centerbutton)
+//        imageView.addSubview(introducelabel)
+//        imageView.addSubview(centerbutton)
         imageView.addSubview(editbutton)
     
         BackimageView.snp.makeConstraints { make in
-            make.left.right.top.equalToSuperview().offset(0)
-            make.height.equalTo(267)
+            make.left.right.top.equalToSuperview()
+            make.height.equalTo(267.fh)
+        }
+        portraitImageView.snp.makeConstraints { maker in
+            maker.centerX.equalToSuperview()
+            maker.centerY.equalTo(imageView.snp.top)
+            maker.width.height.equalTo(70.fw)
         }
         
         namelabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(-40.fh)
-            make.height.equalToSuperview().offset(10.fh)
-            make.left.equalTo(portraitimageView.snp.left).offset(10.fw)
-            make.width.equalToSuperview().offset(10.fw)
+            make.top.equalToSuperview().offset(45.fh)
+            make.height.equalTo(30)
+            make.left.right.equalToSuperview()
         }
         
-        introducelabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(-15.fh)
-            make.height.equalToSuperview().offset(10.fh)
-            make.left.equalToSuperview().offset(Int(screenWidth/2-120).fw)
-            make.width.equalToSuperview().offset(100.fw)
-        }
+//        introducelabel.snp.makeConstraints { make in
+//            make.top.equalTo(namelabel.snp.bottom).offset(5)
+//            make.height.equalTo(30)
+//            make.left.equalToSuperview().offset(Int(screenWidth/2-120).fw)
+//            make.width.equalToSuperview().offset(100.fw)
+//        }
         
-        centerbutton.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(107.fh)
-            make.height.equalTo(10.fh)
-            make.left.equalTo(portraitimageView.snp.left).offset(0.fw)
-            make.width.equalTo(80.fw)
-        }
+//        centerbutton.snp.makeConstraints { make in
+//            make.top.equalToSuperview().offset(107.fh)
+//            make.height.equalTo(10.fh)
+//            make.left.equalTo(portraitimageView.snp.left).offset(0.fw)
+//            make.width.equalTo(80.fw)
+//        }
     
         editbutton.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(137.fh)
-            make.height.equalTo(15.fh)
-            make.left.equalTo(centerbutton).offset(-10.fw)
+            make.top.equalTo(namelabel.snp.bottom).offset(5.fh)
+            make.height.equalTo(24.fh)
+//            make.left.equalTo(centerbutton).offset(-10.fw)
+            make.centerX.equalToSuperview()
             make.width.equalTo(80.fw)
         }
         

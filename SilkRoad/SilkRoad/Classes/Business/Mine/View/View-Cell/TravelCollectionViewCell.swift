@@ -39,7 +39,7 @@ class TravelCollectionViewCell: UICollectionViewCell {
     func ConfigUI() {
         self.addSubview(medalimageView)
         self.addSubview(namelabel)
-        self.addSubview(datelabel)
+//        self.addSubview(datelabel)
         
         medalimageView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(10.fh)
@@ -55,11 +55,11 @@ class TravelCollectionViewCell: UICollectionViewCell {
             make.height.equalToSuperview().offset(5.fh)
         }
         
-        datelabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(95.fh)
-            make.left.equalToSuperview().offset(0.fw)
-            make.height.equalToSuperview().offset(5.fh)
-            make.width.equalToSuperview().offset(10.fw)
-        }
+//        datelabel.snp.makeConstraints { make in
+//            make.top.equalToSuperview().offset(95.fh)
+//            make.left.equalToSuperview().offset(0.fw)
+//            make.height.equalToSuperview().offset(5.fh)
+//            make.width.equalToSuperview().offset(10.fw)
+//        }
     }
 }

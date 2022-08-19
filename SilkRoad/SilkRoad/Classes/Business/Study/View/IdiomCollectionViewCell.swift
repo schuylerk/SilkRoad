@@ -22,8 +22,8 @@ class IdiomCollectionViewCell: UICollectionViewCell {
     lazy var explabel: UILabel = {
         let label = UILabel()
         label.text = "成语世界"
-        label.frame = CGRect(x: 20, y: 5, width: 100, height: 50)
-        label.font = UIFont.init(name: "TimesNewRomanPS-ItalicMT", size: 20)
+        label.frame = CGRect(x: 20.fw, y: 5.fh, width: 100.fw, height: 50.fh)
+        label.font = UIFont.init(name: "TimesNewRomanPS-ItalicMT", size: CGFloat(20.fw))
         label.textColor = .black
         label.numberOfLines = 0
         return label
@@ -33,7 +33,7 @@ class IdiomCollectionViewCell: UICollectionViewCell {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.frame = CGRect(x: 10, y: 30, width: screenWidth, height: 250)
+        collectionView.frame = CGRect(x: 10.fw, y: 30.fh, width: Int(screenWidth), height: 250.fh)
         collectionView.backgroundColor = .clear
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -75,13 +75,7 @@ extension  IdiomCollectionViewCell:  UICollectionViewDelegate, UICollectionViewD
 extension IdiomCollectionViewCell: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 200.fw, height: 200.fh)
-    }
-    
-  
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: CGFloat(0.fh), left: CGFloat(0.fw), bottom: CGFloat(18.fh), right: CGFloat(10.fw))
+        return CGSize(width: 200.fw, height: 200.fw)
     }
     
 }

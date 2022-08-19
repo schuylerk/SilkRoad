@@ -1,0 +1,232 @@
+{
+    "西安": [
+        {
+            "type": 0,
+            "story": "蒙古人西征",
+            "cultureRelic": {
+                
+            }
+        },
+        {
+            "type": 0,
+            "story": "基督教的扩张与传播",
+            "cultureRelic": {
+                
+            }
+        },
+        {
+            "type": 0,
+            "story": "汉武帝进攻匈奴",
+            "cultureRelic": {
+                
+            }
+        },
+        {
+            "type": 0,
+            "story": "亚历山大东征",
+            "cultureRelic": {
+                
+            }
+        },
+        {
+            "type": 1,
+            "story": "",
+            "cultureRelic": {
+                "num": 5,
+                "name": "掐丝镶嵌金辟邪"
+            }
+        },
+        {
+            "type": 1,
+            "story": "",
+            "cultureRelic": {
+                "num": 4,
+                "name": "鎏金铜力士像"
+            }
+        }
+    ],
+    "兰州": [
+        {
+            "type": 0,
+            "story": "佛教教义的改造与传播",
+            "cultureRelic": {
+                
+            }
+        },
+        {
+            "type": 0,
+            "story": "美洲大发现",
+            "cultureRelic": {
+                
+            }
+        },
+        {
+            "type": 0,
+            "story": "汉武帝进攻匈奴",
+            "cultureRelic": {
+                
+            }
+        },
+        {
+            "type": 0,
+            "story": "亚历山大东征",
+            "cultureRelic": {
+                
+            }
+        },
+        {
+            "type": 1,
+            "story": "",
+            "cultureRelic": {
+                "num": 1,
+                "name": ""
+            }
+        },
+        {
+            "type": 1,
+            "story": "",
+            "cultureRelic": {
+                "num": 2,
+                "name": "定窑白釉如意形枕"
+            }
+        }
+    ],
+    "西宁": [
+        {
+            "type": 0,
+            "story": "佛教教义的改造与传播",
+            "cultureRelic": {
+                
+            }
+        },
+        {
+            "type": 0,
+            "story": "美洲大发现",
+            "cultureRelic": {
+                
+            }
+        },
+        {
+            "type": 0,
+            "story": "汉武帝进攻匈奴",
+            "cultureRelic": {
+                
+            }
+        },
+        {
+            "type": 0,
+            "story": "亚历山大东征",
+            "cultureRelic": {
+                
+            }
+        },
+        {
+            "type": 1,
+            "story": "",
+            "cultureRelic": {
+                "num": 3,
+                "name": "定窑黄釉鹦鹉壶"
+            }
+        },
+        {
+            "type": 1,
+            "story": "",
+            "cultureRelic": {
+                "num": 6,
+                "name": "青铜羊首纹灯"
+            }
+        }
+    ],
+    "敦煌": [
+        {
+            "type": 0,
+            "story": "佛教教义的改造与传播",
+            "cultureRelic": {
+                
+            }
+        },
+        {
+            "type": 0,
+            "story": "美洲大发现",
+            "cultureRelic": {
+                
+            }
+        },
+        {
+            "type": 0,
+            "story": "汉武帝进攻匈奴",
+            "cultureRelic": {
+                
+            }
+        },
+        {
+            "type": 0,
+            "story": "亚历山大东征",
+            "cultureRelic": {
+                
+            }
+        },
+        {
+            "type": 1,
+            "story": "",
+            "cultureRelic": {
+                "num": 7,
+                "name": "双思惟菩萨像底座"
+            }
+        },
+        {
+            "type": 1,
+            "story": "",
+            "cultureRelic": {
+                "num": 8,
+                "name": "西汉陶绕襟衣女舞俑"
+            }
+        }
+    ],
+    "乌鲁木齐": [
+        {
+            "type": 0,
+            "story": "佛教教义的改造与传播",
+            "cultureRelic": {
+                
+            }
+        },
+        {
+            "type": 0,
+            "story": "美洲大发现",
+            "cultureRelic": {
+                
+            }
+        },
+        {
+            "type": 0,
+            "story": "汉武帝进攻匈奴",
+            "cultureRelic": {
+                
+            }
+        },
+        {
+            "type": 0,
+            "story": "亚历山大东征",
+            "cultureRelic": {
+                
+            }
+        },
+        {
+            "type": 1,
+            "story": "",
+            "cultureRelic": {
+                "num": 9,
+                "name": ""
+            }
+        },
+        {
+            "type": 1,
+            "story": "",
+            "cultureRelic": {
+                "num": 10,
+                "name": ""
+            }
+        }
+    ]
+}

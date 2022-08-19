@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var tabBarController: ESTabBarController!
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        guard let windowScene = (scene as? UIWindowScene) else { return }
+        guard let _ = (scene as? UIWindowScene) else { return }
         
         tabBarController = tabBar { _, _, _ in
 //            self.window_2.isHidden = false
@@ -30,6 +30,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self.goAR()
         }
 //
+        
+        print((screenWidth, screenHeight))
+        print(Bundle.main.path(forResource: "蒙古人西征", ofType: "png"))
         tabBarController.selectedIndex = 0
         
         guard UserDefaults.standard.value(forKey: "user") != nil else {
