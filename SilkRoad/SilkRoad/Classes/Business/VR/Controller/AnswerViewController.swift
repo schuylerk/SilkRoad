@@ -15,6 +15,8 @@ class AnswerViewController: UIViewController {
     
     var cityName: String = ""
     
+    var isCompleteAnswer: Bool = false
+    
     var currentQuestionIndex: Int = 0 {
         didSet {
             QuestionLabel.text = "\(currentQuestionIndex+1)." + questions[currentQuestionIndex].title
@@ -28,9 +30,15 @@ class AnswerViewController: UIViewController {
                 setOptionButtonColor("")
             }
             if currentQuestionIndex == questions.count-1 {
-                nextQuestionButton.setImage(UIImage(named: "question_submit"), for: .normal)
+                let image: UIImage? = !isCompleteAnswer ? UIImage(named: "question_submit") : nil
+                nextQuestionButton.setImage(image, for: .normal)
+                nextQuestionButton.isEnabled = !isCompleteAnswer
             } else {
+                nextQuestionButton.isEnabled = true
                 nextQuestionButton.setImage(UIImage(named: "question_right"), for: .normal)
+            }
+            if isCompleteAnswer {
+                answerLabel.text = "答案： " + questions[currentQuestionIndex].answer.name
             }
         }
     }
@@ -40,7 +48,7 @@ class AnswerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
-        self.title = cityName + "-答题"
+        self.title = cityName + (isCompleteAnswer ? "-查看题目" : "-答题")
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "back_white"), style: .done, target: self, action: #selector(tapBackButton))
         navigationItem.leftBarButtonItem?.tintColor = .black
         getQuestions {
@@ -127,13 +135,19 @@ class AnswerViewController: UIViewController {
     }()
     
     lazy var goadLabel: UILabel = {
-        let label = UILabel(frame: CGRect(x: Int(screenWidth)/2-100.fw, y: Int(screenHeight)/2+120.fh, width: 200.fw, height: 40.fh))
+        let label = UILabel(frame: CGRect(x: Int(screenWidth)/2-100.fw, y: Int(screenHeight)/2+120.fw, width: 200.fw, height: 40.fh))
         label.textAlignment = .center
         label.textColor = .white
         label.layer.shadowColor = UIColor(hex: "#FFCCA3").cgColor
         label.layer.shadowOpacity = 1
         label.font = .systemFont(ofSize: CGFloat(20.fw))
         label.isHidden = true
+        return label
+    }()
+    
+    lazy var answerLabel: UILabel = {
+        let label = UILabel()
+        label.text = "答案： " + questions[0].answer.name
         return label
     }()
     
@@ -204,10 +218,21 @@ class AnswerViewController: UIViewController {
                 })
                 saveBadge(cityName)
             } else {
-                let alterController = UIAlertController(title: "提示", message: "有题目错误", preferredStyle: .alert)
-                present(alterController, animated: true, completion: {
-                    self.dismiss(animated: true, completion: nil)
+                var message = "\n"
+                for i in 0..<selectRecord.count {
+                    message += "\(i+1).  " + selectRecord[i]
+                    message += ((selectRecord[i]==questions[i].answer.name) ? "  ✅" : ("  ❌")) + "   答案: " + questions[i].answer.name + "\n\n"
+                }
+                let alterController = UIAlertController(title: "提示", message: message, preferredStyle: .alert)
+                let quitAction = UIAlertAction(title: "退出答题", style: .default, handler: { [self] _ in
+                    navigationController?.popViewController(animated: true)
                 })
+                let continueAction = UIAlertAction(title: "继续答题", style: .default, handler: { [self] _ in
+                    dismiss(animated: true, completion: nil)
+                })
+                alterController.addAction(quitAction)
+                alterController.addAction(continueAction)
+                present(alterController, animated: true, completion: nil)
             }
             return
         }
@@ -235,6 +260,7 @@ class AnswerViewController: UIViewController {
         button.setTitle("A", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.addTarget(self, action: #selector(tapOption(button:)), for: .touchUpInside)
+        button.isEnabled = !isCompleteAnswer
         return button
     }()
     
@@ -247,6 +273,7 @@ class AnswerViewController: UIViewController {
         button.setTitle("B", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.addTarget(self, action: #selector(tapOption(button:)), for: .touchUpInside)
+        button.isEnabled = !isCompleteAnswer
         return button
     }()
     
@@ -259,6 +286,7 @@ class AnswerViewController: UIViewController {
         button.setTitle("C", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.addTarget(self, action: #selector(tapOption(button:)), for: .touchUpInside)
+        button.isEnabled = !isCompleteAnswer
         return button
     }()
     
@@ -271,6 +299,7 @@ class AnswerViewController: UIViewController {
         button.setTitle("D", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.addTarget(self, action: #selector(tapOption(button:)), for: .touchUpInside)
+        button.isEnabled = !isCompleteAnswer
         return button
     }()
     
@@ -325,6 +354,9 @@ class AnswerViewController: UIViewController {
         view.addSubview(blackButton)
         view.addSubview(goadImageView)
         view.addSubview(goadLabel)
+        if isCompleteAnswer {
+            view.addSubview(answerLabel)
+        }
         
         QuestionLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(20.fw)
@@ -400,6 +432,14 @@ class AnswerViewController: UIViewController {
             make.width.equalTo(20.fw)
             make.top.equalTo(lastQuestionButton).offset(0)
             make.height.equalTo(20.fw)
+        }
+        if isCompleteAnswer {
+            answerLabel.snp.makeConstraints { maker in
+                maker.left.equalTo(lastQuestionButton)
+                maker.top.equalTo(lastQuestionButton.snp.bottom).offset(20.fh)
+                maker.width.equalTo(200.fw)
+                maker.height.equalTo(30.fh)
+            }
         }
         
     }

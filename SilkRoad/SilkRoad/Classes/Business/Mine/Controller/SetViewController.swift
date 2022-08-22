@@ -54,10 +54,8 @@ class SetViewController: UIViewController {
 //        navigationController?.navigationItem.leftBarButtonItem = UIBarButtonItem(image: <#T##UIImage?#>, style: .done, target: self, action: <#T##Selector?#>)
         
         tableView.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(0.fw)
-            make.right.equalToSuperview().offset(0.fw)
-            make.top.equalToSuperview().offset(20.fh)
-            make.height.equalToSuperview().offset(300.fh)
+            make.left.right.bottom.equalToSuperview()
+            make.top.equalToSuperview().offset(50.fh)
         }
     }
     

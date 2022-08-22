@@ -45,6 +45,7 @@
 		7ECB5C2C27F335E100D37D27 /* IntegralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECB5C2B27F335E100D37D27 /* IntegralViewController.swift */; };
 		7ECB5C2E27F33BDE00D37D27 /* PoemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECB5C2D27F33BDE00D37D27 /* PoemCollectionViewCell.swift */; };
 		7EE79C2E27F53C9400D30AD6 /* QuestionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE79C2D27F53C9400D30AD6 /* QuestionCollectionViewCell.swift */; };
+		A103734328B1B79800623052 /* IPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A103734228B1B79800623052 /* IPView.swift */; };
 		A12AD38428AD01D80027C800 /* CollectedMHCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12AD38328AD01D80027C800 /* CollectedMHCache.swift */; };
 		A12AD38828AD19990027C800 /* OpenedMHCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12AD38728AD19990027C800 /* OpenedMHCache.swift */; };
 		A143229E28A33999005C437E /* mh.json in Resources */ = {isa = PBXBuildFile; fileRef = A143229D28A33999005C437E /* mh.json */; };
@@ -161,6 +162,7 @@
 		A1EDF5FA2827DF44001874BC /* GameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EDF5F92827DF44001874BC /* GameCell.swift */; };
 		A1EDF5FC2827E80C001874BC /* HomemadeGourdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EDF5FB2827E80C001874BC /* HomemadeGourdViewController.swift */; };
 		A1EDF5FE2827E82F001874BC /* ScrapingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EDF5FD2827E82F001874BC /* ScrapingViewController.swift */; };
+		A1FB93A028B0E9CA00E5EE99 /* StoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FB939F28B0E9CA00E5EE99 /* StoryView.swift */; };
 		B9969F8415B66688CD01147E /* Pods_SilkRoad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10076F0333B3EEC2C42268C9 /* Pods_SilkRoad.framework */; };
 /* End PBXBuildFile section */
 
@@ -206,6 +208,7 @@
 		7ECB5C2D27F33BDE00D37D27 /* PoemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemCollectionViewCell.swift; sourceTree = "<group>"; };
 		7EE79C2D27F53C9400D30AD6 /* QuestionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCollectionViewCell.swift; sourceTree = "<group>"; };
 		99133EE11AFFD08BEF26649A /* Pods-SilkRoad.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SilkRoad.release.xcconfig"; path = "Target Support Files/Pods-SilkRoad/Pods-SilkRoad.release.xcconfig"; sourceTree = "<group>"; };
+		A103734228B1B79800623052 /* IPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPView.swift; sourceTree = "<group>"; };
 		A12AD38328AD01D80027C800 /* CollectedMHCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectedMHCache.swift; sourceTree = "<group>"; };
 		A12AD38728AD19990027C800 /* OpenedMHCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenedMHCache.swift; sourceTree = "<group>"; };
 		A143229D28A33999005C437E /* mh.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mh.json; sourceTree = "<group>"; };
@@ -354,6 +357,7 @@
 		A1EDF5F92827DF44001874BC /* GameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCell.swift; sourceTree = "<group>"; };
 		A1EDF5FB2827E80C001874BC /* HomemadeGourdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomemadeGourdViewController.swift; sourceTree = "<group>"; };
 		A1EDF5FD2827E82F001874BC /* ScrapingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapingViewController.swift; sourceTree = "<group>"; };
+		A1FB939F28B0E9CA00E5EE99 /* StoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -478,6 +482,7 @@
 				7ECB5C2027F2A5FD00D37D27 /* PoetryCollectionViewCell.swift */,
 				7ECB5C2227F2AACA00D37D27 /* View-Cell */,
 				7EE79C2D27F53C9400D30AD6 /* QuestionCollectionViewCell.swift */,
+				A103734228B1B79800623052 /* IPView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -955,6 +960,7 @@
 				A1CD62F82803E63D006C56EC /* CultureRelicIntroView.swift */,
 				A1E61633280EE9D300B250F2 /* CultureRelicDialogueView.swift */,
 				A14A0B2C28A9468E003BE9C2 /* MHContentView.swift */,
+				A1FB939F28B0E9CA00E5EE99 /* StoryView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1170,6 +1176,7 @@
 				A14C567528AE46950052402E /* table.c in Sources */,
 				A1CD630D2803E63D006C56EC /* CultureRelicIntroView.swift in Sources */,
 				A14C567928AE46950052402E /* syntax_extension.c in Sources */,
+				A1FB93A028B0E9CA00E5EE99 /* StoryView.swift in Sources */,
 				A14C53C028ADE6AA0052402E /* EditAvatarTableViewCell.swift in Sources */,
 				7E91830427F47E9600F692C3 /* SetTableViewCell.swift in Sources */,
 				7ECB5C1D27F2A5D100D37D27 /* ExploreCollectionViewCell.swift in Sources */,
@@ -1257,6 +1264,7 @@
 				A14C566D28AE46950052402E /* xml.c in Sources */,
 				A16567A227E5804000F81F7C /* Int + Fit.swift in Sources */,
 				A19F46C6280EBB0100D0BE94 /* CultureRelicCache.swift in Sources */,
+				A103734328B1B79800623052 /* IPView.swift in Sources */,
 				7ECB5C2827F325AE00D37D27 /* IntroduceObjectViewController.swift in Sources */,
 				A1EDF5F62827DEEB001874BC /* Game.swift in Sources */,
 				A1CD630C2803E63D006C56EC /* CollectionRecordVerticalView.swift in Sources */,
@@ -1433,14 +1441,14 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobishisi.silkroad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = SilkRoad/NHEFCMark/NHEFCMark.h;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1468,14 +1476,14 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobishisi.silkroad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = SilkRoad/NHEFCMark/NHEFCMark.h;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

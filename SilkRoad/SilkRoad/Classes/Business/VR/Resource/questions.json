@@ -368,7 +368,7 @@
     "敦煌": [
         {
             "title": "\"汉历书简册\"属于哪个朝代？",
-            "optinos": [
+            "options": [
                 {
                     "name": "A",
                     "content": "东汉"
@@ -428,6 +428,10 @@
                 {
                     "name": "C",
                     "content": "甘谷汉简"
+                },
+                {
+                    "name": "C",
+                    "content": "无"
                 }
             ],
             "answer": {

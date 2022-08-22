@@ -33,7 +33,7 @@ class IdiomCollectionViewCell: UICollectionViewCell {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.frame = CGRect(x: 10.fw, y: 30.fh, width: Int(screenWidth), height: 250.fh)
+        collectionView.frame = CGRect(x: 10.fw, y: 30.fh, width: Int(screenWidth)-20.fw, height: 250.fh)
         collectionView.backgroundColor = .clear
         collectionView.delegate = self
         collectionView.dataSource = self

@@ -13,8 +13,8 @@ class CultureRelicInfoView: UIView {
     var model: CultureRelicInfo = CultureRelicInfo() {
         didSet {
             nameLabel.text = model.name
-            unearthedYearLabel.text = "出土年份:   \(model.unearthedYear)"
-            unearthedPlaceLabel.text = "出土地点:   \(model.unearthPlace)"
+            unearthedYearLabel.text = "出土年份:  未知"// \(model.unearthedYear)"
+            unearthedPlaceLabel.text = "出土地点:  未知"// \(model.unearthPlace)"
             dynastyLabel.text = "所属朝代:   \(model.dynasty)"
         }
     }
@@ -22,7 +22,7 @@ class CultureRelicInfoView: UIView {
     lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.font = UIFont(name: "Arial", size: 30)
+        label.font = UIFont(name: "Arial", size: 20)
         label.text = model.name
         label.numberOfLines = 0
         return label

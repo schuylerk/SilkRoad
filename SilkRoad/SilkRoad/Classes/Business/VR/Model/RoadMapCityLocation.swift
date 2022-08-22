@@ -9,8 +9,8 @@ import Foundation
 import UIKit
 
 struct RoadMapCityLocation {
-    var minX: Int
-    var minY: Int
-    var maxX: Int
-    var maxY: Int
+    var minX: Float
+    var minY: Float
+    var maxX: Float
+    var maxY: Float
 }

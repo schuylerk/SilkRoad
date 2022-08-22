@@ -14,10 +14,11 @@ struct Overlay {
     var width: CGFloat
     var height: CGFloat
     var position: SCNVector3
-    var rotation: SCNVector4?
+    var rotation: SCNMatrix4?
     var cullMode: SCNCullMode
     
     var cultureRelic: CultureRelic = CultureRelic()//文物数据
     var story: String = ""
     var type: Int = 0
+    var preRotation: Rotation = Rotation(x: 0, y: 0, z: 0)
 }

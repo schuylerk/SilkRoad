@@ -21,6 +21,7 @@ class MineViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+    
     lazy var setbutton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "set"), for: .normal)
@@ -51,7 +52,7 @@ class MineViewController: UIViewController {
     
     func ConfigUI() {
         self.view.addSubview(MinecollectionView)
-//        self.view.addSubview(setbutton)
+        self.view.addSubview(setbutton)
         
         MinecollectionView.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview()
@@ -59,12 +60,12 @@ class MineViewController: UIViewController {
             make.left.equalToSuperview()
             make.right.equalToSuperview()
         }
-//        setbutton.snp.makeConstraints { make in
-//            make.top.equalToSuperview().offset(80.fh)
-//            make.width.equalTo(50.fw)
-//            make.right.equalToSuperview().offset(-25.fw)
-//            make.height.equalTo(50.fh)
-//        }
+        setbutton.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(80.fh)
+            make.width.equalTo(50.fw)
+            make.right.equalToSuperview().offset(-25.fw)
+            make.height.equalTo(50.fh)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -40,7 +40,7 @@ class MedalCollectionViewCell: UICollectionViewCell {
                 return ""
             }
         }
-        badgelabel.text = "旅行徽章  \(name.count)/5"
+        badgelabel.text = "思绸勋章  \(name.count)/5"
     }
     
     lazy var badgelabel: UILabel = {
@@ -115,13 +115,7 @@ extension  MedalCollectionViewCell:  UICollectionViewDelegate, UICollectionViewD
 extension MedalCollectionViewCell: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 150.fw, height: 180.fh)
-    }
-    
-  
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: CGFloat(0.fh), left: CGFloat(10.fw), bottom: CGFloat(50.fh), right: CGFloat(10.fw))
+        return CGSize(width: 150.fw, height: 200.fh)
     }
     
 }

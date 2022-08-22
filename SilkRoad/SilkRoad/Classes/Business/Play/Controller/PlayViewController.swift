@@ -28,7 +28,7 @@ class PlayViewController: UIViewController {
     
     lazy var playListCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
+        layout.scrollDirection = .horizontal
         layout.itemSize = CGSize(width: Int(screenWidth) - 80.fw, height: 300.fh)
         layout.minimumLineSpacing = CGFloat(50.fh)
         let clv = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -39,6 +39,64 @@ class PlayViewController: UIViewController {
         return clv
     }()
     
+    lazy var scrollView: UIScrollView = {
+        let scv = UIScrollView(frame: CGRect(x: 0, y: Int(screenHeight)/2 - 200.fh, width: Int(screenWidth), height: 400.fh))
+        scv.contentSize = CGSize(width: Int(screenWidth), height: 400.fh)
+        scv.addSubview(huluView)
+        scv.addSubview(guahuaView)
+        return scv
+    }()
+    
+    lazy var huluView: UIView = {
+        let vi = UIView(frame: CGRect(x: 0, y: 0, width: (Int(screenWidth)-20.fw)/2, height: 400.fh))
+        let imageView = UIImageView(frame: vi.bounds)
+        imageView.image = UIImage(named: "hulu")
+        vi.addSubview(imageView)
+        let label = UILabel(frame: CGRect(x: Int(vi.bounds.width)-25.fw, y: 0, width: 25.fw, height: 150.fh))
+        label.text = "自制葫芦"
+        label.textColor = .white
+        label.numberOfLines = 0
+        label.font = .systemFont(ofSize: 20)
+        vi.addSubview(label)
+        vi.layer.cornerRadius = 5
+        vi.layer.shadowColor = UIColor(hex: "#FFCCA3").cgColor
+        vi.layer.shadowOpacity = 1
+        vi.layer.masksToBounds = true
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(tapHulu))
+        vi.isUserInteractionEnabled = true
+        vi.addGestureRecognizer(gesture)
+        return vi
+    }()
+    
+    lazy var guahuaView: UIView = {
+        let vi = UIView(frame: CGRect(x: Int(screenWidth)/2+10, y: 0, width: Int(screenWidth)/2-10.fw, height: 400.fh))
+        let imageView = UIImageView(frame: vi.bounds)
+        imageView.image = UIImage(named: "guahua")
+        vi.addSubview(imageView)
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 25.fw, height: 100.fh))
+        label.text = "刮画"
+        label.textColor = .white
+        label.numberOfLines = 0
+        label.font = .systemFont(ofSize: 20)
+        vi.addSubview(label)
+        vi.layer.cornerRadius = 5
+        vi.layer.shadowColor = UIColor(hex: "#FFCCA3").cgColor
+        vi.layer.shadowOpacity = 1
+        vi.layer.masksToBounds = true
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(tapGuahua))
+        vi.isUserInteractionEnabled = true
+        vi.addGestureRecognizer(gesture)
+        return vi
+    }()
+    
+    @objc func tapHulu() {
+        navigationController?.pushViewController(HomemadeGourdViewController(), animated: true)
+    }
+    
+    @objc func tapGuahua() {
+        navigationController?.pushViewController(ScrapingViewController(), animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,13 +105,14 @@ class PlayViewController: UIViewController {
     
     func setUI() {
         view.layer.addSublayer(colorLayer)
-        view.addSubview(playListCollectionView)
-        playListCollectionView.snp.makeConstraints { maker in
-            maker.left.equalToSuperview().offset(40.fw)
-            maker.right.equalToSuperview().offset(-40.fw)
-            maker.top.equalToSuperview().offset(50.fh)
-            maker.bottom.equalToSuperview().offset(-50.fh)
-        }
+        view.addSubview(scrollView)
+//        view.addSubview(playListCollectionView)
+//        playListCollectionView.snp.makeConstraints { maker in
+//            maker.left.equalToSuperview().offset(40.fw)
+//            maker.right.equalToSuperview().offset(-40.fw)
+//            maker.top.equalToSuperview().offset(50.fh)
+//            maker.bottom.equalToSuperview().offset(-50.fh)
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

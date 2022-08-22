@@ -43,16 +43,13 @@ class TravelCollectionViewCell: UICollectionViewCell {
         
         medalimageView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(10.fh)
-            make.height.equalToSuperview().offset(-30.fh)
-            make.width.equalToSuperview().offset(0.fw)
-            make.left.equalToSuperview().offset(10.fw)
+            make.width.height.equalTo(120.fw)
+            make.centerX.equalToSuperview()
         }
         
         namelabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(80.fh)
-            make.left.equalToSuperview().offset(2.fw)
-            make.width.equalToSuperview().offset(10.fw)
-            make.height.equalToSuperview().offset(5.fh)
+            make.top.equalTo(medalimageView.snp.bottom).offset(10.fh)
+            make.left.bottom.right.equalToSuperview()
         }
         
 //        datelabel.snp.makeConstraints { make in

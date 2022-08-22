@@ -17,12 +17,12 @@ class CultureRelicIntroView: UIView {
         return label
     }()
     
-    lazy var contentLabel: UILabel = {
-        let label = UILabel()
+    lazy var contentLabel: UITextView = {
+        let label = UITextView()
         label.textColor = UIColor(hex: "#353535")
         label.font = UIFont(name: "Arial", size: 18)
-        label.numberOfLines = 0
-        label.lineBreakMode = .byWordWrapping
+        label.isEditable = false
+        label.backgroundColor = .clear
         return label
     }()
     
@@ -39,9 +39,13 @@ class CultureRelicIntroView: UIView {
             maker.left.top.equalToSuperview()
         }
         contentLabel.snp.makeConstraints { maker in
-            maker.left.right.equalToSuperview()
+            maker.left.right.bottom.equalToSuperview()
             maker.top.equalTo(titleLabel.snp.bottom).offset(20)
         }
+    }
+    
+    func calculateHeight() -> CGFloat {
+        return 0
     }
 
 }

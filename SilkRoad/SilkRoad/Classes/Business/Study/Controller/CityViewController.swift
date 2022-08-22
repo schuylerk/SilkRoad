@@ -69,20 +69,21 @@ class CityViewController: UIViewController {
     }()
     
     lazy var answerButton: UIButton = {
-        let button = UIButton(frame: CGRect(x: Int(screenWidth)-100.fw, y: 220.fh, width: 80.fw, height: 30.fh))
+//        let button = UIButton(frame: CGRect(x: Int(screenWidth)-100.fw, y: 220.fh, width: 80.fw, height: 30.fh))
+        let button = UIButton()
         let isCompleteAnswer = (getBadge() ?? []).firstIndex(where: { $0==intro.name }) != nil
-        button.backgroundColor = isCompleteAnswer ? .gray : .orange
-        button.setTitle(isCompleteAnswer ? "已完成答题" : "答题", for: .normal)
+        button.backgroundColor = .orange // isCompleteAnswer ? .gray : .orange
+        button.setTitle(isCompleteAnswer ? "查看题目（已完成）" : "答题", for: .normal)
         button.setTitleColor(.white, for:.normal)
         button.titleLabel?.font = .systemFont(ofSize: CGFloat(isCompleteAnswer ? 12.fw : 16.fw))
-        button.layer.cornerRadius = CGFloat(15.fh)
+        button.layer.cornerRadius = CGFloat(20.fh)
         button.addTarget(self, action: #selector(answerHandler), for: .touchUpInside)
-        button.isEnabled = !isCompleteAnswer
         return button
     }()
     
     lazy var goadImageView: UIImageView = {
-        let imgv = UIImageView(frame: CGRect(x: Int(screenWidth)-140.fw, y: 220.fh, width: 30.fw, height: 30.fw))
+//        let imgv = UIImageView(frame: CGRect(x: Int(screenWidth)-140.fw, y: 220.fh, width: 30.fw, height: 30.fw))
+        let imgv = UIImageView()
         imgv.image = UIImage(named: getGoadName())
         let isCompleteAnswer = (getBadge() ?? []).firstIndex(where: { $0==intro.name }) != nil
         imgv.isHidden = !isCompleteAnswer
@@ -139,28 +140,60 @@ class CityViewController: UIViewController {
 //        collectionView.register(QuestionCollectionViewCell.self, forCellWithReuseIdentifier: questionCellID)
         return collectionView
     }()
+    
+    lazy var ipView: IPView = {
+        let ipv = IPView(frame: CGRect(x: 80.fw, y: Int(screenHeight)/2-30.fh, width: Int(screenWidth)-60.fw, height: 60.fh))
+        ipv.textPosition = .left
+        ipv.text = "答题可以获得思绸勋章哦！"
+        ipv.isHidden = true
+        return ipv
+    }()
+    
+    lazy var blackButton: UIButton = {
+        let button = UIButton(frame: view.bounds)
+        button.backgroundColor = .black
+        button.alpha = 0.7
+        button.addTarget(self, action: #selector(tapBlackButton), for: .touchUpInside)
+        button.isHidden = true
+        return button
+    }()
+    
+    @objc func tapBlackButton() {
+        ipView.isHidden = true
+        blackButton.isHidden = true
+    }
 
     
     func configUI() {
-        self.view.addSubview(backView)
-        self.view.addSubview(CellBackView)
-        self.view.addSubview(BigNamelabel)
+        view.addSubview(backView)
+        view.addSubview(CellBackView)
+        view.addSubview(BigNamelabel)
         view.addSubview(goadImageView)
         view.addSubview(answerButton)
-        self.view.addSubview(IntroduceLabel)
-        self.view.addSubview(collectionView)
-        self.view.addSubview(leftButton)
+        view.addSubview(IntroduceLabel)
+        view.addSubview(collectionView)
+        view.addSubview(leftButton)
+        view.addSubview(blackButton)
+        view.addSubview(ipView)
         
         IntroduceLabel.snp.makeConstraints { make in
             make.top.equalTo(BigNamelabel.snp.bottom).offset(0)
-            make.height.equalTo(65.fh)
             make.left.equalTo(20.fw)
             make.right.equalTo(-20.fw)
         }
-        
-        
+        answerButton.snp.makeConstraints { maker in
+            maker.centerX.equalToSuperview()
+            maker.width.equalTo(300.fw)
+            maker.top.equalTo(IntroduceLabel.snp.bottom).offset(15.fh)
+            maker.height.equalTo(40.fh)
+        }
+        goadImageView.snp.makeConstraints { maker in
+            maker.centerY.equalTo(answerButton)
+            maker.width.height.equalTo(30.fw)
+            maker.left.equalToSuperview().offset(20.fw)
+        }
         collectionView.snp.makeConstraints {make in
-            make.top.equalTo(IntroduceLabel.snp.bottom).offset(10.fh)
+            make.top.equalTo(answerButton.snp.bottom).offset(5.fh)
             make.left.equalToSuperview()
             make.bottom.equalToSuperview()
             make.width.equalTo(screenWidth)
@@ -179,11 +212,19 @@ class CityViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         let isCompleteAnswer = (getBadge() ?? []).firstIndex(where: { $0==intro.name }) != nil
-        answerButton.backgroundColor = isCompleteAnswer ? .gray : .orange
-        answerButton.isEnabled = !isCompleteAnswer
-        answerButton.setTitle(isCompleteAnswer ? "已完成答题" : "答题", for: .normal)
+        answerButton.backgroundColor = .orange // isCompleteAnswer ? .gray : .orange
+        answerButton.setTitle(isCompleteAnswer ? "查看题目（已完成）" : "答题", for: .normal)
         answerButton.titleLabel?.font = .systemFont(ofSize: CGFloat(isCompleteAnswer ? 12.fw : 16.fw))
         goadImageView.isHidden = !isCompleteAnswer
+        
+        let firstEnterCityVC = (UserDefaults.standard.value(forKey: "firstentercityvc") as? Bool) ?? true
+        if firstEnterCityVC {
+            blackButton.isHidden = false
+            ipView.isHidden = false
+            ipView.display()
+            ipView.animateImageView.transform = CGAffineTransform(rotationAngle: -CGFloat.pi/6)
+            UserDefaults.standard.set(false, forKey: "firstentercityvc")
+        }
     }
     
     func updateUI(with data:Introduce){
@@ -256,19 +297,15 @@ extension CityViewController: UICollectionViewDelegateFlowLayout {
         }
     }
     
-  
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        return UIEdgeInsets(top: CGFloat(0.fh), left: CGFloat(0.fw), bottom: CGFloat(13.fh), right: CGFloat(0.fw))
-//    }
-    
 }
 
 extension CityViewController {
     
     @objc func answerHandler() {
+        let isCompleteAnswer = (getBadge() ?? []).firstIndex(where: { $0==intro.name }) != nil
         let vc = AnswerViewController()
         vc.cityName = intro.name
+        vc.isCompleteAnswer = isCompleteAnswer
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

@@ -109,6 +109,8 @@ class HomemadeGourdViewController: UIViewController {
         button.frame.size = CGSize(width: 60.fw, height: 60.fw)
         button.center = CGPoint(x: 225.fw, y: 35.fh)
         button.addTarget(self, action: #selector(eraser), for: .touchUpInside)
+//        let gesture = UILongPressGestureRecognizer(target: self, action: #selector(longPressEraser))
+//        button.addGestureRecognizer(gesture)
         return button
     }()
     
@@ -118,9 +120,30 @@ class HomemadeGourdViewController: UIViewController {
     }
     
     @objc func eraser() {
-        (upCanvas.findBrushBy(name: "Eraser") as! Eraser).use()
-        (downCanvas.findBrushBy(name: "Eraser") as! Eraser).use()
+        let upEraser = upCanvas.findBrushBy(name: "Eraser") as! Eraser
+        let downEraser = downCanvas.findBrushBy(name: "Eraser") as! Eraser
+        upEraser.pointSize = 15
+        downEraser.pointSize = 15
+        upEraser.use()
+        downEraser.use()
     }
+    
+    @objc func longPressEraser() {
+        print("long long")
+        controlEraserSizeView.isHidden = false
+    }
+    
+    lazy var controlEraserSizeView: UIView = {
+        let vi = UIView(frame: CGRect(x: screenWidth/2, y: screenHeight-CGFloat(280.fh), width: CGFloat(200.fw), height: CGFloat(50.fh)))
+        let slider = UISlider(frame: vi.bounds)
+        slider.minimumValue = 1
+        slider.maximumValue = 30
+        vi.backgroundColor = .systemGray6
+        vi.layer.cornerRadius = 3
+        vi.isHidden = true
+        vi.addSubview(slider)
+        return vi
+    }()
     
     lazy var colorCollctionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -147,6 +170,7 @@ class HomemadeGourdViewController: UIViewController {
         view.addSubview(upView)
         view.addSubview(downView)
         view.addSubview(bottomContainerView)
+        view.addSubview(controlEraserSizeView)
     }
     
     func setNav() {

@@ -29,11 +29,11 @@ func tabBar(didHijackHandler: @escaping ESTabBarControllerDidHijackHandler) -> E
 //    let arNavi = UINavigationController(rootViewController: arVC)
     
     StudyVC.tabBarItem = ESTabBarItem(ESTabBarItemCustomColorContentView(), title: "学习", image: UIImage(named: "stu"), selectedImage: nil, tag: 0)
-    VRVC.tabBarItem = ESTabBarItem(ESTabBarItemCustomColorContentView(), title: "搜集", image: UIImage(named: "luxian"), selectedImage: nil, tag: 1)
+    VRVC.tabBarItem = ESTabBarItem(ESTabBarItemCustomColorContentView(), title: "探索", image: UIImage(named: "luxian"), selectedImage: nil, tag: 1)
 //    otherVC.tabBarItem = ESTabBarItem(ESTabBarItemCustomColorContentView(), title: nil, image: UIImage(named: "other"), selectedImage: nil, tag: 2)
 //    HelpVC.tabBarItem = ESTabBarItem(ESTabBarItemCustomColorContentView(), title: nil, image: UIImage(named: "hf"), selectedImage: nil, tag: 3)
-    playVC.tabBarItem = ESTabBarItem(ESTabBarItemCustomColorContentView(), title: "寓教", image: UIImage(named: "play"), selectedImage: nil, tag: 2)
-    MineVC.tabBarItem = ESTabBarItem(ESTabBarItemCustomColorContentView(), title: "我", image: UIImage(named: "min"), selectedImage: nil, tag: 3)
+    playVC.tabBarItem = ESTabBarItem(ESTabBarItemCustomColorContentView(), title: "绘画", image: UIImage(named: "play"), selectedImage: nil, tag: 2)
+    MineVC.tabBarItem = ESTabBarItem(ESTabBarItemCustomColorContentView(), title: "我的", image: UIImage(named: "min"), selectedImage: nil, tag: 3)
 //    arVC.tabBarItem = ESTabBarItem(ExampleIrregularityContentView(), title: nil, image: UIImage(named: "ar"), selectedImage: nil, tag: 2)
     
     tabBarController.viewControllers = [StudyNavi, VRNavi, playNavi, MineNavi]

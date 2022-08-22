@@ -66,7 +66,7 @@ class ExploreCollectionViewCell: UICollectionViewCell {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.frame = CGRect(x: 20.fw, y: 45.fh, width: Int(screenWidth), height: 280.fh)
+        collectionView.frame = CGRect(x: 20.fw, y: 45.fh, width: Int(screenWidth-CGFloat(40.fw)), height: 280.fh)
         collectionView.backgroundColor = .clear
         collectionView.delegate = self
         collectionView.dataSource = self

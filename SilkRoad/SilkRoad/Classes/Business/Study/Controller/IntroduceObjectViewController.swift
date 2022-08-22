@@ -22,8 +22,7 @@ class IntroduceObjectViewController: UIViewController {
         let button = UIButton()
         button.setImage(UIImage(named: "back"), for: .normal)
         button.frame = CGRect(x: 20.fw, y: 50.fh, width: 30.fw, height: 30.fh)
-        button.addTarget(self, action: #selector(clickLeftBackButton), for: .allEvents)
-        
+        button.addTarget(self, action: #selector(clickLeftBackButton), for: .touchUpInside)
         return button
     }()
     
@@ -40,7 +39,7 @@ class IntroduceObjectViewController: UIViewController {
     lazy var Biglabel: UILabel = {
         let label = UILabel()
         label.text = "敦煌大鼎"
-        label.frame = CGRect(x: 210, y: 144, width: 200, height: 60)
+        label.frame = CGRect(x: 220.fw, y: 144.fh, width: 200.fw, height: 60.fw)
         label.font = UIFont.init(name: "TimesNewRomanPS-ItalicMT", size: 20)
         label.textColor = .black
         label.numberOfLines = 0
