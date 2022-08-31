@@ -79,15 +79,15 @@ extension SetViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return 1
+            return 0
         case 1:
-            return 2
+            return 1
         case 2:
-            return 2
+            return 0
         case 3:
-            return 1
+            return 0
         default:
-            return 1
+            return 0
         }
     }
 
@@ -99,7 +99,7 @@ extension SetViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: SetCellID, for: indexPath) as! SetTableViewCell
-            let information = ["账号管理", "手机号码"]
+            let information = ["清除缓存", "手机号码"]
             cell.titleLabel.text = information[indexPath.item]
             return cell
         case 2:
@@ -139,6 +139,13 @@ extension SetViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.section == 1 && indexPath.row == 0 {
+            removeUserDefaults()
+            let alterController = UIAlertController(title: "提示", message: "清除缓存成功", preferredStyle: .alert)
+            present(alterController, animated: true, completion: { [self] in
+                dismiss(animated: true, completion: nil)
+            })
+        }
     }
     
 }

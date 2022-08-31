@@ -19,3 +19,10 @@ func saveOpenedMHIndexes(cityName: String, index: Int) {
 func getOpenedMHIndexes(cityName: String) -> [Int]? {
     return UserDefaults.standard.value(forKey: cityName + "_openedindex") as? [Int]
 }
+
+func removeOpenedMHIndexes() {
+    let keys = ["西安_openedindex", "兰州_openedindex", "乌鲁木齐_openedindex", "敦煌_openedindex", "西宁_openedindex"]
+    keys.forEach { key in
+        UserDefaults.standard.removeObject(forKey: key)
+    }
+}

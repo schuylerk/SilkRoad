@@ -40,25 +40,26 @@ class PlayViewController: UIViewController {
     }()
     
     lazy var scrollView: UIScrollView = {
-        let scv = UIScrollView(frame: CGRect(x: 0, y: Int(screenHeight)/2 - 200.fh, width: Int(screenWidth), height: 400.fh))
-        scv.contentSize = CGSize(width: Int(screenWidth), height: 400.fh)
+        let scv = UIScrollView(frame: CGRect(x: 0, y: Int(screenHeight)/2 - 250.fh, width: Int(screenWidth), height: 500.fh))
+        scv.contentSize = CGSize(width: Int(screenWidth), height: 600.fh)
         scv.addSubview(huluView)
         scv.addSubview(guahuaView)
         return scv
     }()
     
     lazy var huluView: UIView = {
-        let vi = UIView(frame: CGRect(x: 0, y: 0, width: (Int(screenWidth)-20.fw)/2, height: 400.fh))
+        let vi = UIView(frame: CGRect(x: 0, y: 0, width: (Int(screenWidth)-20.fw)/2, height: 500.fh))
         let imageView = UIImageView(frame: vi.bounds)
         imageView.image = UIImage(named: "hulu")
+        imageView.contentMode = .scaleAspectFill
         vi.addSubview(imageView)
-        let label = UILabel(frame: CGRect(x: Int(vi.bounds.width)-25.fw, y: 0, width: 25.fw, height: 150.fh))
+        let label = UILabel(frame: CGRect(x: Int(vi.bounds.width)-40.fw, y: 0, width: 40.fw, height: 200.fh))
         label.text = "自制葫芦"
         label.textColor = .white
         label.numberOfLines = 0
-        label.font = .systemFont(ofSize: 20)
+        label.font = UIFont(name: "LXGW WenKai", size: CGFloat(35.fw))
         vi.addSubview(label)
-        vi.layer.cornerRadius = 5
+        vi.layer.cornerRadius = CGFloat(5.fw)
         vi.layer.shadowColor = UIColor(hex: "#FFCCA3").cgColor
         vi.layer.shadowOpacity = 1
         vi.layer.masksToBounds = true
@@ -69,17 +70,18 @@ class PlayViewController: UIViewController {
     }()
     
     lazy var guahuaView: UIView = {
-        let vi = UIView(frame: CGRect(x: Int(screenWidth)/2+10, y: 0, width: Int(screenWidth)/2-10.fw, height: 400.fh))
+        let vi = UIView(frame: CGRect(x: Int(screenWidth)/2+10, y: 0, width: Int(screenWidth)/2-10.fw, height: 500.fh))
         let imageView = UIImageView(frame: vi.bounds)
         imageView.image = UIImage(named: "guahua")
+        imageView.contentMode = .scaleAspectFill
         vi.addSubview(imageView)
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 25.fw, height: 100.fh))
+        let label = UILabel(frame: CGRect(x: 0, y: 10.fh, width: 40.fw, height: 100.fh))
         label.text = "刮画"
         label.textColor = .white
         label.numberOfLines = 0
-        label.font = .systemFont(ofSize: 20)
+        label.font = UIFont(name: "LXGW WenKai", size: CGFloat(35.fw))
         vi.addSubview(label)
-        vi.layer.cornerRadius = 5
+        vi.layer.cornerRadius = CGFloat(5.fw)
         vi.layer.shadowColor = UIColor(hex: "#FFCCA3").cgColor
         vi.layer.shadowOpacity = 1
         vi.layer.masksToBounds = true

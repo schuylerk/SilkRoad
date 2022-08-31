@@ -38,6 +38,8 @@ class MineDataCollectionViewCell: UICollectionViewCell {
         let imageView = UIImageView(image: image)
         imageView.layer.cornerRadius = CGFloat(35.fw)
         imageView.clipsToBounds = true
+        imageView.layer.borderColor = UIColor.systemGray6.cgColor
+        imageView.layer.borderWidth = 1
         return imageView
     }()
     
@@ -52,10 +54,11 @@ class MineDataCollectionViewCell: UICollectionViewCell {
     
     lazy var introducelabel: UILabel = {
         let label = UILabel()
-        label.text = "女｜湖南｜已解锁\(getBadge()?.count ?? 0)个旅行勋章"
+        label.text = "湖南工业大学 ｜ 计算机学院"//"女｜湖南｜已解锁\(getBadge()?.count ?? 0)个旅行勋章"
         label.textColor = .gray
-        label.font = UIFont.init(name: "TimesNewRomanPS-ItalicMT", size: 15)
+        label.font = UIFont.init(name: "LXGW WenKai", size: 12)
         label.numberOfLines = 0
+        label.textAlignment = .center
         return label
     }()
     
@@ -74,8 +77,8 @@ class MineDataCollectionViewCell: UICollectionViewCell {
         button.setTitleColor(.gray, for: .normal)
         button.layer.borderWidth = 1
         button.layer.borderColor = UIColor.gray.cgColor
-        button.layer.cornerRadius = CGFloat(12.fh)
-        button.titleLabel?.font = UIFont.init(name: "TimesNewRomanPS-ItalicMT", size: 12)
+        button.layer.cornerRadius = CGFloat(11.fh)
+        button.titleLabel?.font = UIFont.init(name: "TimesNewRomanPS-ItalicMT", size: CGFloat(12.fw))
         button.addTarget(self, action: #selector(editClick), for: .touchUpInside)
         return button
     }()
@@ -127,7 +130,7 @@ class MineDataCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(imageView)
         contentView.addSubview(portraitImageView)
         imageView.addSubview(namelabel)
-//        imageView.addSubview(introducelabel)
+        imageView.addSubview(introducelabel)
 //        imageView.addSubview(centerbutton)
         imageView.addSubview(editbutton)
     
@@ -142,17 +145,16 @@ class MineDataCollectionViewCell: UICollectionViewCell {
         }
         
         namelabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(45.fh)
-            make.height.equalTo(30)
+            make.top.equalTo(portraitImageView.snp.bottom)
+            make.height.equalTo(25.fh)
             make.left.right.equalToSuperview()
         }
         
-//        introducelabel.snp.makeConstraints { make in
-//            make.top.equalTo(namelabel.snp.bottom).offset(5)
-//            make.height.equalTo(30)
-//            make.left.equalToSuperview().offset(Int(screenWidth/2-120).fw)
-//            make.width.equalToSuperview().offset(100.fw)
-//        }
+        introducelabel.snp.makeConstraints { make in
+            make.top.equalTo(namelabel.snp.bottom)
+            make.height.equalTo(20.fh)
+            make.left.right.equalToSuperview()
+        }
         
 //        centerbutton.snp.makeConstraints { make in
 //            make.top.equalToSuperview().offset(107.fh)
@@ -162,8 +164,8 @@ class MineDataCollectionViewCell: UICollectionViewCell {
 //        }
     
         editbutton.snp.makeConstraints { make in
-            make.top.equalTo(namelabel.snp.bottom).offset(5.fh)
-            make.height.equalTo(24.fh)
+            make.top.equalTo(introducelabel.snp.bottom).offset(5.fh)
+            make.height.equalTo(22.fh)
 //            make.left.equalTo(centerbutton).offset(-10.fw)
             make.centerX.equalToSuperview()
             make.width.equalTo(80.fw)

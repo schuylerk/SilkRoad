@@ -151,6 +151,17 @@ class AnswerViewController: UIViewController {
         return label
     }()
     
+    lazy var specialLabel: UILabel = {
+        let label = UILabel(frame: CGRect(x: 0, y: Int(screenHeight) / 2 + 200.fw, width: Int(screenWidth), height: 100.fh))
+        label.text = "恭喜通关！\n\n在岁月的长河中，人好比流星\n文化传承的意义，相当于把流星雨录下来反复播放。"
+        label.isHidden = true
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.font = .systemFont(ofSize: 12)
+        label.textColor = UIColor(hex: "#FFCCA3")
+        return label
+    }()
+    
     @objc func tapBlackButton() {
         navigationController?.popViewController(animated: true)
     }
@@ -217,6 +228,9 @@ class AnswerViewController: UIViewController {
                     goadLabel.isHidden = false
                 })
                 saveBadge(cityName)
+                if let badges = getBadge(), badges.count == 5 {
+                    specialLabel.isHidden = false
+                }
             } else {
                 var message = "\n"
                 for i in 0..<selectRecord.count {
@@ -354,6 +368,7 @@ class AnswerViewController: UIViewController {
         view.addSubview(blackButton)
         view.addSubview(goadImageView)
         view.addSubview(goadLabel)
+        view.addSubview(specialLabel)
         if isCompleteAnswer {
             view.addSubview(answerLabel)
         }

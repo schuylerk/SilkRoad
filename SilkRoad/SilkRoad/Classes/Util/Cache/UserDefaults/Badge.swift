@@ -20,3 +20,7 @@ func saveBadge(_ cityName: String) {
 func getBadge() -> [String]? {
     return UserDefaults.standard.value(forKey: "badge") as? [String]
 }
+
+func removeBadge() {
+    UserDefaults.standard.removeObject(forKey: "badge")
+}

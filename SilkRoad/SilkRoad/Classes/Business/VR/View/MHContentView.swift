@@ -14,8 +14,6 @@ class MHContentView: UIView {
     
     var contentType: ContentType = .story
     
-    var markView: NHMarkdownView!
-    
     var storyView: StoryView!
     
     var arscnView: ARSCNView!
@@ -50,17 +48,6 @@ class MHContentView: UIView {
         storyView = StoryView(frame: bounds)
         storyView.config(content: string)
         addSubview(storyView)
-//        let content = NHMarkdown().markdownToHTML(string)
-//        markView = NHMarkdownView()
-//        markView.frame = bounds
-//        markView.openOnSafari = true
-//        markView.onRendered = { height in
-//            print(height ?? 0)
-//        }
-//        addSubview(markView)
-//        markView.load(markdown: content, options: .default) { [self] wkView, wkNav in
-//            markView.setFontSize(percent: 128)
-//        }
     }
     
     func configCultureRelic(cultureRelic: CultureRelic, preRotation: Rotation) {
@@ -89,15 +76,13 @@ class MHContentView: UIView {
         let r1 = SCNMatrix4Rotate(SCNMatrix4Identity, preRotation.x, 1, 0, 0)
         let r2 = SCNMatrix4Rotate(r1, preRotation.y, 0, 1, 0)
         node.pivot = SCNMatrix4Rotate(r2, preRotation.z, 0, 0, 1)
+        let plane = SCNPlane(width: bounds.width, height: bounds.height)
+        plane.firstMaterial?.diffuse.contents = UIColor.white
+        let planeNode = SCNNode(geometry: plane)
+        planeNode.position = SCNVector3Make(0, 0, -3)
+        arscnView.scene.rootNode.insertChildNode(planeNode, at: 0)
         addSubview(arscnView)
         addSubview(crNameLabel)
-    }
-    
-    func removeMarkView() {
-        if markView != nil {
-            markView.removeFromSuperview()
-            markView = nil
-        }
     }
     
     func removeScnView() {
@@ -114,12 +99,6 @@ class MHContentView: UIView {
     func clear() {
         if storyView != nil {
             storyView.clear()
-        }
-    }
-
-    func updateMarkView() {
-        if markView != nil {
-            markView.frame = bounds
         }
     }
     
@@ -169,7 +148,7 @@ class MHContentView: UIView {
             let r2 = SCNMatrix4Rotate(r1, preRotation.y, 0, 1, 0)
             let r3 = SCNMatrix4Rotate(r2, preRotation.z, 0, 0, 1)
             let r4 = SCNMatrix4Rotate(r3, currentAngleX+totleAngleX, 0, 1, 0)
-            arscnView.scene.rootNode.childNodes[0].pivot = SCNMatrix4Rotate(r4, currentAngleY + totleAngleY, 1, 0, 0)
+            arscnView.scene.rootNode.childNodes[1].pivot = SCNMatrix4Rotate(r4, currentAngleY + totleAngleY, 1, 0, 0)
         }
     }
     
@@ -177,9 +156,8 @@ class MHContentView: UIView {
     
     @objc func pinchGestureHandle(gesture: UIPinchGestureRecognizer) {
         let sc = (scale + Float(gesture.scale-1)) >= 0 ? (scale + Float(gesture.scale-1)) : 0
-        if let node = arscnView.scene.rootNode.childNodes.first {
-            node.scale = SCNVector3Make(sc, sc, sc)
-        }
+        let node = arscnView.scene.rootNode.childNodes[1]
+        node.scale = SCNVector3Make(sc, sc, sc)
         if gesture.state == .ended {
             scale = sc
         }
@@ -191,7 +169,6 @@ class MHContentView: UIView {
         arscnView = ARSCNView(frame: bounds)
         arscnView.scene = SCNScene()
         arscnView.delegate = self
-//        arscnView.debugOptions = [.showWorldOrigin, .showFeaturePoints]
         addSubview(arscnView)
         addSubview(addButton)
         addSubview(helpButton)
@@ -208,7 +185,7 @@ class MHContentView: UIView {
         arscnView.session.pause()
         arscnView.removeFromSuperview()
         addButton.removeFromSuperview()
-//        helpButton.removeFromSuperview()
+        helpButton.removeFromSuperview()
         arscnView = nil
         canAdd = false
         openHelp = true
@@ -245,10 +222,6 @@ class MHContentView: UIView {
                 realRotateTx = Float(location.x) - realRotateBeginX
                 realRotateTotleX += realRotateTx
                 let angle = -realRotateTotleX/Float(5.fw)*Float.pi/180.0
-                print(preRotation)
-//                let r1 = SCNMatrix4MakeRotation(preRotation.x, 1, 0, 0)
-//                let r2 = SCNMatrix4Rotate(r1, preRotation.y, 0, 1, 0)
-//                let r3 = SCNMatrix4Rotate(r2, preRotation.z, 0, 0, 1)
                 if num == 5 || num == 3 {
                     realRotateNode.pivot = SCNMatrix4Rotate(SCNMatrix4Identity, angle, 0, 1, 0)
                 } else if num == 8 || num == 10 || num == 9 {
@@ -359,8 +332,6 @@ class MHContentView: UIView {
             node.isHidden = !openHelp
         }
     }
-    
-    var hadAddedPlanes: [UUID] = []
     
 }
 

@@ -48,6 +48,7 @@
 		A103734328B1B79800623052 /* IPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A103734228B1B79800623052 /* IPView.swift */; };
 		A12AD38428AD01D80027C800 /* CollectedMHCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12AD38328AD01D80027C800 /* CollectedMHCache.swift */; };
 		A12AD38828AD19990027C800 /* OpenedMHCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12AD38728AD19990027C800 /* OpenedMHCache.swift */; };
+		A141E8FA28B5C94400CC61E8 /* LXGWWenKai-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A141E8F928B5C94400CC61E8 /* LXGWWenKai-Regular.ttf */; };
 		A143229E28A33999005C437E /* mh.json in Resources */ = {isa = PBXBuildFile; fileRef = A143229D28A33999005C437E /* mh.json */; };
 		A14322A028A33B5F005C437E /* MH.swift in Sources */ = {isa = PBXBuildFile; fileRef = A143229F28A33B5F005C437E /* MH.swift */; };
 		A14A0B2D28A9468E003BE9C2 /* MHContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A0B2C28A9468E003BE9C2 /* MHContentView.swift */; };
@@ -162,6 +163,7 @@
 		A1EDF5FA2827DF44001874BC /* GameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EDF5F92827DF44001874BC /* GameCell.swift */; };
 		A1EDF5FC2827E80C001874BC /* HomemadeGourdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EDF5FB2827E80C001874BC /* HomemadeGourdViewController.swift */; };
 		A1EDF5FE2827E82F001874BC /* ScrapingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EDF5FD2827E82F001874BC /* ScrapingViewController.swift */; };
+		A1EF58EF28BE08D4004875CF /* removeUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EF58EE28BE08D4004875CF /* removeUserDefaults.swift */; };
 		A1FB93A028B0E9CA00E5EE99 /* StoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FB939F28B0E9CA00E5EE99 /* StoryView.swift */; };
 		B9969F8415B66688CD01147E /* Pods_SilkRoad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10076F0333B3EEC2C42268C9 /* Pods_SilkRoad.framework */; };
 /* End PBXBuildFile section */
@@ -211,6 +213,7 @@
 		A103734228B1B79800623052 /* IPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPView.swift; sourceTree = "<group>"; };
 		A12AD38328AD01D80027C800 /* CollectedMHCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectedMHCache.swift; sourceTree = "<group>"; };
 		A12AD38728AD19990027C800 /* OpenedMHCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenedMHCache.swift; sourceTree = "<group>"; };
+		A141E8F928B5C94400CC61E8 /* LXGWWenKai-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LXGWWenKai-Regular.ttf"; sourceTree = "<group>"; };
 		A143229D28A33999005C437E /* mh.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mh.json; sourceTree = "<group>"; };
 		A143229F28A33B5F005C437E /* MH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MH.swift; sourceTree = "<group>"; };
 		A14A0B2C28A9468E003BE9C2 /* MHContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHContentView.swift; sourceTree = "<group>"; };
@@ -357,6 +360,7 @@
 		A1EDF5F92827DF44001874BC /* GameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCell.swift; sourceTree = "<group>"; };
 		A1EDF5FB2827E80C001874BC /* HomemadeGourdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomemadeGourdViewController.swift; sourceTree = "<group>"; };
 		A1EDF5FD2827E82F001874BC /* ScrapingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapingViewController.swift; sourceTree = "<group>"; };
+		A1EF58EE28BE08D4004875CF /* removeUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = removeUserDefaults.swift; sourceTree = "<group>"; };
 		A1FB939F28B0E9CA00E5EE99 /* StoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -735,6 +739,7 @@
 		A165677D27E57B0500F81F7C /* SilkRoad */ = {
 			isa = PBXGroup;
 			children = (
+				A141E8F928B5C94400CC61E8 /* LXGWWenKai-Regular.ttf */,
 				A14C568E28AE469E0052402E /* NHMarkdown */,
 				A14C562A28AE46950052402E /* NHEFCMark */,
 				A165679227E57B8800F81F7C /* Classes */,
@@ -923,6 +928,7 @@
 				A19F46BD280EAC3900D0BE94 /* User.swift */,
 				A12AD38328AD01D80027C800 /* CollectedMHCache.swift */,
 				A12AD38728AD19990027C800 /* OpenedMHCache.swift */,
+				A1EF58EE28BE08D4004875CF /* removeUserDefaults.swift */,
 			);
 			path = UserDefaults;
 			sourceTree = "<group>";
@@ -1119,6 +1125,7 @@
 				A16C6FA528AF491B009888AA /* 汉武帝进攻匈奴.png in Resources */,
 				A165679C27E57EEA00F81F7C /* Main.storyboard in Resources */,
 				A16C6FA828AF491B009888AA /* 美洲大发现.png in Resources */,
+				A141E8FA28B5C94400CC61E8 /* LXGWWenKai-Regular.ttf in Resources */,
 				A1DFC61128053E50004ED0BE /* commodity.json in Resources */,
 				A15F86B928AB69D600C1429D /* 汉武帝进攻匈奴.md in Resources */,
 			);
@@ -1284,6 +1291,7 @@
 				A14C567228AE46950052402E /* autolink.c in Sources */,
 				A12AD38828AD19990027C800 /* OpenedMHCache.swift in Sources */,
 				7EADA7DB27F5C9D80044FB28 /* CommodityCell.swift in Sources */,
+				A1EF58EF28BE08D4004875CF /* removeUserDefaults.swift in Sources */,
 				A1CD630E2803E63D006C56EC /* Question.swift in Sources */,
 				A14C568428AE46950052402E /* arena.c in Sources */,
 				A14C568228AE46950052402E /* render.c in Sources */,
@@ -1425,7 +1433,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = YAJ74PJU3F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SilkRoad/Info.plist;
@@ -1460,7 +1468,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = YAJ74PJU3F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SilkRoad/Info.plist;

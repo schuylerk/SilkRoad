@@ -22,7 +22,12 @@ class MedalCollectionViewCell: UICollectionViewCell {
     }
     
     func configData() {
-        guard let name = getBadge() else { return }
+        guard let name = getBadge() else {
+            self.name = []
+            self.goad = []
+            badgelabel.text = "丝绸勋章  0/5"
+            return
+        }
         self.name = name
         goad = name.map { string -> String in
             switch string {
@@ -40,7 +45,7 @@ class MedalCollectionViewCell: UICollectionViewCell {
                 return ""
             }
         }
-        badgelabel.text = "思绸勋章  \(name.count)/5"
+        badgelabel.text = "丝绸勋章  \(name.count)/5"
     }
     
     lazy var badgelabel: UILabel = {

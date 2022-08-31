@@ -86,7 +86,6 @@ class ShowVRViewController: UIViewController {
                 mhCollectionView.isHidden = false
                 mhBlackButton.isUserInteractionEnabled = true
                 connectRealityButton.isHidden = true
-                mhContentView.removeMarkView()
                 mhContentView.removeScnView()
                 mhContentView.removeCrNameLabel()
                 mhContentView.clear()
@@ -121,7 +120,6 @@ class ShowVRViewController: UIViewController {
             } else {
                 mhContentView.frame = CGRect(x: screenWidth/2-150, y: screenHeight/2-200, width: 300, height: 400)
             }
-            mhContentView.updateMarkView()
             mhContentView.updateArscnView(type: !mhContentIsFull ? .enlarge : .narrow)
         }, completion: { [self] _ in
             mhContentFullButton.frame = !mhContentIsFull ?
@@ -327,8 +325,7 @@ class ShowVRViewController: UIViewController {
     
     lazy var connectRealityButton: UIButton = {
         let button = UIButton(frame: CGRect(x: Int(screenWidth)/2-100.fw, y: Int(screenHeight)-80.fh, width: 200.fw, height: 40.fh))
-        button.backgroundColor = .black
-        button.alpha = 0.2
+        button.backgroundColor = .gray
         button.setTitle("连接现实", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = CGFloat(20.fh)

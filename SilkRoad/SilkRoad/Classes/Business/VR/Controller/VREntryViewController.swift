@@ -300,6 +300,16 @@ class VREntryViewController: UIViewController {
                             roadMapImageView.addSubview(imgV)
                         }
                     }
+                } else {
+                    let subviews = roadMapImageView.subviews
+                    subviews.forEach { subview in
+                        if let imgv = subview as? UIImageView {
+                            let frame = imgv.frame
+                            if (frame.minX == CGFloat(location.minX)*roadMapWidth-15) || (frame.minX == CGFloat(location.maxX)*roadMapWidth+8) {
+                                imgv.removeFromSuperview()
+                            }
+                        }
+                    }
                 }
             }
         }

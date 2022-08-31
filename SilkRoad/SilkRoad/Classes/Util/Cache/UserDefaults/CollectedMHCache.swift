@@ -19,3 +19,11 @@ func saveCollectedMHIndexes(cityName: String, mindex: Int) {
 func getCollectedMHIndexesFor(cityName: String) -> [Int]? {
     return UserDefaults.standard.value(forKey: cityName) as? [Int]
 }
+
+func removeAllCollectedMHIndexes() {
+    UserDefaults.standard.removeObject(forKey: "西安")
+    UserDefaults.standard.removeObject(forKey: "兰州")
+    UserDefaults.standard.removeObject(forKey: "敦煌")
+    UserDefaults.standard.removeObject(forKey: "乌鲁木齐")
+    UserDefaults.standard.removeObject(forKey: "西宁")
+}

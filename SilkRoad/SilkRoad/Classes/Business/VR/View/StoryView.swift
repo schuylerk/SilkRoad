@@ -93,6 +93,7 @@ class StoryView: UIView {
     }
     
     func clear() {
+        colorLayer.removeFromSuperlayer()
         if titleLabel != nil {
             titleLabel.removeFromSuperview()
             titleLabel = nil
