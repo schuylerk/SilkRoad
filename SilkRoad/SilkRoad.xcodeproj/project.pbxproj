@@ -138,6 +138,7 @@
 		A19F46BF280EAC3900D0BE94 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F46BD280EAC3900D0BE94 /* User.swift */; };
 		A19F46C0280EAC3900D0BE94 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F46BE280EAC3900D0BE94 /* Badge.swift */; };
 		A19F46C6280EBB0100D0BE94 /* CultureRelicCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F46C5280EBB0100D0BE94 /* CultureRelicCache.swift */; };
+		A1B0097128BFC03100690A88 /* 49756.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A1B0097028BFC03000690A88 /* 49756.mp3 */; };
 		A1CD63052803E63D006C56EC /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = A1CD62EE2803E63D006C56EC /* questions.json */; };
 		A1CD63062803E63D006C56EC /* roadMapCityLocation.json in Resources */ = {isa = PBXBuildFile; fileRef = A1CD62EF2803E63D006C56EC /* roadMapCityLocation.json */; };
 		A1CD63072803E63D006C56EC /* ColorLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CD62F12803E63D006C56EC /* ColorLayer.swift */; };
@@ -335,6 +336,7 @@
 		A19F46BD280EAC3900D0BE94 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A19F46BE280EAC3900D0BE94 /* Badge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		A19F46C5280EBB0100D0BE94 /* CultureRelicCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CultureRelicCache.swift; sourceTree = "<group>"; };
+		A1B0097028BFC03000690A88 /* 49756.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 49756.mp3; sourceTree = "<group>"; };
 		A1CD62EE2803E63D006C56EC /* questions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
 		A1CD62EF2803E63D006C56EC /* roadMapCityLocation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = roadMapCityLocation.json; sourceTree = "<group>"; };
 		A1CD62F12803E63D006C56EC /* ColorLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorLayer.swift; sourceTree = "<group>"; };
@@ -739,6 +741,7 @@
 		A165677D27E57B0500F81F7C /* SilkRoad */ = {
 			isa = PBXGroup;
 			children = (
+				A1B0097028BFC03000690A88 /* 49756.mp3 */,
 				A141E8F928B5C94400CC61E8 /* LXGWWenKai-Regular.ttf */,
 				A14C568E28AE469E0052402E /* NHMarkdown */,
 				A14C562A28AE46950052402E /* NHEFCMark */,
@@ -1125,6 +1128,7 @@
 				A16C6FA528AF491B009888AA /* 汉武帝进攻匈奴.png in Resources */,
 				A165679C27E57EEA00F81F7C /* Main.storyboard in Resources */,
 				A16C6FA828AF491B009888AA /* 美洲大发现.png in Resources */,
+				A1B0097128BFC03100690A88 /* 49756.mp3 in Resources */,
 				A141E8FA28B5C94400CC61E8 /* LXGWWenKai-Regular.ttf in Resources */,
 				A1DFC61128053E50004ED0BE /* commodity.json in Resources */,
 				A15F86B928AB69D600C1429D /* 汉武帝进攻匈奴.md in Resources */,
@@ -1433,7 +1437,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YAJ74PJU3F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SilkRoad/Info.plist;
@@ -1449,7 +1453,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobishisi.silkroad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1468,7 +1472,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YAJ74PJU3F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SilkRoad/Info.plist;
@@ -1484,7 +1488,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobishisi.silkroad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
