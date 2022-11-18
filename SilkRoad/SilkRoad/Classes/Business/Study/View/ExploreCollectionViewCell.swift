@@ -66,7 +66,7 @@ class ExploreCollectionViewCell: UICollectionViewCell {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.frame = CGRect(x: 20.fw, y: 45.fh, width: Int(screenWidth-CGFloat(40.fw)), height: 280.fh)
+        collectionView.frame = CGRect(x: 20.fw, y: 45.fh, width: Int(screenWidth-CGFloat(40.fw)), height: 310.fh)
         collectionView.backgroundColor = .clear
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -80,10 +80,7 @@ class ExploreCollectionViewCell: UICollectionViewCell {
     func ConfigUI() {
         self.addSubview(explabel)
         self.addSubview(collectionView)
-        
     }
-    
-    
     
 }
 
@@ -104,25 +101,14 @@ extension  ExploreCollectionViewCell:  UICollectionViewDelegate, UICollectionVie
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let callback = cellCallBack {
-            
             callback(self.Relic[indexPath.section],Relic[indexPath.section].face)
         }
-        
     }
 }
-    
-
 
 extension ExploreCollectionViewCell: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 170.fw, height: 250.fh)
+        return CGSize(width: 170.fw, height: 280.fh)
     }
-    
-  
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        return UIEdgeInsets(top: CGFloat(0.fh), left: CGFloat(0.fw), bottom: CGFloat(13.fh), right: CGFloat(20.fw))
-//    }
-    
 }

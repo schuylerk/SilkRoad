@@ -38,6 +38,14 @@ class VREntryViewController: UIViewController {
         return imgV
     }()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        setUI()
+        setNav()
+        getRoadMapCityLocation {}
+    }
+    
     @objc func tapHandler(gesture: UIGestureRecognizer) {
         let location = gesture.location(in: roadMapImageView)
         let (x, y) = (location.x/(roadMapHeight*1.34), location.y/roadMapHeight)
@@ -143,7 +151,6 @@ class VREntryViewController: UIViewController {
                         UserDefaults.standard.set(indexList, forKey: cityName + "_indexlist")
                     }
                 }
-                print(overlays)
                 let vc = ShowVRViewController()
                 vc.overlays = overlays
                 vc.cityNameCN = cityName
@@ -159,23 +166,10 @@ class VREntryViewController: UIViewController {
                 case "敦煌":
                     vc.cityName = "dunhuang"
                 default:
-//                    let ocvc = OtherCityViewController()
-//                    ocvc.cityName = cityName
-//                    self.navigationController?.pushViewController(ocvc, animated: true)
                     return
                 }
                 self.navigationController?.pushViewController(vc, animated: true)
             }
-        }
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        setUI()
-        setNav()
-        getRoadMapCityLocation {
-//            configColletedImageView()
         }
     }
     
@@ -251,16 +245,22 @@ class VREntryViewController: UIViewController {
     
     func getRoadMapCityLocation(completion: @escaping ()->Void) {
         do {
-            let data = try Data(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "roadMapCityLocation", ofType: "json")!))
+            guard let path = Bundle.main.path(forResource: "roadMapCityLocation", ofType: "json") else { return }
+            let data = try Data(contentsOf: URL(fileURLWithPath: path))
             if let jsonObject = try JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary {
                 jsonObject.forEach { key, value in
                     if let value = value as? NSDictionary {
                         if let key = key as? String {
+                            guard let minX = value["minX"] as? CGFloat else { return }
+                            guard let minY = value["minY"] as? CGFloat else { return }
+                            guard let maxX = value["maxX"] as? CGFloat else { return }
+                            guard let maxY = value["maxY"] as? CGFloat else { return }
                             roadMapCityLocation[key] = RoadMapCityLocation(
-                                minX: Float(value["minX"] as! CGFloat),
-                                minY: Float(value["minY"] as! CGFloat),
-                                maxX: Float(value["maxX"] as! CGFloat),
-                                maxY: Float(value["maxY"] as! CGFloat))
+                                minX: Float(minX),
+                                minY: Float(minY),
+                                maxX: Float(maxX),
+                                maxY: Float(maxY)
+                            )
                         }
                     }
                 }

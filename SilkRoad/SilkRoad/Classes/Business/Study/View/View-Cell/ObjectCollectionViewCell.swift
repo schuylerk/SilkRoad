@@ -13,14 +13,12 @@ class ObjectCollectionViewCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         configUI()
-        
     }
     
     lazy var ObjectLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.init(name: "TimesNewRomanPS-ItalicMT", size: 15)
         label.textColor = UIColor(red: 0.62, green: 0.478, blue: 0.353, alpha: 1)
-        label.numberOfLines = 0
         return label
     }()
     
@@ -28,7 +26,6 @@ class ObjectCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.textColor = .gray
         label.font = UIFont.init(name: "TimesNewRomanPS-ItalicMT", size: 10)
-        label.numberOfLines = 0
         return label
     }()
     
@@ -57,39 +54,34 @@ class ObjectCollectionViewCell: UICollectionViewCell {
     }
     
     func configUI() {
-        self.addSubview(WhiteView)
+        addSubview(WhiteView)
         WhiteView.addSubview(ObjectLabel)
         WhiteView.addSubview(ObjectView)
         WhiteView.addSubview(ObjectIntroduceLabel)
-   
-        
         WhiteView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(10.fh)
-            make.right.equalToSuperview().offset(-5.fh)
+            make.right.equalToSuperview().offset(-5.fw)
             make.left.equalToSuperview().offset(5.fw)
             make.bottom.equalToSuperview()
         }
         
         ObjectView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(20)
-            make.right.equalToSuperview().offset(-10)
-            make.left.equalToSuperview().offset(10)
-            make.bottom.equalToSuperview().offset(-80)
+            make.top.equalToSuperview().offset(20.fh)
+            make.right.equalToSuperview().offset(-10.fw)
+            make.left.equalToSuperview().offset(10.fw)
+            make.height.equalTo(180.fh)
         }
         
         ObjectLabel.snp.makeConstraints { make in
-            make.top.equalTo(ObjectView.snp.bottom).offset(15)
-            make.left.equalToSuperview().offset(12)
-            make.right.equalToSuperview().offset(-12)
-            make.height.equalTo(15)
+            make.top.equalTo(ObjectView.snp.bottom).offset(15.fh)
+            make.left.equalToSuperview().offset(12.fw)
+            make.right.equalToSuperview().offset(-12.fw)
         }
         
         ObjectIntroduceLabel.snp.makeConstraints { make in
-            make.top.equalTo(ObjectLabel.snp.bottom).offset(5)
-            make.left.equalToSuperview().offset(12)
-            make.right.equalToSuperview().offset(-12)
-            make.width.equalTo(150)
-            make.height.equalTo(32)
+            make.top.equalTo(ObjectLabel.snp.bottom).offset(5.fh)
+            make.left.equalToSuperview().offset(12.fw)
+            make.right.equalToSuperview().offset(-12.fw)
         }
     }
     

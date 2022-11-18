@@ -12,8 +12,10 @@ class MedalCollectionViewCell: UICollectionViewCell {
     
     let MedalCellID = "MedalCellIID"
     
-    var name = [String]()//["西 安", "兰 州", "西 宁", "敦 煌", "乌 鲁 木 齐"]
-    var goad = [String]()//["xagoad", "lzgoad", "xngoad", "dhgoad", "wlmqgoad"]
+    var name = [String]()
+    var goad = [String]()
+    
+    var didSelectMedal: ((String) -> Void)?
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -64,7 +66,11 @@ class MedalCollectionViewCell: UICollectionViewCell {
         collectionView.showsVerticalScrollIndicator = false
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(refresh))
+        
+        let mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(refresh))
+        mj_header.stateLabel?.isHidden = true
+        mj_header.lastUpdatedTimeLabel?.isHidden = true
+        collectionView.mj_header = mj_header
         
         collectionView.register(TravelCollectionViewCell.self, forCellWithReuseIdentifier: MedalCellID)
         return collectionView
@@ -75,7 +81,6 @@ class MedalCollectionViewCell: UICollectionViewCell {
         collectionView.reloadData()
         collectionView.mj_header?.endRefreshing()
     }
-    
     
     func configUI() {
         self.addSubview(badgelabel)
@@ -108,9 +113,13 @@ extension  MedalCollectionViewCell:  UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MedalCellID, for: indexPath) as! TravelCollectionViewCell
-        cell.namelabel.text = name[indexPath.item]
-        cell.medalimageView.image = UIImage(named: goad[indexPath.item])
+        cell.nameLabel.text = name[indexPath.item]
+        cell.medalImageView.image = UIImage(named: goad[indexPath.item])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        didSelectMedal?(goad[indexPath.item])
     }
 
 }
@@ -120,7 +129,7 @@ extension  MedalCollectionViewCell:  UICollectionViewDelegate, UICollectionViewD
 extension MedalCollectionViewCell: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 150.fw, height: 200.fh)
+        return CGSize(width: 150.fw, height: 180.fh)
     }
     
 }

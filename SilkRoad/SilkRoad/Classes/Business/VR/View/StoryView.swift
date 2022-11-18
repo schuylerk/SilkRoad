@@ -81,7 +81,7 @@ class StoryView: UIView {
             if let range = result?.range {
                 var resultString = ""
                 for i in range.lowerBound...range.upperBound {
-                    resultString += String(content[i])
+                    resultString += String(content[content.index(content.startIndex, offsetBy: i)])
                 }
                 return resultString
             }

@@ -10,18 +10,14 @@ import SnapKit
 
 class CityViewController: UIViewController {
     
-    var intro = Introduce()
+    var intro = CityIntroduce()
     var relic = CultureRelic()
-    
     let exploreCellID = "exploreCell"
     let idiomCellID = "idiomCell"
     let poetryCellID = "poertyCell"
-//    let questionCellID = "questionCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(red: 0.973, green: 0.973, blue: 0.973, alpha: 1)
-        navigationController?.navigationBar.isHidden = true
         configUI()
     }
     
@@ -31,14 +27,15 @@ class CityViewController: UIViewController {
         return view
     }()
     
-    lazy var CellBackView: UIImageView = {
+    lazy var cellBackView: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "lanzhouback"))
         imageView.image = UIImage(named: "dunhuangback")
         imageView.frame = CGRect(x: 0, y: 0, width: Int(screenWidth), height: 311.fh)
+        imageView.backgroundColor = .systemGray6
         return imageView
     }()
 
-    lazy var BigNamelabel: UILabel = {
+    lazy var bigNamelabel: UILabel = {
         let label = UILabel()
         label.frame = CGRect(x: 20.fw, y: 190.fh, width: 200.fw, height: 73.fh)
         label.font = UIFont.init(name: "TimesNewRomanPS-ItalicMT", size: CGFloat(50.fw))
@@ -46,33 +43,26 @@ class CityViewController: UIViewController {
         return label
     }()
     
-    lazy var IntroduceLabel: UILabel = {
+    lazy var introduceLabel: UILabel = {
         let label = UILabel()
         label.textColor = .gray
         label.font = UIFont.init(name: "TimesNewRomanPS-ItalicMT", size: CGFloat(15.fw))
         label.numberOfLines = 0
         return label
     }()
-    
-//    lazy var answerbutton: UIButton = {
-//        let button = UIButton()
-//        button.setImage(UIImage(named: "answer"), for: .normal)
-//        return button
-//    }()
 
     lazy var leftButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "back_white"), for: .normal)
-        button.frame = CGRect(x: 20.fw, y: 50.fh, width: 30.fw, height: 30.fh)
+        button.setImage(UIImage(named: "back.white"), for: .normal)
+        button.frame = CGRect(x: 20.fw, y: 50.fh, width: 30.fw, height: 30.fw)
         button.addTarget(self, action: #selector(clickLeftBackButton), for: .allEvents)
         return button
     }()
     
     lazy var answerButton: UIButton = {
-//        let button = UIButton(frame: CGRect(x: Int(screenWidth)-100.fw, y: 220.fh, width: 80.fw, height: 30.fh))
         let button = UIButton()
         let isCompleteAnswer = (getBadge() ?? []).firstIndex(where: { $0==intro.name }) != nil
-        button.backgroundColor = .orange // isCompleteAnswer ? .gray : .orange
+        button.backgroundColor = .orange
         button.setTitle(isCompleteAnswer ? "查看题目（已完成）" : "答题", for: .normal)
         button.setTitleColor(.white, for:.normal)
         button.titleLabel?.font = .systemFont(ofSize: CGFloat(isCompleteAnswer ? 12.fw : 16.fw))
@@ -82,7 +72,6 @@ class CityViewController: UIViewController {
     }()
     
     lazy var goadImageView: UIImageView = {
-//        let imgv = UIImageView(frame: CGRect(x: Int(screenWidth)-140.fw, y: 220.fh, width: 30.fw, height: 30.fw))
         let imgv = UIImageView()
         imgv.image = UIImage(named: getGoadName())
         let isCompleteAnswer = (getBadge() ?? []).firstIndex(where: { $0==intro.name }) != nil
@@ -114,7 +103,6 @@ class CityViewController: UIViewController {
     lazy var gradientLayer: CAGradientLayer = {
         let galayer = CAGradientLayer()
         galayer.frame = backView.bounds
-        print(galayer.frame)
         let aCLolor = UIColor.blue.cgColor
         let bColor = UIColor.brown.cgColor
         let cColor = UIColor.red.cgColor
@@ -137,7 +125,6 @@ class CityViewController: UIViewController {
         collectionView.register(ExploreCollectionViewCell.self, forCellWithReuseIdentifier: exploreCellID)
         collectionView.register(IdiomCollectionViewCell.self, forCellWithReuseIdentifier: idiomCellID)
         collectionView.register(PoetryCollectionViewCell.self, forCellWithReuseIdentifier: poetryCellID)
-//        collectionView.register(QuestionCollectionViewCell.self, forCellWithReuseIdentifier: questionCellID)
         return collectionView
     }()
     
@@ -165,26 +152,27 @@ class CityViewController: UIViewController {
 
     
     func configUI() {
+        view.backgroundColor = UIColor(red: 0.973, green: 0.973, blue: 0.973, alpha: 1)
         view.addSubview(backView)
-        view.addSubview(CellBackView)
-        view.addSubview(BigNamelabel)
+        view.addSubview(cellBackView)
+        view.addSubview(bigNamelabel)
         view.addSubview(goadImageView)
         view.addSubview(answerButton)
-        view.addSubview(IntroduceLabel)
+        view.addSubview(introduceLabel)
         view.addSubview(collectionView)
         view.addSubview(leftButton)
         view.addSubview(blackButton)
         view.addSubview(ipView)
         
-        IntroduceLabel.snp.makeConstraints { make in
-            make.top.equalTo(BigNamelabel.snp.bottom).offset(0)
-            make.left.equalTo(20.fw)
-            make.right.equalTo(-20.fw)
+        introduceLabel.snp.makeConstraints { make in
+            make.top.equalTo(bigNamelabel.snp.bottom)
+            make.left.equalToSuperview().offset(20.fw)
+            make.right.equalToSuperview().offset(-20.fw)
         }
         answerButton.snp.makeConstraints { maker in
             maker.centerX.equalToSuperview()
             maker.width.equalTo(300.fw)
-            maker.top.equalTo(IntroduceLabel.snp.bottom).offset(15.fh)
+            maker.top.equalTo(introduceLabel.snp.bottom).offset(15.fh)
             maker.height.equalTo(40.fh)
         }
         goadImageView.snp.makeConstraints { maker in
@@ -194,25 +182,20 @@ class CityViewController: UIViewController {
         }
         collectionView.snp.makeConstraints {make in
             make.top.equalTo(answerButton.snp.bottom).offset(5.fh)
-            make.left.equalToSuperview()
+            make.left.right.equalToSuperview()
             make.bottom.equalToSuperview()
-            make.width.equalTo(screenWidth)
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.tabBarController?.tabBar.isHidden = true
+        tabBarController?.tabBar.isHidden = true
         navigationController?.navigationBar.isHidden = true
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        self.tabBarController?.tabBar.isHidden = false
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         let isCompleteAnswer = (getBadge() ?? []).firstIndex(where: { $0==intro.name }) != nil
-        answerButton.backgroundColor = .orange // isCompleteAnswer ? .gray : .orange
+        answerButton.backgroundColor = .orange
         answerButton.setTitle(isCompleteAnswer ? "查看题目（已完成）" : "答题", for: .normal)
         answerButton.titleLabel?.font = .systemFont(ofSize: CGFloat(isCompleteAnswer ? 12.fw : 16.fw))
         goadImageView.isHidden = !isCompleteAnswer
@@ -227,11 +210,11 @@ class CityViewController: UIViewController {
         }
     }
     
-    func updateUI(with data:Introduce){
+    func updateUI(with data: CityIntroduce){
         self.intro = data
-        self.CellBackView.image = UIImage(named: data.back)
-        self.BigNamelabel.text = data.name
-        self.IntroduceLabel.text = data.introduce
+        self.cellBackView.image = UIImage(named: data.back)
+        self.bigNamelabel.text = data.name
+        self.introduceLabel.text = data.introduce
     }
     
 }
@@ -254,8 +237,7 @@ extension  CityViewController:  UICollectionViewDelegate, UICollectionViewDataSo
             cell.cellCallBack = { data, face in
                 let vc = IntroduceObjectViewController()
                 vc.updateUI(data: data)
-                print(data.unearthedYear)
-                vc.BackView.image = UIImage(named: face)
+                vc.faceImageView.image = UIImage(named: face)
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             return cell
@@ -267,12 +249,6 @@ extension  CityViewController:  UICollectionViewDelegate, UICollectionViewDataSo
             return cell
         default:
             return UICollectionViewCell()
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: questionCellID, for: indexPath) as! QuestionCollectionViewCell
-//            cell.answerCallBack = { () in
-//                let vc = AnswerViewController()
-//                self.navigationController?.pushViewController(vc, animated: true)
-//            }
-//            return cell
         }
         
     }
@@ -286,14 +262,13 @@ extension CityViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch indexPath.section{
         case 0:
-            return CGSize(width: Int(UIScreen.main.bounds.width), height: 320.fh)
+            return CGSize(width: Int(UIScreen.main.bounds.width), height: 350.fh)
         case 1:
             return CGSize(width: Int(UIScreen.main.bounds.width), height: 240.fh)
         case 2:
             return CGSize(width: Int(UIScreen.main.bounds.width), height: 350.fh)
         default:
             return .zero
-//            return CGSize(width: Int(UIScreen.main.bounds.width).fw, height: 100.fh)
         }
     }
     

@@ -8,6 +8,10 @@
 import UIKit
 
 class IPView: UIView {
+    enum TextPosition {
+        case left
+        case right
+    }
     
     var textPosition: TextPosition = .left
     
@@ -58,13 +62,4 @@ class IPView: UIView {
         addSubview(contentView)
     }
 
-}
-
-extension IPView {
-    
-    enum TextPosition {
-        case left
-        case right
-    }
-    
 }

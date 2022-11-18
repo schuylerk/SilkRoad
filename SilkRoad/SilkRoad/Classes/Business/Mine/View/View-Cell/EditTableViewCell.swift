@@ -23,7 +23,7 @@ class EditTableViewCell: UITableViewCell {
     
     lazy var answerLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.init(name: "TimesNewRomanPS-ItalicMT", size: CGFloat(18.fw))
+        label.font = UIFont.init(name: "LXGW WenKai", size: CGFloat(18.fw))
         label.textAlignment = .right
         label.textColor = .gray
         return label
@@ -66,6 +66,8 @@ class EditTableViewCell: UITableViewCell {
         switch type {
         case .username:
             answerLabel.text = (UserDefaults.standard.value(forKey: "username") as? String) ?? "墨笔拾丝"
+        case .school:
+            answerLabel.text = (UserDefaults.standard.value(forKey: "user_school") as? String) ?? "选择学校"
         }
     }
 
@@ -75,6 +77,7 @@ extension EditTableViewCell {
     
     enum AnswerLabelType {
         case username
+        case school
     }
     
 }

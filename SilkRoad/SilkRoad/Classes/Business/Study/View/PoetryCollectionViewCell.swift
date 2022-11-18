@@ -37,7 +37,6 @@ class PoetryCollectionViewCell: UICollectionViewCell {
         collectionView.dataSource = self
         collectionView.showsHorizontalScrollIndicator = false // 隐藏滑动条
         collectionView.alwaysBounceHorizontal = true
-        
         collectionView.register(PoemCollectionViewCell.self, forCellWithReuseIdentifier: PotCellID)
         return collectionView
     }()

@@ -8,13 +8,11 @@ target 'SilkRoad' do
 
   # Pods for SilkRoad
     pod 'SnapKit' #用于UI布局
-    pod 'Alamofire', '~> 5.2.0' #网络请求
-    pod 'Eureka'
+#    pod 'Alamofire', '~> 5.2.0' #网络请求
     pod 'SwiftyJSON'
-    pod 'HandyJSON', '~> 5.0.2'
+#    pod 'HandyJSON', '~> 5.0.2'
     pod 'MJRefresh'
     pod 'ESTabBarController-swift'
     pod 'MaLiang'
-    pod 'pop'
     
 end

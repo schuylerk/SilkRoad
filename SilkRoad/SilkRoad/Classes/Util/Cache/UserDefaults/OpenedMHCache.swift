@@ -9,9 +9,7 @@ import Foundation
 
 func saveOpenedMHIndexes(cityName: String, index: Int) {
     var openedIndexes: [Int] = []
-    if let indexes = getOpenedMHIndexes(cityName: cityName) {
-        openedIndexes += indexes
-    }
+    if let indexes = getOpenedMHIndexes(cityName: cityName) { openedIndexes += indexes }
     openedIndexes.append(index)
     UserDefaults.standard.set(openedIndexes, forKey: cityName + "_openedindex")
 }
@@ -21,8 +19,6 @@ func getOpenedMHIndexes(cityName: String) -> [Int]? {
 }
 
 func removeOpenedMHIndexes() {
-    let keys = ["西安_openedindex", "兰州_openedindex", "乌鲁木齐_openedindex", "敦煌_openedindex", "西宁_openedindex"]
-    keys.forEach { key in
-        UserDefaults.standard.removeObject(forKey: key)
-    }
+    let keys = ["西安", "兰州", "乌鲁木齐", "敦煌", "西宁"].map { $0 + "_openedindex" }
+    keys.forEach { UserDefaults.standard.removeObject(forKey: $0) }
 }

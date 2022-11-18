@@ -51,8 +51,14 @@ class ScrapingViewController: UIViewController {
     func setNav() {
         title = "刮画"
         navigationController?.navigationBar.isHidden = false
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "back"), style: .done, target: self, action: #selector(back))
-        navigationController?.navigationBar.tintColor = .black
+        navigationItem.leftBarButtonItem = UIBarButtonItem()
+        let customView = UIView(frame: CGRect(x: 0, y: 0, width: 30.fw, height: 30.fw))
+        let backImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 30.fw, height: 30.fw))
+        backImageView.image = UIImage(named: "back")
+        backImageView.isUserInteractionEnabled = true
+        backImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(back)))
+        customView.addSubview(backImageView)
+        navigationItem.leftBarButtonItem?.customView = customView
     }
     
     

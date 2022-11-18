@@ -26,10 +26,7 @@ class IdiomWordCollectionViewCell: UICollectionViewCell {
         self.addSubview(rectanView)
         
         rectanView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(0.fh)
-            make.bottom.equalToSuperview().offset(0.fh)
-            make.left.equalToSuperview().offset(0.fw)
-            make.right.equalToSuperview().offset(0.fw)
+            make.edges.equalToSuperview()
         }
         
     }

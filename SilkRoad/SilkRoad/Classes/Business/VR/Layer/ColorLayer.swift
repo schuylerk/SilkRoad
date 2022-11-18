@@ -29,7 +29,7 @@ class ColorLayer: CALayer {
     override func layoutSublayers() {
         super.layoutSublayers()
         
-        gradientLayer.frame = self.frame
+        gradientLayer.frame = bounds
     }
     
     func setup() {

@@ -44,6 +44,7 @@ class PlayViewController: UIViewController {
         scv.contentSize = CGSize(width: Int(screenWidth), height: 600.fh)
         scv.addSubview(huluView)
         scv.addSubview(guahuaView)
+        scv.isScrollEnabled = false
         return scv
     }()
     
@@ -122,6 +123,7 @@ class PlayViewController: UIViewController {
         
         setNav()
         tabBarController?.tabBar.isHidden = false
+        navigationController?.navigationBar.isHidden = true
     }
     
     func setNav() {

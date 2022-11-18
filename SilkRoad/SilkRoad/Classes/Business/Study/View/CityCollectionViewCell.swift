@@ -8,16 +8,14 @@
 import UIKit
 import SnapKit
 
-class CityCollectionView: UICollectionViewCell {
+class CityCollectionViewCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
         configUI()
-//        self.backgroundColor = .white
     }
     
-    
-    lazy var Studylabel: UILabel = {
+    lazy var studyLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.init(name: "TimesNewRomanPS-ItalicMT", size: CGFloat(40.fw))
         label.textColor = .white
@@ -25,7 +23,7 @@ class CityCollectionView: UICollectionViewCell {
         return label
     }()
     
-    lazy var BackView:UIImageView = {
+    lazy var backgroundImageView: UIImageView = {
         let imageView = UIImageView()
         let image = UIImage()
         imageView.image = image
@@ -36,17 +34,17 @@ class CityCollectionView: UICollectionViewCell {
     }()
     
     func configUI() {
-        self.addSubview(BackView)
-        self.addSubview(Studylabel)
+        addSubview(backgroundImageView)
+        addSubview(studyLabel)
         
-        Studylabel.snp.makeConstraints { make in
+        studyLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(17.fh)
             make.height.equalToSuperview().offset(28.fh)
             make.left.equalToSuperview().offset(10.fw)
             make.width.equalToSuperview().offset(50.fw)
         }
         
-        BackView.snp.makeConstraints { make in
+        backgroundImageView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(0.fh)
             make.bottom.equalToSuperview().offset(-20.fh)
             make.left.equalToSuperview().offset(0.fw)

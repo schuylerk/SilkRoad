@@ -59,7 +59,6 @@ class ShowVRViewController: UIViewController {
     }()
     
     lazy var deleteButton: UIButton = {
-//        let button = UIButton(frame: CGRect(x: screenWidth/2+150, y: screenHeight/2-215, width: 15, height: 15))
         let button = UIButton(frame: CGRect(x: Int(screenWidth)-30.fw, y: 165.fh, width: 25.fw, height: 25.fw))
         button.setImage(UIImage(named: "mh_cha"), for: .normal)
         button.isHidden = true
@@ -400,101 +399,99 @@ class ShowVRViewController: UIViewController {
         ipBlackButton.isHidden = true
     }
     
-    lazy var xslider: UISlider = {
-        let sld = UISlider(frame: CGRect(x: CGFloat(20.fw), y: screenHeight/2, width: screenWidth-CGFloat(40.fw), height: CGFloat(20.fh)))
-        sld.minimumValue = -5
-        sld.maximumValue = 5
-        sld.tag = 0
-        sld.addTarget(self, action: #selector(sliderHandle), for: .allEvents)
-        return sld
-    }()
-
-    lazy var yslider: UISlider = {
-        let sld = UISlider(frame: CGRect(x: CGFloat(20.fw), y: screenHeight/2+CGFloat(40.fh), width: screenWidth-CGFloat(40.fw), height: CGFloat(20.fh)))
-        sld.minimumValue = -5
-        sld.maximumValue = 5
-        sld.tag = 1
-        sld.addTarget(self, action: #selector(sliderHandle), for: .allEvents)
-        return sld
-    }()
-
-    lazy var zslider: UISlider = {
-        let sld = UISlider(frame: CGRect(x: CGFloat(20.fw), y: screenHeight/2+CGFloat(80.fh), width: screenWidth-CGFloat(40.fw), height: CGFloat(20.fh)))
-        sld.minimumValue = -5
-        sld.maximumValue = 5
-        sld.tag = 2
-        sld.addTarget(self, action: #selector(sliderHandle), for: .allEvents)
-        return sld
-    }()
-
-    lazy var xsliderr: UISlider = {
-        let sld = UISlider(frame: CGRect(x: CGFloat(20.fw), y: screenHeight/2+CGFloat(120.fh), width: screenWidth-CGFloat(40.fw), height: CGFloat(20.fh)))
-        sld.minimumValue = -Float.pi
-        sld.maximumValue = Float.pi
-        sld.tag = 3
-        sld.addTarget(self, action: #selector(sliderHandle), for: .allEvents)
-        return sld
-    }()
-
-    lazy var ysliderr: UISlider = {
-        let sld = UISlider(frame: CGRect(x: CGFloat(20.fw), y: screenHeight/2+CGFloat(160.fh), width: screenWidth-CGFloat(40.fw), height: CGFloat(20.fh)))
-        sld.minimumValue = -Float.pi
-        sld.maximumValue = Float.pi
-        sld.tag = 4
-        sld.addTarget(self, action: #selector(sliderHandle), for: .allEvents)
-        return sld
-    }()
-
-    lazy var zsliderr: UISlider = {
-        let sld = UISlider(frame: CGRect(x: CGFloat(20.fw), y: screenHeight/2+CGFloat(200.fh), width: screenWidth-CGFloat(40.fw), height: CGFloat(20.fh)))
-        sld.minimumValue = -Float.pi
-        sld.maximumValue = Float.pi
-        sld.tag = 5
-        sld.addTarget(self, action: #selector(sliderHandle), for: .allEvents)
-        return sld
-    }()
-
-    var rx: Float = 0
-    var ry: Float = 0
-    var rz: Float = 0
-
-    @objc func sliderHandle(slider: UISlider) {
-//        overlayNodes.map {print($0.position)}
-//        print("===============")
-        let value = slider.value
-        let index = 3
-        switch slider.tag {
-        case 0:
-            let x = value
-            overlayNodes[index].position.x = x
-        case 1:
-            let y = value
-            overlayNodes[index].position.y = y
-        case 2:
-            let z = value
-            overlayNodes[index].position.z = z
-        case 3:
-            let xr = value
-            rx = xr
-        case 4:
-            let yr = value
-            ry = yr
-        case 5:
-            let zr = value
-            rz = zr
-        default:
-            break
-        }
-        if slider.tag < 3 {
-            print(overlayNodes[index].position)
-        } else {
-            let r1 = SCNMatrix4Rotate(SCNMatrix4Identity, rx, 1, 0, 0)
-            let r2 = SCNMatrix4Rotate(r1, ry, 0, 1, 0)
-            overlayNodes[index].pivot = SCNMatrix4Rotate(r2, rz, 0, 0, 1)
-            print("rr", separator: "", terminator: "")
-            print((rx, ry, rz))
-        }
-    }
+//    lazy var xslider: UISlider = {
+//        let sld = UISlider(frame: CGRect(x: CGFloat(20.fw), y: screenHeight/2, width: screenWidth-CGFloat(40.fw), height: CGFloat(20.fh)))
+//        sld.minimumValue = -5
+//        sld.maximumValue = 5
+//        sld.tag = 0
+//        sld.addTarget(self, action: #selector(sliderHandle), for: .allEvents)
+//        return sld
+//    }()
+//
+//    lazy var yslider: UISlider = {
+//        let sld = UISlider(frame: CGRect(x: CGFloat(20.fw), y: screenHeight/2+CGFloat(40.fh), width: screenWidth-CGFloat(40.fw), height: CGFloat(20.fh)))
+//        sld.minimumValue = -5
+//        sld.maximumValue = 5
+//        sld.tag = 1
+//        sld.addTarget(self, action: #selector(sliderHandle), for: .allEvents)
+//        return sld
+//    }()
+//
+//    lazy var zslider: UISlider = {
+//        let sld = UISlider(frame: CGRect(x: CGFloat(20.fw), y: screenHeight/2+CGFloat(80.fh), width: screenWidth-CGFloat(40.fw), height: CGFloat(20.fh)))
+//        sld.minimumValue = -5
+//        sld.maximumValue = 5
+//        sld.tag = 2
+//        sld.addTarget(self, action: #selector(sliderHandle), for: .allEvents)
+//        return sld
+//    }()
+//
+//    lazy var xsliderr: UISlider = {
+//        let sld = UISlider(frame: CGRect(x: CGFloat(20.fw), y: screenHeight/2+CGFloat(120.fh), width: screenWidth-CGFloat(40.fw), height: CGFloat(20.fh)))
+//        sld.minimumValue = -Float.pi
+//        sld.maximumValue = Float.pi
+//        sld.tag = 3
+//        sld.addTarget(self, action: #selector(sliderHandle), for: .allEvents)
+//        return sld
+//    }()
+//
+//    lazy var ysliderr: UISlider = {
+//        let sld = UISlider(frame: CGRect(x: CGFloat(20.fw), y: screenHeight/2+CGFloat(160.fh), width: screenWidth-CGFloat(40.fw), height: CGFloat(20.fh)))
+//        sld.minimumValue = -Float.pi
+//        sld.maximumValue = Float.pi
+//        sld.tag = 4
+//        sld.addTarget(self, action: #selector(sliderHandle), for: .allEvents)
+//        return sld
+//    }()
+//
+//    lazy var zsliderr: UISlider = {
+//        let sld = UISlider(frame: CGRect(x: CGFloat(20.fw), y: screenHeight/2+CGFloat(200.fh), width: screenWidth-CGFloat(40.fw), height: CGFloat(20.fh)))
+//        sld.minimumValue = -Float.pi
+//        sld.maximumValue = Float.pi
+//        sld.tag = 5
+//        sld.addTarget(self, action: #selector(sliderHandle), for: .allEvents)
+//        return sld
+//    }()
+//
+//    var rx: Float = 0
+//    var ry: Float = 0
+//    var rz: Float = 0
+//
+//    @objc func sliderHandle(slider: UISlider) {
+//        let value = slider.value
+//        let index = 3
+//        switch slider.tag {
+//        case 0:
+//            let x = value
+//            overlayNodes[index].position.x = x
+//        case 1:
+//            let y = value
+//            overlayNodes[index].position.y = y
+//        case 2:
+//            let z = value
+//            overlayNodes[index].position.z = z
+//        case 3:
+//            let xr = value
+//            rx = xr
+//        case 4:
+//            let yr = value
+//            ry = yr
+//        case 5:
+//            let zr = value
+//            rz = zr
+//        default:
+//            break
+//        }
+//        if slider.tag < 3 {
+//            print(overlayNodes[index].position)
+//        } else {
+//            let r1 = SCNMatrix4Rotate(SCNMatrix4Identity, rx, 1, 0, 0)
+//            let r2 = SCNMatrix4Rotate(r1, ry, 0, 1, 0)
+//            overlayNodes[index].pivot = SCNMatrix4Rotate(r2, rz, 0, 0, 1)
+//            print("rr", separator: "", terminator: "")
+//            print((rx, ry, rz))
+//        }
+//    }
     
     lazy var introButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 20.fw, y: 160.fh, width: 60.fw, height: 30.fh))
@@ -552,7 +549,7 @@ class ShowVRViewController: UIViewController {
         manager.stopDeviceMotionUpdates()
         
         //TODO: Stop Music
-        avAudioPlayer.stop()
+//        avAudioPlayer.stop()
     }
     
     func gyroUpdate() {
@@ -563,7 +560,6 @@ class ShowVRViewController: UIViewController {
             let qp2 = GLKQuaternionMake(Float(quaternion.x), Float(quaternion.y), Float(quaternion.z), Float(quaternion.w))
             let qp = GLKQuaternionMultiply(qp1, qp2)
             cameraNode.orientation = SCNVector4Make(qp.x, qp.y, qp.z, qp.w)
-//            print((cameraNode.orientation.x, cameraNode.orientation.y, cameraNode.orientation.z, cameraNode.orientation.w))
         })
     }
     
@@ -582,17 +578,16 @@ class ShowVRViewController: UIViewController {
         view.addSubview(deleteButton)
         view.addSubview(connectRealityButton)
         view.addSubview(closeRealityButton)
-//        view.addSubview(mhContentFullButton)
         view.addSubview(unlockTextLabel)
         view.addSubview(introButton)
         view.addSubview(ipBlackButton)
         view.addSubview(ipView)
-        view.addSubview(xslider)
-        view.addSubview(yslider)
-        view.addSubview(zslider)
-        view.addSubview(xsliderr)
-        view.addSubview(ysliderr)
-        view.addSubview(zsliderr)
+//        view.addSubview(xslider)
+//        view.addSubview(yslider)
+//        view.addSubview(zslider)
+//        view.addSubview(xsliderr)
+//        view.addSubview(ysliderr)
+//        view.addSubview(zsliderr)
         backButton.snp.makeConstraints { maker in
             maker.left.equalToSuperview().offset(15.fw)
             maker.top.equalToSuperview().offset(50.fh)
@@ -623,7 +618,6 @@ class ShowVRViewController: UIViewController {
             maker.height.equalTo(300.fh)
         }
         configOverlay()
-//        configDialogueData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -647,14 +641,13 @@ class ShowVRViewController: UIViewController {
         }
         
         //TODO: Play Music
-        do {
-            let path = Bundle.main.path(forResource: "49756", ofType: "mp3")!
-            avAudioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: path))
-            avAudioPlayer.volume = 1.0
-            avAudioPlayer.play()
-        } catch {
-            print("=============")
-        }
+//        do {
+//            let path = Bundle.main.path(forResource: "49756", ofType: "mp3")!
+//            avAudioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: path))
+//            avAudioPlayer.volume = 1.0
+//            avAudioPlayer.play()
+//        } catch {
+//        }
     }
     
     var introductionVC: IntroductionCultureRelicViewController!
@@ -686,11 +679,6 @@ class ShowVRViewController: UIViewController {
             imageView.isHidden = true
             collect(index: index)
         })
-//        currentCultureRelicIndex = index
-//        dialogueView.isHidden = false
-//        dialogueView.contents = dialogueData.filter { dia in
-//            dia.name == overlays[index].cultureRelic.name
-//        }.first?.contents ?? []
     }
     
     func showDetailFor(index: Int) {
@@ -704,18 +692,6 @@ class ShowVRViewController: UIViewController {
         UIView.animate(withDuration: 0.5, animations: {
             self.introductionVC.view.frame = CGRect(x: 0, y: 200.fh, width: Int(screenWidth), height: Int(screenHeight - CGFloat(200.fh)))
         })
-        print("========")
-//        blackView.isHidden = false
-//        introductionVC.collectionBack = {
-//            if let _ = self.collectedIndexes.firstIndex(of: index) { return }
-//            guard let collectedNum = Int(self.collectionRecordView.collectedNumLabel.text ?? "") else { return }
-//            self.collectionRecordView.collectedNumLabel.text = "\(collectedNum + 1)"
-//            self.collectedIndexes.append(index)
-//            saveCultureRelicFor(self.overlays[index].cultureRelic.name, city: self.cityName)
-//            if self.collectedIndexes.count == self.overlays.count {
-//                saveBadge(self.cityNameCN)
-//            }
-//        }
     }
     
     func collect(index: Int) {
@@ -724,10 +700,6 @@ class ShowVRViewController: UIViewController {
         self.collectionRecordView.collectedNumLabel.text = "\(collectedNum + 1)"
         self.collectedIndexes.append(index)
         saveCollectedMHIndexes(cityName: cityNameCN, mindex: index)
-//        saveCultureRelicFor(self.overlays[index].cultureRelic.name, city: self.cityName)
-//        if self.collectedIndexes.count == self.overlays.count {
-//            saveBadge(self.cityNameCN)
-//        }
     }
 
 }
@@ -765,9 +737,6 @@ extension ShowVRViewController {
         if let opIndexes = getOpenedMHIndexes(cityName: cityNameCN) {
             openedIndexes = opIndexes
         }
-//        overlayNodes.forEach { overlayNode in
-//            scnView.scene?.rootNode.addChildNode(overlayNode)
-//        }
         for i in 0..<overlayNodes.count {
             if collectedIndexes.firstIndex(where: {$0==i}) == nil {
                 scnView.scene?.rootNode.addChildNode(overlayNodes[i])
@@ -877,12 +846,10 @@ extension ShowVRViewController {
     
     func displayMHContent(index: Int) {
         mhContentView.isHidden = false
-//        mhContentView.frame = CGRect(x: screenWidth/2, y: screenHeight/2, width: 0, height: 0)
         mhContentView.frame = CGRect(x: 0, y: screenHeight, width: screenWidth, height: 0)
         let mhContentType: MHContentView.ContentType = overlays[index].type == 0 ? .story : .cultureRelic
         mhContentView.contentType = mhContentType
         UIView.animate(withDuration: 0.5, animations: { [self] in
-//            mhContentView.frame = CGRect(x: screenWidth/2-150, y: screenHeight/2-200, width: 300, height: 400)
             mhContentView.frame = CGRect(x: 0, y: 200.fh, width: Int(screenWidth), height: Int(screenHeight)-200.fh)
         }, completion: { [self] _ in
             deleteButton.isHidden = false

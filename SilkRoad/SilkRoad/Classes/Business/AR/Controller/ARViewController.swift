@@ -43,7 +43,7 @@ class ARViewController: UIViewController {
         } else {
             currentPoint = location
             let tx = Float(currentPoint.x - beganPoint.x)
-            currentAngle = tx / 50.0 * Float.pi / 2
+            currentAngle = tx / 80.0 * Float.pi / 2
             currentNode.pivot = SCNMatrix4Rotate(SCNMatrix4Identity, currentAngle + totleAngle, 0, 1, 0)
         }
     }

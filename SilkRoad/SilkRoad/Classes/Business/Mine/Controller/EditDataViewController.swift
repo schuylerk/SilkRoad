@@ -21,25 +21,34 @@ class EditDataViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "编辑资料"
-        self.view.backgroundColor = UIColor(red: 0.953, green: 0.953, blue: 0.953, alpha: 1)
-        self.navigationController?.navigationBar.isHidden = true
-        ConfigUI()
+        title = "编辑资料"
+        navigationItem.leftBarButtonItem = UIBarButtonItem()
+        let customView = UIView(frame: CGRect(x: 0, y: 0, width: 30.fw, height: 30.fw))
+        let backImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 30.fw, height: 30.fw))
+        backImageView.image = UIImage(named: "back")
+        backImageView.isUserInteractionEnabled = true
+        backImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickLeftBackButton)))
+        customView.addSubview(backImageView)
+        navigationItem.leftBarButtonItem?.customView = customView
+        configUI()
     }
-    
-    
-    lazy var leftButton: UIButton = {
-            let button = UIButton()
-            button.setImage(UIImage(named: "back"), for: .normal)
-            button.frame = CGRect(x: 20.fw, y: 50.fh, width: 30.fw, height: 30.fh)
-            button.addTarget(self, action: #selector(clickLeftBackButton), for: .allEvents)
-            
-            return button
-        }()
         
     @objc func clickLeftBackButton(){
-        self.navigationController?.popViewController(animated: true)
+        navigationController?.popViewController(animated: true)
         tabBarController?.tabBar.isHidden = false
+    }
+    
+    lazy var blackButton: UIButton = {
+        let button = UIButton(frame: view.bounds)
+        button.backgroundColor = .black
+        button.alpha = 0.5
+        button.isHidden = true
+        button.addTarget(self, action: #selector(tapBlackButton), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc func tapBlackButton() {
+        
     }
     
     lazy var tableView: UITableView = {
@@ -48,29 +57,26 @@ class EditDataViewController: UIViewController {
         tableview.dataSource = self
         tableview.register(EditTableViewCell.self, forCellReuseIdentifier: EditCellID)
         tableview.register(EditAvatarTableViewCell.self, forCellReuseIdentifier: avatarCellID)
-        tableview.separatorStyle = .none
+//        tableview.separatorStyle = .none
         tableview.backgroundColor = .clear
         tableview.showsVerticalScrollIndicator = false
         tableview.isScrollEnabled = false
         return tableview
     }()
     
-    func ConfigUI() {
-        self.view.addSubview(tableView)
-        view.addSubview(leftButton)
-        
+    func configUI() {
+        view.backgroundColor = UIColor(red: 0.953, green: 0.953, blue: 0.953, alpha: 1)
+        view.addSubview(tableView)
+        view.addSubview(blackButton)
         tableView.snp.makeConstraints { make in
             make.left.right.bottom.equalToSuperview()
-            make.top.equalToSuperview().offset(50.fh)
+            make.top.equalToSuperview()
         }
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        self.tabBarController?.tabBar.isHidden = true
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        self.tabBarController?.tabBar.isHidden = false
+        tabBarController?.tabBar.isHidden = true
+        navigationController?.navigationBar.isHidden = false
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -86,6 +92,9 @@ class EditDataViewController: UIViewController {
         if let usernameCell = tableView.cellForRow(at: IndexPath(row: 1, section: 0)) as? EditTableViewCell {
             usernameCell.setAnswerLabelText(type: .username)
         }
+        if let schoolCell = tableView.cellForRow(at: IndexPath(row: 2, section: 0)) as? EditTableViewCell {
+            schoolCell.setAnswerLabelText(type: .school)
+        }
     }
     
 }
@@ -93,15 +102,13 @@ class EditDataViewController: UIViewController {
 extension EditDataViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-//        return 3
         return 1
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-//            return 1
-            return 2
+            return 3
         case 1:
             return 4
         default:
@@ -120,6 +127,10 @@ extension EditDataViewController: UITableViewDelegate, UITableViewDataSource {
             case 1:
                 let cell = tableView.dequeueReusableCell(withIdentifier: EditCellID, for: indexPath) as! EditTableViewCell
                 cell.titleLabel.text = "昵称"
+                return cell
+            case 2:
+                let cell = tableView.dequeueReusableCell(withIdentifier: EditCellID, for: indexPath) as! EditTableViewCell
+                cell.titleLabel.text = "学校"
                 return cell
             default:
                 return UITableViewCell()
@@ -142,15 +153,8 @@ extension EditDataViewController: UITableViewDelegate, UITableViewDataSource {
         return CGFloat(60.fh)
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let vi = UIView()
-        vi.backgroundColor = .clear
-        return vi
-    }
-    
-    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return CGFloat(20.fh)
+        return CGFloat(1.fh)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -186,6 +190,15 @@ extension EditDataViewController: UITableViewDelegate, UITableViewDataSource {
                 alterController.addAction(cancleAction)
                 alterController.addAction(changeAction)
                 present(alterController, animated: true, completion: nil)
+            case 2:
+                let addSchoolVC = AddSchoolViewController()
+                addSchoolVC.selectSchoolBack = { school in
+                    UserDefaults.standard.set(school, forKey: "user_school")
+                    if let schoolCell = tableView.cellForRow(at: indexPath) as? EditTableViewCell {
+                        schoolCell.setAnswerLabelText(type: .school)
+                    }
+                }
+                navigationController?.pushViewController(addSchoolVC, animated: true)
             default: break
             }
         default: break

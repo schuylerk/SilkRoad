@@ -47,15 +47,20 @@ class AnswerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .white
-        self.title = cityName + (isCompleteAnswer ? "-查看题目" : "-答题")
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "back_white"), style: .done, target: self, action: #selector(tapBackButton))
-        navigationItem.leftBarButtonItem?.tintColor = .black
+        view.backgroundColor = .white
+        title = cityName + (isCompleteAnswer ? "-查看题目" : "-答题")
+        navigationItem.leftBarButtonItem = UIBarButtonItem()
+        let customView = UIView(frame: CGRect(x: 0, y: 0, width: 30.fw, height: 30.fw))
+        let backImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 30.fw, height: 30.fw))
+        backImageView.image = UIImage(named: "back")
+        backImageView.isUserInteractionEnabled = true
+        backImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapBackButton)))
+        customView.addSubview(backImageView)
+        navigationItem.leftBarButtonItem?.customView = customView
         getQuestions {
             self.ConfigUI()
             self.selectRecord = Array(repeating: "", count: self.questions.count)
         }
-        // Do any additional setup after loading the view.
     }
     
     @objc func tapBackButton() {
@@ -196,19 +201,6 @@ class AnswerViewController: UIViewController {
     
     @objc func nextHandler() {
         if currentQuestionIndex == questions.count - 1 {
-//            let score = getScore()
-//            let integral = Int(5*score/100.0)
-//            if let value = UserDefaults.standard.value(forKey: "silkintegral") as? Int {
-//                UserDefaults.standard.set(value + integral, forKey: "silkintegral")
-//            } else {
-//                UserDefaults.standard.set(integral, forKey: "silkintegral")
-//            }
-//            let alert = UIAlertController(title: "得分", message: "题目得分：\(score)\n丝绸积分：\(integral)", preferredStyle: .alert)
-//            let closeAction = UIAlertAction(title: "关闭", style: .default, handler: { _ in
-//                self.navigationController?.popViewController(animated: true)
-//            })
-//            alert.addAction(closeAction)
-//            self.present(alert, animated: true, completion: nil)
             if let _ = selectRecord.firstIndex(where: {$0==""}) {
                 let alterController = UIAlertController(title: "提示", message: "有题目未完成", preferredStyle: .alert)
                 present(alterController, animated: true, completion: {
@@ -411,42 +403,39 @@ class AnswerViewController: UIViewController {
         AnswerALabel.snp.makeConstraints { make in
             make.left.equalTo(AnswerAView.snp.right).offset(20.fw)
             make.right.equalToSuperview().offset(-30.fw)
-            make.top.equalTo(AnswerAView.snp.top).offset(0)
+            make.top.equalTo(AnswerAView.snp.top)
         }
         
         AnswerBLabel.snp.makeConstraints { make in
             make.left.equalTo(AnswerBView.snp.right).offset(20.fw)
-            make.width.equalTo(100.fw)
-            make.top.equalTo(AnswerBView.snp.top).offset(0)
+            make.top.equalTo(AnswerBView.snp.top)
             make.right.equalToSuperview().offset(-30.fw)
         }
         
         AnswerCLabel.snp.makeConstraints { make in
             make.left.equalTo(AnswerCView.snp.right).offset(20.fw)
-            make.width.equalTo(100.fw)
             make.top.equalTo(AnswerCView.snp.top).offset(0)
             make.right.equalToSuperview().offset(-30.fw)
         }
         
         AnswerDLabel.snp.makeConstraints { make in
             make.left.equalTo(AnswerDView.snp.right).offset(20.fw)
-            make.width.equalTo(100.fw)
             make.top.equalTo(AnswerDView.snp.top).offset(0)
             make.right.equalToSuperview().offset(-30.fw)
         }
         
         lastQuestionButton.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(40.fw)
-            make.width.equalTo(20.fw)
+            make.width.equalTo(25.fw)
             make.top.equalTo(AnswerDView.snp.bottom).offset(50.fh)
-            make.height.equalTo(20.fw)
+            make.height.equalTo(25.fw)
         }
         
         nextQuestionButton.snp.makeConstraints { make in
             make.right.equalToSuperview().offset(-40.fw)
-            make.width.equalTo(20.fw)
+            make.width.equalTo(25.fw)
             make.top.equalTo(lastQuestionButton).offset(0)
-            make.height.equalTo(20.fw)
+            make.height.equalTo(25.fw)
         }
         if isCompleteAnswer {
             answerLabel.snp.makeConstraints { maker in
@@ -460,15 +449,16 @@ class AnswerViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.tabBarController?.tabBar.isHidden = true
-        self.navigationController?.navigationBar.isHidden = false
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = true
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        self.tabBarController?.tabBar.isHidden = false
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        navigationController?.navigationBar.isHidden = false
     }
     
-    func getQuestions(_ completion: @escaping (() -> Void)) {
+    func getQuestions(_ completion: @escaping () -> Void) {
         do {
             let data = try Data(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "questions", ofType: "json")!))
             guard let jsonString = String(data: data, encoding: .utf8) else { return }

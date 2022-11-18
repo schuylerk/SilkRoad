@@ -10,45 +10,45 @@ import MaLiang
 import SnapKit
 
 class HomemadeGourdViewController: UIViewController {
+    enum SelectType {
+        case pen
+        case eraser
+    }
     
-    var colors: [UIColor] = [.white, .blue, .green, .red, .orange, .yellow]
-    let colorCellReuseID = "color"
+    let selectSizeCellReuseID = "size"
     var penColor: UIColor = .blue
-    var upBrushes: [Brush] = []
-    var downBrushes: [Brush] = []
+    var selectType: SelectType = .pen
+    var upEraser: Eraser?
+    var downEraser: Eraser?
 
     lazy var upCanvas: Canvas = {
-        let canvas = Canvas(frame: CGRect(x: 0, y: 0, width: 200.fw, height: 200.fw))
+        let canvas = Canvas(frame: CGRect(x: 0, y: 0, width: 240.fw, height: 240.fw))
         canvas.data.addObserver(self)
-        canvas.layer.cornerRadius = CGFloat(100.fw)
+        canvas.layer.cornerRadius = CGFloat(120.fw)
         canvas.layer.masksToBounds = true
         let eraser = try! canvas.registerBrush(name: "Eraser") as Eraser
-        upBrushes.append(eraser)
-        let pen = canvas.defaultBrush!
-        pen.color = penColor
-        pen.use()
-        upBrushes.append(pen)
+        eraser.pointSize = 2
+        upEraser = eraser
+        canvas.defaultBrush.pointSize = 2
         return canvas
     }()
     
     lazy var downCanvas: Canvas = {
-        let canvas = Canvas(frame: CGRect(x: 0, y: 0, width: 300.fw, height: 300.fw))
+        let canvas = Canvas(frame: CGRect(x: 0, y: 0, width: 340.fw, height: 340.fw))
         canvas.data.addObserver(self)
-        canvas.layer.cornerRadius = CGFloat(150.fw)
+        canvas.layer.cornerRadius = CGFloat(170.fw)
         canvas.layer.masksToBounds = true
         let eraser = try! canvas.registerBrush(name: "Eraser") as Eraser
-        let pen = canvas.defaultBrush!
-        pen.color = penColor
-        pen.use()
-        downBrushes.append(eraser)
-        downBrushes.append(pen)
+        eraser.pointSize = 2
+        downEraser = eraser
+        canvas.defaultBrush.pointSize = 2
         return canvas
     }()
     
     lazy var upView: UIView = {
-        let vi = UIView(frame: CGRect(x: Int(screenWidth) / 2 - 100.fw, y: 120.fh, width: 200.fw, height: 200.fw))
+        let vi = UIView(frame: CGRect(x: Int(screenWidth) / 2 - 120.fw, y: 150.fh, width: 240.fw, height: 240.fw))
         vi.backgroundColor = .white
-        vi.layer.cornerRadius = CGFloat(100.fw)
+        vi.layer.cornerRadius = CGFloat(120.fw)
         vi.layer.borderColor = UIColor.systemGray3.cgColor
         vi.layer.borderWidth = 1
         vi.addSubview(upCanvas)
@@ -56,12 +56,40 @@ class HomemadeGourdViewController: UIViewController {
     }()
     
     lazy var downView: UIView = {
-        let vi = UIView(frame: CGRect(x: Int(screenWidth) / 2 - 150.fw, y: 120.fh+200.fw, width: 300.fw, height: 300.fw))
+        let vi = UIView(frame: CGRect(x: Int(screenWidth) / 2 - 170.fw, y: 150.fh+240.fw, width: 340.fw, height: 340.fw))
         vi.backgroundColor = .white
-        vi.layer.cornerRadius = CGFloat(150.fw)
+        vi.layer.cornerRadius = CGFloat(170.fw)
         vi.layer.borderColor = UIColor.systemGray3.cgColor
         vi.layer.borderWidth = 1
         vi.addSubview(downCanvas)
+        return vi
+    }()
+    
+    lazy var blackView: UIButton = {
+        let vi = UIButton(frame: view.bounds)
+        vi.backgroundColor = .black
+        vi.alpha = 0.5
+        vi.isHidden = true
+        vi.addTarget(self, action: #selector(tapBlackView), for: .touchUpInside)
+        return vi
+    }()
+    
+    lazy var colorSelectView: ColorSelectView = {
+        let vi = ColorSelectView(frame: CGRect(x: Int(screenWidth) / 2 - 150.fw, y: Int(screenHeight) / 2 - 200.fh, width: 300.fw, height: 360.fh))
+        vi.backgroundColor = .systemGray6
+        vi.layer.cornerRadius = CGFloat(10.fw)
+        vi.isHidden = true
+        vi.layer.masksToBounds = true
+        vi.cancleHandler = { [self] in
+            colorSelectView.isHidden = true
+            blackView.isHidden = true
+        }
+        vi.determineHandler = { [self] color in
+            upCanvas.defaultBrush.color = color
+            downCanvas.defaultBrush.color = color
+            colorSelectView.isHidden = true
+            blackView.isHidden = true
+        }
         return vi
     }()
     
@@ -75,113 +103,145 @@ class HomemadeGourdViewController: UIViewController {
         return layer
     }()
     
-    lazy var bottomContainerView: UIView = {
-        let vi = UIView(frame: CGRect(x: 0, y: Int(screenHeight) - 200.fh, width: Int(screenWidth), height: 200.fh))
-        vi.backgroundColor = .white
-        vi.addSubview(bottomTopContainerView)
-        vi.addSubview(colorCollctionView)
-        return vi
-    }()
-    
-    lazy var bottomTopContainerView: UIView = {
-        let vi = UIView(frame: CGRect(x: Int(screenWidth) / 2 - 150.fw, y: 20.fh, width: 300.fw, height: 70.fh))
-        vi.backgroundColor = .white
-        vi.layer.borderColor = UIColor.systemGray3.cgColor
-        vi.layer.borderWidth = 1
-        vi.layer.cornerRadius = CGFloat(10.fw)
-        vi.addSubview(penButton)
-        vi.addSubview(eraserButton)
-        return vi
-    }()
-    
     lazy var penButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "pen"), for: .normal)
-        button.frame.size = CGSize(width: 60.fw, height: 60.fw)
-        button.center = CGPoint(x: 75.fw, y: 35.fh)
+        button.frame = CGRect(x: Int(screenWidth) / 2 - 35.fw, y: Int(screenHeight) - 60.fh, width: 30.fw, height: 30.fw)
+        button.setImage(UIImage(named: "pen.select"), for: .normal)
         button.addTarget(self, action: #selector(pen), for: .touchUpInside)
         return button
     }()
     
     lazy var eraserButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "eraser"), for: .normal)
-        button.frame.size = CGSize(width: 60.fw, height: 60.fw)
-        button.center = CGPoint(x: 225.fw, y: 35.fh)
+        button.frame = CGRect(x: Int(screenWidth) / 2 + 5.fw, y: Int(screenHeight) - 60.fh, width: 30.fw, height: 30.fw)
+        button.setImage(UIImage(named: "eraser.deselect"), for: .normal)
         button.addTarget(self, action: #selector(eraser), for: .touchUpInside)
-//        let gesture = UILongPressGestureRecognizer(target: self, action: #selector(longPressEraser))
-//        button.addGestureRecognizer(gesture)
         return button
     }()
     
     @objc func pen() {
+        selectType = .pen
+        navigationItem.rightBarButtonItem?.customView?.isHidden = false
+        penButton.setImage(.init(named: "pen.select"), for: .normal)
+        eraserButton.setImage(.init(named: "eraser.deselect"), for: .normal)
         upCanvas.defaultBrush.use()
         downCanvas.defaultBrush.use()
+        setSelectSizeCLVContainerAnimate()
     }
     
     @objc func eraser() {
-        let upEraser = upCanvas.findBrushBy(name: "Eraser") as! Eraser
-        let downEraser = downCanvas.findBrushBy(name: "Eraser") as! Eraser
-        upEraser.pointSize = 15
-        downEraser.pointSize = 15
-        upEraser.use()
-        downEraser.use()
+        selectType = .eraser
+        navigationItem.rightBarButtonItem?.customView?.isHidden = true
+        penButton.setImage(.init(named: "pen.deselect"), for: .normal)
+        eraserButton.setImage(.init(named: "eraser.select"), for: .normal)
+        upEraser!.use()
+        downEraser!.use()
+        setSelectSizeCLVContainerAnimate()
     }
     
-    @objc func longPressEraser() {
-        print("long long")
-        controlEraserSizeView.isHidden = false
+    @objc func tapBlackView() {}
+    
+    func setSelectSizeCLVContainerAnimate() {
+        let selectSizeCLVContainerHeight = 30.fw
+        let selectSizeCollctionViewHeight = 25.fw
+        selectSizeCLVContainer.frame = CGRect(x: Int(screenWidth) / 2, y: Int(screenHeight) - 60.fh, width: 0, height: selectSizeCLVContainerHeight)
+        selectSizeCollctionView.frame = CGRect(x: CGFloat(10.fw), y: CGFloat(selectSizeCLVContainerHeight - selectSizeCollctionViewHeight) / 2, width: 0, height: CGFloat(selectSizeCollctionViewHeight))
+        UIView.animate(withDuration: 0.2, animations: { [self] in
+            selectSizeCLVContainer.frame = CGRect(x: Int(screenWidth) / 2 - 80.fw, y: Int(screenHeight) - 60.fh, width: 160.fw, height: selectSizeCLVContainerHeight)
+            selectSizeCollctionView.frame = CGRect(x: CGFloat(10.fw), y: CGFloat(selectSizeCLVContainerHeight - selectSizeCollctionViewHeight) / 2, width: CGFloat(140.fw), height: CGFloat(selectSizeCollctionViewHeight))
+            penButton.transform = CGAffineTransform(translationX: -CGFloat(85.fw), y: 0)
+            eraserButton.transform = CGAffineTransform(translationX: CGFloat(85.fw), y: 0)
+        })
+        selectSizeCollctionView.reloadData()
     }
     
-    lazy var controlEraserSizeView: UIView = {
-        let vi = UIView(frame: CGRect(x: screenWidth/2, y: screenHeight-CGFloat(280.fh), width: CGFloat(200.fw), height: CGFloat(50.fh)))
-        let slider = UISlider(frame: vi.bounds)
-        slider.minimumValue = 1
-        slider.maximumValue = 30
-        vi.backgroundColor = .systemGray6
-        vi.layer.cornerRadius = 3
-        vi.isHidden = true
-        vi.addSubview(slider)
+    lazy var selectSizeCLVContainer: UIView = {
+        let vi = UIView(frame: .zero)
+        vi.backgroundColor = .black
+        vi.alpha = 0.5
+        vi.layer.cornerRadius = CGFloat(15.fw)
+        vi.addSubview(selectSizeCollctionView)
         return vi
     }()
     
-    lazy var colorCollctionView: UICollectionView = {
+    lazy var selectSizeCollctionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        layout.itemSize = CGSize(width: 40.fw, height: 40.fw)
-        let clv = UICollectionView(frame: CGRect(x: 30.fw, y: 100.fh, width: Int(screenWidth) - 60.fw, height: 80.fh), collectionViewLayout: layout)
+        layout.scrollDirection = .vertical
+        let clv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         clv.delegate = self
         clv.dataSource = self
         clv.backgroundColor = .clear
+        clv.isScrollEnabled = false
+        clv.layer.cornerRadius = CGFloat(25.fw) / 2
         clv.showsHorizontalScrollIndicator = false
-        clv.register(UICollectionViewCell.self, forCellWithReuseIdentifier: colorCellReuseID)
+        clv.register(UICollectionViewCell.self, forCellWithReuseIdentifier: selectSizeCellReuseID)
         return clv
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         setUI()
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        guard let rect = notification.userInfo?["UIKeyboardFrameEndUserInfoKey"] as? CGRect else { return }
+        let keyboardMinY = rect.minY
+        UIView.animate(withDuration: 0.2, animations: { [self] in
+            colorSelectView.frame = CGRect(x: Int(screenWidth) / 2 - 150.fw, y: Int(keyboardMinY) - 380.fh , width: 300.fw, height: 360.fh)
+        })
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        UIView.animate(withDuration: 0.2, animations: { [self] in
+            colorSelectView.frame = CGRect(x: Int(screenWidth) / 2 - 150.fw, y: Int(screenHeight) / 2 - 200.fh, width: 300.fw, height: 360.fh)
+        })
     }
     
     func setUI() {
         view.layer.addSublayer(colorLayer)
         view.addSubview(upView)
         view.addSubview(downView)
-        view.addSubview(bottomContainerView)
-        view.addSubview(controlEraserSizeView)
+        view.addSubview(penButton)
+        view.addSubview(eraserButton)
+        view.addSubview(selectSizeCLVContainer)
+        view.addSubview(blackView)
+        view.addSubview(colorSelectView)
     }
     
     func setNav() {
         title = "自制葫芦"
         navigationController?.navigationBar.isHidden = false
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "back"), style: .done, target: self, action: #selector(back))
-        navigationController?.navigationBar.tintColor = .black
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem()
+        let customView = UIView(frame: CGRect(x: 0, y: 0, width: 30.fw, height: 30.fw))
+        let backImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 30.fw, height: 30.fw))
+        backImageView.image = UIImage(named: "back")
+        backImageView.isUserInteractionEnabled = true
+        backImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(back)))
+        customView.addSubview(backImageView)
+        navigationItem.leftBarButtonItem?.customView = customView
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem()
+        let rightCustomView = UIView(frame: CGRect(x: 0, y: 0, width: 25.fw, height: 25.fw))
+        let colorSelectImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 25.fw, height: 25.fw))
+        colorSelectImageView.image = UIImage(named: "colorselect")
+        colorSelectImageView.isUserInteractionEnabled = true
+        colorSelectImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(colorSelect)))
+        rightCustomView.addSubview(colorSelectImageView)
+        navigationItem.rightBarButtonItem?.customView = rightCustomView
+        navigationItem.rightBarButtonItem?.customView?.isHidden = true
     }
     
     @objc func back() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func colorSelect() {
+        blackView.isHidden = false
+        colorSelectView.isHidden = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -198,23 +258,37 @@ extension HomemadeGourdViewController: DataObserver {
     
 }
 
-extension HomemadeGourdViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension HomemadeGourdViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return colors.count
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: colorCellReuseID, for: indexPath)
-        cell.layer.cornerRadius = CGFloat(20.fw)
-        cell.backgroundColor = colors[indexPath.row]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: selectSizeCellReuseID, for: indexPath)
+        cell.layer.cornerRadius = CGFloat(25.fw - 4 * indexPath.row) / 2
+        let pointSize = selectType == .pen ? upCanvas.defaultBrush.pointSize : upEraser!.pointSize
+        if Int(pointSize) == 10 - 2 * indexPath.row {
+            cell.backgroundColor = UIColor(hex: "#E18D36")
+        } else {
+            cell.backgroundColor = .white
+        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let color = colors[indexPath.row]
-        upCanvas.defaultBrush.color = color
-        downCanvas.defaultBrush.color = color
+        if selectType == .pen {
+            upCanvas.defaultBrush.pointSize = CGFloat(10 - 2 * indexPath.row)
+            downCanvas.defaultBrush.pointSize = CGFloat(10 - 2 * indexPath.row)
+        } else {
+            upEraser!.pointSize = CGFloat(10 - 2 * indexPath.row)
+            downEraser!.pointSize = CGFloat(10 - 2 * indexPath.row)
+        }
+        selectSizeCollctionView.reloadData()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 25.fw - 4 * indexPath.row, height: 25.fw - 4 * indexPath.row)
     }
     
 }

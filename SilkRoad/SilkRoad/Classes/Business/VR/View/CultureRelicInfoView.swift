@@ -13,8 +13,8 @@ class CultureRelicInfoView: UIView {
     var model: CultureRelicInfo = CultureRelicInfo() {
         didSet {
             nameLabel.text = model.name
-            unearthedYearLabel.text = "出土年份:  未知"// \(model.unearthedYear)"
-            unearthedPlaceLabel.text = "出土地点:  未知"// \(model.unearthPlace)"
+            unearthedYearLabel.text = "出土年份:  未知"
+            unearthedPlaceLabel.text = "出土地点:  未知"
             dynastyLabel.text = "所属朝代:   \(model.dynasty)"
         }
     }

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-struct CultureRelic{
+struct CultureRelic {
     var intro: String = ""
     var name: String = ""
     var unearthedYear: String = ""
@@ -18,6 +18,5 @@ struct CultureRelic{
     var evaluationStatus: String = ""
     var face: String = ""
     var num: Int = 0
-    
 }
 

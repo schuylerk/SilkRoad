@@ -12,7 +12,6 @@ class MineDataCollectionViewCell: UICollectionViewCell {
     
     var searchCallBack: (() -> Void)?
     var editCallBack: (() -> Void)?
-    //var setCallBack: (() -> Void)?
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -54,7 +53,7 @@ class MineDataCollectionViewCell: UICollectionViewCell {
     
     lazy var introducelabel: UILabel = {
         let label = UILabel()
-        label.text = "湖南工业大学 ｜ 计算机学院"//"女｜湖南｜已解锁\(getBadge()?.count ?? 0)个旅行勋章"
+        label.text = ((UserDefaults.standard.value(forKey: "user_school") as? String) ?? "未选择学校") + " | 未选择学院"
         label.textColor = .gray
         label.font = UIFont.init(name: "LXGW WenKai", size: 12)
         label.numberOfLines = 0
@@ -106,6 +105,10 @@ class MineDataCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    func setIntroduceLabel() {
+        introducelabel.text = ((UserDefaults.standard.value(forKey: "user_school") as? String) ?? "未选择学校") + " — 探索者"
+    }
+    
     @objc func searchBarClick() {
         if let callback = searchCallBack {
             callback()
@@ -118,20 +121,12 @@ class MineDataCollectionViewCell: UICollectionViewCell {
         }
     }
     
-//    @objc func setClick() {
-//        if let callback = setCallBack {
-//            callback()
-//        }
-//    }
-    
-    
     func ConfigUI() {
         contentView.addSubview(BackimageView)
         contentView.addSubview(imageView)
         contentView.addSubview(portraitImageView)
         imageView.addSubview(namelabel)
         imageView.addSubview(introducelabel)
-//        imageView.addSubview(centerbutton)
         imageView.addSubview(editbutton)
     
         BackimageView.snp.makeConstraints { make in
@@ -155,28 +150,13 @@ class MineDataCollectionViewCell: UICollectionViewCell {
             make.height.equalTo(20.fh)
             make.left.right.equalToSuperview()
         }
-        
-//        centerbutton.snp.makeConstraints { make in
-//            make.top.equalToSuperview().offset(107.fh)
-//            make.height.equalTo(10.fh)
-//            make.left.equalTo(portraitimageView.snp.left).offset(0.fw)
-//            make.width.equalTo(80.fw)
-//        }
     
         editbutton.snp.makeConstraints { make in
             make.top.equalTo(introducelabel.snp.bottom).offset(5.fh)
             make.height.equalTo(22.fh)
-//            make.left.equalTo(centerbutton).offset(-10.fw)
             make.centerX.equalToSuperview()
             make.width.equalTo(80.fw)
         }
-        
-//        setbutton.snp.makeConstraints { make in
-//            make.top.equalToSuperview().offset(60.fh)
-//            make.width.equalTo(50.fw)
-//            make.right.equalToSuperview().offset(-25.fw)
-//            make.height.equalTo(50.fh)
-//        }
         
     }
 }

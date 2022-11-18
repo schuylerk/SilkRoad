@@ -11,25 +11,23 @@ import SwiftyJSON
 
 class StudyViewController: UIViewController {
     
-
-    let CityCellID = "CityCellID"
-    var IntroduceData = [Introduce]()
-    
     let name = ["西 安", "兰 州", "西 宁", "敦 煌", "乌 鲁 木 齐"]
     let picture = ["xian1", "lanzhou1", "xining1", "dunhuang1", "wulumuqi1"]
+    let cityCellID = "cityCellID"
+    var introduceData = [CityIntroduce(), CityIntroduce(), CityIntroduce(), CityIntroduce(), CityIntroduce()]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .white
         configUI()
-        handyJSON()
+        DispatchQueue.global().async {
+            self.introduceData = self.getCityIntroduceData()
+        }
     }
     
-    lazy var Studylabel: UILabel = {
+    lazy var studyLabel: UILabel = {
         let label = UILabel()
         label.text = "学习"
-        label.font = UIFont.init(name: "TimesNewRomanPS-ItalicMT", size: 32)
-        label.numberOfLines = 0
+        label.font = UIFont.systemFont(ofSize: CGFloat(32.fw))
         return label
     }()
     
@@ -50,120 +48,91 @@ class StudyViewController: UIViewController {
         collectionView.backgroundColor = .clear
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.showsHorizontalScrollIndicator = false // 隐藏滑动条
-        collectionView.alwaysBounceVertical = true
-        
-        collectionView.register(CityCollectionView.self, forCellWithReuseIdentifier: CityCellID)
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.register(CityCollectionViewCell.self, forCellWithReuseIdentifier: cityCellID)
         return collectionView
     }()
     
-    lazy var searchView: SearchView = {
-        let searchView = SearchView()
-        searchView.backgroundColor = UIColor(hex: "#FDF5EF")
-        searchView.layer.cornerRadius = CGFloat(20.fw)
-        searchView.layer.borderColor = UIColor(hex: "#D8D0C9").cgColor
-        searchView.layer.borderWidth = CGFloat(1.fw)
-        searchView.searchTextField.delegate = self
-        return searchView
-    }()
-    
-//    lazy var searchBarBtn: UIButton = {
-//        let btn = UIButton()
-//        btn.titleLabel?.textAlignment = .left
-//        btn.addTarget(self, action: #selector(searchBarClick), for: .touchUpInside)
-//        return btn
-//    }()
-    
-    lazy var blackView: UIView = {
-        let blv = UIView()
-        blv.backgroundColor = .black
-        blv.alpha = 0.5
-        blv.isUserInteractionEnabled = true
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(cancleSearch))
-        blv.addGestureRecognizer(gesture)
-        blv.isHidden = true
-        return blv
-    }()
-    
-    @objc func cancleSearch() {
-        blackView.isHidden = true
-        searchView.searchTextField.resignFirstResponder()
-    }
-    
-    
     func configUI() {
         view.layer.addSublayer(colorLayer)
-        self.view.addSubview(collectionView)
-        self.view.addSubview(Studylabel)
-        self.view.addSubview(blackView)
-//        self.view.addSubview(searchView)
-        
-        Studylabel.snp.makeConstraints { make in
+        view.addSubview(collectionView)
+        view.addSubview(studyLabel)
+        studyLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(80.fh)
             make.left.equalToSuperview().offset(20.fw)
             make.width.equalToSuperview().offset(-40.fw)
-            make.height.equalTo(35)
+            make.height.equalTo(35.fh)
         }
-    
         collectionView.snp.makeConstraints{ make in
-//            make.top.equalToSuperview().offset(170.fh)
             make.top.equalToSuperview().offset(130.fh)
             make.left.equalToSuperview().offset(20.fw)
             make.right.equalToSuperview().offset(-20.fw)
             make.bottom.equalToSuperview().offset(-50.fh)
         }
-    
-        blackView.snp.makeConstraints { maker in
-            maker.edges.equalToSuperview()
-        }
-        
-//        searchView.snp.makeConstraints { maker in
-//            maker.left.equalToSuperview().offset(20.fw)
-//            maker.right.equalToSuperview().offset(-20.fw)
-//            maker.height.equalTo(40.fw)
-//            maker.top.equalToSuperview().offset(120.fh)
-//        }
-        
-        
     }
     
-    
-    func handyJSON() {
-        do{
-            let data = try Data(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "introduce", ofType: "json")!))
-            if let jsonData = String(data: data, encoding: .utf8) {
-                let json = JSON(parseJSON: jsonData)
-                guard let jsonarray = json.array else {return}
-                self.IntroduceData = jsonarray.map{ json -> Introduce in
-                    return Introduce(
-                        name: json["name"].stringValue,
-                        back: json["back"].stringValue,
-                        introduce: json["introduce"].stringValue
-                    )
-                }
-                
+    func configCityIntroduceData() -> [CityIntroduce] {
+        do {
+            guard let path = Bundle.main.path(forResource: "introduce", ofType: "json") else {
+                print("获取城市介绍json文件失败")
+                return []
             }
-            else {print("false")}
+            let data = try Data(contentsOf: URL(fileURLWithPath: path))
+            guard let jsonString = String(data: data, encoding: .utf8) else {
+                print("data转字符串失败")
+                return []
+            }
+            let json = JSON(parseJSON: jsonString)
+            guard let jsonArray = json.array else {
+                print("json转json数组失败")
+                return []
+            }
+            UserDefaults.standard.set(jsonString, forKey: "cityintroduce")
+            return jsonArray.map {
+                return CityIntroduce(
+                    name: $0["name"].stringValue,
+                    back: $0["back"].stringValue,
+                    introduce: $0["introduce"].stringValue
+                )
+            }
+        } catch {
+            print("获取指定URL的数据失败")
+            return []
         }
-        catch{
-            print("false")
-            
+    }
+    
+    func getCityIntroduceData() -> [CityIntroduce] {
+        guard let jsonString = UserDefaults.standard.value(forKey: "cityintroduce") as? String else {
+            return configCityIntroduceData()
+        }
+        let json = JSON(parseJSON: jsonString)
+        guard let jsonArray = json.array else {
+            print("json转json数组失败")
+            return []
+        }
+        return jsonArray.map {
+            return CityIntroduce(
+                name: $0["name"].stringValue,
+                back: $0["back"].stringValue,
+                introduce: $0["introduce"].stringValue
+            )
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         tabBarController?.tabBar.isHidden = false
+        navigationController?.navigationBar.isHidden = true
     }
     
 }
 
 
-extension  StudyViewController:  UICollectionViewDelegate, UICollectionViewDataSource {
+extension StudyViewController:  UICollectionViewDelegate, UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 5
+        return name.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -171,34 +140,25 @@ extension  StudyViewController:  UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CityCellID, for: indexPath) as! CityCollectionView
-        cell.Studylabel.text = name[indexPath.section]
-        cell.BackView.image = UIImage(named: picture[indexPath.section])
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cityCellID, for: indexPath) as? CityCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        cell.studyLabel.text = name[indexPath.section]
+        cell.backgroundImageView.image = UIImage(named: picture[indexPath.section])
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = CityViewController()
-        vc.updateUI(with: IntroduceData[indexPath.section])
+        vc.updateUI(with: introduceData[indexPath.section])
         navigationController?.pushViewController(vc, animated: true)
     }
 }
-    
-
 
 extension StudyViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: Int(screenWidth) - 40.fw, height: 150.fh)
-    }
-    
-}
-
-
-extension StudyViewController: UITextFieldDelegate {
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        blackView.isHidden = false
     }
     
 }

@@ -11,10 +11,8 @@ class QuestionCollectionViewCell: UICollectionViewCell {
     
     var answerCallBack: (() -> Void)?
     
-    
     override func layoutSubviews() {
-        ConfigUI()
-        
+        configUI()
     }
     
     lazy var answerbutton: UIButton = {
@@ -30,15 +28,13 @@ class QuestionCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func ConfigUI() {
-        self.addSubview(answerbutton)
-        
+    func configUI() {
+        addSubview(answerbutton)
         answerbutton.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(15)
             make.right.equalToSuperview().offset(-20)
             make.height.equalToSuperview()
             make.bottom.equalToSuperview().offset(-20)
-            
         }
     }
     

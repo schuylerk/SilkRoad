@@ -6,20 +6,21 @@
 //
 
 import UIKit
+import SnapKit
 
 class TravelCollectionViewCell: UICollectionViewCell {
     
     override func layoutSubviews() {
-        ConfigUI()
-        
+        super.layoutSubviews()
+        configUI()
     }
  
-    lazy var medalimageView: UIImageView = {
+    lazy var medalImageView: UIImageView = {
         let imageView = UIImageView()
         return imageView
     }()
  
-    lazy var namelabel: UILabel = {
+    lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.init(name: "TimesNewRomanPS-ItalicMT", size: 15)
         label.textAlignment = .center
@@ -36,27 +37,17 @@ class TravelCollectionViewCell: UICollectionViewCell {
         return label
     }()
 
-    func ConfigUI() {
-        self.addSubview(medalimageView)
-        self.addSubview(namelabel)
-//        self.addSubview(datelabel)
-        
-        medalimageView.snp.makeConstraints { make in
+    func configUI() {
+        addSubview(medalImageView)
+        addSubview(nameLabel)
+        medalImageView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(10.fh)
             make.width.height.equalTo(120.fw)
             make.centerX.equalToSuperview()
         }
-        
-        namelabel.snp.makeConstraints { make in
-            make.top.equalTo(medalimageView.snp.bottom).offset(10.fh)
-            make.left.bottom.right.equalToSuperview()
+        nameLabel.snp.makeConstraints { make in
+            make.top.equalTo(medalImageView.snp.bottom).offset(10.fh)
+            make.centerX.equalToSuperview()
         }
-        
-//        datelabel.snp.makeConstraints { make in
-//            make.top.equalToSuperview().offset(95.fh)
-//            make.left.equalToSuperview().offset(0.fw)
-//            make.height.equalToSuperview().offset(5.fh)
-//            make.width.equalToSuperview().offset(10.fw)
-//        }
     }
 }
