@@ -2,14 +2,18 @@
 
 .DS_Store
 
-project.xcworkspace  
+SilkRoad.xcworkspace  
 
 xcuserdata  
 
 UserInterfaceState.xcuserstate  
 
-project.xcworkspace/  
+SilkRoad.xcworkspace/  
 
 xcuserdata/  
 
 UserInterface.xcuserstate 
+
+Pods/
+
+SilkRoad.xcodeproj/project.xcworkspace/xcuserdata/
